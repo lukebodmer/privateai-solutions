@@ -1,0 +1,756 @@
+{"date":"2026-11-08","entity":"model/claude-fable-5.1","key":"benchmark.aa_intelligence_index","from":53.4,"to":49.2,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-08","entity":"model/claude-fable-5.1","key":"benchmark.aa_coding_index","from":81.6,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-08","entity":"model/claude-fable-5.1","key":"pricing.cached_input_per_m_usd","from":null,"to":0.25,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-08","entity":"model/claude-fable-5.1","key":"speed.output_tokens_per_second","from":70.611,"to":70.01,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-08","entity":"model/claude-fable-5.1","key":"speed.time_to_first_token_seconds","from":125.093,"to":266.15,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-08","entity":"model/claude-opus-5","key":"benchmark.aa_intelligence_index","from":50.8,"to":44.2,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-08","entity":"model/claude-opus-5","key":"benchmark.aa_coding_index","from":78,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-08","entity":"model/claude-opus-5","key":"pricing.cached_input_per_m_usd","from":null,"to":0.5,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-08","entity":"model/claude-opus-5","key":"speed.output_tokens_per_second","from":0,"to":50.94,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-08","entity":"model/claude-opus-5","key":"speed.time_to_first_token_seconds","from":0,"to":66.81,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-flash-0731","key":"benchmark.aa_intelligence_index","from":34.3,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-flash-0731","key":"benchmark.aa_coding_index","from":69.1,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-flash-0731","key":"pricing.cached_input_per_m_usd","from":null,"to":0.028,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-flash-0731","key":"pricing.blended_per_m_usd","from":0.175,"to":0.18,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-flash-0731","key":"speed.output_tokens_per_second","from":0,"to":129.13,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-flash-0731","key":"speed.time_to_first_token_seconds","from":0,"to":1.41,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-pro-0813","key":"benchmark.aa_intelligence_index","from":36,"to":23.1,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-pro"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-pro-0813","key":"benchmark.aa_coding_index","from":68.8,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-pro"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-pro-0813","key":"pricing.cached_input_per_m_usd","from":null,"to":0.044,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-pro"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-pro-0813","key":"speed.output_tokens_per_second","from":83.591,"to":79.1,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-pro"}
+{"date":"2026-11-08","entity":"model/deepseek-v4-pro-0813","key":"speed.time_to_first_token_seconds","from":1.089,"to":1.77,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-pro"}
+{"date":"2026-11-08","entity":"model/glm-5.3-flash","key":"benchmark.aa_intelligence_index","from":41.8,"to":27.8,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-08","entity":"model/glm-5.3-flash","key":"benchmark.aa_coding_index","from":71.5,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-08","entity":"model/glm-5.3-flash","key":"pricing.cached_input_per_m_usd","from":null,"to":0.03,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-08","entity":"model/glm-5.3-flash","key":"pricing.blended_per_m_usd","from":0.237,"to":0.24,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-08","entity":"model/glm-5.3-flash","key":"speed.output_tokens_per_second","from":68.732,"to":54.53,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-08","entity":"model/glm-5.3-flash","key":"speed.time_to_first_token_seconds","from":2.483,"to":2.34,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-08","entity":"model/glm-5.3","key":"benchmark.aa_intelligence_index","from":44.8,"to":31.7,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-08","entity":"model/glm-5.3","key":"benchmark.aa_coding_index","from":74.8,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-08","entity":"model/glm-5.3","key":"pricing.cached_input_per_m_usd","from":null,"to":0.26,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-08","entity":"model/glm-5.3","key":"speed.output_tokens_per_second","from":65.845,"to":82.54,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-08","entity":"model/glm-5.3","key":"speed.time_to_first_token_seconds","from":2.674,"to":1.67,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-08","entity":"model/gpt-5.6-sol","key":"benchmark.aa_intelligence_index","from":47,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-08","entity":"model/gpt-5.6-sol","key":"benchmark.aa_coding_index","from":77.4,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-08","entity":"model/gpt-5.6-sol","key":"pricing.cached_input_per_m_usd","from":null,"to":0.4,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-08","entity":"model/gpt-5.6-sol","key":"speed.output_tokens_per_second","from":0,"to":119.39,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-08","entity":"model/gpt-5.6-sol","key":"speed.time_to_first_token_seconds","from":0,"to":92.25,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-08","entity":"model/gpt-6-astra","key":"benchmark.aa_intelligence_index","from":52.7,"to":56.9,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-08","entity":"model/gpt-6-astra","key":"benchmark.aa_coding_index","from":76.9,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-08","entity":"model/gpt-6-astra","key":"pricing.cached_input_per_m_usd","from":null,"to":1,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-08","entity":"model/gpt-6-astra","key":"speed.output_tokens_per_second","from":63.825,"to":55.61,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-08","entity":"model/gpt-6-astra","key":"speed.time_to_first_token_seconds","from":181.63,"to":308.01,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-08","entity":"model/gpt-oss-120b","key":"benchmark.aa_intelligence_index","from":11.6,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-08","entity":"model/gpt-oss-120b","key":"benchmark.aa_coding_index","from":30.4,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-08","entity":"model/gpt-oss-120b","key":"pricing.cached_input_per_m_usd","from":null,"to":0.1,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-08","entity":"model/gpt-oss-120b","key":"pricing.blended_per_m_usd","from":0.262,"to":0.26,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-08","entity":"model/gpt-oss-120b","key":"speed.output_tokens_per_second","from":202.247,"to":213.13,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-08","entity":"model/gpt-oss-120b","key":"speed.time_to_first_token_seconds","from":0.486,"to":0.79,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-08","entity":"model/kimi-k3","key":"benchmark.aa_intelligence_index","from":43.6,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3"}
+{"date":"2026-11-08","entity":"model/kimi-k3","key":"benchmark.aa_coding_index","from":76.2,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3"}
+{"date":"2026-11-08","entity":"model/kimi-k3","key":"pricing.cached_input_per_m_usd","from":null,"to":0.3,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3"}
+{"date":"2026-11-08","entity":"model/kimi-k3","key":"speed.output_tokens_per_second","from":38.856,"to":51.93,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3"}
+{"date":"2026-11-08","entity":"model/kimi-k3","key":"speed.time_to_first_token_seconds","from":3.003,"to":3.15,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3"}
+{"date":"2026-11-08","entity":"model/minimax-m3","key":"benchmark.aa_intelligence_index","from":29.2,"to":18.9,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-08","entity":"model/minimax-m3","key":"benchmark.aa_coding_index","from":58.6,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-08","entity":"model/minimax-m3","key":"pricing.cached_input_per_m_usd","from":null,"to":0.06,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-08","entity":"model/minimax-m3","key":"pricing.blended_per_m_usd","from":0.525,"to":0.52,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-08","entity":"model/minimax-m3","key":"speed.output_tokens_per_second","from":82.353,"to":136.94,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-08","entity":"model/minimax-m3","key":"speed.time_to_first_token_seconds","from":1.023,"to":0.86,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-08","entity":"model/qwen3.8-2.4t-a95b","key":"benchmark.aa_intelligence_index","from":39.9,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-2.4t-a95b","key":"benchmark.aa_coding_index","from":71.9,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-2.4t-a95b","key":"pricing.cached_input_per_m_usd","from":null,"to":0.25,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-2.4t-a95b","key":"speed.output_tokens_per_second","from":39.359,"to":39.92,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-2.4t-a95b","key":"speed.time_to_first_token_seconds","from":1.936,"to":2.99,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-27b","key":"benchmark.aa_intelligence_index","from":33.7,"to":20.1,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-27b","key":"benchmark.aa_coding_index","from":68.1,"to":null,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-27b","key":"pricing.cached_input_per_m_usd","from":null,"to":0.1,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-27b","key":"pricing.blended_per_m_usd","from":1.125,"to":1.13,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-27b","key":"speed.output_tokens_per_second","from":40.107,"to":38.47,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-08","entity":"model/qwen3.8-27b","key":"speed.time_to_first_token_seconds","from":1.232,"to":4.02,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"speed.output_tokens_per_second","from":70.01,"to":67.99,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"speed.time_to_first_token_seconds","from":266.15,"to":265.39,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"speed.output_tokens_per_second","from":50.94,"to":54.45,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"speed.time_to_first_token_seconds","from":66.81,"to":63.55,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"pricing.input_per_m_usd","from":0.14,"to":0.135,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"pricing.cached_input_per_m_usd","from":0.028,"to":0.023,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"pricing.output_per_m_usd","from":0.28,"to":0.275,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"pricing.blended_per_m_usd","from":0.18,"to":0.17,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"speed.output_tokens_per_second","from":129.13,"to":124.52,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"speed.time_to_first_token_seconds","from":1.41,"to":1.44,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-pro-0813","key":"speed.output_tokens_per_second","from":79.1,"to":84.17,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-pro"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-pro-0813","key":"speed.time_to_first_token_seconds","from":1.77,"to":1.57,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-pro"}
+{"date":"2026-11-11","entity":"model/glm-5.3-flash","key":"speed.output_tokens_per_second","from":54.53,"to":57.71,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-11","entity":"model/glm-5.3-flash","key":"speed.time_to_first_token_seconds","from":2.34,"to":1.77,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"speed.output_tokens_per_second","from":82.54,"to":90.76,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"speed.time_to_first_token_seconds","from":1.67,"to":1.57,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"speed.output_tokens_per_second","from":119.39,"to":130.23,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"speed.time_to_first_token_seconds","from":92.25,"to":106.59,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"speed.output_tokens_per_second","from":55.61,"to":60.91,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"speed.time_to_first_token_seconds","from":308.01,"to":332.56,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"benchmark.aa_intelligence_index","from":null,"to":3.8,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"speed.output_tokens_per_second","from":213.13,"to":206.22,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"speed.time_to_first_token_seconds","from":0.79,"to":0.81,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-11","entity":"model/kimi-k3","key":"speed.output_tokens_per_second","from":51.93,"to":46.86,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3"}
+{"date":"2026-11-11","entity":"model/kimi-k3","key":"speed.time_to_first_token_seconds","from":3.15,"to":4.92,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3"}
+{"date":"2026-11-11","entity":"model/minimax-m3","key":"speed.output_tokens_per_second","from":136.94,"to":135.23,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-11","entity":"model/minimax-m3","key":"speed.time_to_first_token_seconds","from":0.86,"to":1.05,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-11","entity":"model/qwen3.8-2.4t-a95b","key":"speed.output_tokens_per_second","from":39.92,"to":40.2,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-2.4t-a95b","key":"speed.time_to_first_token_seconds","from":2.99,"to":2.85,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"speed.output_tokens_per_second","from":38.47,"to":42.85,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"speed.time_to_first_token_seconds","from":4.02,"to":3.97,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"quantizations_unsloth","from":"25 rows","to":"25 rows","by":"auto","source":"https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"}
+{"date":"2026-11-11","entity":"harness/opencode","key":"language","from":"4 rows","to":"4 rows","by":"auto","source":"https://github.com/anomalyco/opencode"}
+{"date":"2026-11-11","entity":"harness/pi","key":"language","from":"3 rows","to":"3 rows","by":"auto","source":"https://github.com/earendil-works/pi"}
+{"date":"2026-11-11","entity":"harness/qwen-code","key":"language","from":"5 rows","to":"5 rows","by":"auto","source":"https://github.com/QwenLM/qwen-code"}
+{"date":"2026-11-11","entity":"part/rtx-5090","key":"price.used_usd","from":null,"to":6717,"by":"neuman","source":"https://www.pcprice.watch/search/RTX5090/US/GPU"}
+{"date":"2026-11-11","entity":"part/rtx-4090","key":"price.used_usd","from":null,"to":2780,"by":"neuman","source":"https://www.pcprice.watch/search/RTX4090/US/GPU"}
+{"date":"2026-11-11","entity":"part/rtx-3090","key":"price.used_usd","from":1495,"to":1552,"by":"neuman","source":"https://www.pcprice.watch/search/RTX3090/US/GPU"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"arena_name","from":null,"to":"Claude Fable 5.1 (Max)","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"arena_name","from":null,"to":"Claude Opus 5 (Max)","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-pro-0813","key":"arena_name","from":null,"to":"DeepSeek-V4-Pro (High, 20260813)","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/glm-5.3-flash","key":"arena_name","from":null,"to":"GLM-5.3-Flash","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"arena_name","from":null,"to":"GLM-5.3 (Max)","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"arena_name","from":null,"to":"GPT-5.6 Sol (xHigh)","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"arena_name","from":null,"to":"GPT-6 Astra (Max)","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"arena_name","from":null,"to":"gpt-oss-120b","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/kimi-k3","key":"arena_name","from":null,"to":"Kimi K3 (Max)","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/minimax-m3","key":"arena_name","from":null,"to":"MiniMax-M3","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"arena_name","from":null,"to":"Qwen3.8-27B","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"benchmark.arena_text_coding","from":null,"to":1533,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"benchmark.arena_text_coding","from":null,"to":1528,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-pro-0813","key":"benchmark.arena_text_coding","from":null,"to":1503,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/glm-5.3-flash","key":"benchmark.arena_text_coding","from":null,"to":1527,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"benchmark.arena_text_coding","from":null,"to":1522,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"benchmark.arena_text_coding","from":null,"to":1533,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"benchmark.arena_text_coding","from":null,"to":1548,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"benchmark.arena_text_coding","from":null,"to":1389,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/kimi-k3","key":"benchmark.arena_text_coding","from":null,"to":1537,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/minimax-m3","key":"benchmark.arena_text_coding","from":null,"to":1494,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"benchmark.arena_text_coding","from":null,"to":1496,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"pricing.input_per_m_usd","from":0.135,"to":0.14,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-flash-0731"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"pricing.output_per_m_usd","from":0.275,"to":0.3,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-flash-0731"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"pricing.cached_input_per_m_usd","from":0.023,"to":0.028,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-flash-0731"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"pricing.blended_per_m_usd","from":0.17,"to":0.1875,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-flash-0731"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"pricing.blended_min_per_m_usd","from":null,"to":0.0875,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-flash-0731"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-flash-0731","key":"providers","from":null,"to":"27 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-flash-0731"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-pro-0813","key":"pricing.input_per_m_usd","from":1.32,"to":1.315,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-pro-0813","key":"pricing.cached_input_per_m_usd","from":0.044,"to":0.0621,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-pro-0813","key":"pricing.blended_per_m_usd","from":1.98,"to":1.7988,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-pro-0813","key":"pricing.blended_min_per_m_usd","from":null,"to":0.8712,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-11","entity":"model/deepseek-v4-pro-0813","key":"providers","from":null,"to":"24 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-11","entity":"model/glm-5.3-flash","key":"pricing.input_per_m_usd","from":0.15,"to":0.145,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-11","entity":"model/glm-5.3-flash","key":"pricing.blended_per_m_usd","from":0.24,"to":0.2263,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-11","entity":"model/glm-5.3-flash","key":"pricing.blended_min_per_m_usd","from":null,"to":0.0495,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-11","entity":"model/glm-5.3-flash","key":"providers","from":null,"to":"42 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"pricing.input_per_m_usd","from":1.4,"to":1.19,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"pricing.output_per_m_usd","from":4.4,"to":4.396,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"pricing.cached_input_per_m_usd","from":0.26,"to":0.178,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"pricing.blended_per_m_usd","from":2.15,"to":1.849,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"pricing.blended_min_per_m_usd","from":null,"to":0.4024,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-11","entity":"model/glm-5.3","key":"providers","from":null,"to":"45 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"pricing.input_per_m_usd","from":0.15,"to":0.095,"by":"auto","source":"https://openrouter.ai/openai/gpt-oss-120b"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"pricing.output_per_m_usd","from":0.6,"to":0.46,"by":"auto","source":"https://openrouter.ai/openai/gpt-oss-120b"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"pricing.cached_input_per_m_usd","from":0.1,"to":0.047,"by":"auto","source":"https://openrouter.ai/openai/gpt-oss-120b"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"pricing.blended_per_m_usd","from":0.26,"to":0.1788,"by":"auto","source":"https://openrouter.ai/openai/gpt-oss-120b"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"pricing.blended_min_per_m_usd","from":null,"to":0.06,"by":"auto","source":"https://openrouter.ai/openai/gpt-oss-120b"}
+{"date":"2026-11-11","entity":"model/gpt-oss-120b","key":"providers","from":null,"to":"26 rows","by":"auto","source":"https://openrouter.ai/openai/gpt-oss-120b"}
+{"date":"2026-11-11","entity":"model/kimi-k3","key":"pricing.input_per_m_usd","from":3,"to":2.425,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3"}
+{"date":"2026-11-11","entity":"model/kimi-k3","key":"pricing.blended_per_m_usd","from":6,"to":5.1875,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3"}
+{"date":"2026-11-11","entity":"model/kimi-k3","key":"pricing.blended_min_per_m_usd","from":null,"to":2.607,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3"}
+{"date":"2026-11-11","entity":"model/kimi-k3","key":"providers","from":null,"to":"28 rows","by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3"}
+{"date":"2026-11-11","entity":"model/minimax-m3","key":"pricing.blended_per_m_usd","from":0.52,"to":0.525,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-11","entity":"model/minimax-m3","key":"pricing.blended_min_per_m_usd","from":null,"to":0.388,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-11","entity":"model/minimax-m3","key":"providers","from":null,"to":"9 rows","by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-11","entity":"model/qwen3.8-2.4t-a95b","key":"pricing.blended_min_per_m_usd","from":null,"to":3,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-2.4t-a95b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-2.4t-a95b","key":"providers","from":null,"to":"4 rows","by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-2.4t-a95b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"pricing.input_per_m_usd","from":0.5,"to":0.15,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"pricing.output_per_m_usd","from":3,"to":2.2,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"pricing.cached_input_per_m_usd","from":0.1,"to":0.05,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"pricing.blended_per_m_usd","from":1.13,"to":0.655,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"pricing.blended_min_per_m_usd","from":null,"to":0.1168,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-11","entity":"model/qwen3.8-27b","key":"providers","from":null,"to":"23 rows","by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"pricing.input_per_m_usd","from":10,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"pricing.output_per_m_usd","from":50,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"pricing.blended_per_m_usd","from":20,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"pricing.cached_input_per_m_usd","from":0.25,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"pricing.input_per_m_usd","from":5,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"pricing.output_per_m_usd","from":25,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"pricing.blended_per_m_usd","from":10,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"pricing.cached_input_per_m_usd","from":0.5,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"pricing.input_per_m_usd","from":4,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"pricing.output_per_m_usd","from":20,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"pricing.blended_per_m_usd","from":8,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"pricing.cached_input_per_m_usd","from":0.4,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"pricing.input_per_m_usd","from":10,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"pricing.output_per_m_usd","from":50,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"pricing.blended_per_m_usd","from":20,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"pricing.cached_input_per_m_usd","from":1,"to":null,"by":null,"source":null}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"openrouter_id","from":null,"to":"anthropic/claude-fable-5.1","by":"luke","source":"https://openrouter.ai/api/v1/models"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"openrouter_id","from":null,"to":"anthropic/claude-opus-5","by":"luke","source":"https://openrouter.ai/api/v1/models"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"openrouter_id","from":null,"to":"openai/gpt-5.6-sol","by":"luke","source":"https://openrouter.ai/api/v1/models"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"openrouter_id","from":null,"to":"openai/gpt-6-astra","by":"luke","source":"https://openrouter.ai/api/v1/models"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"pricing.input_per_m_usd","from":null,"to":10,"by":"auto","source":"https://openrouter.ai/anthropic/claude-fable-5.1"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"pricing.output_per_m_usd","from":null,"to":50,"by":"auto","source":"https://openrouter.ai/anthropic/claude-fable-5.1"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"pricing.cached_input_per_m_usd","from":null,"to":0.25,"by":"auto","source":"https://openrouter.ai/anthropic/claude-fable-5.1"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"pricing.blended_per_m_usd","from":null,"to":20,"by":"auto","source":"https://openrouter.ai/anthropic/claude-fable-5.1"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"pricing.blended_min_per_m_usd","from":null,"to":20,"by":"auto","source":"https://openrouter.ai/anthropic/claude-fable-5.1"}
+{"date":"2026-11-11","entity":"model/claude-fable-5.1","key":"providers","from":null,"to":"4 rows","by":"auto","source":"https://openrouter.ai/anthropic/claude-fable-5.1"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"pricing.input_per_m_usd","from":null,"to":5.5,"by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"pricing.output_per_m_usd","from":null,"to":27.5,"by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"pricing.cached_input_per_m_usd","from":null,"to":0.55,"by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"pricing.blended_per_m_usd","from":null,"to":11,"by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"pricing.blended_min_per_m_usd","from":null,"to":10,"by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-11","entity":"model/claude-opus-5","key":"providers","from":null,"to":"11 rows","by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"pricing.input_per_m_usd","from":null,"to":4.2,"by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"pricing.output_per_m_usd","from":null,"to":21,"by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"pricing.cached_input_per_m_usd","from":null,"to":0.42,"by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"pricing.blended_per_m_usd","from":null,"to":8.4,"by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"pricing.blended_min_per_m_usd","from":null,"to":4,"by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-11","entity":"model/gpt-5.6-sol","key":"providers","from":null,"to":"8 rows","by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"pricing.input_per_m_usd","from":null,"to":10.5,"by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"pricing.output_per_m_usd","from":null,"to":52.5,"by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"pricing.cached_input_per_m_usd","from":null,"to":1.05,"by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"pricing.blended_per_m_usd","from":null,"to":21,"by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"pricing.blended_min_per_m_usd","from":null,"to":10,"by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-11","entity":"model/gpt-6-astra","key":"providers","from":null,"to":"8 rows","by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-12","entity":"model/claude-fable-5.1","key":"speed.output_tokens_per_second","from":67.99,"to":67.32,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-12","entity":"model/claude-fable-5.1","key":"speed.time_to_first_token_seconds","from":265.39,"to":274.94,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-12","entity":"model/claude-opus-5","key":"speed.output_tokens_per_second","from":54.45,"to":53.94,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-12","entity":"model/claude-opus-5","key":"speed.time_to_first_token_seconds","from":63.55,"to":48.62,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-flash-0731","key":"speed.output_tokens_per_second","from":124.52,"to":111.98,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-flash-0731","key":"speed.time_to_first_token_seconds","from":1.44,"to":1.47,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-pro-0813","key":"speed.output_tokens_per_second","from":84.17,"to":78.08,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-pro"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-pro-0813","key":"speed.time_to_first_token_seconds","from":1.57,"to":1.61,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-pro"}
+{"date":"2026-11-12","entity":"model/glm-5.3-flash","key":"speed.output_tokens_per_second","from":57.71,"to":57.16,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-12","entity":"model/glm-5.3-flash","key":"speed.time_to_first_token_seconds","from":1.77,"to":1.76,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-12","entity":"model/glm-5.3","key":"speed.output_tokens_per_second","from":90.76,"to":80.51,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-12","entity":"model/glm-5.3","key":"speed.time_to_first_token_seconds","from":1.57,"to":1.68,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-12","entity":"model/gpt-5.6-sol","key":"speed.output_tokens_per_second","from":130.23,"to":127.46,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-12","entity":"model/gpt-5.6-sol","key":"speed.time_to_first_token_seconds","from":106.59,"to":146.49,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-12","entity":"model/gpt-6-astra","key":"speed.output_tokens_per_second","from":60.91,"to":53.18,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-12","entity":"model/gpt-6-astra","key":"speed.time_to_first_token_seconds","from":332.56,"to":310.58,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-12","entity":"model/gpt-oss-120b","key":"speed.output_tokens_per_second","from":206.22,"to":209.39,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-12","entity":"model/gpt-oss-120b","key":"speed.time_to_first_token_seconds","from":0.81,"to":0.84,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-oss-120b"}
+{"date":"2026-11-12","entity":"model/kimi-k3","key":"speed.output_tokens_per_second","from":46.86,"to":46.13,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3"}
+{"date":"2026-11-12","entity":"model/kimi-k3","key":"speed.time_to_first_token_seconds","from":4.92,"to":5.33,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3"}
+{"date":"2026-11-12","entity":"model/minimax-m3","key":"speed.output_tokens_per_second","from":135.23,"to":119.09,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-12","entity":"model/minimax-m3","key":"speed.time_to_first_token_seconds","from":1.05,"to":0.99,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-12","entity":"model/qwen3.8-2.4t-a95b","key":"speed.output_tokens_per_second","from":40.2,"to":39.21,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"}
+{"date":"2026-11-12","entity":"model/qwen3.8-27b","key":"speed.output_tokens_per_second","from":42.85,"to":39,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-12","entity":"model/qwen3.8-27b","key":"speed.time_to_first_token_seconds","from":3.97,"to":3.91,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-12","entity":"model/qwen3.8-27b","key":"quantizations_unsloth","from":"25 rows","to":"26 rows","by":"auto","source":"https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"}
+{"date":"2026-11-12","entity":"harness/deepseek-harness","key":"language","from":"2 rows","to":"2 rows","by":"auto","source":"https://github.com/deepseek-ai/deepseek-harness"}
+{"date":"2026-11-12","entity":"harness/opencode","key":"language","from":"4 rows","to":"4 rows","by":"auto","source":"https://github.com/anomalyco/opencode"}
+{"date":"2026-11-12","entity":"harness/pi","key":"language","from":"3 rows","to":"3 rows","by":"auto","source":"https://github.com/earendil-works/pi"}
+{"date":"2026-11-12","entity":"harness/qwen-code","key":"language","from":"5 rows","to":"5 rows","by":"auto","source":"https://github.com/QwenLM/qwen-code"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"family","from":null,"to":"Kimi K3.1","by":null,"source":"https://www.kimi.ai/blog/kimi-k3-1-pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"company_slug","from":null,"to":"moonshot","by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"released","from":null,"to":"2026-11-04","by":null,"source":"https://www.kimi.ai/blog/kimi-k3-1-pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"parameters_b","from":null,"to":2800,"by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"parameters_active_b","from":null,"to":104,"by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"license","from":null,"to":"Kimi K3.1 Pro License","by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/LICENSE"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"license_commercial","from":null,"to":true,"by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/LICENSE"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"supports_tools","from":null,"to":true,"by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"supports_vision","from":null,"to":true,"by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"supports_structured_output","from":null,"to":true,"by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"snapshot.huggingface_card","from":null,"to":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro","by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"snapshot.hf_config","from":null,"to":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json","by":null,"source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"aa_id","from":null,"to":"665c67ca-09eb-48f0-a7a3-0096e1d5de51","by":null,"source":"https://artificialanalysis.ai/api/v2/language/models/free"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"arena_name","from":null,"to":"Kimi K3.1 Pro (Max)","by":null,"source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-12","entity":"model/claude-opus-5","key":"speed.output_tokens_per_second","from":53.94,"to":54.44,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-flash-0731","key":"speed.output_tokens_per_second","from":111.98,"to":111.15,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-flash-0731","key":"speed.time_to_first_token_seconds","from":1.47,"to":1.45,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-flash"}
+{"date":"2026-11-12","entity":"model/glm-5.3","key":"speed.output_tokens_per_second","from":80.51,"to":80.9,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-12","entity":"model/gpt-5.6-sol","key":"speed.output_tokens_per_second","from":127.46,"to":128.67,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-12","entity":"model/gpt-5.6-sol","key":"speed.time_to_first_token_seconds","from":146.49,"to":157.59,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"benchmark.aa_intelligence_index","from":null,"to":46.5,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"speed.output_tokens_per_second","from":null,"to":29.5,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"speed.time_to_first_token_seconds","from":null,"to":2.54,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-12","entity":"model/qwen3.8-2.4t-a95b","key":"speed.output_tokens_per_second","from":39.21,"to":39.15,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"benchmark.arena_text_coding","from":null,"to":1526,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"native_size_gb","from":null,"to":1561.3,"by":"auto","source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"architecture.type","from":null,"to":"dense","by":"auto","source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"quantizations_unsloth","from":null,"to":"0 rows","by":"auto","source":"https://huggingface.co/unsloth"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"quantizations_bartowski","from":null,"to":"0 rows","by":"auto","source":"https://huggingface.co/bartowski"}
+{"date":"2026-11-12","entity":"model/claude-fable-5.1","key":"providers","from":"4 rows","to":"5 rows","by":"auto","source":"https://openrouter.ai/anthropic/claude-fable-5.1"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-flash-0731","key":"pricing.output_per_m_usd","from":0.3,"to":0.396,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-flash-0731"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-flash-0731","key":"providers","from":"27 rows","to":"27 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-flash-0731"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-pro-0813","key":"pricing.input_per_m_usd","from":1.315,"to":1.32,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-pro-0813","key":"pricing.cached_input_per_m_usd","from":0.0621,"to":0.0815,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-pro-0813","key":"pricing.blended_per_m_usd","from":1.7988,"to":1.98,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-pro-0813","key":"pricing.blended_min_per_m_usd","from":0.8712,"to":0.99,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-pro-0813","key":"providers","from":"24 rows","to":"24 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4-pro-0813"}
+{"date":"2026-11-12","entity":"model/glm-5.3","key":"pricing.input_per_m_usd","from":1.19,"to":1.12,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-12","entity":"model/glm-5.3","key":"pricing.output_per_m_usd","from":4.396,"to":4.3843,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-12","entity":"model/glm-5.3","key":"pricing.blended_per_m_usd","from":1.849,"to":1.8375,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-12","entity":"model/glm-5.3","key":"providers","from":"45 rows","to":"47 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"pricing.input_per_m_usd","from":null,"to":1.9,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"pricing.output_per_m_usd","from":null,"to":10,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"pricing.cached_input_per_m_usd","from":null,"to":0.2,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"pricing.blended_per_m_usd","from":null,"to":3.993,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"pricing.blended_min_per_m_usd","from":null,"to":2.2803,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"providers","from":null,"to":"23 rows","by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-12","entity":"model/qwen3.8-27b","key":"pricing.blended_min_per_m_usd","from":0.1168,"to":0.1563,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-12","entity":"model/qwen3.8-27b","key":"providers","from":"23 rows","to":"23 rows","by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-12","entity":"model/glm-5.3-flash","key":"architecture.type","from":"dense","to":"moe","by":"auto","source":"https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"architecture.type","from":"dense","to":"moe","by":"auto","source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"architecture.experts","from":null,"to":896,"by":"auto","source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/kimi-k3.1-pro","key":"context_length","from":null,"to":1048576,"by":"auto","source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/minimax-m3","key":"architecture.type","from":"dense","to":"moe","by":"auto","source":"https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/minimax-m3","key":"architecture.experts","from":null,"to":128,"by":"auto","source":"https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/minimax-m3","key":"context_length","from":null,"to":1048576,"by":"auto","source":"https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/deepseek-v4-pro-0813","key":"snapshot.official_announcement","from":"https://api-docs.deepseek.com/news/news260424","to":"https://api-docs.deepseek.com/news/news260813","by":"luke","source":"https://api-docs.deepseek.com/news/news260813"}
+{"date":"2026-11-12","entity":"part/rtx-5090","key":"price.new_usd","from":4600,"to":6549.99,"by":"luke","source":"https://videocardprices.com/card/nvidia-rtx-5090.md"}
+{"date":"2026-11-12","entity":"part/m6","key":"price.new_usd","from":899,"to":779,"by":"luke","source":"https://www.bhphotovideo.com/c/product/1997676-REG/apple_mhqk4ll_a_mac_mini_m6.html"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"released","from":null,"to":"2026-10-17","by":"neuman","source":"https://api-docs.deepseek.com/updates"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"parameters_b","from":null,"to":763,"by":"neuman","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"snapshot.huggingface_card","from":null,"to":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017","by":"luke","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"snapshot.hf_config","from":null,"to":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json","by":"luke","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"snapshot.official_announcement","from":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017","to":"https://api-docs.deepseek.com/news/news261017","by":"luke","source":"https://api-docs.deepseek.com/news/news261017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"family","from":null,"to":"DeepSeek V4.1 Flash","by":"luke","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"company_slug","from":null,"to":"deepseek","by":"luke","source":"https://api-docs.deepseek.com/news/news261017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"license","from":null,"to":"MIT","by":"luke","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/LICENSE"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"license_commercial","from":null,"to":true,"by":"luke","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/LICENSE"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"supports_tools","from":null,"to":true,"by":"luke","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"supports_vision","from":null,"to":true,"by":"luke","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"supports_structured_output","from":null,"to":true,"by":"luke","source":"https://api-docs.deepseek.com/guides/json_mode.md"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"aa_id","from":null,"to":"5720fd2f-873a-4765-8640-a153b38bd64d","by":"luke","source":"https://artificialanalysis.ai/api/v2/language/models/free"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"native_size_gb","from":null,"to":510.3,"by":"auto","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"architecture.type","from":null,"to":"moe","by":"auto","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"architecture.experts","from":null,"to":384,"by":"auto","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"context_length","from":null,"to":1048576,"by":"auto","source":"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"snapshot.unsloth_gguf","from":null,"to":"https://huggingface.co/unsloth/DeepSeek-V4.1-Flash-1017-GGUF","by":"auto","source":"https://huggingface.co/unsloth/DeepSeek-V4.1-Flash-1017-GGUF"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"quantizations_unsloth","from":null,"to":"9 rows","by":"auto","source":"https://huggingface.co/unsloth/DeepSeek-V4.1-Flash-1017-GGUF"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"quantizations_bartowski","from":null,"to":"0 rows","by":"auto","source":"https://huggingface.co/bartowski"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.input_per_m_usd","from":null,"to":0.1725,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.output_per_m_usd","from":null,"to":0.69,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.cached_input_per_m_usd","from":null,"to":0.006,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_per_m_usd","from":null,"to":0.2969,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_min_per_m_usd","from":null,"to":0.0888,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"providers","from":null,"to":"48 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"benchmark.aa_intelligence_index","from":null,"to":18.5,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017-non-reasoning"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"speed.output_tokens_per_second","from":null,"to":172.07,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017-non-reasoning"}
+{"date":"2026-11-12","entity":"model/deepseek-v4.1-flash-1017","key":"speed.time_to_first_token_seconds","from":null,"to":1.28,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017-non-reasoning"}
+{"date":"2026-11-12","entity":"part/m6","key":"price.new_usd","from":779,"to":899,"by":"neuman","source":"https://www.apple.com/shop/buy-mac/mac-mini"}
+{"date":"2026-11-13","entity":"model/minimax-m3","key":"hidden","from":null,"to":true,"by":"luke","source":null}
+{"date":"2026-11-13","entity":"model/claude-fable-5.1","key":"hidden","from":null,"to":true,"by":"luke","source":null}
+{"date":"2026-11-13","entity":"model/gpt-6-astra","key":"hidden","from":null,"to":true,"by":"luke","source":null}
+{"date":"2026-11-13","entity":"model/claude-fable-5.1","key":"benchmark.arena_text_legal","from":null,"to":1496,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/claude-fable-5.1","key":"benchmark.arena_text_science","from":null,"to":1522,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/claude-opus-5","key":"benchmark.arena_text_legal","from":null,"to":1502,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/claude-opus-5","key":"benchmark.arena_text_science","from":null,"to":1515,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/glm-5.3-flash","key":"benchmark.arena_text_legal","from":null,"to":1474,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/glm-5.3-flash","key":"benchmark.arena_text_science","from":null,"to":1490,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/glm-5.3","key":"benchmark.arena_text_legal","from":null,"to":1482,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/glm-5.3","key":"benchmark.arena_text_science","from":null,"to":1510,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/gpt-5.6-sol","key":"benchmark.arena_text_legal","from":null,"to":1497,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/gpt-5.6-sol","key":"benchmark.arena_text_science","from":null,"to":1492,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/gpt-6-astra","key":"benchmark.arena_text_legal","from":null,"to":1482,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/gpt-6-astra","key":"benchmark.arena_text_science","from":null,"to":1488,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/kimi-k3.1-pro","key":"benchmark.arena_text_legal","from":null,"to":1495,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/kimi-k3.1-pro","key":"benchmark.arena_text_science","from":null,"to":1482,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/minimax-m3","key":"benchmark.arena_text_legal","from":null,"to":1435,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/minimax-m3","key":"benchmark.arena_text_science","from":null,"to":1459,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/qwen3.8-27b","key":"benchmark.arena_text_legal","from":null,"to":1436,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/qwen3.8-27b","key":"benchmark.arena_text_science","from":null,"to":1462,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"aa_id","from":"5720fd2f-873a-4765-8640-a153b38bd64d","to":"f151fd0b-2139-40cf-a3ec-995e8cedc592","by":"luke","source":"https://artificialanalysis.ai/api/v2/language/models/free"}
+{"date":"2026-11-13","entity":"model/claude-fable-5.1","key":"speed.output_tokens_per_second","from":67.32,"to":67.54,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-13","entity":"model/claude-fable-5.1","key":"speed.time_to_first_token_seconds","from":274.94,"to":253.01,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-13","entity":"model/claude-opus-5","key":"speed.output_tokens_per_second","from":54.44,"to":54.22,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-13","entity":"model/claude-opus-5","key":"speed.time_to_first_token_seconds","from":48.62,"to":49.63,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"benchmark.aa_intelligence_index","from":18.5,"to":32.6,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"speed.output_tokens_per_second","from":172.07,"to":170.93,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"speed.time_to_first_token_seconds","from":1.28,"to":1.06,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-13","entity":"model/glm-5.3-flash","key":"speed.output_tokens_per_second","from":57.16,"to":49.26,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-13","entity":"model/glm-5.3-flash","key":"speed.time_to_first_token_seconds","from":1.76,"to":1.94,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-13","entity":"model/glm-5.3","key":"speed.output_tokens_per_second","from":80.9,"to":79.48,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-13","entity":"model/glm-5.3","key":"speed.time_to_first_token_seconds","from":1.68,"to":1.63,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-13","entity":"model/gpt-5.6-sol","key":"speed.output_tokens_per_second","from":128.67,"to":127.17,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-13","entity":"model/gpt-5.6-sol","key":"speed.time_to_first_token_seconds","from":157.59,"to":152.33,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-13","entity":"model/gpt-6-astra","key":"speed.output_tokens_per_second","from":53.18,"to":45.54,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-13","entity":"model/gpt-6-astra","key":"speed.time_to_first_token_seconds","from":310.58,"to":347.38,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-13","entity":"model/kimi-k3.1-pro","key":"speed.output_tokens_per_second","from":29.5,"to":29.92,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-13","entity":"model/kimi-k3.1-pro","key":"speed.time_to_first_token_seconds","from":2.54,"to":2.53,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-13","entity":"model/minimax-m3","key":"speed.output_tokens_per_second","from":119.09,"to":116.18,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-13","entity":"model/minimax-m3","key":"speed.time_to_first_token_seconds","from":0.99,"to":0.94,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-13","entity":"model/qwen3.8-27b","key":"speed.output_tokens_per_second","from":39,"to":37.06,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-13","entity":"model/qwen3.8-27b","key":"speed.time_to_first_token_seconds","from":3.91,"to":3.83,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"arena_name","from":null,"to":"DeepSeek-V4.1-Flash-20260910 (Max)","by":"luke","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"benchmark.arena_text_coding","from":null,"to":1525,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"benchmark.arena_text_legal","from":null,"to":1460,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"benchmark.arena_text_science","from":null,"to":1488,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-13","entity":"company/anthropic","key":"hidden","from":null,"to":true,"by":"luke","source":null}
+{"date":"2026-11-13","entity":"company/openai","key":"hidden","from":null,"to":true,"by":"luke","source":null}
+{"date":"2026-11-13","entity":"part/m6","key":"hidden","from":null,"to":true,"by":"luke","source":null}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.input_per_m_usd","from":0.1725,"to":0.1625,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_min_per_m_usd","from":0.0888,"to":0.0815,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-13","entity":"model/deepseek-v4.1-flash-1017","key":"providers","from":"48 rows","to":"48 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-13","entity":"model/glm-5.3-flash","key":"pricing.input_per_m_usd","from":0.145,"to":0.13,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-13","entity":"model/glm-5.3-flash","key":"pricing.blended_per_m_usd","from":0.2263,"to":0.2088,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-13","entity":"model/glm-5.3-flash","key":"providers","from":"42 rows","to":"42 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-13","entity":"model/glm-5.3","key":"pricing.output_per_m_usd","from":4.3843,"to":4.2921,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-13","entity":"model/glm-5.3","key":"pricing.cached_input_per_m_usd","from":0.178,"to":0.18,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-13","entity":"model/glm-5.3","key":"pricing.blended_per_m_usd","from":1.8375,"to":1.8325,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-13","entity":"model/glm-5.3","key":"providers","from":"47 rows","to":"46 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-13","entity":"model/kimi-k3.1-pro","key":"pricing.blended_per_m_usd","from":3.993,"to":3.8125,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-13","entity":"model/kimi-k3.1-pro","key":"pricing.blended_min_per_m_usd","from":2.2803,"to":2.281,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-13","entity":"model/kimi-k3.1-pro","key":"providers","from":"23 rows","to":"23 rows","by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-13","entity":"model/qwen3.8-27b","key":"pricing.input_per_m_usd","from":0.15,"to":0.163,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-13","entity":"model/qwen3.8-27b","key":"pricing.blended_min_per_m_usd","from":0.1563,"to":0.3418,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-13","entity":"model/qwen3.8-27b","key":"providers","from":"23 rows","to":"23 rows","by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-13","entity":"harness/opencode","key":"language","from":"4 rows","to":"4 rows","by":"auto","source":"https://github.com/anomalyco/opencode"}
+{"date":"2026-11-13","entity":"harness/pi","key":"language","from":"3 rows","to":"3 rows","by":"auto","source":"https://github.com/earendil-works/pi"}
+{"date":"2026-11-13","entity":"harness/qwen-code","key":"language","from":"5 rows","to":"5 rows","by":"auto","source":"https://github.com/QwenLM/qwen-code"}
+{"date":"2026-11-15","entity":"model/claude-fable-5.1","key":"speed.output_tokens_per_second","from":67.54,"to":69.42,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-15","entity":"model/claude-fable-5.1","key":"speed.time_to_first_token_seconds","from":253.01,"to":163.35,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-15","entity":"model/claude-opus-5","key":"speed.output_tokens_per_second","from":54.22,"to":53.74,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-15","entity":"model/claude-opus-5","key":"speed.time_to_first_token_seconds","from":49.63,"to":50.7,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-15","entity":"model/deepseek-v4.1-flash-1017","key":"speed.output_tokens_per_second","from":170.93,"to":173.45,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-15","entity":"model/deepseek-v4.1-flash-1017","key":"speed.time_to_first_token_seconds","from":1.06,"to":0.97,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-15","entity":"model/glm-5.3-flash","key":"speed.output_tokens_per_second","from":49.26,"to":60.87,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-15","entity":"model/glm-5.3-flash","key":"speed.time_to_first_token_seconds","from":1.94,"to":1.84,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-15","entity":"model/glm-5.3","key":"speed.output_tokens_per_second","from":79.48,"to":102.37,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-15","entity":"model/glm-5.3","key":"speed.time_to_first_token_seconds","from":1.63,"to":1.59,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-15","entity":"model/gpt-5.6-sol","key":"speed.output_tokens_per_second","from":127.17,"to":130.89,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-15","entity":"model/gpt-5.6-sol","key":"speed.time_to_first_token_seconds","from":152.33,"to":85.07,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-15","entity":"model/gpt-6-astra","key":"speed.output_tokens_per_second","from":45.54,"to":64.01,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-15","entity":"model/gpt-6-astra","key":"speed.time_to_first_token_seconds","from":347.38,"to":280.79,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-15","entity":"model/kimi-k3.1-pro","key":"speed.output_tokens_per_second","from":29.92,"to":29.2,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-15","entity":"model/kimi-k3.1-pro","key":"speed.time_to_first_token_seconds","from":2.53,"to":2.1,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-15","entity":"model/minimax-m3","key":"speed.output_tokens_per_second","from":116.18,"to":120.22,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-15","entity":"model/minimax-m3","key":"speed.time_to_first_token_seconds","from":0.94,"to":0.86,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-15","entity":"model/qwen3.8-27b","key":"speed.output_tokens_per_second","from":37.06,"to":45.05,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-15","entity":"model/qwen3.8-27b","key":"speed.time_to_first_token_seconds","from":3.83,"to":3.85,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-15","entity":"model/claude-fable-5.1","key":"benchmark.arena_text_science","from":1522,"to":1523,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/claude-opus-5","key":"benchmark.arena_text_legal","from":1502,"to":1503,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/glm-5.3-flash","key":"benchmark.arena_text_coding","from":1527,"to":1526,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/glm-5.3-flash","key":"benchmark.arena_text_legal","from":1474,"to":1475,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/glm-5.3-flash","key":"benchmark.arena_text_science","from":1490,"to":1491,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/glm-5.3","key":"benchmark.arena_text_science","from":1510,"to":1508,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/gpt-5.6-sol","key":"benchmark.arena_text_legal","from":1497,"to":1498,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/kimi-k3.1-pro","key":"benchmark.arena_text_coding","from":1526,"to":1530,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/kimi-k3.1-pro","key":"benchmark.arena_text_legal","from":1495,"to":1520,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/kimi-k3.1-pro","key":"benchmark.arena_text_science","from":1482,"to":1496,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/minimax-m3","key":"benchmark.arena_text_coding","from":1494,"to":1493,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/minimax-m3","key":"benchmark.arena_text_legal","from":1435,"to":1434,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/qwen3.8-27b","key":"benchmark.arena_text_legal","from":1436,"to":1437,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-15","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.input_per_m_usd","from":0.1625,"to":0.15,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-15","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.output_per_m_usd","from":0.69,"to":0.64,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-15","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_per_m_usd","from":0.2969,"to":0.2756,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-15","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_min_per_m_usd","from":0.0815,"to":0.042,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-15","entity":"model/deepseek-v4.1-flash-1017","key":"providers","from":"48 rows","to":"48 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-15","entity":"model/glm-5.3-flash","key":"providers","from":"42 rows","to":"42 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-15","entity":"model/glm-5.3","key":"pricing.input_per_m_usd","from":1.12,"to":1.05,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-15","entity":"model/glm-5.3","key":"pricing.output_per_m_usd","from":4.2921,"to":4.2,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-15","entity":"model/glm-5.3","key":"pricing.cached_input_per_m_usd","from":0.18,"to":0.178,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-15","entity":"model/glm-5.3","key":"pricing.blended_per_m_usd","from":1.8325,"to":1.8275,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-15","entity":"model/glm-5.3","key":"providers","from":"46 rows","to":"49 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-15","entity":"model/kimi-k3.1-pro","key":"pricing.input_per_m_usd","from":1.9,"to":2,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-15","entity":"model/kimi-k3.1-pro","key":"pricing.blended_per_m_usd","from":3.8125,"to":4,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-15","entity":"model/kimi-k3.1-pro","key":"pricing.blended_min_per_m_usd","from":2.281,"to":2.2808,"by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-15","entity":"model/kimi-k3.1-pro","key":"providers","from":"23 rows","to":"24 rows","by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-15","entity":"model/minimax-m3","key":"pricing.input_per_m_usd","from":0.3,"to":0.29,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-15","entity":"model/minimax-m3","key":"pricing.output_per_m_usd","from":1.2,"to":1.15,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-15","entity":"model/minimax-m3","key":"pricing.cached_input_per_m_usd","from":0.06,"to":0.058,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-15","entity":"model/minimax-m3","key":"pricing.blended_per_m_usd","from":0.525,"to":0.505,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-15","entity":"model/minimax-m3","key":"providers","from":"9 rows","to":"8 rows","by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-15","entity":"model/qwen3.8-27b","key":"pricing.input_per_m_usd","from":0.163,"to":0.15,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-15","entity":"model/qwen3.8-27b","key":"pricing.blended_min_per_m_usd","from":0.3418,"to":0.2,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-15","entity":"model/qwen3.8-27b","key":"providers","from":"23 rows","to":"23 rows","by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-15","entity":"harness/deepseek-harness","key":"language","from":"2 rows","to":"2 rows","by":"auto","source":"https://github.com/deepseek-ai/deepseek-harness"}
+{"date":"2026-11-15","entity":"harness/opencode","key":"language","from":"4 rows","to":"4 rows","by":"auto","source":"https://github.com/anomalyco/opencode"}
+{"date":"2026-11-15","entity":"harness/pi","key":"language","from":"3 rows","to":"3 rows","by":"auto","source":"https://github.com/earendil-works/pi"}
+{"date":"2026-11-15","entity":"harness/qwen-code","key":"language","from":"5 rows","to":"5 rows","by":"auto","source":"https://github.com/QwenLM/qwen-code"}
+{"date":"2026-11-16","entity":"model/claude-fable-5.1","key":"speed.output_tokens_per_second","from":69.42,"to":68.9,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-16","entity":"model/claude-fable-5.1","key":"speed.time_to_first_token_seconds","from":163.35,"to":243.36,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-16","entity":"model/claude-opus-5","key":"speed.output_tokens_per_second","from":53.74,"to":52.69,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-16","entity":"model/claude-opus-5","key":"speed.time_to_first_token_seconds","from":50.7,"to":38.29,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-16","entity":"model/deepseek-v4.1-flash-1017","key":"speed.output_tokens_per_second","from":173.45,"to":172.47,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-16","entity":"model/deepseek-v4.1-flash-1017","key":"speed.time_to_first_token_seconds","from":0.97,"to":1.05,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-16","entity":"model/glm-5.3-flash","key":"speed.output_tokens_per_second","from":60.87,"to":62.99,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-16","entity":"model/glm-5.3-flash","key":"speed.time_to_first_token_seconds","from":1.84,"to":1.99,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-16","entity":"model/glm-5.3","key":"speed.time_to_first_token_seconds","from":1.59,"to":1.46,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-16","entity":"model/gpt-5.6-sol","key":"speed.output_tokens_per_second","from":130.89,"to":126.52,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-16","entity":"model/gpt-5.6-sol","key":"speed.time_to_first_token_seconds","from":85.07,"to":68.05,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-16","entity":"model/gpt-6-astra","key":"speed.output_tokens_per_second","from":64.01,"to":58.28,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-16","entity":"model/gpt-6-astra","key":"speed.time_to_first_token_seconds","from":280.79,"to":384.79,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-16","entity":"model/kimi-k3.1-pro","key":"speed.output_tokens_per_second","from":29.2,"to":28.96,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-16","entity":"model/kimi-k3.1-pro","key":"speed.time_to_first_token_seconds","from":2.1,"to":2.22,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-16","entity":"model/minimax-m3","key":"speed.output_tokens_per_second","from":120.22,"to":99.13,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-16","entity":"model/minimax-m3","key":"speed.time_to_first_token_seconds","from":0.86,"to":0.9,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-16","entity":"model/qwen3.8-27b","key":"speed.output_tokens_per_second","from":45.05,"to":43.29,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-16","entity":"model/qwen3.8-27b","key":"speed.time_to_first_token_seconds","from":3.85,"to":3.86,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-16","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.output_per_m_usd","from":0.64,"to":0.6265,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-16","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_per_m_usd","from":0.2756,"to":0.2788,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-16","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_min_per_m_usd","from":0.042,"to":0.0625,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-16","entity":"model/deepseek-v4.1-flash-1017","key":"providers","from":"48 rows","to":"50 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-16","entity":"model/glm-5.3-flash","key":"pricing.blended_per_m_usd","from":0.2088,"to":0.2025,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-16","entity":"model/glm-5.3-flash","key":"providers","from":"42 rows","to":"43 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-16","entity":"model/glm-5.3","key":"pricing.input_per_m_usd","from":1.05,"to":1.225,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-16","entity":"model/glm-5.3","key":"pricing.output_per_m_usd","from":4.2,"to":4.3922,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-16","entity":"model/glm-5.3","key":"pricing.cached_input_per_m_usd","from":0.178,"to":0.186,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-16","entity":"model/glm-5.3","key":"pricing.blended_per_m_usd","from":1.8275,"to":1.8863,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-16","entity":"model/glm-5.3","key":"providers","from":"49 rows","to":"48 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-16","entity":"model/kimi-k3.1-pro","key":"providers","from":"24 rows","to":"24 rows","by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-16","entity":"model/qwen3.8-27b","key":"pricing.output_per_m_usd","from":2.2,"to":2.09,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-16","entity":"model/qwen3.8-27b","key":"pricing.blended_per_m_usd","from":0.655,"to":0.63,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-16","entity":"model/qwen3.8-27b","key":"pricing.blended_min_per_m_usd","from":0.2,"to":0.161,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-16","entity":"model/qwen3.8-27b","key":"providers","from":"23 rows","to":"24 rows","by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-16","entity":"harness/opencode","key":"language","from":"4 rows","to":"4 rows","by":"auto","source":"https://github.com/anomalyco/opencode"}
+{"date":"2026-11-16","entity":"harness/pi","key":"language","from":"3 rows","to":"3 rows","by":"auto","source":"https://github.com/earendil-works/pi"}
+{"date":"2026-11-16","entity":"harness/qwen-code","key":"language","from":"5 rows","to":"5 rows","by":"auto","source":"https://github.com/QwenLM/qwen-code"}
+{"date":"2026-11-17","entity":"build/starter-workstation","key":"kind","from":null,"to":"custom","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/starter-workstation","key":"runtime","from":null,"to":"llama.cpp","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/starter-workstation","key":"parts","from":null,"to":"1 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/starter-workstation","key":"models","from":null,"to":"1 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/team-workstation","key":"kind","from":null,"to":"custom","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/team-workstation","key":"runtime","from":null,"to":"llama.cpp","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/team-workstation","key":"parts","from":null,"to":"1 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/team-workstation","key":"models","from":null,"to":"1 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/mac-studio-512","key":"kind","from":null,"to":"system","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/mac-studio-512","key":"runtime","from":null,"to":"llama.cpp","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/mac-studio-512","key":"parts","from":null,"to":"1 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/mac-studio-512","key":"models","from":null,"to":"2 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/dgx-station","key":"kind","from":null,"to":"system","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/dgx-station","key":"runtime","from":null,"to":"llama.cpp","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/dgx-station","key":"parts","from":null,"to":"1 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/dgx-station","key":"models","from":null,"to":"2 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/kimi-server","key":"kind","from":null,"to":"system","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/kimi-server","key":"runtime","from":null,"to":"vllm","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/kimi-server","key":"parts","from":null,"to":"1 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"build/kimi-server","key":"models","from":null,"to":"1 rows","by":null,"source":null}
+{"date":"2026-11-17","entity":"model/glm-5.3-flash","key":"kv_cache_bytes_per_token","from":null,"to":14080,"by":"auto","source":"https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/config.json"}
+{"date":"2026-11-17","entity":"model/glm-5.3","key":"kv_cache_bytes_per_token","from":null,"to":109824,"by":"auto","source":"https://huggingface.co/zai-org/GLM-5.3/raw/main/config.json"}
+{"date":"2026-11-17","entity":"model/kimi-k3.1-pro","key":"kv_cache_bytes_per_token","from":null,"to":27648,"by":"auto","source":"https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json"}
+{"date":"2026-11-17","entity":"model/minimax-m3","key":"kv_cache_bytes_per_token","from":null,"to":184320,"by":"auto","source":"https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json"}
+{"date":"2026-11-17","entity":"model/qwen3.8-27b","key":"kv_cache_bytes_per_token","from":null,"to":65536,"by":"auto","source":"https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/config.json"}
+{"date":"2026-11-17","entity":"part/mac-studio","key":"released","from":null,"to":"2026-09-22","by":"neuman","source":"https://en.wikipedia.org/wiki/Mac_Studio"}
+{"date":"2026-11-17","entity":"part/mac-studio","key":"memory_gb","from":null,"to":512,"by":"neuman","source":"https://www.apple.com/mac-studio/specs/"}
+{"date":"2026-11-17","entity":"part/mac-studio","key":"power_w","from":null,"to":480,"by":"neuman","source":"https://www.apple.com/mac-studio/specs/"}
+{"date":"2026-11-17","entity":"model/claude-fable-5.1","key":"speed.output_tokens_per_second","from":68.9,"to":67.16,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-17","entity":"model/claude-fable-5.1","key":"speed.time_to_first_token_seconds","from":243.36,"to":281.65,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-17","entity":"model/claude-opus-5","key":"speed.output_tokens_per_second","from":52.69,"to":51.29,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-17","entity":"model/claude-opus-5","key":"speed.time_to_first_token_seconds","from":38.29,"to":47.78,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-17","entity":"model/deepseek-v4.1-flash-1017","key":"speed.output_tokens_per_second","from":172.47,"to":168.03,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-17","entity":"model/deepseek-v4.1-flash-1017","key":"speed.time_to_first_token_seconds","from":1.05,"to":1.09,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-17","entity":"model/glm-5.3-flash","key":"speed.time_to_first_token_seconds","from":1.99,"to":1.8,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-17","entity":"model/glm-5.3","key":"speed.output_tokens_per_second","from":102.37,"to":101.06,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-17","entity":"model/glm-5.3","key":"speed.time_to_first_token_seconds","from":1.46,"to":1.52,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-17","entity":"model/gpt-5.6-sol","key":"speed.output_tokens_per_second","from":126.52,"to":116.75,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-17","entity":"model/gpt-5.6-sol","key":"speed.time_to_first_token_seconds","from":68.05,"to":75.38,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-5-6-sol"}
+{"date":"2026-11-17","entity":"model/gpt-6-astra","key":"speed.output_tokens_per_second","from":58.28,"to":44.49,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-17","entity":"model/gpt-6-astra","key":"speed.time_to_first_token_seconds","from":384.79,"to":397.08,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-17","entity":"model/kimi-k3.1-pro","key":"speed.output_tokens_per_second","from":28.96,"to":28.17,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-17","entity":"model/kimi-k3.1-pro","key":"speed.time_to_first_token_seconds","from":2.22,"to":2.2,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-17","entity":"model/minimax-m3","key":"speed.output_tokens_per_second","from":99.13,"to":97.9,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-17","entity":"model/minimax-m3","key":"speed.time_to_first_token_seconds","from":0.9,"to":0.84,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-17","entity":"model/qwen3.8-27b","key":"speed.output_tokens_per_second","from":43.29,"to":41.96,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-17","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.input_per_m_usd","from":0.15,"to":0.1485,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-17","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.output_per_m_usd","from":0.6265,"to":0.605,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-17","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.cached_input_per_m_usd","from":0.006,"to":0.0058,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-17","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_per_m_usd","from":0.2788,"to":0.25,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-17","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_min_per_m_usd","from":0.0625,"to":0.0475,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-17","entity":"model/deepseek-v4.1-flash-1017","key":"providers","from":"50 rows","to":"50 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-17","entity":"model/glm-5.3-flash","key":"pricing.input_per_m_usd","from":0.13,"to":0.135,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-17","entity":"model/glm-5.3-flash","key":"pricing.blended_per_m_usd","from":0.2025,"to":0.2125,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-17","entity":"model/glm-5.3-flash","key":"providers","from":"43 rows","to":"44 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-17","entity":"model/glm-5.3","key":"pricing.input_per_m_usd","from":1.225,"to":1.4,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-17","entity":"model/glm-5.3","key":"pricing.output_per_m_usd","from":4.3922,"to":4.4,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-17","entity":"model/glm-5.3","key":"pricing.cached_input_per_m_usd","from":0.186,"to":0.19,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-17","entity":"model/glm-5.3","key":"pricing.blended_per_m_usd","from":1.8863,"to":1.935,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-17","entity":"model/glm-5.3","key":"providers","from":"48 rows","to":"49 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-17","entity":"model/kimi-k3.1-pro","key":"providers","from":"24 rows","to":"27 rows","by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-17","entity":"model/qwen3.8-27b","key":"pricing.input_per_m_usd","from":0.15,"to":0.175,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-17","entity":"model/qwen3.8-27b","key":"pricing.output_per_m_usd","from":2.09,"to":2.2,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-17","entity":"model/qwen3.8-27b","key":"pricing.blended_per_m_usd","from":0.63,"to":0.6638,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-17","entity":"model/qwen3.8-27b","key":"pricing.blended_min_per_m_usd","from":0.161,"to":0.2408,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-17","entity":"model/qwen3.8-27b","key":"providers","from":"24 rows","to":"25 rows","by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-17","entity":"harness/deepseek-harness","key":"language","from":"2 rows","to":"2 rows","by":"auto","source":"https://github.com/deepseek-ai/deepseek-harness"}
+{"date":"2026-11-17","entity":"harness/opencode","key":"language","from":"4 rows","to":"4 rows","by":"auto","source":"https://github.com/anomalyco/opencode"}
+{"date":"2026-11-17","entity":"harness/pi","key":"language","from":"3 rows","to":"3 rows","by":"auto","source":"https://github.com/earendil-works/pi"}
+{"date":"2026-11-17","entity":"harness/qwen-code","key":"language","from":"5 rows","to":"5 rows","by":"auto","source":"https://github.com/QwenLM/qwen-code"}
+{"date":"2026-11-17","entity":"part/mac-studio","key":"snapshot.wikipedia","from":null,"to":"https://en.wikipedia.org/wiki/Mac_Studio","by":"luke","source":"https://en.wikipedia.org/wiki/Mac_Studio"}
+{"date":"2026-11-17","entity":"part/mac-studio","key":"maker","from":null,"to":"Apple","by":"luke","source":"https://www.apple.com/mac-studio/specs/"}
+{"date":"2026-11-17","entity":"part/mac-studio","key":"placement","from":null,"to":"desk","by":"luke","source":"https://www.apple.com/mac-studio/specs/"}
+{"date":"2026-11-17","entity":"part/rtx-pro-6000-blackwell","key":"released","from":null,"to":"2025-03-18","by":"neuman","source":"https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units"}
+{"date":"2026-11-17","entity":"part/rtx-pro-6000-blackwell","key":"memory_gb","from":null,"to":96,"by":"neuman","source":"https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md"}
+{"date":"2026-11-17","entity":"part/rtx-pro-6000-blackwell","key":"memory_bandwidth_gbps","from":null,"to":1792,"by":"neuman","source":"https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md"}
+{"date":"2026-11-17","entity":"part/rtx-pro-6000-blackwell","key":"power_w","from":null,"to":600,"by":"neuman","source":"https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md"}
+{"date":"2026-11-17","entity":"part/dgx-station","key":"memory_gb","from":null,"to":748,"by":"neuman","source":"https://www.nvidia.com/en-us/products/workstations/dgx-station/"}
+{"date":"2026-11-17","entity":"part/dgx-station","key":"gpu_memory_gb","from":null,"to":252,"by":"neuman","source":"https://www.nvidia.com/en-us/products/workstations/dgx-station/"}
+{"date":"2026-11-17","entity":"part/dgx-station","key":"power_w","from":null,"to":1600,"by":"neuman","source":"https://www.nvidia.com/en-us/products/workstations/dgx-station/"}
+{"date":"2026-11-17","entity":"part/dgx-station","key":"gpu_count","from":null,"to":1,"by":"neuman","source":"https://www.nvidia.com/en-us/products/workstations/dgx-station/"}
+{"date":"2026-11-17","entity":"part/mac-studio","key":"price.new_usd","from":null,"to":29799,"by":"luke","source":"https://www.apple.com/shop/buy-mac/mac-studio/m5-ultra-chip-36-core-cpu-80-core-gpu-512gb-memory-16tb-storage"}
+{"date":"2026-11-18","entity":"part/rtx-pro-6000-blackwell","key":"maker","from":null,"to":"NVIDIA","by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md"}
+{"date":"2026-11-18","entity":"part/rtx-pro-6000-blackwell","key":"snapshot.wikipedia","from":null,"to":"https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units","by":"luke","source":"https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units"}
+{"date":"2026-11-18","entity":"part/rtx-pro-6000-blackwell","key":"form_factor","from":null,"to":"dual-slot","by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md"}
+{"date":"2026-11-18","entity":"part/hgx-b300","key":"gpu_count","from":null,"to":8,"by":"neuman","source":"https://www.nvidia.com/en-us/data-center/hgx/"}
+{"date":"2026-11-18","entity":"part/hgx-b300","key":"memory_gb","from":null,"to":2304,"by":"neuman","source":"https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/components.html"}
+{"date":"2026-11-18","entity":"part/dgx-station","key":"snapshot.wikipedia","from":null,"to":"https://en.wikipedia.org/wiki/Nvidia_DGX","by":"luke","source":"https://en.wikipedia.org/wiki/Nvidia_DGX"}
+{"date":"2026-11-18","entity":"part/dgx-station","key":"maker","from":null,"to":"NVIDIA","by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-station/"}
+{"date":"2026-11-18","entity":"part/dgx-station","key":"memory_bandwidth_gbps","from":null,"to":7100,"by":"luke","source":"https://en.wikipedia.org/wiki/Nvidia_DGX"}
+{"date":"2026-11-18","entity":"part/dgx-station","key":"placement","from":null,"to":"deskside","by":"luke","source":"https://en.wikipedia.org/wiki/Nvidia_DGX"}
+{"date":"2026-11-18","entity":"part/dgx-station","key":"bf16_tflops","from":null,"to":2500,"by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-station/"}
+{"date":"2026-11-18","entity":"part/rtx-pro-6000-blackwell","key":"bf16_tflops","from":null,"to":503.8,"by":"luke","source":"https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units"}
+{"date":"2026-11-18","entity":"part/dgx-station","key":"price.new_usd","from":null,"to":104830,"by":"luke","source":"https://www.exxactcorp.com/Exxact-VWS-158270643-E158270643"}
+{"date":"2026-11-18","entity":"part/hgx-b300","key":"snapshot.wikipedia","from":null,"to":"https://en.wikipedia.org/wiki/Blackwell_(microarchitecture)","by":"luke","source":"https://en.wikipedia.org/wiki/Blackwell_(microarchitecture)"}
+{"date":"2026-11-18","entity":"part/hgx-b300","key":"maker","from":null,"to":"NVIDIA","by":"luke","source":"https://www.nvidia.com/en-us/data-center/hgx/"}
+{"date":"2026-11-18","entity":"part/hgx-b300","key":"price.new_usd","from":null,"to":529958,"by":"luke","source":"https://www.exxactcorp.com/Exxact-TS4-131188947-E131188947"}
+{"date":"2026-11-18","entity":"build/team-workstation","key":"photo_credit","from":null,"to":"A similar desktop, for illustration. Photo: Dateks.","by":null,"source":"https://blog.dateks.lv/wp-content/uploads/2026/08/BJ8A3582-2.jpg"}
+{"date":"2026-11-18","entity":"build/starter-workstation","key":"photo_credit","from":null,"to":"A similar desktop, for illustration. Photo: EmpoweredPC.","by":null,"source":"https://empoweredpc.com/cdn/shop/files/PanoramaXL_AIO_DawnPro_Aqua.jpg"}
+{"date":"2026-11-18","entity":"build/starter-workstation","key":"price_range","from":null,"to":"$9,300–12,300 in parts","by":"luke","source":null}
+{"date":"2026-11-18","entity":"build/team-workstation","key":"price_range","from":null,"to":"$39,500–51,300 in parts","by":"luke","source":null}
+{"date":"2026-11-18","entity":"part/dgx-spark","key":"class","from":null,"to":"system","by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-spark/"}
+{"date":"2026-11-18","entity":"part/dgx-spark","key":"snapshot.maker","from":null,"to":"https://www.nvidia.com/en-us/products/workstations/dgx-spark/","by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-spark/"}
+{"date":"2026-11-18","entity":"part/dgx-spark","key":"placement","from":null,"to":"desk","by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-spark/"}
+{"date":"2026-11-18","entity":"part/dgx-spark","key":"memory_gb","from":null,"to":128,"by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-spark/"}
+{"date":"2026-11-18","entity":"part/dgx-spark","key":"memory_bandwidth_gbps","from":null,"to":273,"by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-spark/"}
+{"date":"2026-11-18","entity":"part/dgx-spark","key":"power_w","from":null,"to":240,"by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-spark/"}
+{"date":"2026-11-18","entity":"part/dgx-spark","key":"maker","from":null,"to":"NVIDIA","by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-spark/"}
+{"date":"2026-11-18","entity":"part/dgx-spark","key":"gpu_count","from":null,"to":1,"by":"luke","source":"https://www.nvidia.com/en-us/products/workstations/dgx-spark/"}
+{"date":"2026-11-18","entity":"part/dgx-spark","key":"price.new_usd","from":null,"to":6950,"by":"luke","source":"https://marketplace.nvidia.com/en-us/developer/dgx-spark/"}
+{"date":"2026-11-18","entity":"build/dgx-spark","key":"kind","from":null,"to":"system","by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-spark","key":"runtime","from":null,"to":"llama.cpp","by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-spark","key":"parts","from":null,"to":"1 rows","by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-spark","key":"models","from":null,"to":"2 rows","by":null,"source":null}
+{"date":"2026-11-18","entity":"build/starter-workstation","key":"context_per_session","from":null,"to":65536,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/starter-workstation","key":"concurrent_sessions","from":null,"to":3,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/starter-workstation","key":"team_min","from":null,"to":3,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/starter-workstation","key":"team_max","from":null,"to":9,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-spark","key":"context_per_session","from":null,"to":65536,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-spark","key":"concurrent_sessions","from":null,"to":6,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-spark","key":"team_min","from":null,"to":6,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-spark","key":"team_max","from":null,"to":18,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/team-workstation","key":"context_per_session","from":null,"to":65536,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/team-workstation","key":"concurrent_sessions","from":null,"to":32,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/team-workstation","key":"team_min","from":null,"to":32,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/team-workstation","key":"team_max","from":null,"to":96,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/mac-studio-512","key":"context_per_session","from":null,"to":65536,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/mac-studio-512","key":"concurrent_sessions","from":null,"to":2,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/mac-studio-512","key":"team_min","from":null,"to":2,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/mac-studio-512","key":"team_max","from":null,"to":6,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-station","key":"context_per_session","from":null,"to":65536,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-station","key":"concurrent_sessions","from":null,"to":32,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-station","key":"team_min","from":null,"to":32,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/dgx-station","key":"team_max","from":null,"to":96,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/kimi-server","key":"context_per_session","from":null,"to":65536,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/kimi-server","key":"concurrent_sessions","from":null,"to":300,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/kimi-server","key":"team_min","from":null,"to":300,"by":null,"source":null}
+{"date":"2026-11-18","entity":"build/kimi-server","key":"team_max","from":null,"to":900,"by":null,"source":null}
+{"date":"2026-11-18","entity":"company/alibaba","key":"my_take","from":null,"to":"Alibaba is a company out of China. Its market cap is about 250 billion, making it roughly the size of Toyota. A division of that company called Alibaba Cloud is responsible for making the Qwen models. The US government has accused Alibaba of distilling models proprietary models from the US to create this model. It's hard to have a problem with that when companies like Anthropic and OpenAI have stolen the corpus of all human produced text and video to train their models. \n\nAs far as the Qwen models, they are some of the best models you can run on limited hardware. For example, Qwen 3.8 27B takes up just 56 gigabytes of room in memory, making it a game changer for local LLM setups on a budget.","by":"luke","source":null}
+{"date":"2026-11-18","entity":"company/deepseek","key":"my_take","from":null,"to":"Deepseek is another company out of China that started just in twenty twenty-three. It's a medium sized company with under four hundred employees and a private valuation of around $74 billion. \n\nDeepseek produced one of my favorite models of all time. Deepseek V 4.1 flash. This was the model that really caught everyone's attention because people started running it locally and were getting results comparable to Opus 5.5. \n\nIt should be exciting to see what Deepseek does in the future.","by":"luke","source":null}
+{"date":"2026-11-18","entity":"harness/deepseek-harness","key":"my_take","from":null,"to":"This is a solid harness From Deep Seek. It's tuned to be most useful with Deep Seek models, but it serves as a great source of information for Neuman as Deep Seek tends to innovate and share their progress.","by":"luke","source":null}
+{"date":"2026-11-18","entity":"harness/pi","key":"my_take","from":null,"to":"Pi is one of my favorite harnesses. I used it extensively before building Neuman and partially to build Neuman. What I love about Pi is its simplicity. A lot of these harnesses become a mass of code produced by swarms of agents running 24/7, and they become completely incomprehensible and often very buggy. Pi took a very different approach in being a very minimal harness that you can customize. I think it's a great project and it serves as a invaluable source of information for guiding Neuman's harness.","by":"luke","source":null}
+{"date":"2026-11-18","entity":"build/dgx-spark","key":"my_take","from":null,"to":"The DGX Spark is an interesting machine from Nvidia. It reminds me of the Mac Studio in its footprint and its power. You can also combine up to eight of these to run massive models with a whopping 1024GB of memory.","by":"luke","source":null}
+{"date":"2026-11-18","entity":"build/dgx-station","key":"my_take","from":null,"to":"The DGX Sparks is a great machine for a research lab or a small team. With 748GB of memory, it's an extremely powerful machine. The footprint is not too big either and looks like a large desktop computer.","by":"luke","source":null}
+{"date":"2026-11-19","entity":"model/claude-fable-5.1","key":"speed.output_tokens_per_second","from":67.16,"to":65.44,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-19","entity":"model/claude-fable-5.1","key":"speed.time_to_first_token_seconds","from":281.65,"to":270.33,"by":"auto","source":"https://artificialanalysis.ai/models/claude-fable-5-1"}
+{"date":"2026-11-19","entity":"model/claude-opus-5","key":"speed.output_tokens_per_second","from":51.29,"to":52.36,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-19","entity":"model/claude-opus-5","key":"speed.time_to_first_token_seconds","from":47.78,"to":64.24,"by":"auto","source":"https://artificialanalysis.ai/models/claude-opus-5"}
+{"date":"2026-11-19","entity":"model/deepseek-v4.1-flash-1017","key":"speed.output_tokens_per_second","from":168.03,"to":160.35,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-19","entity":"model/deepseek-v4.1-flash-1017","key":"speed.time_to_first_token_seconds","from":1.09,"to":1.06,"by":"auto","source":"https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"}
+{"date":"2026-11-19","entity":"model/glm-5.3-flash","key":"speed.output_tokens_per_second","from":62.99,"to":61.35,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-19","entity":"model/glm-5.3-flash","key":"speed.time_to_first_token_seconds","from":1.8,"to":1.78,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-19","entity":"model/glm-5.3","key":"speed.output_tokens_per_second","from":101.06,"to":77.85,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-19","entity":"model/glm-5.3","key":"speed.time_to_first_token_seconds","from":1.52,"to":1.64,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-19","entity":"model/gpt-6-astra","key":"speed.output_tokens_per_second","from":44.49,"to":42.12,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-19","entity":"model/gpt-6-astra","key":"speed.time_to_first_token_seconds","from":397.08,"to":378.46,"by":"auto","source":"https://artificialanalysis.ai/models/gpt-6-astra"}
+{"date":"2026-11-19","entity":"model/kimi-k3.1-pro","key":"speed.output_tokens_per_second","from":28.17,"to":28.28,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-19","entity":"model/kimi-k3.1-pro","key":"speed.time_to_first_token_seconds","from":2.2,"to":2.35,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-19","entity":"model/minimax-m3","key":"speed.output_tokens_per_second","from":97.9,"to":92.41,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-19","entity":"model/minimax-m3","key":"speed.time_to_first_token_seconds","from":0.84,"to":0.76,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-19","entity":"model/qwen3.8-27b","key":"speed.output_tokens_per_second","from":41.96,"to":41.61,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-19","entity":"model/qwen3.8-27b","key":"speed.time_to_first_token_seconds","from":3.86,"to":3.84,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-19","entity":"model/claude-fable-5.1","key":"providers","from":"5 rows","to":"3 rows","by":"auto","source":"https://openrouter.ai/anthropic/claude-fable-5.1"}
+{"date":"2026-11-19","entity":"model/claude-opus-5","key":"pricing.input_per_m_usd","from":5.5,"to":5,"by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-19","entity":"model/claude-opus-5","key":"pricing.output_per_m_usd","from":27.5,"to":25,"by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-19","entity":"model/claude-opus-5","key":"pricing.cached_input_per_m_usd","from":0.55,"to":0.5,"by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-19","entity":"model/claude-opus-5","key":"pricing.blended_per_m_usd","from":11,"to":10,"by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-19","entity":"model/claude-opus-5","key":"providers","from":"11 rows","to":"6 rows","by":"auto","source":"https://openrouter.ai/anthropic/claude-opus-5"}
+{"date":"2026-11-19","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.input_per_m_usd","from":0.1485,"to":0.17,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-19","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.output_per_m_usd","from":0.605,"to":0.7,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-19","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.cached_input_per_m_usd","from":0.0058,"to":0.005,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-19","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_per_m_usd","from":0.25,"to":0.3125,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-19","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_min_per_m_usd","from":0.0475,"to":0.0638,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-19","entity":"model/deepseek-v4.1-flash-1017","key":"providers","from":"50 rows","to":"49 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-19","entity":"model/glm-5.3-flash","key":"pricing.blended_per_m_usd","from":0.2125,"to":0.2113,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-19","entity":"model/glm-5.3-flash","key":"providers","from":"44 rows","to":"42 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-19","entity":"model/glm-5.3","key":"pricing.input_per_m_usd","from":1.4,"to":1.26,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-19","entity":"model/glm-5.3","key":"pricing.cached_input_per_m_usd","from":0.19,"to":0.182,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-19","entity":"model/glm-5.3","key":"providers","from":"49 rows","to":"49 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-19","entity":"model/gpt-5.6-sol","key":"pricing.input_per_m_usd","from":4.2,"to":4,"by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-19","entity":"model/gpt-5.6-sol","key":"pricing.output_per_m_usd","from":21,"to":20,"by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-19","entity":"model/gpt-5.6-sol","key":"pricing.cached_input_per_m_usd","from":0.42,"to":0.4,"by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-19","entity":"model/gpt-5.6-sol","key":"pricing.blended_per_m_usd","from":8.4,"to":8,"by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-19","entity":"model/gpt-5.6-sol","key":"providers","from":"8 rows","to":"5 rows","by":"auto","source":"https://openrouter.ai/openai/gpt-5.6-sol"}
+{"date":"2026-11-19","entity":"model/gpt-6-astra","key":"pricing.input_per_m_usd","from":10.5,"to":10,"by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-19","entity":"model/gpt-6-astra","key":"pricing.output_per_m_usd","from":52.5,"to":50,"by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-19","entity":"model/gpt-6-astra","key":"pricing.cached_input_per_m_usd","from":1.05,"to":1,"by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-19","entity":"model/gpt-6-astra","key":"pricing.blended_per_m_usd","from":21,"to":20,"by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-19","entity":"model/gpt-6-astra","key":"providers","from":"8 rows","to":"6 rows","by":"auto","source":"https://openrouter.ai/openai/gpt-6-astra"}
+{"date":"2026-11-19","entity":"model/kimi-k3.1-pro","key":"providers","from":"27 rows","to":"27 rows","by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-19","entity":"model/minimax-m3","key":"pricing.input_per_m_usd","from":0.29,"to":0.3,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-19","entity":"model/minimax-m3","key":"pricing.output_per_m_usd","from":1.15,"to":1.2,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-19","entity":"model/minimax-m3","key":"pricing.cached_input_per_m_usd","from":0.058,"to":0.06,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-19","entity":"model/minimax-m3","key":"pricing.blended_per_m_usd","from":0.505,"to":0.525,"by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-19","entity":"model/minimax-m3","key":"providers","from":"8 rows","to":"9 rows","by":"auto","source":"https://openrouter.ai/minimax/minimax-m3"}
+{"date":"2026-11-19","entity":"model/qwen3.8-27b","key":"pricing.input_per_m_usd","from":0.175,"to":0.2,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-19","entity":"model/qwen3.8-27b","key":"pricing.output_per_m_usd","from":2.2,"to":2.3,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-19","entity":"model/qwen3.8-27b","key":"pricing.blended_per_m_usd","from":0.6638,"to":0.73,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-19","entity":"model/qwen3.8-27b","key":"pricing.blended_min_per_m_usd","from":0.2408,"to":0.3418,"by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-19","entity":"model/qwen3.8-27b","key":"providers","from":"25 rows","to":"25 rows","by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-19","entity":"harness/qwen-code","key":"language","from":"5 rows","to":"5 rows","by":"auto","source":"https://github.com/QwenLM/qwen-code"}
+{"date":"2026-11-19","entity":"part/dgx-spark","key":"price.swept","from":null,"to":false,"by":"luke","source":null}
+{"date":"2026-11-19","entity":"part/dgx-station","key":"price.swept","from":null,"to":true,"by":"luke","source":null}
+{"date":"2026-11-19","entity":"part/hgx-b300","key":"price.swept","from":null,"to":true,"by":"luke","source":null}
+{"date":"2026-11-19","entity":"part/mac-studio","key":"price.swept","from":null,"to":false,"by":"luke","source":null}
+{"date":"2026-11-19","entity":"part/rtx-5090","key":"price.swept","from":null,"to":false,"by":"luke","source":null}
+{"date":"2026-11-19","entity":"part/rtx-pro-6000-blackwell","key":"price.swept","from":null,"to":false,"by":"luke","source":null}
+{"date":"2026-11-19","entity":"model/kimi-k3.1-pro","key":"snapshot.unsloth_gguf","from":null,"to":"https://huggingface.co/unsloth/Kimi-K3.1-Pro","by":"luke","source":"https://huggingface.co/unsloth/Kimi-K3.1-Pro"}
+{"date":"2026-11-19","entity":"model/minimax-m3","key":"parameters_active_b","from":null,"to":23,"by":"luke","source":"https://github.com/MiniMax-AI/MiniMax-M3"}
+{"date":"2026-11-19","entity":"part/rtx-5090","key":"snapshot.techpowerup","from":null,"to":"https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216","by":"luke","source":"https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216"}
+{"date":"2026-11-19","entity":"part/rtx-5090","key":"bf16_tflops","from":null,"to":209.5,"by":"luke","source":"https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216"}
+{"date":"2026-11-19","entity":"part/hgx-b300","key":"memory_bandwidth_gbps","from":null,"to":64000,"by":"luke","source":"https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/components.html"}
+{"date":"2026-11-19","entity":"part/hgx-b300","key":"bf16_tflops","from":null,"to":18000,"by":"luke","source":"https://www.nvidia.com/en-us/data-center/hgx/"}
+{"date":"2026-11-19","entity":"part/hgx-b300","key":"placement","from":null,"to":"rack","by":"luke","source":"https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/overview.html"}
+{"date":"2026-11-19","entity":"part/hgx-b300","key":"price.new_usd","from":529958,"to":null,"by":"luke","source":"https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/overview.html"}
+{"date":"2026-11-19","entity":"company/mistral","key":"country","from":null,"to":"France","by":"neuman","source":"https://en.wikipedia.org/wiki/Mistral_AI"}
+{"date":"2026-11-19","entity":"company/mistral","key":"hq_city","from":null,"to":"Paris","by":"neuman","source":"https://en.wikipedia.org/wiki/Mistral_AI"}
+{"date":"2026-11-20","entity":"model/glm-5.3-flash","key":"speed.time_to_first_token_seconds","from":1.78,"to":1.6,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3-flash"}
+{"date":"2026-11-20","entity":"model/glm-5.3","key":"speed.output_tokens_per_second","from":77.85,"to":67.41,"by":"auto","source":"https://artificialanalysis.ai/models/glm-5-3"}
+{"date":"2026-11-20","entity":"model/kimi-k3.1-pro","key":"speed.time_to_first_token_seconds","from":2.35,"to":2.68,"by":"auto","source":"https://artificialanalysis.ai/models/kimi-k3-1-pro"}
+{"date":"2026-11-20","entity":"model/minimax-m3","key":"speed.output_tokens_per_second","from":92.41,"to":87.15,"by":"auto","source":"https://artificialanalysis.ai/models/minimax-m3"}
+{"date":"2026-11-20","entity":"model/qwen3.8-27b","key":"speed.output_tokens_per_second","from":41.61,"to":46.81,"by":"auto","source":"https://artificialanalysis.ai/models/qwen3-8-27b"}
+{"date":"2026-11-20","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.input_per_m_usd","from":0.17,"to":0.15,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-20","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.output_per_m_usd","from":0.7,"to":0.666,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-20","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.cached_input_per_m_usd","from":0.005,"to":0.0046,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-20","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_per_m_usd","from":0.3125,"to":0.2663,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-20","entity":"model/deepseek-v4.1-flash-1017","key":"pricing.blended_min_per_m_usd","from":0.0638,"to":0.085,"by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-20","entity":"model/deepseek-v4.1-flash-1017","key":"providers","from":"49 rows","to":"50 rows","by":"auto","source":"https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"}
+{"date":"2026-11-20","entity":"model/glm-5.3-flash","key":"pricing.input_per_m_usd","from":0.135,"to":0.127,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-20","entity":"model/glm-5.3-flash","key":"pricing.blended_per_m_usd","from":0.2113,"to":0.195,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-20","entity":"model/glm-5.3-flash","key":"providers","from":"42 rows","to":"42 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3-flash"}
+{"date":"2026-11-20","entity":"model/glm-5.3","key":"pricing.cached_input_per_m_usd","from":0.182,"to":0.169,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-20","entity":"model/glm-5.3","key":"pricing.blended_per_m_usd","from":1.935,"to":2.0027,"by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-20","entity":"model/glm-5.3","key":"providers","from":"49 rows","to":"49 rows","by":"auto","source":"https://openrouter.ai/z-ai/glm-5.3"}
+{"date":"2026-11-20","entity":"model/kimi-k3.1-pro","key":"providers","from":"27 rows","to":"27 rows","by":"auto","source":"https://openrouter.ai/moonshotai/kimi-k3.1-pro"}
+{"date":"2026-11-20","entity":"model/qwen3.8-27b","key":"providers","from":"25 rows","to":"25 rows","by":"auto","source":"https://openrouter.ai/qwen/qwen3.8-27b"}
+{"date":"2026-11-20","entity":"harness/opencode","key":"language","from":"4 rows","to":"4 rows","by":"auto","source":"https://github.com/anomalyco/opencode"}
+{"date":"2026-11-20","entity":"harness/qwen-code","key":"language","from":"5 rows","to":"5 rows","by":"auto","source":"https://github.com/QwenLM/qwen-code"}
+{"date":"2026-11-20","entity":"model/deepseek-v4.1-flash-1017","key":"benchmark.arena_text_legal","from":1460,"to":1461,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/deepseek-v4.1-flash-1017","key":"benchmark.arena_text_science","from":1488,"to":1489,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/glm-5.3-flash","key":"benchmark.arena_text_legal","from":1475,"to":1476,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/glm-5.3-flash","key":"benchmark.arena_text_science","from":1491,"to":1493,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/glm-5.3","key":"benchmark.arena_text_coding","from":1522,"to":1524,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/glm-5.3","key":"benchmark.arena_text_legal","from":1482,"to":1483,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/glm-5.3","key":"benchmark.arena_text_science","from":1508,"to":1509,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/kimi-k3.1-pro","key":"benchmark.arena_text_coding","from":1530,"to":1532,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/kimi-k3.1-pro","key":"benchmark.arena_text_legal","from":1520,"to":1495,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/kimi-k3.1-pro","key":"benchmark.arena_text_science","from":1496,"to":1497,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/minimax-m3","key":"benchmark.arena_text_coding","from":1493,"to":1492,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/minimax-m3","key":"benchmark.arena_text_legal","from":1434,"to":1432,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/minimax-m3","key":"benchmark.arena_text_science","from":1459,"to":1458,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/qwen3.8-27b","key":"benchmark.arena_text_coding","from":1496,"to":1498,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/qwen3.8-27b","key":"benchmark.arena_text_legal","from":1437,"to":1438,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}
+{"date":"2026-11-20","entity":"model/qwen3.8-27b","key":"benchmark.arena_text_science","from":1462,"to":1464,"by":"auto","source":"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"}

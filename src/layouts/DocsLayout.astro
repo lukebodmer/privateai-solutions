@@ -1,0 +1,129 @@
+---
+/**
+ * A page of Neuman's docs: the doc tree on the left, the doc in the middle,
+ * its sections on the right. On narrow screens the tree folds into a
+ * disclosure above a doc (the index needs none: its cards are the tree) and
+ * the section list is dropped.
+ */
+import Base from './Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { docGroups, docsSource } from '../lib/docs';
+
+interface Props {
+  title: string;
+  description?: string;
+  current: string;
+  headings?: { depth: number; slug: string; text: string }[];
+  /** Draw the title here. A page that puts something behind its header draws it itself. */
+  header?: boolean;
+  /** A landing page may run wider than a page of text: it is a hero and cards, not prose. */
+  wide?: boolean;
+}
+
+const { title, description, current, headings = [], header = true, wide = false } = Astro.props;
+const groups = await docGroups();
+const flat = groups.flatMap(g => g.docs);
+const idx = flat.findIndex(d => d.slug === current);
+const prev = idx > 0 ? flat[idx - 1] : null;
+const next = idx >= 0 && idx < flat.length - 1 ? flat[idx + 1] : null;
+// The label over the title: the doc's group, or "Documentation" on the index.
+const group = groups.find(g => g.docs.some(d => d.slug === current))?.label ?? 'Documentation';
+
+// A doc of h3 entries and no h2 sections (gotchas) lists its h3s instead.
+const depth = headings.some(h => h.depth === 2) ? 2 : 3;
+const toc = headings.filter(h => h.depth === depth);
+
+const source = docsSource();
+const fmt = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+
+<Base title={`${title} — Neuman docs`} description={description}>
+  <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 flex gap-10">
+
+    <aside class="hidden lg:block w-56 shrink-0 sticky top-14 self-start max-h-[calc(100vh-3.5rem)] overflow-y-auto py-8">
+
+        <a href="/docs" class:list={['block text-sm font-semibold mb-4', current === '' ? 'text-frost-400' : 'text-nord-100 hover:text-frost-400']}>
+          Neuman docs
+        </a>
+        {groups.map(g => (
+          <div class="mb-5">
+            <p class="text-[10px] uppercase tracking-wider text-nord-500 mb-1.5">{g.label}</p>
+            <ul class="space-y-0.5">
+              {g.docs.map(d => (
+                <li>
+                  <a href={`/docs/${d.slug}`} aria-current={d.slug === current ? 'page' : undefined}
+                    class:list={['block px-2.5 py-1 rounded text-sm transition-colors', d.slug === current
+                      ? 'text-frost-400 bg-frost-400/10'
+                      : 'text-nord-400 hover:text-nord-100 hover:bg-nord-800/70']}>
+                    {d.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        {source && (
+          <p class="text-[11px] text-nord-600 leading-relaxed mt-6 pt-4 border-t border-nord-800">
+            {source.source === 'github'
+              ? <>From <span class="text-nord-500">{source.branch}</span> at <code class="text-nord-500">{source.sha?.slice(0, 7)}</code>, {fmt(source.committed!)}</>
+              : <>From a local checkout</>}
+          </p>
+        )}
+
+    </aside>
+
+    <main class:list={['min-w-0 flex-1 mx-auto py-8 lg:py-10', wide ? 'max-w-3xl xl:max-w-5xl' : 'max-w-3xl']}>
+      {current && (
+      <details class="lg:hidden mb-6 border border-nord-800 rounded-lg group">
+        <summary class="px-3.5 py-2.5 text-sm text-nord-300 cursor-pointer select-none flex items-center justify-between">
+          <span>Neuman docs{current && <span class="text-nord-500"> / {title}</span>}</span>
+          <span class="text-nord-500 group-open:rotate-180 transition-transform">&#9662;</span>
+        </summary>
+        <div class="px-3.5 pb-3 border-t border-nord-800 pt-3">
+          <a href="/docs" class="block text-sm text-nord-300 mb-3">Overview</a>
+          {groups.map(g => (
+            <div class="mb-3">
+              <p class="text-[10px] uppercase tracking-wider text-nord-500 mb-1">{g.label}</p>
+              {g.docs.map(d => (
+                <a href={`/docs/${d.slug}`} class:list={['block py-1 text-sm', d.slug === current ? 'text-frost-400' : 'text-nord-400']}>{d.data.title}</a>
+              ))}
+            </div>
+          ))}
+        </div>
+      </details>
+      )}
+
+      {header && <PageHeader eyebrow={group} title={title} class="mb-8" />}
+      <slot />
+
+      {(prev || next) && (
+        <nav class="mt-16 pt-6 border-t border-nord-800 flex justify-between gap-6 text-sm" aria-label="Previous and next">
+          {prev ? (
+            <a href={`/docs/${prev.slug}`} class="group">
+              <span class="block text-xs text-nord-600">&larr; Previous</span>
+              <span class="text-nord-300 group-hover:text-frost-400">{prev.data.title}</span>
+            </a>
+          ) : <span />}
+          {next ? (
+            <a href={`/docs/${next.slug}`} class="group text-right">
+              <span class="block text-xs text-nord-600">Next &rarr;</span>
+              <span class="text-nord-300 group-hover:text-frost-400">{next.data.title}</span>
+            </a>
+          ) : <span />}
+        </nav>
+      )}
+    </main>
+
+    {toc.length > 0 && (
+      <aside class="hidden xl:block w-60 shrink-0 sticky top-14 self-start max-h-[calc(100vh-3.5rem)] overflow-y-auto py-10">
+        <p class="text-[10px] uppercase tracking-wider text-nord-500 mb-2">On this page</p>
+        <ul class="space-y-1.5 text-[13px] leading-snug">
+          {toc.map(h => (
+            <li><a href={`#${h.slug}`} class="text-nord-500 hover:text-nord-100 transition-colors">{h.text}</a></li>
+          ))}
+        </ul>
+      </aside>
+    )}
+  </div>
+</Base>

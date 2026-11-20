@@ -1,0 +1,300 @@
+---
+import Base from '../layouts/Base.astro';
+import DashboardPanel from '../components/DashboardPanel.astro';
+import BenchmarkCredit from '../components/BenchmarkCredit.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { getCollection } from 'astro:content';
+import { loadEntities, factStr, factNum } from '../lib/facts';
+import { loadNews } from '../lib/news';
+import { loadBenchmarks, barPct } from '../utils/loadBenchmarks';
+import { resolveLogo, resolveModelLogo } from '../utils/resolveLogo';
+import { fitBuild } from '../lib/sizing';
+import { buildPrice, fmtGb } from '../lib/builds';
+import { brandColorForCompany, barStyle } from '../data/schemas/brandColors';
+
+// /ecosystem: the open-weight ecosystem as a dashboard. Every reference
+// section of the site as a panel, each showing enough of its data to be worth
+// reading on its own and linking through.
+
+// ── Benchmarks: every tile in one column order, the Open models table's
+// (by overall score, below), so the mini charts and the table read as one set.
+const previewTiles = loadBenchmarks().filter(t => t.rows.length > 0);
+const previewBars = new Map<string, string>();
+for (const tile of previewTiles) {
+  for (const row of tile.rows) {
+    if (!previewBars.has(row.model_slug)) {
+      previewBars.set(row.model_slug, barStyle(brandColorForCompany(row.company_slug), row.is_open));
+    }
+  }
+}
+
+// ── Models: open-weight leaderboard by a rough overall score: each
+// benchmark placed on its tile's own 0–100 scale (barPct), then averaged
+// over the benchmarks that rate the model. Meant to be read as a bar, not a
+// number — the scales are the charts' display ranges, not a calibration.
+const tileScores = new Map<string, number[]>();
+for (const tile of previewTiles) {
+  for (const row of tile.rows) {
+    if (!tileScores.has(row.model_slug)) tileScores.set(row.model_slug, []);
+    tileScores.get(row.model_slug)!.push(barPct(tile, row.score));
+  }
+}
+function overall(slug: string): { score: number; count: number } | null {
+  const xs = tileScores.get(slug);
+  return xs && xs.length > 0 ? { score: xs.reduce((a, b) => a + b, 0) / xs.length, count: xs.length } : null;
+}
+const previewColumns = [...new Set(previewTiles.flatMap(t => t.rows.map(r => r.model_slug)))]
+  .sort((a, b) => (overall(b)?.score ?? -1) - (overall(a)?.score ?? -1));
+
+const allModels = loadEntities('model');
+const openModels = allModels.filter(m => factStr(m, 'distribution') !== 'closed');
+const modelRows = openModels
+  .map(m => ({
+    entity: m,
+    company: factStr(m, 'company_slug'),
+    overall: overall(m.slug),
+    params: factNum(m, 'parameters_b'),
+    sizeGb: factNum(m, 'native_size_gb'),
+    tps: factNum(m, 'speed.output_tokens_per_second'),
+  }))
+  .sort((a, b) => (b.overall?.score ?? -1) - (a.overall?.score ?? -1));
+
+// ── Builds: the ladder, least memory first. Memory spans 32 GB to terabytes,
+// so the bar is on a log scale.
+const buildRows = loadEntities('build')
+  .map(b => {
+    const fit = fitBuild(b);
+    const price = buildPrice(b);
+    return { entity: b, memoryGb: fit.totalMemoryGb, main: fit.models[0]?.model?.name ?? null, price: price.short, priceFull: price.label };
+  })
+  .sort((a, b) => (a.memoryGb ?? Infinity) - (b.memoryGb ?? Infinity));
+const logMax = Math.log10(Math.max(10, ...buildRows.map(r => r.memoryGb ?? 0)));
+const memoryBar = (gb: number | null) => gb ? Math.max(4, (Math.log10(gb) / logMax) * 100) : 0;
+
+// ── Harnesses and companies.
+const harnesses = loadEntities('harness');
+const companies = loadEntities('company').map(c => ({
+  entity: c,
+  country: factStr(c, 'country'),
+  models: allModels.filter(m => factStr(m, 'company_slug') === c.slug),
+}));
+
+// ── News.
+const recentNews = loadNews().slice(0, 20);
+
+// ── Writing.
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+
+function fmtParams(total: number | null): string {
+  if (total === null) return '—';
+  return total >= 1000 ? `${(total / 1000).toFixed(1)}T` : `${total}B`;
+}
+
+function fmtDate(d: string | Date): string {
+  const date = typeof d === 'string' ? new Date(`${d}T00:00:00Z`) : d;
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+}
+---
+
+<Base
+  title="The open-weight ecosystem — Private AI Solutions"
+  description="Open-weight models, the builds that run them, the harnesses that drive them and the companies behind them, tracked for running AI on your own hardware with Neuman."
+>
+  <main class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 py-6">
+
+    <!-- Header: what this page is. -->
+    <PageHeader eyebrow="Open source · open weights" title="The open-weight" accent="ecosystem." wide class="pt-6 sm:pt-8 mb-8">
+      Neuman relies on a growing ecosystem of open-source software and open-weight models.
+      Below are the models it runs on, the builds we run them on, and the harnesses and news we track to keep
+      it on the cutting edge.
+    </PageHeader>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-3">
+
+      <!-- Models -->
+      <DashboardPanel title="Open models" href="/models" class="lg:col-span-7">
+        <a href="/models" class="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 pb-1 group">
+          {previewTiles.map(tile => {
+            const scoreBySlug = new Map(tile.rows.map(r => [r.model_slug, r.score]));
+            return (
+              <div class="bg-nord-950 border border-nord-800 rounded-md p-2 h-20 flex flex-col group-hover:border-nord-600 transition-colors">
+                <div class="text-[9px] font-semibold text-nord-400 mb-0.5 truncate leading-tight">
+                  {tile.short_title}
+                </div>
+                <div class="flex-1 flex items-end gap-[2px] min-h-0">
+                  {previewColumns.map(slug => {
+                    const score = scoreBySlug.get(slug);
+                    const pct = typeof score === 'number'
+                      ? Math.max(2, barPct(tile, score))
+                      : 0;
+                    return (
+                      <div
+                        class="flex-1 rounded-t-sm"
+                        style={`height: ${pct}%; ${previewBars.get(slug) ?? ''} min-height: 1px;`}
+                      ></div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </a>
+        <BenchmarkCredit tiles={previewTiles} class="px-3 pt-1 pb-2" />
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="text-[10px] uppercase tracking-wider text-nord-500 text-left">
+                <th class="font-medium px-3 py-2 w-6">#</th>
+                <th class="font-medium px-2 py-2">Model</th>
+                <th class="font-medium px-2 py-2 w-[30%]" title="The average of the four benchmarks above, each on its chart's scale">Overall</th>
+                <th class="font-medium px-2 py-2 text-right whitespace-nowrap hidden sm:table-cell">Params</th>
+                <th class="font-medium px-2 py-2 text-right whitespace-nowrap hidden sm:table-cell" title="Download size of the model's weights at native precision">Size</th>
+                <th class="font-medium px-3 py-2 text-right whitespace-nowrap hidden md:table-cell">tok/s</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-nord-800/70">
+              {modelRows.map((r, i) => {
+                const logo = resolveModelLogo(r.entity.slug, r.company);
+                return (
+                  <tr class="relative group hover:bg-nord-900/60 cursor-pointer">
+                    <td class="px-3 py-1.5 text-nord-600 tabular-nums">{i + 1}</td>
+                    <td class="px-2 py-1.5">
+                      <!-- The link stretches over the whole row, so a click anywhere opens the model. -->
+                      <a href={`/models/${r.entity.slug}`}
+                        title={r.overall !== null && r.overall.count < previewTiles.length ? `Overall from ${r.overall.count} of ${previewTiles.length} benchmarks` : undefined}
+                        class="flex items-center gap-2 text-nord-200 group-hover:text-frost-400 min-w-0 after:absolute after:inset-0 after:content-['']">
+                        {logo ? <img src={logo} alt="" class="w-4 h-4 rounded-sm shrink-0" /> : <span class="w-4 h-4 shrink-0"></span>}
+                        <span class="truncate">{r.entity.name}</span>
+                      </a>
+                    </td>
+                    <td class="px-2 py-1.5">
+                      {r.overall !== null ? (
+                        <div class="h-1.5 bg-nord-800 rounded-full overflow-hidden">
+                          <div class="h-full rounded-full"
+                            style={`width: ${r.overall.score}%; background-color: ${brandColorForCompany(r.company)};`}></div>
+                        </div>
+                      ) : <span class="text-nord-600">—</span>}
+                    </td>
+                    <td class="px-2 py-1.5 text-right font-mono text-nord-400 whitespace-nowrap hidden sm:table-cell">{fmtParams(r.params)}</td>
+                    <td class="px-2 py-1.5 text-right font-mono text-nord-400 whitespace-nowrap hidden sm:table-cell">{r.sizeGb !== null ? `${Math.round(r.sizeGb)} GB` : '—'}</td>
+                    <td class="px-3 py-1.5 text-right font-mono text-nord-400 hidden md:table-cell">{r.tps !== null ? Math.round(r.tps) : '—'}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </DashboardPanel>
+
+      <!-- Builds -->
+      <DashboardPanel title="Builds" href="/builds" class="lg:col-span-5">
+        <ul class="h-full flex flex-col divide-y divide-nord-800/70">
+          {buildRows.map(r => (
+            <li class="flex-1 flex">
+              <a href={`/builds/${r.entity.slug}`} class="flex-1 grid grid-cols-[1fr_auto_4.5rem] sm:grid-cols-[1fr_7rem_5rem] items-center gap-3 px-3.5 py-2 hover:bg-nord-900/60 group">
+                <span class="min-w-0">
+                  <span class="block text-xs text-nord-200 group-hover:text-frost-400 truncate">{r.entity.name}</span>
+                  {r.main && <span class="block text-[10px] text-nord-500 truncate">{r.main}</span>}
+                </span>
+                <span class="flex items-center gap-2">
+                  <span class="flex-1 h-1.5 bg-nord-800 rounded-full overflow-hidden hidden sm:block">
+                    <span class="block h-full bg-frost-500/70 rounded-full" style={`width: ${memoryBar(r.memoryGb)}%`}></span>
+                  </span>
+                  <span class="text-[11px] font-mono text-nord-300 w-14 text-right whitespace-nowrap">{r.memoryGb !== null ? fmtGb(r.memoryGb) : '—'}</span>
+                </span>
+                <span class="text-[11px] font-mono text-nord-500 text-right whitespace-nowrap truncate" title={r.priceFull ?? undefined}>{r.price ?? '—'}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </DashboardPanel>
+
+      <!-- Harnesses and companies are five rows tall and scroll past that: the
+           panels of this row share one grid row, so a list that grew with its
+           data would resize the news and writing panels beside it. -->
+
+      <!-- Harnesses -->
+      <DashboardPanel title="Harnesses" href="/harnesses" class="lg:col-span-3">
+        <ul class="divide-y divide-nord-800/70 max-h-[11.5rem] overflow-y-auto">
+          {harnesses.map(h => {
+            const logo = resolveLogo('harnesses', h.slug);
+            const developer = factStr(h, 'developer');
+            const license = factStr(h, 'license');
+            const lang = (h.facts.language?.value as { name: string }[] | null | undefined)?.[0]?.name ?? null;
+            return (
+              <li>
+                <a href={`/harnesses/${h.slug}`} class="flex items-center gap-2 px-3.5 py-2 hover:bg-nord-900/60 group">
+                  {logo ? <img src={logo} alt="" class="w-5 h-5 rounded shrink-0" /> : <span class="w-5 h-5 shrink-0"></span>}
+                  <span class="text-xs text-nord-200 group-hover:text-frost-400 truncate">{h.name}</span>
+                  <span class="text-[11px] text-nord-500 truncate">{developer}</span>
+                  <span class="ml-auto text-[11px] font-mono text-nord-500 whitespace-nowrap">{[lang, license].filter(Boolean).join(' · ')}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </DashboardPanel>
+
+      <!-- Companies -->
+      <DashboardPanel title="Companies" href="/companies" class="lg:col-span-3">
+        <ul class="divide-y divide-nord-800/70 max-h-[11.5rem] overflow-y-auto">
+          {companies.map(c => {
+            const logo = resolveLogo('companies', c.entity.slug);
+            return (
+              <li>
+                <a href={`/companies/${c.entity.slug}`} class="flex items-center gap-2 px-3.5 py-2 hover:bg-nord-900/60 group">
+                  {logo ? <img src={logo} alt="" class="w-5 h-5 rounded shrink-0" /> : <span class="w-5 h-5 shrink-0"></span>}
+                  <span class="text-xs text-nord-200 group-hover:text-frost-400 truncate">{c.entity.name}</span>
+                  <span class="text-[11px] text-nord-500 truncate">{c.country}</span>
+                  <span class="ml-auto text-[11px] font-mono text-nord-500 whitespace-nowrap">
+                    {c.models.length} {c.models.length === 1 ? 'model' : 'models'}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </DashboardPanel>
+
+      <!-- News -->
+      <DashboardPanel title="Relevant news" href="/news" class="lg:col-span-3">
+        {recentNews.length === 0
+          ? <p class="px-3.5 py-2 text-[11px] text-nord-500">Nothing yet.</p>
+          : (
+            <div class="relative h-full max-h-72 overflow-y-auto lg:max-h-none lg:overflow-visible"><div class="lg:absolute lg:inset-0 lg:overflow-y-auto">
+            <ul class="divide-y divide-nord-800/70">
+              {recentNews.map(n => (
+                <li class="px-3.5 py-1.5 text-[11px]">
+                  <a href={n.url} target="_blank" rel="noopener" class="block text-xs text-nord-200 hover:text-frost-400 leading-snug">{n.title}</a>
+                  <div class="flex items-baseline gap-2 text-nord-500">
+                    <span class="truncate">{n.source}</span>
+                    <span class="ml-auto text-nord-600 whitespace-nowrap">{fmtDate(n.date).replace(/, \d{4}$/, '')}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            </div></div>
+          )}
+      </DashboardPanel>
+
+      <!-- Writing + method -->
+      <DashboardPanel title="Writing" href="/blog" class="lg:col-span-3">
+        <div class="relative h-full max-h-72 overflow-y-auto lg:max-h-none lg:overflow-visible"><div class="lg:absolute lg:inset-0 lg:overflow-y-auto">
+        <ul class="divide-y divide-nord-800/70">
+          {posts.map(p => (
+            <li>
+              <a href={`/blog/${p.slug}/`} class="block px-3.5 py-2 hover:bg-nord-900/60 group">
+                <div class="text-xs text-nord-200 group-hover:text-frost-400 leading-snug">{p.data.title}</div>
+                <div class="text-[11px] text-nord-600 mt-0.5">{fmtDate(p.data.date)}</div>
+              </a>
+            </li>
+          ))}
+        </ul>
+        </div></div>
+      </DashboardPanel>
+
+    </div>
+  </main>
+</Base>

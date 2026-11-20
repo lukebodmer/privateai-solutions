@@ -1,0 +1,107 @@
+{
+  "name": "DGX Spark",
+  "slug": "dgx-spark",
+  "facts": {
+    "kind": {
+      "value": "system",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "runtime": {
+      "value": "llama.cpp",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "parts": {
+      "value": [
+        {
+          "part": "dgx-spark",
+          "quantity": 1
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "models": {
+      "value": [
+        {
+          "model": "glm-5.3-flash",
+          "weights": "UD-IQ3_XXS"
+        },
+        {
+          "model": "qwen3.8-27b",
+          "weights": "BF16"
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "context_per_session": {
+      "value": 65536,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "concurrent_sessions": {
+      "value": 6,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "team_min": {
+      "value": 6,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "team_max": {
+      "value": 18,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "measured.output_tokens_per_second": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "photo_credit": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "measured.max_concurrency": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "my_take": {
+      "value": "The DGX Spark is an interesting machine from Nvidia. It reminds me of the Mac Studio in its footprint and its power. You can also combine up to eight of these to run massive models with a whopping 1024GB of memory.",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    }
+  },
+  "references": []
+}

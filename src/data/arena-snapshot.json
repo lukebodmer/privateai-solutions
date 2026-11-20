@@ -1,0 +1,5515 @@
+{
+  "fetched": "2026-11-20T06:20:51.687Z",
+  "attribution": "https://arena.ai/",
+  "source_url": "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/parquet/text_style_control/latest/0.parquet",
+  "config": "text_style_control",
+  "categories": [
+    "coding",
+    "industry_legal_and_government",
+    "industry_life_and_physical_and_social_science"
+  ],
+  "leaderboard_publish_date": "2026-11-19",
+  "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+  "data": [
+    {
+      "model_name": "Gemini 4 Carbon (High)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 4262,
+      "rank": 1,
+      "ratings": {
+        "coding": 1568.281593084063,
+        "industry_legal_and_government": 1525.6310386728182,
+        "industry_life_and_physical_and_social_science": 1524.4204756937665
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 4 Argon (High)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 27193,
+      "rank": 2,
+      "ratings": {
+        "coding": 1552.3987608378943,
+        "industry_legal_and_government": 1526.9600738132326,
+        "industry_life_and_physical_and_social_science": 1539.556725847522
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 4 Neon (High)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 5555,
+      "rank": 3,
+      "ratings": {
+        "coding": 1558.986819590525,
+        "industry_legal_and_government": 1501.8145594977932,
+        "industry_life_and_physical_and_social_science": 1535.5231447245606
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Muse Wonder (Max)",
+      "organization": "meta",
+      "license": "Proprietary",
+      "vote_count": 16158,
+      "rank": 4,
+      "ratings": {
+        "coding": 1549.9877197400601,
+        "industry_legal_and_government": 1519.8818048696435,
+        "industry_life_and_physical_and_social_science": 1521.2645140626098
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 5.5 (High)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 18286,
+      "rank": 5,
+      "ratings": {
+        "coding": 1547.9788697715503,
+        "industry_legal_and_government": 1510.6181851956057,
+        "industry_life_and_physical_and_social_science": 1519.974071003113
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Fable 5 (High)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 45315,
+      "rank": 6,
+      "ratings": {
+        "coding": 1551.1793830048646,
+        "industry_legal_and_government": 1511.1025563583657,
+        "industry_life_and_physical_and_social_science": 1524.918772868723
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Fable 5.2 (Max)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 5216,
+      "rank": 7,
+      "ratings": {
+        "coding": 1526.4733662644471,
+        "industry_legal_and_government": 1498.548575217499,
+        "industry_life_and_physical_and_social_science": 1531.8230274334494
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.6 (High)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 84188,
+      "rank": 8,
+      "ratings": {
+        "coding": 1547.2133865028986,
+        "industry_legal_and_government": 1509.8173938512555,
+        "industry_life_and_physical_and_social_science": 1526.9986102942005
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Fable 5.1 (Max)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 22408,
+      "rank": 9,
+      "ratings": {
+        "coding": 1532.699387378877,
+        "industry_legal_and_government": 1501.6469264797288,
+        "industry_life_and_physical_and_social_science": 1525.58290693251
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.7 (High)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 64074,
+      "rank": 10,
+      "ratings": {
+        "coding": 1551.0976758195484,
+        "industry_legal_and_government": 1511.6186878098624,
+        "industry_life_and_physical_and_social_science": 1525.3887893378028
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Muse Spark 1.3 (Max)",
+      "organization": "meta",
+      "license": "Proprietary",
+      "vote_count": 30142,
+      "rank": 11,
+      "ratings": {
+        "coding": 1535.0782823259888,
+        "industry_legal_and_government": 1498.2476793969586,
+        "industry_life_and_physical_and_social_science": 1510.293905613048
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3.8 Flash (High)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 73351,
+      "rank": 12,
+      "ratings": {
+        "coding": 1529.5584159109517,
+        "industry_legal_and_government": 1495.5122025949145,
+        "industry_life_and_physical_and_social_science": 1517.1515797056313
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.6",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 88918,
+      "rank": 13,
+      "ratings": {
+        "coding": 1546.6743872557645,
+        "industry_legal_and_government": 1507.9279209546894,
+        "industry_life_and_physical_and_social_science": 1518.0997362515818
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.7",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 65152,
+      "rank": 14,
+      "ratings": {
+        "coding": 1546.3421785472697,
+        "industry_legal_and_government": 1495.406039508926,
+        "industry_life_and_physical_and_social_science": 1513.8737405929692
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Muse Spark 1.2 (xHigh)",
+      "organization": "meta",
+      "license": "Proprietary",
+      "vote_count": 18264,
+      "rank": 15,
+      "ratings": {
+        "coding": 1540.263582034193,
+        "industry_legal_and_government": 1509.5159044271263,
+        "industry_life_and_physical_and_social_science": 1514.5668421126816
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Muse Spark 1.1",
+      "organization": "meta",
+      "license": "Proprietary",
+      "vote_count": 45342,
+      "rank": 16,
+      "ratings": {
+        "coding": 1533.210784158328,
+        "industry_legal_and_government": 1497.4277932235314,
+        "industry_life_and_physical_and_social_science": 1502.7914195330266
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3.7 Flash (High)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 33087,
+      "rank": 17,
+      "ratings": {
+        "coding": 1520.5287915212784,
+        "industry_legal_and_government": 1496.8685690211914,
+        "industry_life_and_physical_and_social_science": 1513.4336944859085
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 4 Hydrogen (High)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 4743,
+      "rank": 18,
+      "ratings": {
+        "coding": 1513.7355886311484,
+        "industry_legal_and_government": 1506.2307797950807,
+        "industry_life_and_physical_and_social_science": 1501.5188851153914
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 5 (High)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 73414,
+      "rank": 19,
+      "ratings": {
+        "coding": 1531.9776794810746,
+        "industry_legal_and_government": 1499.671554562577,
+        "industry_life_and_physical_and_social_science": 1509.7655753755128
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Muse Spark",
+      "organization": "meta",
+      "license": "Proprietary",
+      "vote_count": 13972,
+      "rank": 20,
+      "ratings": {
+        "coding": 1529.0137648516975,
+        "industry_legal_and_government": 1500.889730207526,
+        "industry_life_and_physical_and_social_science": 1495.280831806214
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 5 (Max)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 35534,
+      "rank": 21,
+      "ratings": {
+        "coding": 1528.209629172357,
+        "industry_legal_and_government": 1501.882919840888,
+        "industry_life_and_physical_and_social_science": 1515.1845891349615
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Kimi K3 (Max)",
+      "organization": "moonshot",
+      "license": "Kimi K3 license",
+      "vote_count": 44364,
+      "rank": 22,
+      "ratings": {
+        "coding": 1536.9517030415013,
+        "industry_legal_and_government": 1505.7825688805165,
+        "industry_life_and_physical_and_social_science": 1516.5173462486553
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3.1 Pro Preview",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 131889,
+      "rank": 23,
+      "ratings": {
+        "coding": 1520.5169087555628,
+        "industry_legal_and_government": 1498.6074780148942,
+        "industry_life_and_physical_and_social_science": 1509.3517959272097
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3 Pro",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 41792,
+      "rank": 24,
+      "ratings": {
+        "coding": 1517.0429681688893,
+        "industry_legal_and_government": 1501.0618883313587,
+        "industry_life_and_physical_and_social_science": 1497.4328450779726
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.6 Sol (xHigh)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 43782,
+      "rank": 25,
+      "ratings": {
+        "coding": 1533.1448056832623,
+        "industry_legal_and_government": 1496.9687374974064,
+        "industry_life_and_physical_and_social_science": 1491.6693055774533
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.8-Max",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 40248,
+      "rank": 26,
+      "ratings": {
+        "coding": 1524.5768221661742,
+        "industry_legal_and_government": 1496.11325525038,
+        "industry_life_and_physical_and_social_science": 1514.5257654136262
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3.6 Flash (High)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 35275,
+      "rank": 27,
+      "ratings": {
+        "coding": 1518.1751175671575,
+        "industry_legal_and_government": 1480.6054960231272,
+        "industry_life_and_physical_and_social_science": 1495.1284561048672
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-6.1 Sol (Max)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 15857,
+      "rank": 28,
+      "ratings": {
+        "coding": 1544.4666725240531,
+        "industry_legal_and_government": 1506.0198413192875,
+        "industry_life_and_physical_and_social_science": 1499.6082637159332
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Kimi K3.1 Pro (Max)",
+      "organization": "moonshot",
+      "license": "Kimi K3.1 Pro License",
+      "vote_count": 6658,
+      "rank": 29,
+      "ratings": {
+        "coding": 1531.6964471451906,
+        "industry_legal_and_government": 1494.5310297378232,
+        "industry_life_and_physical_and_social_science": 1497.2983483695523
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-5.3 (Max)",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 34708,
+      "rank": 30,
+      "ratings": {
+        "coding": 1523.9353421240253,
+        "industry_legal_and_government": 1482.948607323151,
+        "industry_life_and_physical_and_social_science": 1509.1973293579626
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.8 (High)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 62925,
+      "rank": 31,
+      "ratings": {
+        "coding": 1533.4814316141628,
+        "industry_legal_and_government": 1495.5684559134706,
+        "industry_life_and_physical_and_social_science": 1504.0501562484303
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.5 (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 68109,
+      "rank": 32,
+      "ratings": {
+        "coding": 1518.0321725433805,
+        "industry_legal_and_government": 1496.6633166948686,
+        "industry_life_and_physical_and_social_science": 1497.6106845885665
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiMo-V2.6-Pro",
+      "organization": "xiaomi",
+      "license": "MIT",
+      "vote_count": 4045,
+      "rank": 33,
+      "ratings": {
+        "coding": 1538.8626257637002,
+        "industry_legal_and_government": 1470.7207539602573,
+        "industry_life_and_physical_and_social_science": 1495.675100448949
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3.5 Flash (High)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 47470,
+      "rank": 34,
+      "ratings": {
+        "coding": 1508.148380470377,
+        "industry_legal_and_government": 1478.4581554697834,
+        "industry_life_and_physical_and_social_science": 1489.5060819561013
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.5",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 69700,
+      "rank": 35,
+      "ratings": {
+        "coding": 1510.0519205148803,
+        "industry_legal_and_government": 1486.9603492064061,
+        "industry_life_and_physical_and_social_science": 1496.6596080024383
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3.5 Flash (Medium)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 46163,
+      "rank": 36,
+      "ratings": {
+        "coding": 1506.3483933311495,
+        "industry_legal_and_government": 1481.9246697503554,
+        "industry_life_and_physical_and_social_science": 1496.5546912612958
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-6 Astra (Max)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 20918,
+      "rank": 37,
+      "ratings": {
+        "coding": 1547.6218067059094,
+        "industry_legal_and_government": 1481.499131170333,
+        "industry_life_and_physical_and_social_science": 1491.5788171175338
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.2 Chat (20260210)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 35605,
+      "rank": 38,
+      "ratings": {
+        "coding": 1514.3810152020033,
+        "industry_legal_and_government": 1481.719459849141,
+        "industry_life_and_physical_and_social_science": 1484.3464036424507
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-5.3-Flash",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 56089,
+      "rank": 39,
+      "ratings": {
+        "coding": 1526.3207480204792,
+        "industry_legal_and_government": 1476.3018394632104,
+        "industry_life_and_physical_and_social_science": 1493.442420636096
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-5.2 (Max)",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 53978,
+      "rank": 40,
+      "ratings": {
+        "coding": 1515.5661935631451,
+        "industry_legal_and_government": 1494.9725484759288,
+        "industry_life_and_physical_and_social_science": 1498.0469849308874
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.4 (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 63928,
+      "rank": 41,
+      "ratings": {
+        "coding": 1520.7072299290921,
+        "industry_legal_and_government": 1489.6518343064308,
+        "industry_life_and_physical_and_social_science": 1487.0539531500272
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V4.1-Flash-20260910 (Max)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 13492,
+      "rank": 42,
+      "ratings": {
+        "coding": 1525.053070519998,
+        "industry_legal_and_government": 1460.7273382849753,
+        "industry_life_and_physical_and_social_science": 1489.470784537073
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.20 Beta 1",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 27577,
+      "rank": 43,
+      "ratings": {
+        "coding": 1507.7817304892196,
+        "industry_legal_and_government": 1468.4245130668755,
+        "industry_life_and_physical_and_social_science": 1478.9599855172887
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-6.1 Terra (Max)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 8278,
+      "rank": 44,
+      "ratings": {
+        "coding": 1540.9217548899474,
+        "industry_legal_and_government": 1500.0318982361741,
+        "industry_life_and_physical_and_social_science": 1483.823481179172
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.8",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 63957,
+      "rank": 45,
+      "ratings": {
+        "coding": 1528.3221501297694,
+        "industry_legal_and_government": 1497.9908729477174,
+        "industry_life_and_physical_and_social_science": 1499.5119421693048
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.7-Max-Preview",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 3888,
+      "rank": 46,
+      "ratings": {
+        "coding": 1523.7622037559395,
+        "industry_legal_and_government": 1478.2894218367096,
+        "industry_life_and_physical_and_social_science": 1484.2380205843538
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.5 Instant",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 26822,
+      "rank": 47,
+      "ratings": {
+        "coding": 1513.670560870301,
+        "industry_legal_and_government": 1475.989221528749,
+        "industry_life_and_physical_and_social_science": 1492.6641531375478
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.5 (High, 32K, 20251101)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 37227,
+      "rank": 48,
+      "ratings": {
+        "coding": 1530.1836703705676,
+        "industry_legal_and_government": 1485.8597682034083,
+        "industry_life_and_physical_and_social_science": 1491.2378349087903
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Sonnet 5.5 (xHigh)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 16925,
+      "rank": 49,
+      "ratings": {
+        "coding": 1516.996671253365,
+        "industry_legal_and_government": 1477.4147439951398,
+        "industry_life_and_physical_and_social_science": 1489.8171390529178
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3 Flash",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 31095,
+      "rank": 50,
+      "ratings": {
+        "coding": 1505.3476838242077,
+        "industry_legal_and_government": 1483.593305870509,
+        "industry_life_and_physical_and_social_science": 1487.0750873126335
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.20 Beta (Reasoning, 0309)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 65550,
+      "rank": 51,
+      "ratings": {
+        "coding": 1510.6461371519467,
+        "industry_legal_and_government": 1478.5796903997384,
+        "industry_life_and_physical_and_social_science": 1488.888407722667
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Sonnet 4.6",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 69794,
+      "rank": 52,
+      "ratings": {
+        "coding": 1528.2922698220013,
+        "industry_legal_and_government": 1483.5325787889583,
+        "industry_life_and_physical_and_social_science": 1499.7791681247195
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.20 Multi-Agent Beta (0309)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 64081,
+      "rank": 53,
+      "ratings": {
+        "coding": 1508.4036268233222,
+        "industry_legal_and_government": 1470.5782885286858,
+        "industry_life_and_physical_and_social_science": 1479.625735008307
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.5 (20251101)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 72170,
+      "rank": 54,
+      "ratings": {
+        "coding": 1522.7974838218015,
+        "industry_legal_and_government": 1482.5472130675694,
+        "industry_life_and_physical_and_social_science": 1486.8041487516998
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-6.2 Astra (Max)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 2398,
+      "rank": 55,
+      "ratings": {
+        "coding": 1522.8419741198713,
+        "industry_legal_and_government": 1466.4400757292965,
+        "industry_life_and_physical_and_social_science": 1482.7023516009729
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.6 Terra (xHigh)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 48597,
+      "rank": 56,
+      "ratings": {
+        "coding": 1517.452677262314,
+        "industry_legal_and_government": 1476.360810697574,
+        "industry_life_and_physical_and_social_science": 1476.7057268668987
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "ERNIE 5.1",
+      "organization": "baidu",
+      "license": "Proprietary",
+      "vote_count": 38932,
+      "rank": 57,
+      "ratings": {
+        "coding": 1511.8572831573133,
+        "industry_legal_and_government": 1463.4979350689114,
+        "industry_life_and_physical_and_social_science": 1485.8524535063038
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiMo-V2.5-Pro",
+      "organization": "xiaomi",
+      "license": "MIT",
+      "vote_count": 76511,
+      "rank": 58,
+      "ratings": {
+        "coding": 1520.1185542761586,
+        "industry_legal_and_government": 1475.1644782445342,
+        "industry_life_and_physical_and_social_science": 1489.8573019764597
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.5",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 39006,
+      "rank": 59,
+      "ratings": {
+        "coding": 1514.161211673235,
+        "industry_legal_and_government": 1479.1745910255759,
+        "industry_life_and_physical_and_social_science": 1483.0758271811078
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.1 (Thinking)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 65943,
+      "rank": 60,
+      "ratings": {
+        "coding": 1499.817928905204,
+        "industry_legal_and_government": 1475.8095652817342,
+        "industry_life_and_physical_and_social_science": 1478.5811485572024
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.5-Max-Preview",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 22361,
+      "rank": 61,
+      "ratings": {
+        "coding": 1513.4165671592386,
+        "industry_legal_and_government": 1475.319364813357,
+        "industry_life_and_physical_and_social_science": 1490.2659564068256
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.4",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 66931,
+      "rank": 62,
+      "ratings": {
+        "coding": 1511.3228580061113,
+        "industry_legal_and_government": 1474.5153181048581,
+        "industry_life_and_physical_and_social_science": 1478.0927642847455
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-5.1",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 66799,
+      "rank": 63,
+      "ratings": {
+        "coding": 1512.1537161539304,
+        "industry_legal_and_government": 1471.9184246960817,
+        "industry_life_and_physical_and_social_science": 1487.570109169903
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-6.2 Sol (Max)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 2541,
+      "rank": 64,
+      "ratings": {
+        "coding": 1505.89953458214,
+        "industry_life_and_physical_and_social_science": 1501.0353758860485
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V4-Pro (High, 20260813)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 9544,
+      "rank": 65,
+      "ratings": {
+        "coding": 1502.9451420804603,
+        "industry_legal_and_government": 1483.896484817491,
+        "industry_life_and_physical_and_social_science": 1486.7696535865775
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Kimi K2.6",
+      "organization": "moonshot",
+      "license": "Modified MIT",
+      "vote_count": 39440,
+      "rank": 66,
+      "ratings": {
+        "coding": 1516.142800709688,
+        "industry_legal_and_government": 1463.735944172341,
+        "industry_life_and_physical_and_social_science": 1477.224132699589
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Sonnet 5 (High)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 52790,
+      "rank": 67,
+      "ratings": {
+        "coding": 1519.264345533441,
+        "industry_legal_and_government": 1471.353831146393,
+        "industry_life_and_physical_and_social_science": 1486.5152513542282
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.6-Max-Preview",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 5369,
+      "rank": 68,
+      "ratings": {
+        "coding": 1510.4118122901896,
+        "industry_legal_and_government": 1460.8930637341732,
+        "industry_life_and_physical_and_social_science": 1483.5988258277853
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.1",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 68101,
+      "rank": 69,
+      "ratings": {
+        "coding": 1492.4116176059624,
+        "industry_legal_and_government": 1474.578686853064,
+        "industry_life_and_physical_and_social_science": 1476.8780378263134
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3 Flash (Minimal)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 89880,
+      "rank": 70,
+      "ratings": {
+        "coding": 1489.5449403586072,
+        "industry_legal_and_government": 1468.8496429983988,
+        "industry_life_and_physical_and_social_science": 1480.3578420767628
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-6 Sol (Max)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 23032,
+      "rank": 71,
+      "ratings": {
+        "coding": 1518.706627370007,
+        "industry_legal_and_government": 1464.7263894426583,
+        "industry_life_and_physical_and_social_science": 1469.9041983459865
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V4-Pro",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 56686,
+      "rank": 72,
+      "ratings": {
+        "coding": 1500.6207907595299,
+        "industry_legal_and_government": 1473.9855115117625,
+        "industry_life_and_physical_and_social_science": 1479.4892958937392
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-5",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 28939,
+      "rank": 73,
+      "ratings": {
+        "coding": 1498.3720018946283,
+        "industry_legal_and_government": 1468.0993226539572,
+        "industry_life_and_physical_and_social_science": 1478.6076577888532
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.6 (High)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 34437,
+      "rank": 74,
+      "ratings": {
+        "coding": 1508.3840048799943,
+        "industry_legal_and_government": 1456.281349849639,
+        "industry_life_and_physical_and_social_science": 1470.0587165664047
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Dola Seed 2.0 Pro",
+      "organization": "bytedance",
+      "license": "Proprietary",
+      "vote_count": 78009,
+      "rank": 75,
+      "ratings": {
+        "coding": 1513.950253131181,
+        "industry_legal_and_government": 1466.563090173181,
+        "industry_life_and_physical_and_social_science": 1472.1530981864425
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Sonnet 4.5 (High, 32K, 20250929)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 83209,
+      "rank": 76,
+      "ratings": {
+        "coding": 1518.6554670266537,
+        "industry_legal_and_government": 1463.6233336590208,
+        "industry_life_and_physical_and_social_science": 1470.873022492529
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.1 (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 41348,
+      "rank": 77,
+      "ratings": {
+        "coding": 1491.7139456802697,
+        "industry_legal_and_government": 1464.9747325089315,
+        "industry_life_and_physical_and_social_science": 1469.9282622146839
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3.5 Flash-Lite",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 34983,
+      "rank": 78,
+      "ratings": {
+        "coding": 1502.1413576078917,
+        "industry_legal_and_government": 1455.833137628877,
+        "industry_life_and_physical_and_social_science": 1477.857914276841
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.7-Plus",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 41181,
+      "rank": 79,
+      "ratings": {
+        "coding": 1499.924669263462,
+        "industry_legal_and_government": 1455.5170843335095,
+        "industry_life_and_physical_and_social_science": 1471.0531145797756
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Sonnet 4.5 (20250929)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 81966,
+      "rank": 80,
+      "ratings": {
+        "coding": 1512.235566063615,
+        "industry_legal_and_government": 1463.8810762313096,
+        "industry_life_and_physical_and_social_science": 1470.6675606641215
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V4-Pro Preview (High)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 54082,
+      "rank": 81,
+      "ratings": {
+        "coding": 1487.8418279438379,
+        "industry_legal_and_government": 1470.8452740008765,
+        "industry_life_and_physical_and_social_science": 1480.2669069661729
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hy3",
+      "organization": "tencent",
+      "license": "Apache 2.0",
+      "vote_count": 16080,
+      "rank": 82,
+      "ratings": {
+        "coding": 1503.8943280854019,
+        "industry_legal_and_government": 1452.8700001944853,
+        "industry_life_and_physical_and_social_science": 1479.8601123887274
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.6 Luna (xHigh)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 40430,
+      "rank": 83,
+      "ratings": {
+        "coding": 1502.916438336993,
+        "industry_legal_and_government": 1459.9638333281964,
+        "industry_life_and_physical_and_social_science": 1461.8370928091247
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 4 31B",
+      "organization": "google",
+      "license": "Apache 2.0",
+      "vote_count": 6121,
+      "rank": 84,
+      "ratings": {
+        "coding": 1502.3850023538607,
+        "industry_legal_and_government": 1454.6598948671808,
+        "industry_life_and_physical_and_social_science": 1473.0755752324862
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.3 Chat",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 33963,
+      "rank": 85,
+      "ratings": {
+        "coding": 1496.5466702693457,
+        "industry_legal_and_government": 1466.755062870022,
+        "industry_life_and_physical_and_social_science": 1461.8320015599547
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.1 (Thinking 16K, 20250805)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 49357,
+      "rank": 86,
+      "ratings": {
+        "coding": 1511.2906973529866,
+        "industry_legal_and_government": 1462.945943518484,
+        "industry_life_and_physical_and_social_science": 1470.214647778665
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Kimi K2.5 (Thinking)",
+      "organization": "moonshot",
+      "license": "Modified MIT",
+      "vote_count": 73661,
+      "rank": 87,
+      "ratings": {
+        "coding": 1502.267996996301,
+        "industry_legal_and_government": 1446.199376946539,
+        "industry_life_and_physical_and_social_science": 1469.5320303631959
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Step 5 Preview",
+      "organization": "stepfun",
+      "license": "Proprietary",
+      "vote_count": 12285,
+      "rank": 88,
+      "ratings": {
+        "coding": 1504.160626624091,
+        "industry_legal_and_government": 1442.5736136266478,
+        "industry_life_and_physical_and_social_science": 1475.8223201565863
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "ERNIE-5.0-Preview (1203)",
+      "organization": "baidu",
+      "license": "Proprietary",
+      "vote_count": 9729,
+      "rank": 89,
+      "ratings": {
+        "coding": 1470.723485225512,
+        "industry_legal_and_government": 1457.3725620524033,
+        "industry_life_and_physical_and_social_science": 1480.282598047667
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiMo-V2-Pro",
+      "organization": "xiaomi",
+      "license": "Proprietary",
+      "vote_count": 25162,
+      "rank": 90,
+      "ratings": {
+        "coding": 1502.9178813198755,
+        "industry_legal_and_government": 1457.110680754105,
+        "industry_life_and_physical_and_social_science": 1480.069808317129
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4.1 (20250805)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 76884,
+      "rank": 91,
+      "ratings": {
+        "coding": 1504.4331458734628,
+        "industry_legal_and_government": 1457.2992316308791,
+        "industry_life_and_physical_and_social_science": 1463.2359444714452
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiMo-V2.6-Flash",
+      "organization": "xiaomi",
+      "license": "MIT",
+      "vote_count": 28828,
+      "rank": 92,
+      "ratings": {
+        "coding": 1509.96536412274,
+        "industry_legal_and_government": 1441.8444989028753,
+        "industry_life_and_physical_and_social_science": 1462.2660068703376
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.4 mini (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 62615,
+      "rank": 93,
+      "ratings": {
+        "coding": 1494.7368570801045,
+        "industry_legal_and_government": 1455.533216038502,
+        "industry_life_and_physical_and_social_science": 1464.6992806609358
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "ERNIE 5.0 (0110)",
+      "organization": "baidu",
+      "license": "Proprietary",
+      "vote_count": 36124,
+      "rank": 94,
+      "ratings": {
+        "coding": 1489.4893123929482,
+        "industry_legal_and_government": 1437.3178766384294,
+        "industry_life_and_physical_and_social_science": 1456.593970382757
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 2.5 Pro",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 124685,
+      "rank": 95,
+      "ratings": {
+        "coding": 1464.298753062013,
+        "industry_legal_and_government": 1470.4322946756142,
+        "industry_life_and_physical_and_social_science": 1471.840736803866
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4.5 Preview (2025-02-27)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 14547,
+      "rank": 96,
+      "ratings": {
+        "coding": 1457.7699791996934,
+        "industry_legal_and_government": 1468.5681144818382,
+        "industry_life_and_physical_and_social_science": 1448.3739089601004
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.7 (xHigh)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 25453,
+      "rank": 97,
+      "ratings": {
+        "coding": 1490.9660120148992,
+        "industry_legal_and_government": 1462.080485726235,
+        "industry_life_and_physical_and_social_science": 1464.8669133440003
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.6-Plus",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 47471,
+      "rank": 98,
+      "ratings": {
+        "coding": 1496.2951757311057,
+        "industry_legal_and_government": 1446.3589753350643,
+        "industry_life_and_physical_and_social_science": 1453.315059501145
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "ChatGPT-4o Latest (20250326)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 81621,
+      "rank": 99,
+      "ratings": {
+        "coding": 1466.7847654992065,
+        "industry_legal_and_government": 1459.8628989798099,
+        "industry_life_and_physical_and_social_science": 1459.5223502067824
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-6 Luna (Max)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 118208,
+      "rank": 100,
+      "ratings": {
+        "coding": 1504.0274786315508,
+        "industry_legal_and_government": 1445.047319034033,
+        "industry_life_and_physical_and_social_science": 1453.4040643993874
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Inkling",
+      "organization": "thinky",
+      "license": "Apache 2.0",
+      "vote_count": 54140,
+      "rank": 101,
+      "ratings": {
+        "coding": 1494.0560962546415,
+        "industry_legal_and_government": 1443.9878628158012,
+        "industry_life_and_physical_and_social_science": 1461.2652938178442
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.3",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 69985,
+      "rank": 102,
+      "ratings": {
+        "coding": 1486.9743123734938,
+        "industry_legal_and_government": 1438.602434646135,
+        "industry_life_and_physical_and_social_science": 1458.2268667274773
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.5-397B-A17B",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 97351,
+      "rank": 103,
+      "ratings": {
+        "coding": 1490.47109810165,
+        "industry_legal_and_government": 1447.4750502447691,
+        "industry_life_and_physical_and_social_science": 1465.142534211759
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4.7",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 12145,
+      "rank": 104,
+      "ratings": {
+        "coding": 1484.0897582304024,
+        "industry_legal_and_government": 1454.0292840030284,
+        "industry_life_and_physical_and_social_science": 1472.4236864197858
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V4-Flash Preview (High)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 51054,
+      "rank": 105,
+      "ratings": {
+        "coding": 1479.9934013532638,
+        "industry_legal_and_government": 1456.925619807852,
+        "industry_life_and_physical_and_social_science": 1458.9148583507701
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.1",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 44144,
+      "rank": 106,
+      "ratings": {
+        "coding": 1475.4224563248508,
+        "industry_legal_and_government": 1452.0265707595695,
+        "industry_life_and_physical_and_social_science": 1455.8870768822542
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 4 26B A4B",
+      "organization": "google",
+      "license": "Apache 2.0",
+      "vote_count": 6063,
+      "rank": 107,
+      "ratings": {
+        "coding": 1482.8676460967508,
+        "industry_legal_and_government": 1464.4955724908382,
+        "industry_life_and_physical_and_social_science": 1453.7602707494711
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.2 (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 49202,
+      "rank": 108,
+      "ratings": {
+        "coding": 1489.0944690825936,
+        "industry_legal_and_government": 1448.2111327903858,
+        "industry_life_and_physical_and_social_science": 1452.1315228769622
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "LongCat-Flash-Chat Exp (2602)",
+      "organization": "meituan",
+      "license": "Proprietary",
+      "vote_count": 28971,
+      "rank": 109,
+      "ratings": {
+        "coding": 1500.5792338925048,
+        "industry_legal_and_government": 1428.6242379602204,
+        "industry_life_and_physical_and_social_science": 1454.6112052215844
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V4-Flash",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 51238,
+      "rank": 110,
+      "ratings": {
+        "coding": 1484.0597095939233,
+        "industry_legal_and_government": 1447.9741590030612,
+        "industry_life_and_physical_and_social_science": 1456.6100778232294
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.2",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 82756,
+      "rank": 111,
+      "ratings": {
+        "coding": 1481.8632298627876,
+        "industry_legal_and_government": 1443.9242842233452,
+        "industry_life_and_physical_and_social_science": 1450.6815393400104
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5 (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 31631,
+      "rank": 112,
+      "ratings": {
+        "coding": 1471.5460564762848,
+        "industry_legal_and_government": 1460.670424595307,
+        "industry_life_and_physical_and_social_science": 1446.5650919918285
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.8-27B",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 36651,
+      "rank": 113,
+      "ratings": {
+        "coding": 1498.2294261310476,
+        "industry_legal_and_government": 1438.474233405425,
+        "industry_life_and_physical_and_social_science": 1463.6371949732945
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-Max-Preview",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 27290,
+      "rank": 114,
+      "ratings": {
+        "coding": 1480.5204938965753,
+        "industry_legal_and_government": 1431.3525415866407,
+        "industry_life_and_physical_and_social_science": 1456.7371634951824
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiniMax-M3",
+      "organization": "minimax",
+      "license": "MiniMax Community License",
+      "vote_count": 76817,
+      "rank": 115,
+      "ratings": {
+        "coding": 1492.1045970462956,
+        "industry_legal_and_government": 1431.5908515229594,
+        "industry_life_and_physical_and_social_science": 1457.7277848977712
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Beam 1.0 501B A23B",
+      "organization": "reflection",
+      "license": "Apache 2.0",
+      "vote_count": 3991,
+      "rank": 116,
+      "ratings": {
+        "coding": 1504.8728139232985,
+        "industry_legal_and_government": 1432.2728335542497,
+        "industry_life_and_physical_and_social_science": 1443.2792962265144
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiMo-V2.5",
+      "organization": "xiaomi",
+      "license": "MIT",
+      "vote_count": 46693,
+      "rank": 117,
+      "ratings": {
+        "coding": 1491.2281320045258,
+        "industry_legal_and_government": 1429.8610633248304,
+        "industry_life_and_physical_and_social_science": 1452.5340377445102
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 3.1 Flash-Lite Preview",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 63448,
+      "rank": 118,
+      "ratings": {
+        "coding": 1457.523053647889,
+        "industry_legal_and_government": 1440.5355884655523,
+        "industry_life_and_physical_and_social_science": 1450.4560466485214
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "o3 (2025-04-16)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 58795,
+      "rank": 119,
+      "ratings": {
+        "coding": 1460.178552673552,
+        "industry_legal_and_government": 1452.5073953503997,
+        "industry_life_and_physical_and_social_science": 1455.717007676286
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Kimi K2.5 (Instant)",
+      "organization": "moonshot",
+      "license": "Modified MIT",
+      "vote_count": 8317,
+      "rank": 120,
+      "ratings": {
+        "coding": 1504.4435158137408,
+        "industry_legal_and_government": 1440.6588645813931,
+        "industry_life_and_physical_and_social_science": 1454.9376316680782
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4.1 Fast (Reasoning)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 57026,
+      "rank": 121,
+      "ratings": {
+        "coding": 1461.302401262437,
+        "industry_legal_and_government": 1427.5765968008695,
+        "industry_life_and_physical_and_social_science": 1447.216011819421
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiMo-V2-Omni",
+      "organization": "xiaomi",
+      "license": "Proprietary",
+      "vote_count": 20352,
+      "rank": 122,
+      "ratings": {
+        "coding": 1488.1971886787574,
+        "industry_legal_and_government": 1437.6846161644512,
+        "industry_life_and_physical_and_social_science": 1452.5995465557394
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Kimi K2 Thinking Turbo",
+      "organization": "moonshot",
+      "license": "Modified MIT",
+      "vote_count": 62866,
+      "rank": 123,
+      "ratings": {
+        "coding": 1486.357667524771,
+        "industry_legal_and_government": 1434.6802065867105,
+        "industry_life_and_physical_and_social_science": 1441.3934713152516
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "NVIDIA-Nemotron-3-Ultra-550B-A55B (NVFP4)",
+      "organization": "nvidia",
+      "license": "OpenMDW-1.1",
+      "vote_count": 11366,
+      "rank": 124,
+      "ratings": {
+        "coding": 1473.50766087165,
+        "industry_legal_and_government": 1427.194382127038,
+        "industry_life_and_physical_and_social_science": 1446.9071592641171
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "amazon-nova-experimental-chat (26-02-10)",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 3500,
+      "rank": 125,
+      "ratings": {
+        "coding": 1486.084567205995,
+        "industry_legal_and_government": 1443.5437620541284,
+        "industry_life_and_physical_and_social_science": 1429.5058644272724
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5 Chat",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 31093,
+      "rank": 126,
+      "ratings": {
+        "coding": 1461.6040876451234,
+        "industry_legal_and_government": 1458.0644913532228,
+        "industry_life_and_physical_and_social_science": 1446.3385755257295
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Medium 3.5",
+      "organization": "mistral",
+      "license": "Modified MIT",
+      "vote_count": 11634,
+      "rank": 127,
+      "ratings": {
+        "coding": 1478.2788618963355,
+        "industry_legal_and_government": 1440.0094139500156,
+        "industry_life_and_physical_and_social_science": 1436.3398222474943
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4 (Thinking 16K, 20250514)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 35833,
+      "rank": 128,
+      "ratings": {
+        "coding": 1498.3444124763037,
+        "industry_legal_and_government": 1433.1846768571377,
+        "industry_life_and_physical_and_social_science": 1437.4591977962461
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Muse Glimmer",
+      "organization": "meta",
+      "license": "Apache-2.0",
+      "vote_count": 3784,
+      "rank": 129,
+      "ratings": {
+        "coding": 1480.672019494125,
+        "industry_legal_and_government": 1435.6494838272242,
+        "industry_life_and_physical_and_social_science": 1437.2517253222823
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3.2-Exp (Thinking)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 8966,
+      "rank": 130,
+      "ratings": {
+        "coding": 1474.8663298170727,
+        "industry_legal_and_government": 1423.5074238438601,
+        "industry_life_and_physical_and_social_science": 1450.3020767194828
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3.2",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 47729,
+      "rank": 131,
+      "ratings": {
+        "coding": 1469.5388016182178,
+        "industry_legal_and_government": 1432.043547989892,
+        "industry_life_and_physical_and_social_science": 1452.5851657073317
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4.6",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 35636,
+      "rank": 132,
+      "ratings": {
+        "coding": 1458.1840142951805,
+        "industry_legal_and_government": 1435.9002443079853,
+        "industry_life_and_physical_and_social_science": 1445.9686641798382
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-Max (2025-09-23)",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 9002,
+      "rank": 133,
+      "ratings": {
+        "coding": 1472.8871001323641,
+        "industry_legal_and_government": 1409.7578842915211,
+        "industry_life_and_physical_and_social_science": 1430.192396017456
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Large 4",
+      "organization": "mistral",
+      "license": "Modified MIT",
+      "vote_count": 9831,
+      "rank": 134,
+      "ratings": {
+        "coding": 1485.8272017499899,
+        "industry_legal_and_government": 1437.9852140448252,
+        "industry_life_and_physical_and_social_science": 1451.1158002138195
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3.2 (Thinking)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 41721,
+      "rank": 135,
+      "ratings": {
+        "coding": 1475.5897093071862,
+        "industry_legal_and_government": 1428.830657542067,
+        "industry_life_and_physical_and_social_science": 1437.757126552383
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-235B-A22B-Instruct (2507)",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 97527,
+      "rank": 136,
+      "ratings": {
+        "coding": 1471.9630566929782,
+        "industry_legal_and_government": 1433.0080849599854,
+        "industry_life_and_physical_and_social_science": 1443.9587421888186
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3.2-Exp",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 11947,
+      "rank": 137,
+      "ratings": {
+        "coding": 1467.1005235667872,
+        "industry_legal_and_government": 1414.6381560238706,
+        "industry_life_and_physical_and_social_science": 1436.6914245749451
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-R1 (0528)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 18152,
+      "rank": 138,
+      "ratings": {
+        "coding": 1463.8959619035018,
+        "industry_legal_and_government": 1415.7827715840365,
+        "industry_life_and_physical_and_social_science": 1425.8322696184664
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Haiku 5.5 (High)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 17433,
+      "rank": 139,
+      "ratings": {
+        "coding": 1487.1989787975235,
+        "industry_legal_and_government": 1411.7800657583648,
+        "industry_life_and_physical_and_social_science": 1449.3548017881546
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4 Fast (Non-Reasoning)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 6326,
+      "rank": 140,
+      "ratings": {
+        "coding": 1457.1769875595019,
+        "industry_legal_and_government": 1422.9343731216682,
+        "industry_life_and_physical_and_social_science": 1428.597361029114
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Kimi K2 Preview (0905)",
+      "organization": "moonshot",
+      "license": "Modified MIT",
+      "vote_count": 11568,
+      "rank": 141,
+      "ratings": {
+        "coding": 1467.8239312799674,
+        "industry_legal_and_government": 1448.8526007868918,
+        "industry_life_and_physical_and_social_science": 1438.1666832282276
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Kimi K2 Preview (0711)",
+      "organization": "moonshot",
+      "license": "Modified MIT",
+      "vote_count": 27090,
+      "rank": 142,
+      "ratings": {
+        "coding": 1459.377354336974,
+        "industry_legal_and_government": 1418.5004072781612,
+        "industry_life_and_physical_and_social_science": 1430.662156154112
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "ERNIE-5.0-Preview (1022)",
+      "organization": "baidu",
+      "license": "Proprietary",
+      "vote_count": 4739,
+      "rank": 143,
+      "ratings": {
+        "coding": 1430.8976005296017,
+        "industry_legal_and_government": 1448.2323923490735,
+        "industry_life_and_physical_and_social_science": 1439.784982501797
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3.1",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 14574,
+      "rank": 144,
+      "ratings": {
+        "coding": 1447.6614208990286,
+        "industry_legal_and_government": 1418.867657629622,
+        "industry_life_and_physical_and_social_science": 1434.6025052777713
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.5-122B-A10B",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 29427,
+      "rank": 145,
+      "ratings": {
+        "coding": 1458.625950934519,
+        "industry_legal_and_government": 1423.9487982893415,
+        "industry_life_and_physical_and_social_science": 1436.0003585368345
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3.1-Terminus (Thinking)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 3357,
+      "rank": 146,
+      "ratings": {
+        "coding": 1459.638517982317,
+        "industry_legal_and_government": 1463.802785917895,
+        "industry_life_and_physical_and_social_science": 1443.2774647706294
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3.1 (Thinking)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 11430,
+      "rank": 147,
+      "ratings": {
+        "coding": 1455.0691844605662,
+        "industry_legal_and_government": 1421.9222831777925,
+        "industry_life_and_physical_and_social_science": 1427.8809596773335
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)",
+      "organization": "nvidia",
+      "license": "OpenMDW-1.1",
+      "vote_count": 4035,
+      "rank": 148,
+      "ratings": {
+        "coding": 1460.07085307662,
+        "industry_legal_and_government": 1378.8873917463056,
+        "industry_life_and_physical_and_social_science": 1444.9782079495128
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3.1-Terminus",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 3602,
+      "rank": 149,
+      "ratings": {
+        "coding": 1439.821554408983,
+        "industry_legal_and_government": 1417.7087295290962,
+        "industry_life_and_physical_and_social_science": 1451.0272147329633
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Large 3",
+      "organization": "mistral",
+      "license": "Apache 2.0",
+      "vote_count": 88402,
+      "rank": 150,
+      "ratings": {
+        "coding": 1471.1378645732411,
+        "industry_legal_and_government": 1422.777656065668,
+        "industry_life_and_physical_and_social_science": 1428.5512587553533
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiniMax-M2.7",
+      "organization": "minimax",
+      "license": "Modified MIT",
+      "vote_count": 89192,
+      "rank": 151,
+      "ratings": {
+        "coding": 1479.9767058280995,
+        "industry_legal_and_government": 1416.5438065238332,
+        "industry_life_and_physical_and_social_science": 1431.289749652561
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4.1 (2025-04-14)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 50219,
+      "rank": 152,
+      "ratings": {
+        "coding": 1455.599566886467,
+        "industry_legal_and_government": 1437.211938802076,
+        "industry_life_and_physical_and_social_science": 1424.2062006451483
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Opus 4 (20250514)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 42956,
+      "rank": 153,
+      "ratings": {
+        "coding": 1464.617301084243,
+        "industry_legal_and_government": 1437.7405150128984,
+        "industry_life_and_physical_and_social_science": 1429.7515552404082
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Haiku 4.5 (20251001)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 153650,
+      "rank": 154,
+      "ratings": {
+        "coding": 1481.5159252329272,
+        "industry_legal_and_government": 1415.795564413767,
+        "industry_life_and_physical_and_social_science": 1430.7862218128992
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-VL-235B-A22B-Instruct",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 11282,
+      "rank": 155,
+      "ratings": {
+        "coding": 1463.1083359308668,
+        "industry_legal_and_government": 1431.0755797382649,
+        "industry_life_and_physical_and_social_science": 1441.7753465490284
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Inkling 2 Small",
+      "organization": "thinky",
+      "license": "Apache 2.0",
+      "vote_count": 2678,
+      "rank": 156,
+      "ratings": {
+        "coding": 1485.428301428099,
+        "industry_life_and_physical_and_social_science": 1423.211023707551
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "amazon-nova-experimental-chat (26-01-10)",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 3513,
+      "rank": 157,
+      "ratings": {
+        "coding": 1480.9724447563135,
+        "industry_legal_and_government": 1397.170611937865,
+        "industry_life_and_physical_and_social_science": 1430.8517618100905
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 3 Preview (02-24)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 32479,
+      "rank": 158,
+      "ratings": {
+        "coding": 1442.2981356610544,
+        "industry_legal_and_government": 1424.9460510321924,
+        "industry_life_and_physical_and_social_science": 1417.8419723289055
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4.5",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 23747,
+      "rank": 159,
+      "ratings": {
+        "coding": 1454.9937088209026,
+        "industry_legal_and_government": 1417.3410352827318,
+        "industry_life_and_physical_and_social_science": 1424.3313690119514
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4 (0709)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 39568,
+      "rank": 160,
+      "ratings": {
+        "coding": 1435.274729387772,
+        "industry_legal_and_government": 1423.251817815154,
+        "industry_life_and_physical_and_social_science": 1434.4828992556984
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 2.5 Flash",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 124831,
+      "rank": 161,
+      "ratings": {
+        "coding": 1423.6760513480947,
+        "industry_legal_and_government": 1426.0361689707474,
+        "industry_life_and_physical_and_social_science": 1430.3020732262455
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hy3 preview",
+      "organization": "tencent",
+      "license": "tencent-hunyuan-community",
+      "vote_count": 6791,
+      "rank": 162,
+      "ratings": {
+        "coding": 1452.2811171593871,
+        "industry_legal_and_government": 1445.5195690943824,
+        "industry_life_and_physical_and_social_science": 1430.831731250516
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.5-27B",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 28359,
+      "rank": 163,
+      "ratings": {
+        "coding": 1451.478742378405,
+        "industry_legal_and_government": 1405.8802034888322,
+        "industry_life_and_physical_and_social_science": 1440.5864185931966
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Medium 3.1 (2508)",
+      "organization": "mistral",
+      "license": "Proprietary",
+      "vote_count": 94660,
+      "rank": 164,
+      "ratings": {
+        "coding": 1453.4059661173892,
+        "industry_legal_and_government": 1416.9964935584421,
+        "industry_life_and_physical_and_social_science": 1424.5687209777639
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Inkling-Small",
+      "organization": "thinky",
+      "license": "Apache 2.0",
+      "vote_count": 37463,
+      "rank": 165,
+      "ratings": {
+        "coding": 1472.4974359997946,
+        "industry_legal_and_government": 1396.168421507642,
+        "industry_life_and_physical_and_social_science": 1418.0294659325552
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 4 Fast (Reasoning)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 18189,
+      "rank": 166,
+      "ratings": {
+        "coding": 1439.0055824619467,
+        "industry_legal_and_government": 1425.42989265315,
+        "industry_life_and_physical_and_social_science": 1436.0784555787725
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 2.5 Flash Preview (09-2025)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 32848,
+      "rank": 167,
+      "ratings": {
+        "coding": 1427.6156081966105,
+        "industry_legal_and_government": 1426.1372339743966,
+        "industry_life_and_physical_and_social_science": 1434.4768184667387
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "o1 (2024-12-17)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 27807,
+      "rank": 168,
+      "ratings": {
+        "coding": 1432.6757149183882,
+        "industry_legal_and_government": 1406.6430763555077,
+        "industry_life_and_physical_and_social_science": 1410.7214484677518
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Sonnet 4 (Thinking 32K, 20250514)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 34067,
+      "rank": 169,
+      "ratings": {
+        "coding": 1474.4809133419903,
+        "industry_legal_and_government": 1405.9320617699248,
+        "industry_life_and_physical_and_social_science": 1416.088521636125
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-235B-A22B (Non-Thinking)",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 37410,
+      "rank": 170,
+      "ratings": {
+        "coding": 1444.4002318640282,
+        "industry_legal_and_government": 1404.5559733933346,
+        "industry_life_and_physical_and_social_science": 1416.182771368536
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5.4 nano (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 61480,
+      "rank": 171,
+      "ratings": {
+        "coding": 1459.6043778601966,
+        "industry_legal_and_government": 1400.6135601434298,
+        "industry_life_and_physical_and_social_science": 1414.8025649392762
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "LongCat-Flash-Chat",
+      "organization": "meituan",
+      "license": "MIT",
+      "vote_count": 11124,
+      "rank": 172,
+      "ratings": {
+        "coding": 1471.8056587688266,
+        "industry_legal_and_government": 1395.9061350475477,
+        "industry_life_and_physical_and_social_science": 1403.9436591451988
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-235B-A22B-Thinking (2507)",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 8813,
+      "rank": 173,
+      "ratings": {
+        "coding": 1442.0302084410982,
+        "industry_legal_and_government": 1397.2805165359632,
+        "industry_life_and_physical_and_social_science": 1412.5655479348613
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-Next-80B-A3B-Instruct",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 22677,
+      "rank": 174,
+      "ratings": {
+        "coding": 1444.1524954608267,
+        "industry_legal_and_government": 1408.4504620542507,
+        "industry_life_and_physical_and_social_science": 1416.602626252485
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-R1",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 18524,
+      "rank": 175,
+      "ratings": {
+        "coding": 1443.796216181086,
+        "industry_legal_and_government": 1398.8235856733086,
+        "industry_life_and_physical_and_social_science": 1410.8576640468614
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.5-Flash",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 61011,
+      "rank": 176,
+      "ratings": {
+        "coding": 1435.5730969351575,
+        "industry_legal_and_government": 1399.7547857491597,
+        "industry_life_and_physical_and_social_science": 1418.450941264772
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3 (0324)",
+      "organization": "deepseek",
+      "license": "MIT",
+      "vote_count": 44904,
+      "rank": 177,
+      "ratings": {
+        "coding": 1427.855092973698,
+        "industry_legal_and_government": 1409.4529779562151,
+        "industry_life_and_physical_and_social_science": 1413.9808191292682
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-VL-235B-A22B-Thinking",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 7825,
+      "rank": 178,
+      "ratings": {
+        "coding": 1452.1584523794386,
+        "industry_legal_and_government": 1403.9609120990822,
+        "industry_life_and_physical_and_social_science": 1406.8867888831448
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hunyuan Vision 1.5 Thinking",
+      "organization": "tencent",
+      "license": "Proprietary",
+      "vote_count": 2158,
+      "rank": 179,
+      "ratings": {
+        "coding": 1436.1572051131777,
+        "industry_life_and_physical_and_social_science": 1399.1507864157493
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3.5-35B-A3B",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 30115,
+      "rank": 180,
+      "ratings": {
+        "coding": 1434.7086930759192,
+        "industry_legal_and_government": 1399.151072184507,
+        "industry_life_and_physical_and_social_science": 1415.8512902411242
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Step-3.5-Flash",
+      "organization": "stepfun",
+      "license": "Apache 2.0",
+      "vote_count": 59627,
+      "rank": 181,
+      "ratings": {
+        "coding": 1448.6367902177562,
+        "industry_legal_and_government": 1394.7885777871154,
+        "industry_life_and_physical_and_social_science": 1404.5462353513553
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "amazon-nova-experimental-chat (12-10)",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 3713,
+      "rank": 182,
+      "ratings": {
+        "coding": 1435.6705885415226,
+        "industry_legal_and_government": 1398.8052718364938,
+        "industry_life_and_physical_and_social_science": 1418.479804637228
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiMo-V2-Flash (Non-Thinking)",
+      "organization": "xiaomi",
+      "license": "MIT",
+      "vote_count": 47679,
+      "rank": 183,
+      "ratings": {
+        "coding": 1447.245242292729,
+        "industry_legal_and_government": 1390.8992817152277,
+        "industry_life_and_physical_and_social_science": 1404.7728072780224
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude Sonnet 4 (20250514)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 39103,
+      "rank": 184,
+      "ratings": {
+        "coding": 1449.004378980047,
+        "industry_legal_and_government": 1408.8365684825221,
+        "industry_life_and_physical_and_social_science": 1410.084331969976
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "o4-mini (2025-04-16)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 44777,
+      "rank": 185,
+      "ratings": {
+        "coding": 1433.0277812489203,
+        "industry_legal_and_government": 1398.784696333189,
+        "industry_life_and_physical_and_social_science": 1404.184437030577
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiniMax-M2.5",
+      "organization": "minimax",
+      "license": "Modified MIT",
+      "vote_count": 42365,
+      "rank": 186,
+      "ratings": {
+        "coding": 1446.3781678690184,
+        "industry_legal_and_government": 1404.0325072684122,
+        "industry_life_and_physical_and_social_science": 1409.38789344076
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5 mini (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 26698,
+      "rank": 187,
+      "ratings": {
+        "coding": 1432.340957716944,
+        "industry_legal_and_government": 1397.6270308180356,
+        "industry_life_and_physical_and_social_science": 1397.8807544615252
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "o1-preview",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 31122,
+      "rank": 188,
+      "ratings": {
+        "coding": 1415.3619826728686,
+        "industry_legal_and_government": 1390.9295546468857,
+        "industry_life_and_physical_and_social_science": 1389.6446617485929
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude 3.7 Sonnet (Thinking 32K, 20250219)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 38126,
+      "rank": 189,
+      "ratings": {
+        "coding": 1452.15989452931,
+        "industry_legal_and_government": 1396.4646439391577,
+        "industry_life_and_physical_and_social_science": 1401.9026153182876
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Solar Pro 4",
+      "organization": "upstage",
+      "license": "Proprietary",
+      "vote_count": 26976,
+      "rank": 190,
+      "ratings": {
+        "coding": 1460.9854781715276,
+        "industry_legal_and_government": 1383.1375098733627,
+        "industry_life_and_physical_and_social_science": 1402.568793785955
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-Coder-480B-A35B-Instruct",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 25143,
+      "rank": 191,
+      "ratings": {
+        "coding": 1457.1171297998935,
+        "industry_legal_and_government": 1399.6952682859442,
+        "industry_life_and_physical_and_social_science": 1394.5160233744616
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Medium 3 (2505)",
+      "organization": "mistral",
+      "license": "Proprietary",
+      "vote_count": 32745,
+      "rank": 192,
+      "ratings": {
+        "coding": 1432.3271353738423,
+        "industry_legal_and_government": 1409.6855526208974,
+        "industry_life_and_physical_and_social_science": 1408.3679720881516
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hunyuan T1 (20250711)",
+      "organization": "tencent",
+      "license": "Proprietary",
+      "vote_count": 4585,
+      "rank": 193,
+      "ratings": {
+        "coding": 1400.807523519336,
+        "industry_legal_and_government": 1406.386550466014,
+        "industry_life_and_physical_and_social_science": 1422.903219913746
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiMo-V2-Flash (Thinking)",
+      "organization": "xiaomi",
+      "license": "MIT",
+      "vote_count": 11044,
+      "rank": 194,
+      "ratings": {
+        "coding": 1432.1598007767643,
+        "industry_legal_and_government": 1396.5317841369515,
+        "industry_life_and_physical_and_social_science": 1399.084280584518
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiniMax-M2.1 Preview",
+      "organization": "minimax",
+      "license": "MIT",
+      "vote_count": 17092,
+      "rank": 195,
+      "ratings": {
+        "coding": 1437.6993588931928,
+        "industry_legal_and_government": 1395.6626566268174,
+        "industry_life_and_physical_and_social_science": 1405.0020015227665
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hunyuan TurboS (20250416)",
+      "organization": "tencent",
+      "license": "Proprietary",
+      "vote_count": 10618,
+      "rank": 196,
+      "ratings": {
+        "coding": 1394.4491593292278,
+        "industry_legal_and_government": 1382.654279087637,
+        "industry_life_and_physical_and_social_science": 1413.9761075561917
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4.1 mini (2025-04-14)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 38647,
+      "rank": 197,
+      "ratings": {
+        "coding": 1432.9726781554327,
+        "industry_legal_and_government": 1396.4393859729153,
+        "industry_life_and_physical_and_social_science": 1384.5513916078953
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-30B-A3B-Instruct (2507)",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 23267,
+      "rank": 198,
+      "ratings": {
+        "coding": 1437.7180226737437,
+        "industry_legal_and_government": 1384.0472650322426,
+        "industry_life_and_physical_and_social_science": 1395.0741040244682
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 2.5 Flash-Lite Preview (Non-Thinking, 09-2025)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 47166,
+      "rank": 199,
+      "ratings": {
+        "coding": 1397.560923036756,
+        "industry_legal_and_government": 1396.6388066955005,
+        "industry_life_and_physical_and_social_science": 1402.491931138554
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Trinity Large Preview",
+      "organization": "",
+      "license": "Apache 2.0",
+      "vote_count": 30949,
+      "rank": 200,
+      "ratings": {
+        "coding": 1443.4422424995917,
+        "industry_legal_and_government": 1393.9611047491107,
+        "industry_life_and_physical_and_social_science": 1404.498414090151
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4.6V",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 2820,
+      "rank": 201,
+      "ratings": {
+        "coding": 1417.168081387034,
+        "industry_legal_and_government": 1400.632485407466,
+        "industry_life_and_physical_and_social_science": 1401.0388389969505
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 2.5 Flash-Lite Preview (Thinking, 06-17)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 32327,
+      "rank": 202,
+      "ratings": {
+        "coding": 1382.5884676500204,
+        "industry_legal_and_government": 1383.6805902414449,
+        "industry_life_and_physical_and_social_science": 1385.4679642293
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-235B-A22B",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 25921,
+      "rank": 203,
+      "ratings": {
+        "coding": 1431.4300634519934,
+        "industry_legal_and_government": 1365.7608173240988,
+        "industry_life_and_physical_and_social_science": 1383.619257910489
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude 3.5 Sonnet (20241022)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 87748,
+      "rank": 204,
+      "ratings": {
+        "coding": 1435.787434564832,
+        "industry_legal_and_government": 1382.7056903536775,
+        "industry_life_and_physical_and_social_science": 1376.3034138817975
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen2.5-Max",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 32481,
+      "rank": 205,
+      "ratings": {
+        "coding": 1401.3108529384237,
+        "industry_legal_and_government": 1387.6070150283158,
+        "industry_life_and_physical_and_social_science": 1389.7745760935832
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4.5-Air",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 30588,
+      "rank": 206,
+      "ratings": {
+        "coding": 1426.963063332618,
+        "industry_legal_and_government": 1371.801635012981,
+        "industry_life_and_physical_and_social_science": 1397.2236576282644
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude 3.7 Sonnet (20250219)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 42548,
+      "rank": 207,
+      "ratings": {
+        "coding": 1431.4847648674408,
+        "industry_legal_and_government": 1394.2463501949278,
+        "industry_life_and_physical_and_social_science": 1384.7223730618423
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-Next-80B-A3B-Thinking",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 13445,
+      "rank": 208,
+      "ratings": {
+        "coding": 1421.2706940393878,
+        "industry_legal_and_government": 1361.3110634464633,
+        "industry_life_and_physical_and_social_science": 1382.9011836927345
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Trinity Large Thinking",
+      "organization": "",
+      "license": "Apache 2.0",
+      "vote_count": 29925,
+      "rank": 209,
+      "ratings": {
+        "coding": 1412.3171115170262,
+        "industry_legal_and_government": 1376.1327836218602,
+        "industry_life_and_physical_and_social_science": 1390.081437226262
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 3 27B IT",
+      "organization": "google",
+      "license": "Gemma",
+      "vote_count": 46604,
+      "rank": 210,
+      "ratings": {
+        "coding": 1357.7305639677202,
+        "industry_legal_and_government": 1384.3477123721068,
+        "industry_life_and_physical_and_social_science": 1391.8359697156475
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4.7-Flash",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 11920,
+      "rank": 211,
+      "ratings": {
+        "coding": 1422.559669434229,
+        "industry_legal_and_government": 1378.844327506778,
+        "industry_life_and_physical_and_social_science": 1380.687608431471
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiniMax-M1",
+      "organization": "minimax",
+      "license": "Apache 2.0",
+      "vote_count": 34228,
+      "rank": 212,
+      "ratings": {
+        "coding": 1416.3386307656015,
+        "industry_legal_and_government": 1362.5632717508915,
+        "industry_life_and_physical_and_social_science": 1381.0302054083666
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 3 Mini (High)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 15573,
+      "rank": 213,
+      "ratings": {
+        "coding": 1392.5379449522156,
+        "industry_legal_and_government": 1385.2837209023437,
+        "industry_life_and_physical_and_social_science": 1380.4018214767668
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "o3-mini (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 18589,
+      "rank": 214,
+      "ratings": {
+        "coding": 1434.2609012385033,
+        "industry_legal_and_government": 1359.326406952424,
+        "industry_life_and_physical_and_social_science": 1372.8168232574544
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "amazon-nova-experimental-chat (11-10)",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 25841,
+      "rank": 215,
+      "ratings": {
+        "coding": 1419.4483541385625,
+        "industry_legal_and_government": 1363.4947893443045,
+        "industry_life_and_physical_and_social_science": 1385.6843662798497
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 2.0 Flash (001)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 43419,
+      "rank": 216,
+      "ratings": {
+        "coding": 1363.3995728972745,
+        "industry_legal_and_government": 1381.859753225542,
+        "industry_life_and_physical_and_social_science": 1368.773413757036
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "NVIDIA-Nemotron-3-Super-120B-A12B",
+      "organization": "nvidia",
+      "license": "NVIDIA Open Model",
+      "vote_count": 7838,
+      "rank": 217,
+      "ratings": {
+        "coding": 1407.2208401456048,
+        "industry_legal_and_government": 1366.1904796958402,
+        "industry_life_and_physical_and_social_science": 1367.3103417589455
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V3",
+      "organization": "deepseek",
+      "license": "DeepSeek",
+      "vote_count": 21770,
+      "rank": 218,
+      "ratings": {
+        "coding": 1386.641773664819,
+        "industry_legal_and_government": 1383.6751554909165,
+        "industry_life_and_physical_and_social_science": 1372.3165266020599
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 3 Mini Beta",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 20900,
+      "rank": 219,
+      "ratings": {
+        "coding": 1386.4865471750263,
+        "industry_legal_and_government": 1362.7839600945867,
+        "industry_life_and_physical_and_social_science": 1372.3852674083296
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Small 3.2 (2506)",
+      "organization": "mistral",
+      "license": "Apache 2.0",
+      "vote_count": 17429,
+      "rank": 220,
+      "ratings": {
+        "coding": 1411.7836000565717,
+        "industry_legal_and_government": 1369.968071230187,
+        "industry_life_and_physical_and_social_science": 1365.976017796828
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "INTELLECT-3",
+      "organization": "",
+      "license": "MIT",
+      "vote_count": 5396,
+      "rank": 221,
+      "ratings": {
+        "coding": 1414.713961414163,
+        "industry_legal_and_government": 1327.2420647729195,
+        "industry_life_and_physical_and_social_science": 1368.819287384048
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 2.0 Flash-Lite Preview (02-05)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 24955,
+      "rank": 222,
+      "ratings": {
+        "coding": 1342.4149121223313,
+        "industry_legal_and_government": 1380.982245366657,
+        "industry_life_and_physical_and_social_science": 1364.2818611162481
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Command A (03-2025)",
+      "organization": "cohere",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 55662,
+      "rank": 223,
+      "ratings": {
+        "coding": 1388.4183263302577,
+        "industry_legal_and_government": 1376.8619828543297,
+        "industry_life_and_physical_and_social_science": 1370.5160194153266
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4.5V",
+      "organization": "zai",
+      "license": "MIT",
+      "vote_count": 4808,
+      "rank": 224,
+      "ratings": {
+        "coding": 1402.389981100885,
+        "industry_legal_and_government": 1368.7580154232187,
+        "industry_life_and_physical_and_social_science": 1359.2463900307541
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B (NVFP4)",
+      "organization": "nvidia",
+      "license": "OpenMDW-1.1",
+      "vote_count": 25030,
+      "rank": 225,
+      "ratings": {
+        "coding": 1427.961310334019,
+        "industry_legal_and_government": 1340.7929557123164,
+        "industry_life_and_physical_and_social_science": 1358.515385456458
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "gpt-oss-120b",
+      "organization": "openai",
+      "license": "Apache 2.0",
+      "vote_count": 30102,
+      "rank": 226,
+      "ratings": {
+        "coding": 1389.2830420773114,
+        "industry_legal_and_government": 1340.6503050611582,
+        "industry_life_and_physical_and_social_science": 1361.3585527206103
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 1.5 Pro (002)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 55606,
+      "rank": 227,
+      "ratings": {
+        "coding": 1356.016678734141,
+        "industry_legal_and_government": 1366.8340638500454,
+        "industry_life_and_physical_and_social_science": 1360.4164438157002
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Step-3",
+      "organization": "stepfun",
+      "license": "Apache 2.0",
+      "vote_count": 6280,
+      "rank": 228,
+      "ratings": {
+        "coding": 1408.8266877087663,
+        "industry_legal_and_government": 1342.0805416317367,
+        "industry_life_and_physical_and_social_science": 1351.537563980538
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hunyuan TurboS (20250226)",
+      "organization": "tencent",
+      "license": "Proprietary",
+      "vote_count": 2220,
+      "rank": 229,
+      "ratings": {
+        "coding": 1398.567906584302,
+        "industry_life_and_physical_and_social_science": 1359.2841245298991
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "o3-mini",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 56689,
+      "rank": 230,
+      "ratings": {
+        "coding": 1416.5102390432862,
+        "industry_legal_and_government": 1340.2623133949285,
+        "industry_life_and_physical_and_social_science": 1349.913710128385
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "amazon-nova-experimental-chat (10-20)",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 11546,
+      "rank": 231,
+      "ratings": {
+        "coding": 1410.4806986224537,
+        "industry_legal_and_government": 1338.5422719100436,
+        "industry_life_and_physical_and_social_science": 1372.3280596247102
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.1 Nemotron Ultra 253B v1",
+      "organization": "nvidia",
+      "license": "Nvidia Open Model",
+      "vote_count": 2549,
+      "rank": 232,
+      "ratings": {
+        "coding": 1390.451964210586,
+        "industry_life_and_physical_and_social_science": 1360.5014398236065
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-32B",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 3926,
+      "rank": 233,
+      "ratings": {
+        "coding": 1405.8647500310487,
+        "industry_legal_and_government": 1326.805737830527,
+        "industry_life_and_physical_and_social_science": 1378.6337680768218
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "amazon-nova-experimental-chat (10-09)",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 2774,
+      "rank": 234,
+      "ratings": {
+        "coding": 1391.423639348438,
+        "industry_legal_and_government": 1339.5146002122542,
+        "industry_life_and_physical_and_social_science": 1386.4838867169767
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4o (2024-05-13)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 112881,
+      "rank": 235,
+      "ratings": {
+        "coding": 1368.8603569617535,
+        "industry_legal_and_government": 1371.145068157875,
+        "industry_life_and_physical_and_social_science": 1353.9516661189887
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen-Plus (0125)",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 5819,
+      "rank": 236,
+      "ratings": {
+        "coding": 1378.472098155344,
+        "industry_legal_and_government": 1378.6018321371707,
+        "industry_life_and_physical_and_social_science": 1380.4225780084535
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MiniMax-M2",
+      "organization": "minimax",
+      "license": "Apache 2.0",
+      "vote_count": 6831,
+      "rank": 237,
+      "ratings": {
+        "coding": 1382.7251795284078,
+        "industry_legal_and_government": 1358.3361452607235,
+        "industry_life_and_physical_and_social_science": 1356.8213343920186
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude 3.5 Sonnet (20240620)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 82419,
+      "rank": 238,
+      "ratings": {
+        "coding": 1399.3594344424596,
+        "industry_legal_and_government": 1354.0880977134339,
+        "industry_life_and_physical_and_social_science": 1356.6579358715849
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.3 Nemotron Super 49B v1.5",
+      "organization": "nvidia",
+      "license": "Nvidia Open",
+      "vote_count": 3322,
+      "rank": 239,
+      "ratings": {
+        "coding": 1403.446693296488,
+        "industry_legal_and_government": 1352.635966354973,
+        "industry_life_and_physical_and_social_science": 1377.244129132309
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Ling-flash-2.0",
+      "organization": "ant-group",
+      "license": "MIT",
+      "vote_count": 6924,
+      "rank": 240,
+      "ratings": {
+        "coding": 1408.323226365897,
+        "industry_legal_and_government": 1343.9890920312382,
+        "industry_life_and_physical_and_social_science": 1362.7013355978806
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mercury 2",
+      "organization": "inception-ai",
+      "license": "Proprietary",
+      "vote_count": 3153,
+      "rank": 241,
+      "ratings": {
+        "coding": 1392.9035788107992,
+        "industry_life_and_physical_and_social_science": 1320.113882381364
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4-Plus (0111)",
+      "organization": "zai",
+      "license": "Proprietary",
+      "vote_count": 5760,
+      "rank": 242,
+      "ratings": {
+        "coding": 1330.0584649652192,
+        "industry_legal_and_government": 1382.2348763363852,
+        "industry_life_and_physical_and_social_science": 1366.4689943519907
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 3 12B IT",
+      "organization": "google",
+      "license": "Gemma",
+      "vote_count": 3829,
+      "rank": 243,
+      "ratings": {
+        "coding": 1315.7505377709167,
+        "industry_legal_and_government": 1383.1947785462007,
+        "industry_life_and_physical_and_social_science": 1369.0940217854743
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hunyuan Turbo (0110)",
+      "organization": "tencent",
+      "license": "Proprietary",
+      "vote_count": 2290,
+      "rank": 244,
+      "ratings": {
+        "coding": 1370.1430820539408,
+        "industry_life_and_physical_and_social_science": 1364.3481873296216
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Granite 4.2 30B",
+      "organization": "ibm",
+      "license": "Apache 2.0",
+      "vote_count": 3304,
+      "rank": 245,
+      "ratings": {
+        "coding": 1397.1522479860469,
+        "industry_legal_and_government": 1325.6958077113031,
+        "industry_life_and_physical_and_social_science": 1355.8688387990283
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-5 nano (High)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 8119,
+      "rank": 246,
+      "ratings": {
+        "coding": 1385.7137996332683,
+        "industry_legal_and_government": 1328.5356291556873,
+        "industry_life_and_physical_and_social_science": 1348.619876519171
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "o1-mini",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 51981,
+      "rank": 247,
+      "ratings": {
+        "coding": 1385.660502635229,
+        "industry_legal_and_government": 1342.9345448696658,
+        "industry_life_and_physical_and_social_science": 1340.1216734490215
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini Advanced (0514)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 50148,
+      "rank": 248,
+      "ratings": {
+        "coding": 1336.387989187583,
+        "industry_legal_and_government": 1374.912690852534,
+        "industry_life_and_physical_and_social_science": 1343.4170613721471
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 2 (2024-08-13)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 63498,
+      "rank": 249,
+      "ratings": {
+        "coding": 1357.5370623221097,
+        "industry_legal_and_government": 1365.3971505462553,
+        "industry_life_and_physical_and_social_science": 1351.5862856993258
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4o (2024-08-06)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 45499,
+      "rank": 250,
+      "ratings": {
+        "coding": 1359.5189683568515,
+        "industry_legal_and_government": 1347.0960424445148,
+        "industry_life_and_physical_and_social_science": 1347.8267559111107
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.1 405B Instruct (BF16)",
+      "organization": "meta",
+      "license": "Llama 3.1 Community",
+      "vote_count": 41375,
+      "rank": 251,
+      "ratings": {
+        "coding": 1376.3005715000763,
+        "industry_legal_and_government": 1369.1406029270206,
+        "industry_life_and_physical_and_social_science": 1362.407561885155
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "QwQ-32B",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 25156,
+      "rank": 252,
+      "ratings": {
+        "coding": 1382.202558371286,
+        "industry_legal_and_government": 1339.7302023802595,
+        "industry_life_and_physical_and_social_science": 1352.5797885212376
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Amazon Nova 2 Lite",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 12334,
+      "rank": 253,
+      "ratings": {
+        "coding": 1393.0438205018959,
+        "industry_legal_and_government": 1334.0919663266732,
+        "industry_life_and_physical_and_social_science": 1356.8284266375103
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.1 405B Instruct (FP8)",
+      "organization": "meta",
+      "license": "Llama 3.1 Community",
+      "vote_count": 59656,
+      "rank": 254,
+      "ratings": {
+        "coding": 1369.0551991861807,
+        "industry_legal_and_government": 1368.9916286671846,
+        "industry_life_and_physical_and_social_science": 1349.7434463077439
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Step-2 16K Exp (202412)",
+      "organization": "stepfun",
+      "license": "Proprietary",
+      "vote_count": 4833,
+      "rank": 255,
+      "ratings": {
+        "coding": 1370.2268381704557,
+        "industry_legal_and_government": 1347.4060444321674,
+        "industry_life_and_physical_and_social_science": 1344.8725749980833
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Olmo 3.1 32B Instruct",
+      "organization": "allenai",
+      "license": "Apache 2.0",
+      "vote_count": 11721,
+      "rank": 256,
+      "ratings": {
+        "coding": 1381.1520107081465,
+        "industry_legal_and_government": 1356.6477440987692,
+        "industry_life_and_physical_and_social_science": 1344.6235629943042
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Yi Lightning",
+      "organization": "",
+      "license": "Proprietary",
+      "vote_count": 27332,
+      "rank": 257,
+      "ratings": {
+        "coding": 1368.4058635387516,
+        "industry_legal_and_government": 1364.7044731351516,
+        "industry_life_and_physical_and_social_science": 1353.1560913351523
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.3 Nemotron Super 49B v1",
+      "organization": "nvidia",
+      "license": "Nvidia",
+      "vote_count": 2218,
+      "rank": 258,
+      "ratings": {
+        "coding": 1361.5860845403004,
+        "industry_life_and_physical_and_social_science": 1361.1670393529257
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 4 Maverick 17B 128E Instruct",
+      "organization": "meta",
+      "license": "Llama 4",
+      "vote_count": 39384,
+      "rank": 259,
+      "ratings": {
+        "coding": 1372.3302225924926,
+        "industry_legal_and_government": 1341.2831993484428,
+        "industry_life_and_physical_and_social_science": 1342.171259223107
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen3-30B-A3B",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 26130,
+      "rank": 260,
+      "ratings": {
+        "coding": 1384.746808970298,
+        "industry_legal_and_government": 1323.476414385204,
+        "industry_life_and_physical_and_social_science": 1332.8968449403744
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hunyuan Large (2025-02-10)",
+      "organization": "tencent",
+      "license": "Proprietary",
+      "vote_count": 3738,
+      "rank": 261,
+      "ratings": {
+        "coding": 1365.5665227954069,
+        "industry_legal_and_government": 1334.2594660879593,
+        "industry_life_and_physical_and_social_science": 1341.9487559019688
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude 3.5 Haiku (20241022)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 69005,
+      "rank": 262,
+      "ratings": {
+        "coding": 1385.5512779648363,
+        "industry_legal_and_government": 1351.6685068213853,
+        "industry_life_and_physical_and_social_science": 1342.1339147055032
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4 Turbo (2024-04-09)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 98114,
+      "rank": 263,
+      "ratings": {
+        "coding": 1346.7744639986613,
+        "industry_legal_and_government": 1335.5332144337017,
+        "industry_life_and_physical_and_social_science": 1326.4140068999143
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 1.5 Pro (001)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 79138,
+      "rank": 264,
+      "ratings": {
+        "coding": 1346.0453614390253,
+        "industry_legal_and_government": 1331.678065660059,
+        "industry_life_and_physical_and_social_science": 1332.9099557420752
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V2.5 (1210)",
+      "organization": "deepseek",
+      "license": "DeepSeek",
+      "vote_count": 6795,
+      "rank": 265,
+      "ratings": {
+        "coding": 1373.615087347347,
+        "industry_legal_and_government": 1325.5855770238504,
+        "industry_life_and_physical_and_social_science": 1330.4665669780034
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Ring-flash-2.0",
+      "organization": "ant-group",
+      "license": "MIT",
+      "vote_count": 6968,
+      "rank": 266,
+      "ratings": {
+        "coding": 1390.0650013400957,
+        "industry_legal_and_government": 1293.4572283180883,
+        "industry_life_and_physical_and_social_science": 1330.3868258468995
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude 3 Opus (20240229)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 194909,
+      "rank": 267,
+      "ratings": {
+        "coding": 1355.2372147545161,
+        "industry_legal_and_government": 1347.7043811307606,
+        "industry_life_and_physical_and_social_science": 1339.5120322162068
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4.1 nano (2025-04-14)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 6103,
+      "rank": 268,
+      "ratings": {
+        "coding": 1372.8135111146364,
+        "industry_legal_and_government": 1351.3323523767453,
+        "industry_life_and_physical_and_social_science": 1349.0037385076291
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 4 Scout 17B 16E Instruct",
+      "organization": "meta",
+      "license": "Llama",
+      "vote_count": 29762,
+      "rank": 269,
+      "ratings": {
+        "coding": 1362.2973851949494,
+        "industry_legal_and_government": 1341.050912163824,
+        "industry_life_and_physical_and_social_science": 1333.8231398334106
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Molmo 2 8B",
+      "organization": "allenai",
+      "license": "Apache 2.0",
+      "vote_count": 819,
+      "rank": 270,
+      "ratings": {},
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Step-1o Turbo (202506)",
+      "organization": "stepfun",
+      "license": "Proprietary",
+      "vote_count": 8897,
+      "rank": 271,
+      "ratings": {
+        "coding": 1351.3436493020836,
+        "industry_legal_and_government": 1336.0121970594273,
+        "industry_life_and_physical_and_social_science": 1336.8682945257153
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4-Plus",
+      "organization": "zai",
+      "license": "Proprietary",
+      "vote_count": 26126,
+      "rank": 272,
+      "ratings": {
+        "coding": 1351.560664561889,
+        "industry_legal_and_government": 1349.3913455156994,
+        "industry_life_and_physical_and_social_science": 1333.884166892607
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.3 70B Instruct",
+      "organization": "meta",
+      "license": "Llama-3.3",
+      "vote_count": 54473,
+      "rank": 273,
+      "ratings": {
+        "coding": 1345.7026416492185,
+        "industry_legal_and_government": 1342.457323154946,
+        "industry_life_and_physical_and_social_science": 1340.8864786497245
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen-Max (0919)",
+      "organization": "alibaba",
+      "license": "Qwen",
+      "vote_count": 16478,
+      "rank": 274,
+      "ratings": {
+        "coding": 1352.2397721265766,
+        "industry_legal_and_government": 1326.390444593017,
+        "industry_life_and_physical_and_social_science": 1324.5142528868132
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 3n E4B IT",
+      "organization": "google",
+      "license": "Gemma",
+      "vote_count": 22105,
+      "rank": 275,
+      "ratings": {
+        "coding": 1307.0088281112467,
+        "industry_legal_and_government": 1326.252492174276,
+        "industry_life_and_physical_and_social_science": 1340.162152678647
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4o mini (2024-07-18)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 68705,
+      "rank": 276,
+      "ratings": {
+        "coding": 1347.5536180494692,
+        "industry_legal_and_government": 1346.3656544542023,
+        "industry_life_and_physical_and_social_science": 1326.1340990854567
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "gpt-oss-20b",
+      "organization": "openai",
+      "license": "Apache 2.0",
+      "vote_count": 10393,
+      "rank": 277,
+      "ratings": {
+        "coding": 1368.128907975718,
+        "industry_legal_and_government": 1321.4306637014042,
+        "industry_life_and_physical_and_social_science": 1328.242908659017
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen2.5-Plus (1127)",
+      "organization": "alibaba",
+      "license": "Proprietary",
+      "vote_count": 10187,
+      "rank": 278,
+      "ratings": {
+        "coding": 1356.160275741444,
+        "industry_legal_and_government": 1325.1475561671964,
+        "industry_life_and_physical_and_social_science": 1336.6970482353602
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Large 2 (2407)",
+      "organization": "mistral",
+      "license": "Mistral Research",
+      "vote_count": 45459,
+      "rank": 279,
+      "ratings": {
+        "coding": 1353.5056140908482,
+        "industry_legal_and_government": 1337.950465271527,
+        "industry_life_and_physical_and_social_science": 1330.589485454675
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Athene V2 Chat",
+      "organization": "",
+      "license": "NexusFlow",
+      "vote_count": 24739,
+      "rank": 280,
+      "ratings": {
+        "coding": 1368.420425186205,
+        "industry_legal_and_government": 1327.0472930955018,
+        "industry_life_and_physical_and_social_science": 1335.661359481248
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "NVIDIA-Nemotron-3-Nano-30B-A3B (BF16)",
+      "organization": "nvidia",
+      "license": "NVIDIA Open Model",
+      "vote_count": 15651,
+      "rank": 281,
+      "ratings": {
+        "coding": 1361.2843301798223,
+        "industry_legal_and_government": 1303.3061171415534,
+        "industry_life_and_physical_and_social_science": 1314.726636105365
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4 Turbo Preview (0125)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 93439,
+      "rank": 282,
+      "ratings": {
+        "coding": 1331.778153448562,
+        "industry_legal_and_government": 1325.2449455253054,
+        "industry_life_and_physical_and_social_science": 1316.3183580498116
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4 Turbo Preview (1106)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 100105,
+      "rank": 283,
+      "ratings": {
+        "coding": 1340.3109952668487,
+        "industry_legal_and_government": 1313.7986608951724,
+        "industry_life_and_physical_and_social_science": 1319.60971950039
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hunyuan Standard (2025-02-10)",
+      "organization": "tencent",
+      "license": "Proprietary",
+      "vote_count": 3904,
+      "rank": 284,
+      "ratings": {
+        "coding": 1330.9013736578104,
+        "industry_legal_and_government": 1338.6040127008037,
+        "industry_life_and_physical_and_social_science": 1332.2904316674972
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 1.5 Flash (002)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 34902,
+      "rank": 285,
+      "ratings": {
+        "coding": 1316.029769792252,
+        "industry_legal_and_government": 1327.3393610578778,
+        "industry_life_and_physical_and_social_science": 1327.94717157928
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Grok 2 mini (2024-08-13)",
+      "organization": "xai",
+      "license": "Proprietary",
+      "vote_count": 52567,
+      "rank": 286,
+      "ratings": {
+        "coding": 1334.079124323844,
+        "industry_legal_and_government": 1329.072072978637,
+        "industry_life_and_physical_and_social_science": 1333.1091438559538
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-V2.5",
+      "organization": "deepseek",
+      "license": "DeepSeek",
+      "vote_count": 24572,
+      "rank": 287,
+      "ratings": {
+        "coding": 1367.5115698513823,
+        "industry_legal_and_government": 1329.812737003242,
+        "industry_life_and_physical_and_social_science": 1320.2628306771105
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Athene 70B (0725)",
+      "organization": "",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 19621,
+      "rank": 288,
+      "ratings": {
+        "coding": 1349.2123072867712,
+        "industry_legal_and_government": 1332.4102998653634,
+        "industry_life_and_physical_and_social_science": 1338.5321230640036
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Olmo 3 32B Think",
+      "organization": "allenai",
+      "license": "Apache 2.0",
+      "vote_count": 5790,
+      "rank": 289,
+      "ratings": {
+        "coding": 1359.0859867263127,
+        "industry_legal_and_government": 1294.6397877217419,
+        "industry_life_and_physical_and_social_science": 1322.065714708278
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Large (2411)",
+      "organization": "mistral",
+      "license": "MRL",
+      "vote_count": 28073,
+      "rank": 290,
+      "ratings": {
+        "coding": 1345.7014898060447,
+        "industry_legal_and_government": 1325.8489476849,
+        "industry_life_and_physical_and_social_science": 1314.5272533724196
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mercury",
+      "organization": "inception-ai",
+      "license": "Proprietary",
+      "vote_count": 1964,
+      "rank": 291,
+      "ratings": {
+        "coding": 1363.8976471052852,
+        "industry_life_and_physical_and_social_science": 1332.9265456214468
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Magistral Medium (2506)",
+      "organization": "mistral",
+      "license": "Proprietary",
+      "vote_count": 11487,
+      "rank": 292,
+      "ratings": {
+        "coding": 1387.63951792728,
+        "industry_legal_and_government": 1301.275785995293,
+        "industry_life_and_physical_and_social_science": 1309.8412606937254
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Granite 4.1 8B",
+      "organization": "ibm",
+      "license": "Apache 2.0",
+      "vote_count": 4118,
+      "rank": 293,
+      "ratings": {
+        "coding": 1353.778879903135,
+        "industry_legal_and_government": 1348.4105226040158,
+        "industry_life_and_physical_and_social_science": 1328.3511750891885
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 3 4B IT",
+      "organization": "google",
+      "license": "Gemma",
+      "vote_count": 4171,
+      "rank": 294,
+      "ratings": {
+        "coding": 1273.371479921628,
+        "industry_legal_and_government": 1340.0008970692295,
+        "industry_life_and_physical_and_social_science": 1316.1762279675804
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen2.5-72B-Instruct",
+      "organization": "alibaba",
+      "license": "Qwen",
+      "vote_count": 39406,
+      "rank": 295,
+      "ratings": {
+        "coding": 1354.72462404552,
+        "industry_legal_and_government": 1330.3730148938662,
+        "industry_life_and_physical_and_social_science": 1317.8978166767456
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Small 3.1 24B Instruct (2503)",
+      "organization": "mistral",
+      "license": "Apache 2.0",
+      "vote_count": 32649,
+      "rank": 296,
+      "ratings": {
+        "coding": 1360.8222295163368,
+        "industry_legal_and_government": 1306.4460689729744,
+        "industry_life_and_physical_and_social_science": 1304.7767448658287
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.1 Nemotron 70B Instruct",
+      "organization": "nvidia",
+      "license": "Llama 3.1",
+      "vote_count": 7140,
+      "rank": 297,
+      "ratings": {
+        "coding": 1327.6939093922142,
+        "industry_legal_and_government": 1327.4093583553213,
+        "industry_life_and_physical_and_social_science": 1317.4549439455973
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hunyuan Large Vision",
+      "organization": "tencent",
+      "license": "Proprietary",
+      "vote_count": 5272,
+      "rank": 298,
+      "ratings": {
+        "coding": 1358.1386038367555,
+        "industry_legal_and_government": 1289.8318720862478,
+        "industry_life_and_physical_and_social_science": 1306.8215954500888
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.1 70B Instruct",
+      "organization": "meta",
+      "license": "Llama 3.1 Community",
+      "vote_count": 55240,
+      "rank": 299,
+      "ratings": {
+        "coding": 1333.0463182587255,
+        "industry_legal_and_government": 1328.4869292745113,
+        "industry_life_and_physical_and_social_science": 1318.8690075474974
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Amazon Nova Pro 1.0",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 24745,
+      "rank": 300,
+      "ratings": {
+        "coding": 1342.5396192128555,
+        "industry_legal_and_government": 1325.4480360422722,
+        "industry_life_and_physical_and_social_science": 1303.625849466345
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 2 27B IT",
+      "organization": "google",
+      "license": "Gemma license",
+      "vote_count": 75754,
+      "rank": 301,
+      "ratings": {
+        "coding": 1303.73603530625,
+        "industry_legal_and_government": 1310.8368652390354,
+        "industry_life_and_physical_and_social_science": 1303.839974923426
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Granite 4.2 8B",
+      "organization": "ibm",
+      "license": "Apache 2.0",
+      "vote_count": 3183,
+      "rank": 302,
+      "ratings": {
+        "coding": 1367.628735672471,
+        "industry_legal_and_government": 1286.1787816920607,
+        "industry_life_and_physical_and_social_science": 1299.8453489115
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Jamba 1.5 Large",
+      "organization": "",
+      "license": "Jamba Open",
+      "vote_count": 8662,
+      "rank": 303,
+      "ratings": {
+        "coding": 1311.7948821033822,
+        "industry_legal_and_government": 1325.3008808140357,
+        "industry_life_and_physical_and_social_science": 1313.2826165999734
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Granite 4.2 3B",
+      "organization": "ibm",
+      "license": "Apache 2.0",
+      "vote_count": 3173,
+      "rank": 304,
+      "ratings": {
+        "coding": 1376.0707755415824,
+        "industry_legal_and_government": 1314.9323240664085,
+        "industry_life_and_physical_and_social_science": 1303.319257144962
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Reka Core (20240904)",
+      "organization": "",
+      "license": "Proprietary",
+      "vote_count": 7312,
+      "rank": 305,
+      "ratings": {
+        "coding": 1315.1569649021822,
+        "industry_legal_and_government": 1328.6067778801068,
+        "industry_life_and_physical_and_social_science": 1320.984199346926
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4 (0314)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 54173,
+      "rank": 306,
+      "ratings": {
+        "coding": 1329.793830981972,
+        "industry_legal_and_government": 1293.946354959549,
+        "industry_life_and_physical_and_social_science": 1285.9174157978775
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Granite-4.0-H-Small",
+      "organization": "ibm",
+      "license": "Apache 2.0",
+      "vote_count": 5613,
+      "rank": 307,
+      "ratings": {
+        "coding": 1329.8294441375651,
+        "industry_legal_and_government": 1283.4564340110624,
+        "industry_life_and_physical_and_social_science": 1314.3112174126304
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.1 Nemotron 51B Instruct",
+      "organization": "nvidia",
+      "license": "Llama 3.1",
+      "vote_count": 3749,
+      "rank": 308,
+      "ratings": {
+        "coding": 1312.136959720426,
+        "industry_legal_and_government": 1330.0952903011757,
+        "industry_life_and_physical_and_social_science": 1302.3675844709842
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 1.5 Flash (001)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 62833,
+      "rank": 309,
+      "ratings": {
+        "coding": 1308.628038491199,
+        "industry_legal_and_government": 1305.8265847452258,
+        "industry_life_and_physical_and_social_science": 1294.4088717906454
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.1 Tulu 3 70B",
+      "organization": "allenai",
+      "license": "Llama 3.1",
+      "vote_count": 2846,
+      "rank": 310,
+      "ratings": {
+        "coding": 1307.852649080827,
+        "industry_life_and_physical_and_social_science": 1307.2459911167875
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Olmo 3.1 32B Think",
+      "organization": "allenai",
+      "license": "Apache 2.0",
+      "vote_count": 8246,
+      "rank": 311,
+      "ratings": {
+        "coding": 1339.6380074016533,
+        "industry_legal_and_government": 1305.5479376400333,
+        "industry_life_and_physical_and_social_science": 1309.8601952793101
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude 3 Sonnet (20240229)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 109284,
+      "rank": 312,
+      "ratings": {
+        "coding": 1318.1600510961819,
+        "industry_legal_and_government": 1303.2659068045484,
+        "industry_life_and_physical_and_social_science": 1299.1347361019486
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 2 9B IT SimPO",
+      "organization": "",
+      "license": "MIT",
+      "vote_count": 10072,
+      "rank": 313,
+      "ratings": {
+        "coding": 1270.5125895978445,
+        "industry_legal_and_government": 1326.0727197216581,
+        "industry_life_and_physical_and_social_science": 1295.30393741281
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Nemotron-4 340B Instruct",
+      "organization": "nvidia",
+      "license": "NVIDIA Open Model",
+      "vote_count": 19659,
+      "rank": 314,
+      "ratings": {
+        "coding": 1308.6964699689402,
+        "industry_legal_and_government": 1314.4348330055168,
+        "industry_life_and_physical_and_social_science": 1301.646887672292
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3 70B Instruct",
+      "organization": "meta",
+      "license": "Llama 3 Community",
+      "vote_count": 156876,
+      "rank": 315,
+      "ratings": {
+        "coding": 1306.0685054562837,
+        "industry_legal_and_government": 1300.6430577432502,
+        "industry_life_and_physical_and_social_science": 1295.2879261047603
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Command R+ (08-2024)",
+      "organization": "cohere",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 9866,
+      "rank": 316,
+      "ratings": {
+        "coding": 1280.2127288139427,
+        "industry_legal_and_government": 1319.4215720348254,
+        "industry_life_and_physical_and_social_science": 1302.3244628329455
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-4 (0613)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 88723,
+      "rank": 317,
+      "ratings": {
+        "coding": 1314.4133807487656,
+        "industry_legal_and_government": 1271.6003849698532,
+        "industry_life_and_physical_and_social_science": 1275.3072487418638
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Small 24B Instruct (2501)",
+      "organization": "mistral",
+      "license": "Apache 2.0",
+      "vote_count": 14681,
+      "rank": 318,
+      "ratings": {
+        "coding": 1311.9215240350848,
+        "industry_legal_and_government": 1275.0987402988553,
+        "industry_life_and_physical_and_social_science": 1293.7233837566507
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GLM-4 (0520)",
+      "organization": "zai",
+      "license": "Proprietary",
+      "vote_count": 9788,
+      "rank": 319,
+      "ratings": {
+        "coding": 1309.007799392607,
+        "industry_legal_and_government": 1311.6421028261325,
+        "industry_life_and_physical_and_social_science": 1290.3131257879181
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Reka Flash (20240904)",
+      "organization": "",
+      "license": "Proprietary",
+      "vote_count": 7536,
+      "rank": 320,
+      "ratings": {
+        "coding": 1291.5885607892988,
+        "industry_legal_and_government": 1284.7919606627001,
+        "industry_life_and_physical_and_social_science": 1295.7091967593415
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen2.5-Coder-32B-Instruct",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 5432,
+      "rank": 321,
+      "ratings": {
+        "coding": 1341.8792962485386,
+        "industry_legal_and_government": 1309.07268465514,
+        "industry_life_and_physical_and_social_science": 1277.069011571693
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Aya Expanse 32B",
+      "organization": "cohere",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 27124,
+      "rank": 322,
+      "ratings": {
+        "coding": 1292.0868204399549,
+        "industry_legal_and_government": 1298.6463389996725,
+        "industry_life_and_physical_and_social_science": 1286.5233062971784
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 2 9B IT",
+      "organization": "google",
+      "license": "Gemma license",
+      "vote_count": 54611,
+      "rank": 323,
+      "ratings": {
+        "coding": 1269.5348277173016,
+        "industry_legal_and_government": 1284.2932422216395,
+        "industry_life_and_physical_and_social_science": 1279.6036348108048
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek-Coder-V2",
+      "organization": "deepseek",
+      "license": "DeepSeek License",
+      "vote_count": 15147,
+      "rank": 324,
+      "ratings": {
+        "coding": 1342.0165998140214,
+        "industry_legal_and_government": 1273.604909435509,
+        "industry_life_and_physical_and_social_science": 1268.950541894159
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen2-72B-Instruct",
+      "organization": "alibaba",
+      "license": "Qianwen LICENSE",
+      "vote_count": 37325,
+      "rank": 325,
+      "ratings": {
+        "coding": 1297.2641354393695,
+        "industry_legal_and_government": 1272.8219326596718,
+        "industry_life_and_physical_and_social_science": 1279.0264407862383
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Command R+",
+      "organization": "cohere",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 77554,
+      "rank": 326,
+      "ratings": {
+        "coding": 1273.133468782582,
+        "industry_legal_and_government": 1312.0536764260532,
+        "industry_life_and_physical_and_social_science": 1287.5079143399194
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Claude 3 Haiku (20240307)",
+      "organization": "anthropic",
+      "license": "Proprietary",
+      "vote_count": 117701,
+      "rank": 327,
+      "ratings": {
+        "coding": 1301.1265762586045,
+        "industry_legal_and_government": 1285.2782468218074,
+        "industry_life_and_physical_and_social_science": 1272.7624787637176
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Amazon Nova Lite 1.0",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 19372,
+      "rank": 328,
+      "ratings": {
+        "coding": 1305.4847816315544,
+        "industry_legal_and_government": 1283.3677078276396,
+        "industry_life_and_physical_and_social_science": 1280.290496961901
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini 1.5 Flash-8B (001)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 35558,
+      "rank": 329,
+      "ratings": {
+        "coding": 1271.2652046602473,
+        "industry_legal_and_government": 1293.5940894948637,
+        "industry_life_and_physical_and_social_science": 1276.971725679476
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Phi-4",
+      "organization": "microsoft",
+      "license": "MIT",
+      "vote_count": 24126,
+      "rank": 330,
+      "ratings": {
+        "coding": 1305.6480240187889,
+        "industry_legal_and_government": 1298.4310730521333,
+        "industry_life_and_physical_and_social_science": 1264.6734197366402
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "OLMo 2 32B Instruct (0325)",
+      "organization": "allenai",
+      "license": "Apache-2.0",
+      "vote_count": 3334,
+      "rank": 331,
+      "ratings": {
+        "coding": 1279.5199544179095,
+        "industry_legal_and_government": 1273.0604350100575,
+        "industry_life_and_physical_and_social_science": 1287.0530557319942
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Command R (08-2024)",
+      "organization": "cohere",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 10140,
+      "rank": 332,
+      "ratings": {
+        "coding": 1281.3816955590687,
+        "industry_legal_and_government": 1300.8974945165032,
+        "industry_life_and_physical_and_social_science": 1289.9565016005756
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Large (2402)",
+      "organization": "mistral",
+      "license": "Proprietary",
+      "vote_count": 62436,
+      "rank": 333,
+      "ratings": {
+        "coding": 1295.5606263692875,
+        "industry_legal_and_government": 1268.3898385029106,
+        "industry_life_and_physical_and_social_science": 1250.7765363521821
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Amazon Nova Micro 1.0",
+      "organization": "amazon",
+      "license": "Proprietary",
+      "vote_count": 19364,
+      "rank": 334,
+      "ratings": {
+        "coding": 1288.302975209742,
+        "industry_legal_and_government": 1265.7107079690218,
+        "industry_life_and_physical_and_social_science": 1256.649653246281
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Jamba 1.5 Mini",
+      "organization": "",
+      "license": "Jamba Open",
+      "vote_count": 8858,
+      "rank": 335,
+      "ratings": {
+        "coding": 1264.20146133885,
+        "industry_legal_and_government": 1285.933423962398,
+        "industry_life_and_physical_and_social_science": 1254.1694169444131
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Ministral 8B (2410)",
+      "organization": "mistral",
+      "license": "MRL",
+      "vote_count": 4781,
+      "rank": 336,
+      "ratings": {
+        "coding": 1274.168964696129,
+        "industry_legal_and_government": 1269.2657664427602,
+        "industry_life_and_physical_and_social_science": 1248.6296953983438
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini Pro (Dev API)",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 18354,
+      "rank": 337,
+      "ratings": {
+        "coding": 1239.1983110194637,
+        "industry_legal_and_government": 1265.2337506361696,
+        "industry_life_and_physical_and_social_science": 1254.25029707034
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen1.5-110B-Chat",
+      "organization": "alibaba",
+      "license": "Qianwen LICENSE",
+      "vote_count": 26195,
+      "rank": 338,
+      "ratings": {
+        "coding": 1279.6629998436051,
+        "industry_legal_and_government": 1267.82318935674,
+        "industry_life_and_physical_and_social_science": 1246.8723602374175
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Reka Flash 21B (Online, 20240226)",
+      "organization": "",
+      "license": "Proprietary",
+      "vote_count": 15450,
+      "rank": 339,
+      "ratings": {
+        "coding": 1278.12745970169,
+        "industry_legal_and_government": 1280.9246672065851,
+        "industry_life_and_physical_and_social_science": 1260.1568302696971
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen1.5-72B-Chat",
+      "organization": "alibaba",
+      "license": "Qianwen LICENSE",
+      "vote_count": 39302,
+      "rank": 340,
+      "ratings": {
+        "coding": 1275.2394543262462,
+        "industry_legal_and_government": 1259.3689953647413,
+        "industry_life_and_physical_and_social_science": 1246.5127218468256
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Hunyuan Standard 256K",
+      "organization": "tencent",
+      "license": "Proprietary",
+      "vote_count": 2728,
+      "rank": 341,
+      "ratings": {
+        "coding": 1300.2494974098238,
+        "industry_life_and_physical_and_social_science": 1242.4008141690847
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mixtral 8x22B Instruct v0.1",
+      "organization": "mistral",
+      "license": "Apache 2.0",
+      "vote_count": 51416,
+      "rank": 342,
+      "ratings": {
+        "coding": 1277.6601058894953,
+        "industry_legal_and_government": 1254.5171347731184,
+        "industry_life_and_physical_and_social_science": 1249.1159476353869
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Command R",
+      "organization": "cohere",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 54036,
+      "rank": 343,
+      "ratings": {
+        "coding": 1243.4832217731503,
+        "industry_legal_and_government": 1280.1571410889242,
+        "industry_life_and_physical_and_social_science": 1248.392295323212
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Reka Flash 21B (20240226)",
+      "organization": "",
+      "license": "Proprietary",
+      "vote_count": 24806,
+      "rank": 344,
+      "ratings": {
+        "coding": 1267.2718891128789,
+        "industry_legal_and_government": 1262.6658309091783,
+        "industry_life_and_physical_and_social_science": 1247.0556230498485
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-3.5 Turbo (0125)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 66207,
+      "rank": 345,
+      "ratings": {
+        "coding": 1274.7151832706177,
+        "industry_legal_and_government": 1247.5112042789224,
+        "industry_life_and_physical_and_social_science": 1222.5133414906659
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemini Pro",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 6390,
+      "rank": 346,
+      "ratings": {
+        "coding": 1248.4913425248246,
+        "industry_legal_and_government": 1222.6332079104768,
+        "industry_life_and_physical_and_social_science": 1238.93484109745
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3 8B Instruct",
+      "organization": "meta",
+      "license": "Llama 3 Community",
+      "vote_count": 104642,
+      "rank": 347,
+      "ratings": {
+        "coding": 1253.0956771920532,
+        "industry_legal_and_government": 1245.6001565352444,
+        "industry_life_and_physical_and_social_science": 1244.6081975097602
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Aya Expanse 8B",
+      "organization": "cohere",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 9818,
+      "rank": 348,
+      "ratings": {
+        "coding": 1254.8509620369782,
+        "industry_legal_and_government": 1265.8647217893601,
+        "industry_life_and_physical_and_social_science": 1250.3629232517508
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral Medium",
+      "organization": "mistral",
+      "license": "Proprietary",
+      "vote_count": 34550,
+      "rank": 349,
+      "ratings": {
+        "coding": 1262.739867094348,
+        "industry_legal_and_government": 1251.996042696932,
+        "industry_life_and_physical_and_social_science": 1250.4977752991574
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.1 Tulu 3 8B",
+      "organization": "allenai",
+      "license": "Llama 3.1",
+      "vote_count": 2896,
+      "rank": 350,
+      "ratings": {
+        "coding": 1252.5812108609161,
+        "industry_life_and_physical_and_social_science": 1235.028998107906
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Zephyr ORPO 141B A35B v0.1",
+      "organization": "",
+      "license": "Apache 2.0",
+      "vote_count": 4652,
+      "rank": 351,
+      "ratings": {
+        "coding": 1245.2661193011045,
+        "industry_legal_and_government": 1223.1403278838961,
+        "industry_life_and_physical_and_social_science": 1238.6959792483053
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Yi 1.5 34B Chat",
+      "organization": "",
+      "license": "Apache-2.0",
+      "vote_count": 24146,
+      "rank": 352,
+      "ratings": {
+        "coding": 1248.5141953422085,
+        "industry_legal_and_government": 1251.0886122915635,
+        "industry_life_and_physical_and_social_science": 1229.9183183889272
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.1 8B Instruct",
+      "organization": "meta",
+      "license": "Llama 3.1 Community",
+      "vote_count": 49605,
+      "rank": 353,
+      "ratings": {
+        "coding": 1259.5230269133663,
+        "industry_legal_and_government": 1246.271170508233,
+        "industry_life_and_physical_and_social_science": 1228.7558821688906
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Granite 3.1 8B Instruct",
+      "organization": "ibm",
+      "license": "Apache 2.0",
+      "vote_count": 3090,
+      "rank": 354,
+      "ratings": {
+        "coding": 1288.2418144990684,
+        "industry_legal_and_government": 1249.8641226992859,
+        "industry_life_and_physical_and_social_science": 1215.9294590201616
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT-3.5 Turbo (1106)",
+      "organization": "openai",
+      "license": "Proprietary",
+      "vote_count": 16619,
+      "rank": 355,
+      "ratings": {
+        "coding": 1262.2674348026699,
+        "industry_legal_and_government": 1201.6962915659067,
+        "industry_life_and_physical_and_social_science": 1199.0395199978227
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen1.5-32B-Chat",
+      "organization": "alibaba",
+      "license": "Qianwen LICENSE",
+      "vote_count": 21741,
+      "rank": 356,
+      "ratings": {
+        "coding": 1262.3081768704355,
+        "industry_legal_and_government": 1227.5362939324568,
+        "industry_life_and_physical_and_social_science": 1220.204019449385
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 2 2B IT",
+      "organization": "google",
+      "license": "Gemma license",
+      "vote_count": 46616,
+      "rank": 357,
+      "ratings": {
+        "coding": 1191.4541903389606,
+        "industry_legal_and_government": 1221.5242432563623,
+        "industry_life_and_physical_and_social_science": 1214.8762625223762
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Phi-3 Medium 4K Instruct",
+      "organization": "microsoft",
+      "license": "MIT",
+      "vote_count": 25055,
+      "rank": 358,
+      "ratings": {
+        "coding": 1231.4138072687315,
+        "industry_legal_and_government": 1211.3481214927046,
+        "industry_life_and_physical_and_social_science": 1223.148420921517
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mixtral 8x7B Instruct v0.1",
+      "organization": "mistral",
+      "license": "Apache 2.0",
+      "vote_count": 73503,
+      "rank": 359,
+      "ratings": {
+        "coding": 1239.71915765178,
+        "industry_legal_and_government": 1223.6597577427688,
+        "industry_life_and_physical_and_social_science": 1213.5196745075282
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DBRX Instruct Preview",
+      "organization": "",
+      "license": "DBRX LICENSE",
+      "vote_count": 32191,
+      "rank": 360,
+      "ratings": {
+        "coding": 1251.2736615962908,
+        "industry_legal_and_government": 1207.4325650332448,
+        "industry_life_and_physical_and_social_science": 1211.120290539777
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen1.5-14B-Chat",
+      "organization": "alibaba",
+      "license": "Qianwen LICENSE",
+      "vote_count": 17839,
+      "rank": 361,
+      "ratings": {
+        "coding": 1239.8075900226331,
+        "industry_legal_and_government": 1204.749006369415,
+        "industry_life_and_physical_and_social_science": 1190.6637697688914
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "InternLM2.5 20B Chat",
+      "organization": "",
+      "license": "Other",
+      "vote_count": 9901,
+      "rank": 362,
+      "ratings": {
+        "coding": 1248.779797822578,
+        "industry_legal_and_government": 1193.6369942623014,
+        "industry_life_and_physical_and_social_science": 1209.7579256626107
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "DeepSeek LLM 67B Chat",
+      "organization": "deepseek",
+      "license": "DeepSeek License",
+      "vote_count": 4932,
+      "rank": 363,
+      "ratings": {
+        "coding": 1218.2731296055088,
+        "industry_legal_and_government": 1198.9115841968894,
+        "industry_life_and_physical_and_social_science": 1180.194662917734
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "WizardLM 70B",
+      "organization": "microsoft",
+      "license": "Llama 2 Community",
+      "vote_count": 8214,
+      "rank": 364,
+      "ratings": {
+        "coding": 1193.5935436592144,
+        "industry_legal_and_government": 1217.8169178897497,
+        "industry_life_and_physical_and_social_science": 1200.1964536920118
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Yi 34B Chat",
+      "organization": "",
+      "license": "Yi License",
+      "vote_count": 15483,
+      "rank": 365,
+      "ratings": {
+        "coding": 1205.658124862361,
+        "industry_legal_and_government": 1219.588341988921,
+        "industry_life_and_physical_and_social_science": 1212.8011960363058
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Granite 3.0 8B Instruct",
+      "organization": "ibm",
+      "license": "Apache 2.0",
+      "vote_count": 6638,
+      "rank": 366,
+      "ratings": {
+        "coding": 1240.4776686169794,
+        "industry_legal_and_government": 1191.1909704937302,
+        "industry_life_and_physical_and_social_science": 1216.8425643738744
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "OpenChat 3.5",
+      "organization": "",
+      "license": "Apache-2.0",
+      "vote_count": 7968,
+      "rank": 367,
+      "ratings": {
+        "coding": 1202.6027287758416,
+        "industry_legal_and_government": 1228.2664682912182,
+        "industry_life_and_physical_and_social_science": 1186.8129816880185
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "OpenChat 3.5 (0106)",
+      "organization": "",
+      "license": "Apache-2.0",
+      "vote_count": 12637,
+      "rank": 368,
+      "ratings": {
+        "coding": 1229.9668850678936,
+        "industry_legal_and_government": 1204.649964177105,
+        "industry_life_and_physical_and_social_science": 1181.5755424220367
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 1.1 7B IT",
+      "organization": "google",
+      "license": "Gemma license",
+      "vote_count": 23893,
+      "rank": 369,
+      "ratings": {
+        "coding": 1215.474098663563,
+        "industry_legal_and_government": 1209.2659066860774,
+        "industry_life_and_physical_and_social_science": 1194.9243964433363
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Snowflake Arctic Instruct",
+      "organization": "",
+      "license": "Apache 2.0",
+      "vote_count": 32832,
+      "rank": 370,
+      "ratings": {
+        "coding": 1224.6995533906322,
+        "industry_legal_and_government": 1196.7797570235207,
+        "industry_life_and_physical_and_social_science": 1193.1286923991072
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Granite 3.1 2B Instruct",
+      "organization": "ibm",
+      "license": "Apache 2.0",
+      "vote_count": 3188,
+      "rank": 371,
+      "ratings": {
+        "coding": 1249.0205458703922,
+        "industry_life_and_physical_and_social_science": 1177.5038133299356
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Tulu 2 DPO 70B",
+      "organization": "",
+      "license": "AI2 ImpACT Low-risk",
+      "vote_count": 6535,
+      "rank": 372,
+      "ratings": {
+        "coding": 1215.2045747182974,
+        "industry_legal_and_government": 1216.7137078416988,
+        "industry_life_and_physical_and_social_science": 1188.940478298335
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "OpenHermes 2.5 Mistral 7B",
+      "organization": "",
+      "license": "Apache-2.0",
+      "vote_count": 5006,
+      "rank": 373,
+      "ratings": {
+        "coding": 1186.7487861973677,
+        "industry_legal_and_government": 1209.9783446388456,
+        "industry_life_and_physical_and_social_science": 1182.0070684449554
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Vicuna 33B",
+      "organization": "",
+      "license": "Non-commercial",
+      "vote_count": 22479,
+      "rank": 374,
+      "ratings": {
+        "coding": 1193.6988257451505,
+        "industry_legal_and_government": 1189.458534729808,
+        "industry_life_and_physical_and_social_science": 1192.0048304902164
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Phi-3 Small 8K Instruct",
+      "organization": "microsoft",
+      "license": "MIT",
+      "vote_count": 17766,
+      "rank": 375,
+      "ratings": {
+        "coding": 1205.0768225707698,
+        "industry_legal_and_government": 1193.1391898543748,
+        "industry_life_and_physical_and_social_science": 1192.3249361321919
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Starling LM 7B Beta",
+      "organization": "",
+      "license": "Apache-2.0",
+      "vote_count": 16056,
+      "rank": 376,
+      "ratings": {
+        "coding": 1235.7253173525132,
+        "industry_legal_and_government": 1209.1824766485877,
+        "industry_life_and_physical_and_social_science": 1204.7275080367306
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 2 70B Chat",
+      "organization": "meta",
+      "license": "Llama 2 Community",
+      "vote_count": 38492,
+      "rank": 377,
+      "ratings": {
+        "coding": 1179.26913573707,
+        "industry_legal_and_government": 1189.9570807961973,
+        "industry_life_and_physical_and_social_science": 1195.1073757318666
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Starling LM 7B Alpha",
+      "organization": "",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 10224,
+      "rank": 378,
+      "ratings": {
+        "coding": 1207.6932229718072,
+        "industry_legal_and_government": 1202.8827110760135,
+        "industry_life_and_physical_and_social_science": 1194.8403921493687
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.2 3B Instruct",
+      "organization": "meta",
+      "license": "Llama 3.2",
+      "vote_count": 7936,
+      "rank": 379,
+      "ratings": {
+        "coding": 1176.6593400293343,
+        "industry_legal_and_government": 1188.1933975391312,
+        "industry_life_and_physical_and_social_science": 1185.3205314481766
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Nous Hermes 2 Mixtral 8x7B DPO",
+      "organization": "",
+      "license": "Apache-2.0",
+      "vote_count": 3777,
+      "rank": 380,
+      "ratings": {
+        "coding": 1175.84024289432,
+        "industry_life_and_physical_and_social_science": 1187.069862074693
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Granite 3.0 2B Instruct",
+      "organization": "ibm",
+      "license": "Apache 2.0",
+      "vote_count": 6837,
+      "rank": 381,
+      "ratings": {
+        "coding": 1209.594038454432,
+        "industry_legal_and_government": 1178.904980894933,
+        "industry_life_and_physical_and_social_science": 1180.7543397477123
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 2 70B SteerLM Chat",
+      "organization": "nvidia",
+      "license": "Llama 2 Community",
+      "vote_count": 3585,
+      "rank": 382,
+      "ratings": {
+        "coding": 1145.754355123007,
+        "industry_life_and_physical_and_social_science": 1179.0008118885235
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "QwQ-32B-Preview",
+      "organization": "alibaba",
+      "license": "Apache 2.0",
+      "vote_count": 3231,
+      "rank": 383,
+      "ratings": {
+        "coding": 1174.020219719346,
+        "industry_legal_and_government": 1155.0969068488043,
+        "industry_life_and_physical_and_social_science": 1159.8395574587976
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "SOLAR 10.7B Instruct v1.0",
+      "organization": "upstage",
+      "license": "CC-BY-NC-4.0",
+      "vote_count": 4155,
+      "rank": 384,
+      "ratings": {
+        "coding": 1183.6588247364753,
+        "industry_legal_and_government": 1180.5239311008431,
+        "industry_life_and_physical_and_social_science": 1177.5521257071748
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Dolphin 2.2.1 Mistral 7B",
+      "organization": "",
+      "license": "Apache-2.0",
+      "vote_count": 1679,
+      "rank": 385,
+      "ratings": {
+        "industry_life_and_physical_and_social_science": 1171.006877209685
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MPT 30B Chat",
+      "organization": "",
+      "license": "CC-BY-NC-SA-4.0",
+      "vote_count": 2572,
+      "rank": 386,
+      "ratings": {
+        "coding": 1168.0034907370748,
+        "industry_life_and_physical_and_social_science": 1152.2713332752749
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "WizardLM 13B",
+      "organization": "microsoft",
+      "license": "Llama 2 Community",
+      "vote_count": 7044,
+      "rank": 387,
+      "ratings": {
+        "coding": 1151.8748297450297,
+        "industry_legal_and_government": 1193.3215046481487,
+        "industry_life_and_physical_and_social_science": 1170.3586657601209
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral 7B Instruct v0.2",
+      "organization": "mistral",
+      "license": "Apache-2.0",
+      "vote_count": 19402,
+      "rank": 388,
+      "ratings": {
+        "coding": 1186.0483721660353,
+        "industry_legal_and_government": 1183.574743727083,
+        "industry_life_and_physical_and_social_science": 1171.3192917958056
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Falcon 180B Chat",
+      "organization": "",
+      "license": "Falcon-180B TII License",
+      "vote_count": 1295,
+      "rank": 389,
+      "ratings": {
+        "industry_life_and_physical_and_social_science": 1160.424832842158
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen1.5-7B-Chat",
+      "organization": "alibaba",
+      "license": "Qianwen LICENSE",
+      "vote_count": 4737,
+      "rank": 390,
+      "ratings": {
+        "coding": 1209.7051730285987,
+        "industry_legal_and_government": 1178.7440412766007,
+        "industry_life_and_physical_and_social_science": 1160.195462714932
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Phi-3 Mini 4K Instruct (June 2024)",
+      "organization": "microsoft",
+      "license": "MIT",
+      "vote_count": 12297,
+      "rank": 391,
+      "ratings": {
+        "coding": 1197.100490876603,
+        "industry_legal_and_government": 1152.5306357251034,
+        "industry_life_and_physical_and_social_science": 1159.1864206527343
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Vicuna 13B",
+      "organization": "",
+      "license": "Llama 2 Community",
+      "vote_count": 19367,
+      "rank": 392,
+      "ratings": {
+        "coding": 1163.4413454229316,
+        "industry_legal_and_government": 1169.135470076218,
+        "industry_life_and_physical_and_social_science": 1152.2055315600462
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 2 13B Chat",
+      "organization": "meta",
+      "license": "Llama 2 Community",
+      "vote_count": 19174,
+      "rank": 393,
+      "ratings": {
+        "coding": 1162.7239282070095,
+        "industry_legal_and_government": 1155.361345654473,
+        "industry_life_and_physical_and_social_science": 1158.9545458398406
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen-14B-Chat",
+      "organization": "alibaba",
+      "license": "Qianwen LICENSE",
+      "vote_count": 4964,
+      "rank": 394,
+      "ratings": {
+        "coding": 1197.6919495121474,
+        "industry_legal_and_government": 1169.5597854484367,
+        "industry_life_and_physical_and_social_science": 1132.3497517284711
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "PaLM 2",
+      "organization": "google",
+      "license": "Proprietary",
+      "vote_count": 8554,
+      "rank": 395,
+      "ratings": {
+        "coding": 1152.9507209201715,
+        "industry_legal_and_government": 1153.3197265707174,
+        "industry_life_and_physical_and_social_science": 1159.7754934256518
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 7B IT",
+      "organization": "google",
+      "license": "Gemma license",
+      "vote_count": 8925,
+      "rank": 396,
+      "ratings": {
+        "coding": 1166.3866588088817,
+        "industry_legal_and_government": 1155.4669593208866,
+        "industry_life_and_physical_and_social_science": 1137.183798314722
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Code Llama 34B Instruct",
+      "organization": "meta",
+      "license": "Llama 2 Community",
+      "vote_count": 7366,
+      "rank": 397,
+      "ratings": {
+        "coding": 1159.5944089796026,
+        "industry_legal_and_government": 1157.0989999922108,
+        "industry_life_and_physical_and_social_science": 1163.032343979807
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Zephyr 7B Beta",
+      "organization": "",
+      "license": "MIT",
+      "vote_count": 11118,
+      "rank": 398,
+      "ratings": {
+        "coding": 1152.884151237432,
+        "industry_legal_and_government": 1184.9324367599809,
+        "industry_life_and_physical_and_social_science": 1156.9922083509377
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Phi-3 Mini 128K Instruct",
+      "organization": "microsoft",
+      "license": "MIT",
+      "vote_count": 20685,
+      "rank": 399,
+      "ratings": {
+        "coding": 1154.6712498148422,
+        "industry_legal_and_government": 1115.36600926879,
+        "industry_life_and_physical_and_social_science": 1137.2898932802186
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Phi-3 Mini 4K Instruct",
+      "organization": "microsoft",
+      "license": "MIT",
+      "vote_count": 20118,
+      "rank": 400,
+      "ratings": {
+        "coding": 1187.6505317858177,
+        "industry_legal_and_government": 1153.7025479353606,
+        "industry_life_and_physical_and_social_science": 1145.5184262677612
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Guanaco 33B",
+      "organization": "",
+      "license": "Non-commercial",
+      "vote_count": 2921,
+      "rank": 401,
+      "ratings": {
+        "coding": 1113.8094246214037,
+        "industry_life_and_physical_and_social_science": 1160.8574932258116
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Zephyr 7B Alpha",
+      "organization": "",
+      "license": "MIT",
+      "vote_count": 1785,
+      "rank": 402,
+      "ratings": {
+        "coding": 1166.9936078417672,
+        "industry_life_and_physical_and_social_science": 1140.5539382917314
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "StripedHyena Nous 7B",
+      "organization": "",
+      "license": "Apache 2.0",
+      "vote_count": 5182,
+      "rank": 403,
+      "ratings": {
+        "coding": 1127.4655834537416,
+        "industry_legal_and_government": 1111.2887235327996,
+        "industry_life_and_physical_and_social_science": 1130.8723465686855
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Code Llama 70B Instruct",
+      "organization": "meta",
+      "license": "Llama 2 Community",
+      "vote_count": 1143,
+      "rank": 404,
+      "ratings": {},
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 1.1 2B IT",
+      "organization": "google",
+      "license": "Gemma license",
+      "vote_count": 10854,
+      "rank": 405,
+      "ratings": {
+        "coding": 1170.3648406979955,
+        "industry_legal_and_government": 1117.8951290787031,
+        "industry_life_and_physical_and_social_science": 1126.3841618124438
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Vicuna 7B",
+      "organization": "",
+      "license": "Llama 2 Community",
+      "vote_count": 6923,
+      "rank": 406,
+      "ratings": {
+        "coding": 1131.8472896378898,
+        "industry_legal_and_government": 1144.4653205777745,
+        "industry_life_and_physical_and_social_science": 1116.4192125925092
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "SmolLM2 1.7B Instruct",
+      "organization": "",
+      "license": "Apache 2.0",
+      "vote_count": 2199,
+      "rank": 407,
+      "ratings": {
+        "coding": 1160.1849646399864,
+        "industry_life_and_physical_and_social_science": 1150.8426537725682
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 3.2 1B Instruct",
+      "organization": "meta",
+      "license": "Llama 3.2",
+      "vote_count": 8045,
+      "rank": 408,
+      "ratings": {
+        "coding": 1149.4211308478343,
+        "industry_legal_and_government": 1148.6746629211818,
+        "industry_life_and_physical_and_social_science": 1130.8152050544772
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Mistral 7B Instruct",
+      "organization": "mistral",
+      "license": "Apache 2.0",
+      "vote_count": 8977,
+      "rank": 409,
+      "ratings": {
+        "coding": 1144.675464016865,
+        "industry_legal_and_government": 1146.9263023392646,
+        "industry_life_and_physical_and_social_science": 1126.4533501766432
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Llama 2 7B Chat",
+      "organization": "meta",
+      "license": "Llama 2 Community",
+      "vote_count": 14148,
+      "rank": 410,
+      "ratings": {
+        "coding": 1103.2652803344572,
+        "industry_legal_and_government": 1137.3964956777995,
+        "industry_life_and_physical_and_social_science": 1122.205926735949
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Gemma 2B IT",
+      "organization": "google",
+      "license": "Gemma license",
+      "vote_count": 4780,
+      "rank": 411,
+      "ratings": {
+        "coding": 1135.519435909846,
+        "industry_legal_and_government": 1137.6117796575495,
+        "industry_life_and_physical_and_social_science": 1075.131349753783
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Qwen1.5-4B-Chat",
+      "organization": "alibaba",
+      "license": "Qianwen LICENSE",
+      "vote_count": 7597,
+      "rank": 412,
+      "ratings": {
+        "coding": 1131.6129090326149,
+        "industry_legal_and_government": 1137.2411405312364,
+        "industry_life_and_physical_and_social_science": 1107.0371270180333
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "OLMo 7B Instruct",
+      "organization": "allenai",
+      "license": "Apache-2.0",
+      "vote_count": 6328,
+      "rank": 413,
+      "ratings": {
+        "coding": 1107.5497794424905,
+        "industry_legal_and_government": 1105.122568867288,
+        "industry_life_and_physical_and_social_science": 1074.9767797741988
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Koala 13B",
+      "organization": "",
+      "license": "Non-commercial",
+      "vote_count": 6965,
+      "rank": 414,
+      "ratings": {
+        "coding": 1066.2723872179017,
+        "industry_legal_and_government": 1078.7560185259053,
+        "industry_life_and_physical_and_social_science": 1102.427969631844
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Alpaca 13B",
+      "organization": "",
+      "license": "Non-commercial",
+      "vote_count": 5745,
+      "rank": 415,
+      "ratings": {
+        "coding": 998.7149259253919,
+        "industry_legal_and_government": 1089.0825928621161,
+        "industry_life_and_physical_and_social_science": 1075.1240805471668
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "GPT4All 13B Snoozy",
+      "organization": "",
+      "license": "Non-commercial",
+      "vote_count": 1743,
+      "rank": 416,
+      "ratings": {
+        "industry_life_and_physical_and_social_science": 1058.5161755086415
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "MPT 7B Chat",
+      "organization": "",
+      "license": "CC-BY-NC-SA-4.0",
+      "vote_count": 3924,
+      "rank": 417,
+      "ratings": {
+        "coding": 1066.000728241045,
+        "industry_life_and_physical_and_social_science": 1064.128942101175
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "ChatGLM3 6B",
+      "organization": "",
+      "license": "Apache-2.0",
+      "vote_count": 4658,
+      "rank": 418,
+      "ratings": {
+        "coding": 1090.3332227572946,
+        "industry_legal_and_government": 1089.3932264952111,
+        "industry_life_and_physical_and_social_science": 1048.1563345835336
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "RWKV-4 Raven 14B",
+      "organization": "",
+      "license": "Apache 2.0",
+      "vote_count": 4845,
+      "rank": 419,
+      "ratings": {
+        "coding": 1059.636129455579,
+        "industry_legal_and_government": 1107.9943890488125,
+        "industry_life_and_physical_and_social_science": 1061.7465850942692
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "ChatGLM2 6B",
+      "organization": "",
+      "license": "Apache-2.0",
+      "vote_count": 2658,
+      "rank": 420,
+      "ratings": {
+        "coding": 1030.7216827053956,
+        "industry_life_and_physical_and_social_science": 1039.8861157397273
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "OpenAssistant Pythia 12B",
+      "organization": "",
+      "license": "Apache 2.0",
+      "vote_count": 6310,
+      "rank": 421,
+      "ratings": {
+        "coding": 1050.1092784600291,
+        "industry_legal_and_government": 1062.4426237167872,
+        "industry_life_and_physical_and_social_science": 1044.9430004287387
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "ChatGLM 6B",
+      "organization": "",
+      "license": "Non-commercial",
+      "vote_count": 4914,
+      "rank": 422,
+      "ratings": {
+        "coding": 1035.8629995519063,
+        "industry_legal_and_government": 992.2638371427234,
+        "industry_life_and_physical_and_social_science": 955.166624991695
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "FastChat-T5 3B",
+      "organization": "",
+      "license": "Apache 2.0",
+      "vote_count": 4203,
+      "rank": 423,
+      "ratings": {
+        "coding": 907.8755440454461,
+        "industry_legal_and_government": 1029.0382604914016,
+        "industry_life_and_physical_and_social_science": 993.8738507686737
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "Dolly 2.0 12B",
+      "organization": "",
+      "license": "MIT",
+      "vote_count": 3412,
+      "rank": 424,
+      "ratings": {
+        "coding": 961.9922204897348,
+        "industry_life_and_physical_and_social_science": 982.3181152622087
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "LLaMA 13B",
+      "organization": "meta",
+      "license": "Non-commercial",
+      "vote_count": 2391,
+      "rank": 425,
+      "ratings": {
+        "coding": 882.3338983682057,
+        "industry_life_and_physical_and_social_science": 992.4398655452101
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    },
+    {
+      "model_name": "StableLM Tuned Alpha 7B",
+      "organization": "",
+      "license": "CC-BY-NC-SA-4.0",
+      "vote_count": 3287,
+      "rank": 426,
+      "ratings": {
+        "coding": 1004.9578873041927,
+        "industry_life_and_physical_and_social_science": 934.8887923493633
+      },
+      "leaderboard_publish_date": "2026-11-19"
+    }
+  ]
+}

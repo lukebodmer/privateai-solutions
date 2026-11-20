@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import GliderMark from '../components/GliderMark.astro';
+---
+
+<Base
+  title="Page not found — Private AI Solutions"
+  description="The page you're looking for isn't in the archive."
+>
+  <main class="flex-1 flex flex-col justify-center max-w-3xl w-full mx-auto px-4 sm:px-6 py-16 text-center">
+    <GliderMark size={56} animate="always" class="text-frost-400 mx-auto mb-6" />
+    <p class="text-sm sm:text-base font-mono text-nord-500 tracking-wider mb-4">404 — not found</p>
+    <h1 class="text-3xl sm:text-4xl font-bold text-nord-100 mb-4 leading-tight">
+      That page doesn't exist <span class="font-mono text-nord-500">:(</span>
+    </h1>
+    <p class="text-nord-400 leading-relaxed max-w-2xl mx-auto">
+      Every claim on this site is sourced and dated... but this isn't one of them.
+      If you think this is a mistake, <a href="https://github.com/lukebodmer/privateai_solutions/issues" target="_blank" rel="noopener noreferrer" class="text-frost-400 hover:text-frost-300 hover:underline">open an issue on GitHub</a> and let us know.
+    </p>
+  </main>
+</Base>

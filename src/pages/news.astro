@@ -1,0 +1,41 @@
+---
+/** The news feed, day by day — rendered from src/data/news.json (src/lib/news.ts). */
+import Base from '../layouts/Base.astro';
+import { loadNews } from '../lib/news';
+
+const news = loadNews();
+const days = new Map<string, typeof news>();
+for (const n of news) days.set(n.date, [...(days.get(n.date) ?? []), n]);
+
+function fmtDay(d: string): string {
+  return new Date(`${d}T00:00:00Z`).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+}
+---
+
+<Base
+  title="Relevant news — Private AI Solutions"
+  description="New open models, what the closed labs are doing, and what to watch if you run AI on your own hardware."
+>
+  <main class="max-w-4xl w-full mx-auto px-4 sm:px-6 py-12">
+    <h1 class="text-3xl font-bold text-nord-100 mb-3">Relevant news</h1>
+    <p class="text-sm text-nord-400 leading-relaxed mb-10 max-w-2xl">
+      New open models, what the closed labs are doing, and what to watch if you run AI on your own hardware.
+    </p>
+
+    {days.size === 0 && <p class="text-sm text-nord-500">Nothing yet.</p>}
+
+    {[...days.entries()].map(([day, list]) => (
+      <section class="mb-8">
+        <h2 class="text-sm font-semibold text-nord-300 mb-2">{fmtDay(day)}</h2>
+        <ul class="divide-y divide-nord-800/70 border-y border-nord-800/70">
+          {list.map(n => (
+            <li class="py-1.5 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-sm">
+              <a href={n.url} target="_blank" rel="noopener" class="text-nord-200 hover:text-frost-400">{n.title}</a>
+              <span class="text-xs text-nord-500">({n.source})</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </main>
+</Base>

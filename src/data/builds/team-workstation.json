@@ -1,0 +1,117 @@
+{
+  "name": "Team workstation",
+  "slug": "team-workstation",
+  "facts": {
+    "kind": {
+      "value": "custom",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "runtime": {
+      "value": "llama.cpp",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "parts": {
+      "value": [
+        {
+          "part": "rtx-pro-6000-blackwell",
+          "quantity": 2
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "models": {
+      "value": [
+        {
+          "model": "glm-5.3-flash",
+          "weights": "UD-IQ4_XS"
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "photo_credit": {
+      "value": "A similar desktop, for illustration. Photo: Dateks.",
+      "source": "https://blog.dateks.lv/wp-content/uploads/2026/08/BJ8A3582-2.jpg",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "611238702c4e8586f4e89be04dbd495f5faf551c48e8e8af01dfb7a4fbf766ec",
+      "snapshot_ext": "html"
+    },
+    "price_range": {
+      "value": "$39,500–51,300 in parts",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "context_per_session": {
+      "value": 65536,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "concurrent_sessions": {
+      "value": 32,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "team_min": {
+      "value": 32,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "team_max": {
+      "value": 96,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "components": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "measured.max_concurrency": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "measured.output_tokens_per_second": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": []
+}

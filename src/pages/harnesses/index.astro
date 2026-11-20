@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadEntities, factStr } from '../../lib/facts';
+import { resolveLogo } from '../../utils/resolveLogo';
+
+const harnesses = loadEntities('harness');
+const harnessLogos = new Map(harnesses.map(h => [h.slug, resolveLogo('harnesses', h.slug)]));
+---
+
+<Base
+  title="Open-Source Agent Harnesses — Private AI Solutions"
+  description="Neuman and the open-source agent harnesses we follow: who builds them, what they're written in, and how they're licensed."
+>
+  <main class="max-w-3xl w-full mx-auto px-4 sm:px-6 py-10">
+
+    <header class="mb-8 pb-6 border-b border-nord-800">
+      <h1 class="text-xl font-semibold text-nord-100 tracking-tight">Agent harnesses</h1>
+      <p class="text-sm text-nord-400 leading-relaxed mt-1.5 max-w-xl">
+        Neuman is part of the open-source agent community. We follow these projects to see
+        what others are building and bring the best ideas into Neuman. Select one to learn more.
+      </p>
+    </header>
+
+    <div class="space-y-3">
+      {/* Neuman: ours, pre-release, so a hand-written card rather than a
+          harness entity — it has no public repository to source facts from. */}
+      <a href="/"
+        class="block bg-nord-900 border border-frost-900/60 rounded-lg px-4 py-4 hover:border-frost-700 hover:bg-nord-800/60 transition-colors">
+        <div class="flex items-start justify-between gap-3">
+          <div class="flex items-center gap-3 min-w-0">
+            <img src="/favicon.svg" alt="" class="w-8 h-8 rounded shrink-0" />
+            <div class="min-w-0">
+              <span class="font-medium text-nord-100 text-sm">Neuman</span>
+              <span class="block text-xs text-nord-500 mt-0.5">Private AI Solutions · Python</span>
+            </div>
+          </div>
+          <span class="text-xs px-2 py-0.5 rounded bg-frost-950/60 text-frost-400 border border-frost-900 whitespace-nowrap">Pre-release</span>
+        </div>
+        <p class="text-xs text-nord-400 mt-2 leading-relaxed">
+          Runs as the person it acts for, and does nothing they haven't approved.
+        </p>
+      </a>
+
+      {harnesses.map(h => {
+        const hLogo = harnessLogos.get(h.slug);
+        const developer = factStr(h, 'developer');
+        const language = factStr(h, 'language');
+        const license = factStr(h, 'license');
+        const installMethod = factStr(h, 'install_method');
+        return (
+        <a href={`/harnesses/${h.slug}`}
+          class="block bg-nord-900 border border-nord-800 rounded-lg px-4 py-4 hover:border-nord-600 hover:bg-nord-800/60 transition-colors">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-3 min-w-0">
+              {hLogo && <img src={hLogo} alt="" class="w-8 h-8 rounded shrink-0" />}
+              <div class="min-w-0">
+                <span class="font-medium text-nord-100 text-sm">{h.name}</span>
+                <span class="block text-xs text-nord-500 mt-0.5">
+                  {developer ?? ''}{language ? ` · ${language}` : ''}
+                </span>
+              </div>
+            </div>
+            {license && (
+              <span class="text-xs px-2 py-0.5 rounded bg-nord-800 text-nord-400 border border-nord-700 whitespace-nowrap">{license}</span>
+            )}
+          </div>
+          {installMethod && (
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              <span class="text-xs px-1.5 py-0.5 rounded bg-nord-800 text-nord-500 border border-nord-700">{installMethod.substring(0, 40)}</span>
+            </div>
+          )}
+        </a>
+      );})}
+    </div>
+
+  </main>
+</Base>

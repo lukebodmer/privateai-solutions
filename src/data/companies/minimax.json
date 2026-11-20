@@ -1,0 +1,116 @@
+{
+  "name": "MiniMax",
+  "slug": "minimax",
+  "facts": {
+    "snapshot.official": {
+      "value": "https://www.minimax.io/",
+      "source": "https://www.minimax.io/",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "d6bb9174e5d7616b17ed4c6a2183dae81e40244a0c0c0a24406b5357fac5440a",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/MiniMax_Group",
+      "source": "https://en.wikipedia.org/wiki/MiniMax_Group",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "3c4d822f65810dd18d8bdd3c7ab80fb91918b65ac695d49205733f1558e2c7bd",
+      "snapshot_ext": "html"
+    },
+    "snapshot.huggingface_org": {
+      "value": "https://huggingface.co/MiniMaxAI",
+      "source": "https://huggingface.co/MiniMaxAI",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "df6995b693d57ecebe0c81bf0c3e68ff09e0c155d283171bb3985a32f4639379",
+      "snapshot_ext": "html"
+    },
+    "snapshot.github_org": {
+      "value": "https://github.com/MiniMax-AI",
+      "source": "https://github.com/MiniMax-AI",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "4576bf9e6adc6581d758bd6c859fc10551b48f23d945ea4466642a6cb89060f2",
+      "snapshot_ext": "html"
+    },
+    "country": {
+      "value": "China",
+      "source": "https://en.wikipedia.org/wiki/MiniMax_Group",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "3c4d822f65810dd18d8bdd3c7ab80fb91918b65ac695d49205733f1558e2c7bd",
+      "snapshot_ext": "html"
+    },
+    "hq_city": {
+      "value": "Shanghai",
+      "source": "https://en.wikipedia.org/wiki/MiniMax_Group",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "6b84686ddfd8037e79b2fc9ca587dc3b5647930b62753df6f320e2995c1082af",
+      "snapshot_ext": "html"
+    },
+    "founded": {
+      "value": "2021-12",
+      "source": "https://en.wikipedia.org/wiki/MiniMax_Group",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09"
+    },
+    "weights_availability": {
+      "value": "open-with-restrictions",
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "4d87a9c791011009c84fc4b91d70c2048edb0ce5c3bd8f2d06f02fd6cd837663",
+      "snapshot_ext": "html"
+    },
+    "legal_structure": {
+      "value": "for-profit",
+      "source": "https://en.wikipedia.org/wiki/MiniMax_Group",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "6b84686ddfd8037e79b2fc9ca587dc3b5647930b62753df6f320e2995c1082af",
+      "snapshot_ext": "html"
+    },
+    "ownership": {
+      "value": "public",
+      "source": "https://en.wikipedia.org/wiki/MiniMax_Group",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09"
+    },
+    "parent_company": {
+      "value": null,
+      "source": "https://en.wikipedia.org/wiki/MiniMax_Group",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09"
+    },
+    "employee_tier": {
+      "value": "50-500",
+      "source": "https://en.wikipedia.org/wiki/MiniMax_Group",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "6b84686ddfd8037e79b2fc9ca587dc3b5647930b62753df6f320e2995c1082af",
+      "snapshot_ext": "html"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": []
+}

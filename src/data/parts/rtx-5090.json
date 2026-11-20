@@ -1,0 +1,140 @@
+{
+  "name": "GeForce RTX 5090",
+  "slug": "rtx-5090",
+  "facts": {
+    "class": {
+      "value": "gpu",
+      "source": null,
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-08"
+    },
+    "maker": {
+      "value": "NVIDIA",
+      "source": "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-08"
+    },
+    "memory_gb": {
+      "value": 32,
+      "source": null,
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-08"
+    },
+    "memory_bandwidth_gbps": {
+      "value": 1792,
+      "source": "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-08"
+    },
+    "power_w": {
+      "value": 575,
+      "source": "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-08"
+    },
+    "released": {
+      "value": "2025-01-30",
+      "source": "https://en.wikipedia.org/wiki/GeForce_RTX_50_series",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-08"
+    },
+    "form_factor": {
+      "value": "dual-slot",
+      "source": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-08"
+    },
+    "snapshot.maker": {
+      "value": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+      "source": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "0027aed75a80972273436461694848317fc4b2883bcfa5cdd56bd53bdfbf2b9f",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/GeForce_50_series",
+      "source": "https://en.wikipedia.org/wiki/GeForce_50_series",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "cd335d771e3ff245a76dd4c3e9c5bd0b93bb8d365cb015e801bc374e961eab95",
+      "snapshot_ext": "html"
+    },
+    "price.new_usd": {
+      "value": 6549.99,
+      "source": "https://www.newegg.com/gigabyte-gv-n5090gaming-oc-32gd-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814932761",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "$6,549.99 Free 82-day Returns",
+      "snapshot_hash": "8ef68e6f6b6bce5dafe38ad429186e82c3de58ec07653de8da314da8b1d7a48e",
+      "snapshot_ext": "html"
+    },
+    "price.swept": {
+      "value": false,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "snapshot.techpowerup": {
+      "value": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216",
+      "source": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "038d0e2392397416d76ea6013034e7f9d6469859ff97c02160575c803241d6b2",
+      "snapshot_ext": "html"
+    },
+    "bf16_tflops": {
+      "value": 209.5,
+      "source": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "83d798c11839cd36b2db80dcacfbc1d3a7e2d0c8986c321ecd156a7e9bf813e2",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "NVIDIA RTX Blackwell GPU Architecture (PDF, v1.01)",
+      "url": "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf",
+      "author": "NVIDIA",
+      "date": "Feb 2025"
+    },
+    {
+      "title": "NVIDIA GeForce RTX 5090 Product Page",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+      "author": "NVIDIA",
+      "date": "Jan 2025"
+    },
+    {
+      "title": "GeForce RTX 5090 User Guide (Rev 1)",
+      "url": "https://www.nvidia.com/content/geforce-gtx/GeForce_RTX_5090_User_Guide_Rev1.pdf",
+      "author": "NVIDIA",
+      "date": "Jan 2025"
+    },
+    {
+      "title": "GeForce 50 Series — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/GeForce_50_series",
+      "author": "Wikipedia",
+      "date": "2025"
+    },
+    {
+      "title": "RTX 5090 Price, Value Score & Where to Buy (August 2026)",
+      "url": "https://gpupoet.com/gpu/learn/price/august-2026/nvidia-geforce-rtx-5090",
+      "author": "GPU Poet",
+      "date": "2026"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "name": "Z.ai",
+  "slug": "zai",
+  "facts": {
+    "country": {
+      "value": "China",
+      "source": "https://en.wikipedia.org/wiki/Z.ai",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "founded": {
+      "value": "2019",
+      "source": "https://en.wikipedia.org/wiki/Z.ai",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "weights_availability": {
+      "value": "open-fully",
+      "source": "https://huggingface.co/zai-org",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "hq_city": {
+      "value": "Beijing",
+      "source": "https://en.wikipedia.org/wiki/Z.ai",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "legal_structure": {
+      "value": "for-profit",
+      "source": "https://en.wikipedia.org/wiki/Z.ai",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "ownership": {
+      "value": "public",
+      "source": "https://en.wikipedia.org/wiki/Z.ai",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parent_company": {
+      "value": null,
+      "source": "https://en.wikipedia.org/wiki/Z.ai",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "employee_tier": {
+      "value": "500-5k",
+      "source": "https://en.wikipedia.org/wiki/Z.ai",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.official": {
+      "value": "https://z.ai",
+      "source": "https://z.ai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "3a40cdbed503080aca9e34ae6ff7c80d834ab5cf5302e8be419f54a9021b0459",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/Z.ai",
+      "source": "https://en.wikipedia.org/wiki/Z.ai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "66890e5b5565729285942100de359bb4d1f49d3ed4404617f2e8fa08a81292d7",
+      "snapshot_ext": "html"
+    },
+    "snapshot.huggingface_org": {
+      "value": "https://huggingface.co/zai-org",
+      "source": "https://huggingface.co/zai-org",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "2f825c0c34a36e069981ed65ec67868743f5a2400048a02e090838fe426f6b39",
+      "snapshot_ext": "html"
+    },
+    "snapshot.github_org": {
+      "value": "https://github.com/zai-org",
+      "source": "https://github.com/zai-org",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "5900c5cbb0d3915cbbd6e2538bb8a5b64237d05d68d36f186d5d37fe432bc31b",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "Z.ai — Official Site",
+      "url": "https://z.ai",
+      "author": "Z.ai",
+      "date": "2026"
+    },
+    {
+      "title": "Z.ai — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Z.ai",
+      "author": "Wikipedia",
+      "date": "2026"
+    },
+    {
+      "title": "Z.ai — HuggingFace",
+      "url": "https://huggingface.co/zai-org",
+      "author": "Z.ai",
+      "date": "2026"
+    },
+    {
+      "title": "Z.ai — GitHub",
+      "url": "https://github.com/zai-org",
+      "author": "Z.ai",
+      "date": "2026"
+    }
+  ]
+}

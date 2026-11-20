@@ -1,0 +1,79 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadEntities, factStr } from '../../lib/facts';
+import { fitBuild } from '../../lib/sizing';
+import { buildImage, buildPrice, fmtGb, teamLabel } from '../../lib/builds';
+
+// The ladder: least memory first, so each build runs something the one
+// above it cannot.
+const builds = loadEntities('build')
+  .map(b => ({ build: b, fit: fitBuild(b), price: buildPrice(b), image: buildImage(b) }))
+  .sort((a, b) => (a.fit.totalMemoryGb ?? Infinity) - (b.fit.totalMemoryGb ?? Infinity));
+---
+
+<Base
+  title="Builds — Private AI Solutions"
+  description="Machines we build and set up to run Neuman and open models on your own premises, each sized for a team and the models it runs."
+>
+  <main class="max-w-3xl w-full mx-auto px-4 sm:px-6 py-10">
+
+    <header class="mb-8 pb-6 border-b border-nord-800">
+      <h1 class="text-xl font-semibold text-nord-100 tracking-tight">Builds</h1>
+      <p class="text-sm text-nord-400 leading-relaxed mt-1.5 max-w-xl">
+        Machines we build and set up for
+        <a href="/" class="text-frost-400 hover:text-frost-300">Neuman</a>,
+        from one workstation to a server room. Each is sized for a team and the models it runs,
+        and every sizing figure links to <a href="#how-we-size" class="text-frost-400 hover:text-frost-300">the documents it comes from</a>.
+      </p>
+    </header>
+
+    <div class="space-y-3">
+      {builds.map(({ build: b, fit, price, image }) => {
+        const main = fit.models[0];
+        const kind = factStr(b, 'kind');
+        const team = teamLabel(b);
+        const specs = [
+          fit.totalMemoryGb !== null ? `${fmtGb(fit.totalMemoryGb)} memory` : 'memory pending',
+          main?.model ? `runs ${main.model.name}` : null,
+          team,
+        ].filter(Boolean).join(' · ');
+        return (
+          <a href={`/builds/${b.slug}`}
+            class="block bg-nord-900 border border-nord-800 rounded-lg px-4 py-4 hover:border-nord-600 hover:bg-nord-800/60 transition-colors">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+              {image
+                ? <span class="relative w-14 h-14 shrink-0">
+                    <img src={image} alt="" class="w-14 h-14 rounded object-cover bg-nord-950" />
+                    {factStr(b, 'photo_credit') && <span class="absolute inset-x-0 bottom-0 rounded-b bg-nord-950/80 text-[8px] text-nord-300 text-center leading-tight py-0.5">Illustration</span>}
+                  </span>
+                : <span class="w-14 h-14 rounded bg-nord-950 border border-nord-800 shrink-0"></span>}
+              <div class="min-w-0">
+                <span class="font-medium text-nord-100 text-sm">{b.name}</span>
+                <span class="block text-xs text-nord-500 mt-0.5">
+                  {fit.parts.map(p => `${p.quantity}× ${p.part?.name ?? p.slug}`).join(' + ')}
+                </span>
+                <span class="block text-xs text-nord-400 font-mono mt-1">{specs}</span>
+              </div>
+              </div>
+              <div class="flex flex-col items-end gap-1.5 shrink-0">
+                {kind === 'custom' && (
+                  <span class="text-xs px-2 py-0.5 rounded bg-nord-800 text-nord-400 border border-nord-700 whitespace-nowrap">Custom build</span>
+                )}
+                {price.label && <span class="text-xs font-mono text-nord-300">{price.label}</span>}
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+    <p id="how-we-size" class="mt-8 text-xs text-nord-500 leading-relaxed max-w-xl scroll-mt-20">
+      How we size a build: the model's weights, plus the memory each person's session holds at the
+      context we set, must fit in the memory the inference server will actually use. Each build page
+      shows that arithmetic and the published documents behind every rule in it. Speeds appear only
+      once we have measured them.
+    </p>
+
+  </main>
+</Base>

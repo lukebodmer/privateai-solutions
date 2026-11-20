@@ -1,0 +1,371 @@
+---
+// The gear train behind the docs index header. Source: assets/docs/gears.blend,
+// exported to public/docs/gears.glb.
+//
+// It is a background, not an illustration: the camera looks straight down on
+// the train, the object sits to the right of the headline, a faded grid runs
+// under it, and the panel's scrim carries the words. The colours are Nord — a
+// cool white key, the frost accent for the rim, sky for fill — so the steel
+// reads blue-grey rather than neutral, and the grid is the site's frost
+// hairline, drawn to a cell pitch like the hero's.
+//
+// It ticks rather than spins: once a second the large gear turns two degrees
+// and the other two turn by the ratio of their teeth, so the three stay meshed
+// at every step. A clock's escapement is the reference, not a motor.
+interface Props {
+  class?: string;
+}
+
+const { class: cls = '' } = Astro.props;
+---
+
+<div class={`pointer-events-none ${cls}`} data-gears-mount aria-hidden="true"></div>
+
+<script>
+  import type * as THREE from 'three';
+
+  // Degrees the large gear turns per tick, and how much of the second the turn
+  // takes. The rest of the second it holds.
+  const STEP_DEG = 2;
+  const TURN_SECONDS = 0.45;
+
+  // Teeth per gear, from the model. These ratios are the whole illusion.
+  const RATIOS: Array<[string, number]> = [
+    ['Gear_Large', 1],
+    ['Gear_Medium', -24 / 14],
+    ['Gear_Small', 24 / 9],
+  ];
+
+  // How far the plan is turned on screen, so the train runs on a diagonal
+  // rather than square to the panel.
+  const ROLL_DEG = 18;
+
+  const mount = document.querySelector<HTMLElement>('[data-gears-mount]');
+  if (mount) boot(mount);
+  async function boot(mount: HTMLElement) {
+    const three = await import('three');
+    const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new three.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+    } catch {
+      return;
+    }
+
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearAlpha(0);
+    renderer.outputColorSpace = three.SRGBColorSpace;
+    renderer.toneMapping = three.AgXToneMapping;
+    renderer.toneMappingExposure = 1.05;
+    renderer.domElement.style.cssText = 'display:block;width:100%;height:100%';
+    mount.appendChild(renderer.domElement);
+
+    const scene = new three.Scene();
+    const camera = new three.PerspectiveCamera(26, 1, 0.01, 12);
+
+    // A room of its own rather than a neutral one: from straight above, a metal
+    // face mirrors whatever is over it, so the ceiling is what decides the
+    // object's colour. This one is lit the way the page is — frost above, the
+    // page's near-black below — which turns the steel blue-grey.
+    const envScene = new three.Scene();
+    const dome = new three.Mesh(
+      new three.SphereGeometry(1, 32, 16),
+      new three.ShaderMaterial({
+        side: three.BackSide,
+        vertexShader: /* glsl */ `
+          varying vec3 vDir;
+          void main() {
+            vDir = normalize(position);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: /* glsl */ `
+          varying vec3 vDir;
+          void main() {
+            vec3 dir = normalize(vDir);
+            float t = clamp(dir.y * 0.5 + 0.5, 0.0, 1.0);
+            vec3 below = vec3(0.02, 0.024, 0.03);
+            vec3 above = vec3(0.85, 1.10, 1.35);
+            vec3 col = mix(below, above, smoothstep(0.40, 0.95, t));
+            // One soft box high and to the left: without it a flat face mirrors
+            // a flat ceiling and the steel has no gradient to model it.
+            float box = smoothstep(0.52, 0.90, dot(dir, normalize(vec3(-0.45, 0.85, 0.35))));
+            col += box * vec3(3.6, 4.2, 4.8);
+            gl_FragColor = vec4(col, 1.0);
+          }
+        `,
+      }),
+    );
+    envScene.add(dome);
+
+    const pmrem = new three.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(envScene, 0.04).texture;
+    scene.environmentIntensity = 0.85;
+    scene.add(new three.AmbientLight(0x4c566a, 0.2));
+
+    // Nord: snow-white key from one side, frost rim from the other, sky fill.
+    const key = new three.DirectionalLight(0xd8dee9, 2.2);
+    key.position.set(-0.55, 1.0, 0.55);
+    scene.add(key);
+
+    const rim = new three.DirectionalLight(0x88c0d0, 3.4);
+    rim.position.set(0.9, 0.35, -0.8);
+    scene.add(rim);
+
+    const fill = new three.DirectionalLight(0x81a1c1, 1.3);
+    fill.position.set(0.8, 0.35, 0.65);
+    scene.add(fill);
+
+    let model: THREE.Object3D;
+    try {
+      const gltf = await new GLTFLoader().loadAsync('/docs/gears.glb');
+      model = gltf.scene;
+    } catch {
+      return;
+    }
+    scene.add(model);
+
+    // Each gear turns about its own axis. The pose in the file already has the
+    // three at the one phase where the teeth interlock, so every frame is that
+    // pose plus an angle — never an accumulated one, or the mesh would drift.
+    const axis = new three.Vector3(0, 1, 0);
+    const step = new three.Quaternion();
+    const gears: Array<{ gear: THREE.Object3D; ratio: number; base: THREE.Quaternion }> = [];
+    for (const [name, ratio] of RATIOS) {
+      const gear = model.getObjectByName(name);
+      if (gear) gears.push({ gear, ratio, base: gear.quaternion.clone() });
+    }
+    if (!gears.length) return;
+
+    const turn = (angle: number) => {
+      for (const { gear, ratio, base } of gears) {
+        step.setFromAxisAngle(axis, angle * ratio);
+        gear.quaternion.copy(base).premultiply(step);
+      }
+    };
+
+    // Straight down. With the view axis along Y the camera has to be given
+    // another "up" or lookAt has nothing to resolve against; this one also
+    // rolls the plan ROLL_DEG so the train sits on a diagonal.
+    const roll = three.MathUtils.degToRad(ROLL_DEG);
+    const up = new three.Vector3(Math.sin(roll), 0, -Math.cos(roll));
+    camera.up.copy(up);
+
+    const bounds = new three.Box3().setFromObject(model);
+    const centre = bounds.getCenter(new three.Vector3());
+
+    // The floor grid, drawn the way the hero draws its own: a frost hairline
+    // on a 40 mm pitch, faded out before the panel's edge so the object sits in
+    // darkness rather than on a plane.
+    const gridMaterial = new three.ShaderMaterial({
+      uniforms: {
+        uColor: { value: new three.Color(0x88c0d0) },
+        uSpacing: { value: 0.04 },
+        uFadeStart: { value: 0.09 },
+        uFadeEnd: { value: 0.30 },
+        uOrigin: { value: centre.clone() },
+      },
+      vertexShader: /* glsl */ `
+        varying vec3 vWorld;
+        void main() {
+          vec4 world = modelMatrix * vec4(position, 1.0);
+          vWorld = world.xyz;
+          gl_Position = projectionMatrix * viewMatrix * world;
+        }
+      `,
+      fragmentShader: /* glsl */ `
+        uniform vec3 uColor;
+        uniform vec3 uOrigin;
+        uniform float uSpacing;
+        uniform float uFadeStart;
+        uniform float uFadeEnd;
+        varying vec3 vWorld;
+        void main() {
+          vec2 p = vWorld.xz - uOrigin.xz;
+          vec2 cell = abs(fract(p / uSpacing - 0.5) - 0.5) / 0.02;
+          float line = 1.0 - min(min(cell.x, cell.y), 1.0);
+          float fade = 1.0 - smoothstep(uFadeStart, uFadeEnd, length(p));
+          float alpha = line * fade * 0.095;
+          if (alpha < 0.002) discard;
+          gl_FragColor = vec4(uColor, alpha);
+          #include <colorspace_fragment>
+        }
+      `,
+      transparent: true,
+      depthWrite: false,
+    });
+    const grid = new three.Mesh(new three.PlaneGeometry(3, 3), gridMaterial);
+    grid.rotation.x = -Math.PI / 2;
+    grid.position.set(centre.x, bounds.min.y + 0.0003, centre.z);
+    scene.add(grid);
+
+    // Every vertex in the camera's own frame, so the fit follows the silhouette
+    // rather than the box round it: a chain of discs leaves most of that box
+    // empty. The margin covers the teeth swinging through as the gears turn.
+    const plane = new three.Vector3(0, 1, 0);
+    const right = new three.Vector3(Math.cos(roll), 0, Math.sin(roll));
+
+    const cloud: number[] = [];
+    model.updateMatrixWorld(true);
+    const point = new three.Vector3();
+    model.traverse((child) => {
+      const mesh = child as THREE.Mesh;
+      if (!mesh.isMesh) return;
+      const position = mesh.geometry.attributes.position as THREE.BufferAttribute;
+      for (let i = 0; i < position.count; i++) {
+        point.fromBufferAttribute(position, i).applyMatrix4(mesh.matrixWorld).sub(centre);
+        cloud.push(point.dot(right), point.dot(up), point.dot(plane));
+      }
+    });
+
+    const wide = window.matchMedia('(min-width: 768px)');
+
+    // The object answers the pointer the way the home page's does: the camera
+    // leans a few degrees toward the cursor and settles back when it leaves.
+    // From straight above that shows a sliver of the gears' sides, which is all
+    // the movement this view needs.
+    const host = mount.parentElement ?? mount;
+    const pointer = { x: 0, y: 0 };
+    const target = { x: 0, y: 0 };
+    let clock = 0;
+    const swing = three.MathUtils.degToRad(12);
+    let distance = 1;
+
+    const upNow = new three.Vector3();
+    const rightNow = new three.Vector3();
+
+    function place() {
+      const reach = Math.tan(swing) * distance;
+      // A slow sway of its own, so the object is never quite still: a flat plan
+      // seen from directly above shows no motion at all otherwise.
+      const driftX = Math.sin(clock * 0.22) * 0.12;
+      const driftY = Math.cos(clock * 0.17) * 0.08;
+      // The pointer turns the plan as well as leaning over it. A lean alone is
+      // almost invisible on something this flat; a turn reads immediately.
+      const turn =
+        roll +
+        (pointer.x + driftX) * three.MathUtils.degToRad(5) +
+        Math.sin(clock * 0.13) * three.MathUtils.degToRad(0.8);
+
+      upNow.set(Math.sin(turn), 0, -Math.cos(turn));
+      rightNow.set(Math.cos(turn), 0, Math.sin(turn));
+      camera.up.copy(upNow);
+      camera.position
+        .copy(centre)
+        .addScaledVector(plane, distance)
+        .addScaledVector(rightNow, (pointer.x + driftX) * reach)
+        .addScaledVector(upNow, -(pointer.y + driftY) * reach);
+      camera.lookAt(centre);
+    }
+
+    function resize() {
+      const w = mount.clientWidth;
+      const h = mount.clientHeight;
+      if (!w || !h) return;
+
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+
+      const vFov = three.MathUtils.degToRad(camera.fov);
+      const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+
+      // Each point needs a height of its own (|offset| / tan(half-fov), plus
+      // how close it already is); the largest is the one that would leave frame.
+      let need = 0;
+      for (let i = 0; i < cloud.length; i += 3) {
+        need = Math.max(
+          need,
+          Math.abs(cloud[i]) / Math.tan(hFov / 2) + cloud[i + 2],
+          Math.abs(cloud[i + 1]) / Math.tan(vFov / 2) + cloud[i + 2],
+        );
+      }
+      distance = 1.26 * need;
+      place();
+
+      // The headline sits over the left of the panel, so the object moves right.
+      const shiftX = wide.matches ? -0.24 * w : 0;
+      camera.setViewOffset(w, h, shiftX, 0, w, h);
+
+      if (reduced) renderer.render(scene, camera);
+    }
+
+    resize();
+    new ResizeObserver(resize).observe(mount);
+    wide.addEventListener('change', resize);
+
+    if (reduced) {
+      turn(0);
+      renderer.render(scene, camera);
+      return;
+    }
+
+    const easeInOutCubic = (p: number) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+    const stepRad = three.MathUtils.degToRad(STEP_DEG);
+
+    let raf = 0;
+    let running = false;
+    // Time only advances while the scene is playing, so a tab that was hidden
+    // resumes at whichever step it left rather than jumping forward.
+    let last = performance.now();
+
+    function frame(now: number) {
+      raf = requestAnimationFrame(frame);
+      const dt = Math.min(0.1, (now - last) / 1000);
+      clock += dt;
+      last = now;
+
+      // Frame-rate independent, but a touch quicker than the hero's 0.05 a
+      // frame at 60: this view needs to answer before the eye leaves it.
+      const ease = 1 - Math.exp(-dt * 4);
+      pointer.x += (target.x - pointer.x) * ease;
+      pointer.y += (target.y - pointer.y) * ease;
+      place();
+
+      const index = Math.floor(clock);
+      const progress = Math.min(1, (clock - index) / TURN_SECONDS);
+      turn((index + easeInOutCubic(progress)) * stepRad);
+      renderer.render(scene, camera);
+    }
+
+    function play() {
+      if (running) return;
+      running = true;
+      last = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
+
+    function pause() {
+      running = false;
+      cancelAnimationFrame(raf);
+    }
+
+    host.addEventListener('pointermove', (event) => {
+      const rect = mount.getBoundingClientRect();
+      target.x = three.MathUtils.clamp(((event.clientX - rect.left) / rect.width) * 2 - 1, -1, 1);
+      target.y = three.MathUtils.clamp(((event.clientY - rect.top) / rect.height) * 2 - 1, -1, 1);
+    });
+    host.addEventListener('pointerleave', () => {
+      target.x = 0;
+      target.y = 0;
+    });
+
+    new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) play();
+        else pause();
+      },
+      { threshold: 0.05 },
+    ).observe(mount);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) pause();
+      else play();
+    });
+
+    play();
+  }
+</script>

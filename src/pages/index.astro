@@ -1,0 +1,237 @@
+---
+import Base from '../layouts/Base.astro';
+import DemoVideo from '../components/DemoVideo.astro';
+import LifeWord from '../components/LifeWord.astro';
+import OfficeScene from '../components/OfficeScene.astro';
+import DocCard from '../components/DocCard.astro';
+import NextSection from '../components/NextSection.astro';
+import { docGroups } from '../lib/docs';
+
+// The home page, which is Neuman's: why it is open source and runs on hardware
+// you own, recordings of it at work, and a way into its docs. Claims here
+// follow Neuman's own docs (security-model.md, tools.md); check them there before
+// changing a word.
+
+// The docs worth starting from; /docs has the rest. A slug that main no
+// longer publishes is skipped rather than breaking the page.
+const FEATURED_DOCS = ['philosophy', 'security-model', 'tools', 'setup'];
+const allDocs = (await docGroups()).flatMap(g => g.docs);
+const featuredDocs = FEATURED_DOCS
+  .map(slug => allDocs.find(d => d.slug === slug))
+  .filter(d => d !== undefined);
+
+// The hero's three points: what local and open source mean for whoever runs it.
+const promises = [
+  {
+    title: 'On machines you own.',
+    body: 'Neuman runs on hardware you control, in your building, under your rules.',
+  },
+  {
+    title: 'Open to inspect and adapt.',
+    body: 'Read the code, and tailor it to how you work instead of working around it.',
+  },
+  {
+    title: 'Your data stays yours.',
+    body: 'It stays local and private, never sent to a big tech company.',
+  },
+];
+---
+
+<Base
+  title="Private AI Solutions — Neuman, an AI agent on hardware you own"
+  description="Neuman is an open-source AI agent that runs on hardware you own and works in your own programs, as you. Your data, your models, no cloud in the middle."
+>
+  <main class="w-full">
+
+    <!-- Hero: why Neuman exists, in the voice of its manifesto, over the
+         office Neuman lives in — the people working, the light running along
+         the lines to the cabinet (see components/OfficeScene.astro). On a
+         wide screen the room keeps to the open right of the panel and fades
+         into it, and the words lead; on a narrow one it sits in the words,
+         between the promise and the three points. -->
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 pt-6">
+      <section class="relative overflow-hidden bg-nord-950">
+        <div class="absolute inset-0 bg-gradient-to-br from-frost-950/25 via-nord-950 to-nord-950"></div>
+
+        <div class="relative flex flex-col lg:min-h-[640px]">
+          <!-- Scrim over the scene, under the text: without it the room
+               runs straight through the words. Only a wide screen puts the
+               words on the room; below lg it sits in the words and needs no
+               scrim at all. -->
+          <div class="pointer-events-none absolute inset-0 z-10 hidden lg:block"
+            style="background: linear-gradient(90deg, rgba(30,35,43,0.97) 0%, rgba(30,35,43,0.92) 32%, rgba(30,35,43,0.72) 46%, rgba(30,35,43,0.18) 64%, rgba(30,35,43,0) 76%)"></div>
+
+          <div class="flex items-center lg:flex-1">
+            <!-- The text sits in from the panel's edge rather than against it:
+                 on a wide screen a column pinned to the left leaves the middle
+                 of the panel empty and reads as a caption to the object. -->
+            <div class="mx-auto w-full max-w-[62rem] px-5 sm:px-8 lg:px-14 py-10 sm:py-12">
+              <div class="relative z-20 max-w-xl lg:max-w-2xl">
+                <p class="text-[11px] font-semibold tracking-wider uppercase text-frost-400 mb-4">
+                  Neuman &middot; open source &middot; pre-release
+                </p>
+                <h1 class="text-[2.15rem] sm:text-[3.2rem] lg:text-[3.75rem] font-light text-nord-50 leading-[1.06] tracking-[-0.03em]">
+                  Free <LifeWord from="your AI" to="yourself" />
+                  <span class="block bg-gradient-to-r from-frost-300 to-frost-500 bg-clip-text text-transparent">from the cloud.</span>
+                </h1>
+                <p class="mt-6 max-w-xl text-lg sm:text-xl font-light text-nord-200 leading-snug">
+                  The future of AI is local and open source.
+                </p>
+              </div>
+
+              <!-- Below lg the room sits in the words, between the promise and
+                   the points: edge to edge across the panel, in plain sight,
+                   and as wide as the panel allows. Its fitted box reaches
+                   further above the room than below it (the data lines rise
+                   over the walls), so the canvas is lifted to centre the room
+                   in it. From lg it goes back behind the words, on the open
+                   right of the panel. -->
+              <OfficeScene class="relative z-0 -mx-5 mb-4 aspect-[1.15] max-h-[700px] -translate-y-[8%] sm:-mx-8 lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:translate-y-0" />
+
+              <div class="relative z-20 max-w-xl lg:max-w-2xl">
+                <ul class="lg:mt-6 space-y-4 max-w-md">
+                  {promises.map(p => (
+                    <li class="flex gap-4">
+                      <span class="mt-2 h-px w-6 shrink-0 bg-frost-400" aria-hidden="true"></span>
+                      <p class="text-sm sm:text-base font-light text-nord-400 leading-relaxed">
+                        <span class="font-normal text-nord-100">{p.title}</span> {p.body}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-3 mt-8 sm:mt-9">
+                  <a href="/contact"
+                    class="px-4 py-2 rounded-full bg-frost-500 hover:bg-frost-400 text-nord-950 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(136,192,208,0.6)] transition-colors">
+                    Book a consultation
+                  </a>
+                  <a href="#see-it-work"
+                    class="group inline-flex items-center gap-1.5 text-sm font-medium text-nord-300 hover:text-white transition-colors">
+                    See Neuman at work
+                    <span class="text-frost-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Drive the programs: the Blender recording -->
+    <section id="see-it-work" class="scroll-mt-20 max-w-6xl mx-auto px-4 sm:px-6 mt-16 sm:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div class="lg:col-span-5">
+        <h2 class="text-[1.75rem] sm:text-4xl lg:text-[2.75rem] font-light text-nord-50 leading-[1.1] tracking-[-0.03em]">
+          Drive the programs
+          <span class="bg-gradient-to-r from-frost-300 to-frost-500 bg-clip-text text-transparent">you already use.</span>
+        </h2>
+        <p class="mt-5 max-w-md text-sm sm:text-base font-light text-nord-400 leading-relaxed">
+          Neuman is open source, so you can build tools for exactly your workflow and the
+          programs you like to use. Watch it drive Blender to make a 3D model from a picture.
+        </p>
+      </div>
+
+      <DemoVideo
+        name="blender-demo"
+        class="lg:col-span-7"
+        label="Screen recording: Neuman is asked to model an attached image of a ball bearing in Blender. It inspects the image and the scene, builds the rings and balls, then renders the camera view to check the result."
+      />
+    </section>
+
+    <NextSection href="#research" label="Accelerate your research." class="mt-12 sm:mt-16" />
+
+    <!-- Research: recording left, text right, the mirror of the Blender section -->
+    <section id="research" class="scroll-mt-20 max-w-6xl mx-auto px-4 sm:px-6 mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div class="lg:col-span-5 lg:order-2">
+        <h2 class="text-[1.75rem] sm:text-4xl lg:text-[2.75rem] font-light text-nord-50 leading-[1.1] tracking-[-0.03em]">
+          Accelerate
+          <span class="bg-gradient-to-r from-frost-300 to-frost-500 bg-clip-text text-transparent">your research.</span>
+        </h2>
+        <p class="mt-5 max-w-md text-sm sm:text-base font-light text-nord-400 leading-relaxed">
+          Neuman can help with almost anything you do on a computer, with as much or as
+          little access as you choose to give it. Here it researches the state of the art
+          in MRI image registration.
+        </p>
+      </div>
+
+      <DemoVideo
+        name="research-demo"
+        class="lg:col-span-7 lg:order-1"
+        label="Screen recording: Neuman is asked for the state of the art in MRI image registration. It runs searches, then opens the Learn2Reg challenge results, an arXiv paper and the Springer proceedings in the browser and reads them."
+      />
+    </section>
+
+    <NextSection href="#admin" label="Control your data. Administer your business's AI." class="mt-12 sm:mt-16" />
+
+    <!-- Administration: text left, recording right, like the Blender section -->
+    <section id="admin" class="scroll-mt-20 max-w-6xl mx-auto px-4 sm:px-6 mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div class="lg:col-span-5">
+        <h2 class="text-[1.75rem] sm:text-4xl lg:text-[2.75rem] font-light text-nord-50 leading-[1.1] tracking-[-0.03em]">
+          Control your data.
+          <span class="bg-gradient-to-r from-frost-300 to-frost-500 bg-clip-text text-transparent">Administer your business's AI.</span>
+        </h2>
+        <p class="mt-5 max-w-md text-sm sm:text-base font-light text-nord-400 leading-relaxed">
+          Run every account from one console. Create accounts, roles and groups, and give
+          each person exactly the access they need. Download models, turn on tool packages
+          and tailor the rest to how you work. Every session and log is recorded, and it all
+          stays on your own hardware, where no one outside can see it.
+        </p>
+      </div>
+
+      <DemoVideo
+        name="admin-demo"
+        class="lg:col-span-7"
+        label="Screen recording: the Neuman administration console. An administrator looks over the overview, the list of accounts, one person's effective policy — the folders they may read and write, their models and approval mode — the model catalog, and the list of every session."
+      />
+    </section>
+
+    <NextSection href="#docs" label="Documentation" class="mt-12 sm:mt-16" />
+
+    <!-- Documentation -->
+    <section id="docs" class="max-w-6xl mx-auto px-4 sm:px-6 mt-12 sm:mt-16 scroll-mt-20">
+      <h2 class="mb-8 text-2xl sm:text-3xl font-light text-nord-50 tracking-[-0.02em] leading-tight">
+        <a href="/docs" class="group inline-flex items-baseline gap-2 hover:text-frost-300 transition-colors">
+          Documentation
+          <span class="text-frost-400 text-xl transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+        </a>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        {featuredDocs.map(d => <DocCard doc={d} />)}
+      </div>
+      <a href="/docs" class="group mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-nord-300 hover:text-white transition-colors">
+        All {allDocs.length} documents
+        <span class="text-frost-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
+    <!-- Closing: the way in, for anyone the page has convinced. -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 mt-16 sm:mt-24 mb-20">
+      <div class="relative overflow-hidden rounded-xl border border-nord-800 bg-nord-950 px-6 sm:px-10 py-10 sm:py-12">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(136,192,208,0.12),transparent_60%)]"></div>
+        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-7">
+            <h2 class="text-[1.75rem] sm:text-4xl font-light text-nord-50 leading-[1.1] tracking-[-0.03em]">
+              Bring Neuman
+              <span class="bg-gradient-to-r from-frost-300 to-frost-500 bg-clip-text text-transparent">to your business.</span>
+            </h2>
+            <p class="mt-4 max-w-lg text-sm sm:text-base font-light text-nord-400 leading-relaxed">
+              We install it on hardware you own, set up the models and each person's access, and
+              support it after. Tell us what you work on and we'll show you what it can do.
+            </p>
+          </div>
+          <div class="lg:col-span-5 flex flex-wrap lg:justify-end items-center gap-x-5 gap-y-3">
+            <a href="/contact"
+              class="px-4 py-2 rounded-full bg-frost-500 hover:bg-frost-400 text-nord-950 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(136,192,208,0.6)] transition-colors">
+              Book a consultation
+            </a>
+            <a href="mailto:lukejbodmer@gmail.com?subject=Neuman%20release%20updates&body=Please%20let%20me%20know%20when%20Neuman%20is%20released."
+              class="group inline-flex items-center gap-1.5 text-sm font-medium text-nord-300 hover:text-white transition-colors">
+              Get release updates
+              <span class="text-frost-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Base>

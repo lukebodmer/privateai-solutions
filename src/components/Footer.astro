@@ -1,0 +1,32 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-nord-800 py-8 px-4">
+  <div class="max-w-screen-2xl mx-auto flex flex-col items-center gap-6 text-nord-500 text-sm">
+
+    <!-- Links -->
+    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+      <a href="/" class="hover:text-nord-300 transition-colors">Neuman</a>
+      <a href="/ecosystem" class="hover:text-nord-300 transition-colors">Ecosystem</a>
+      <a href="/docs" class="hover:text-nord-300 transition-colors">Docs</a>
+      <a href="/services" class="hover:text-nord-300 transition-colors">Services</a>
+      <a href="/about" class="hover:text-nord-300 transition-colors">About</a>
+      <a href="/contact" class="hover:text-frost-400 transition-colors">Consult with us</a>
+    </div>
+
+    <!-- Privacy & error reporting -->
+    <div class="flex flex-col sm:flex-row items-center gap-2 text-xs text-nord-600">
+      <span>No cookies. No tracking beyond aggregate analytics.</span>
+      <span class="hidden sm:inline">·</span>
+      <a href="https://github.com/lukebodmer/privateai-solutions/issues/new" target="_blank" rel="noopener noreferrer"
+        class="hover:text-nord-400 transition-colors">
+        Spot an error? Open an issue on GitHub ↗
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-xs text-nord-700">© {year} Private AI Solutions · Los Angeles, California. All rights reserved.</p>
+
+  </div>
+</footer>

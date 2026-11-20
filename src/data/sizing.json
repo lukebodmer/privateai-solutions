@@ -1,0 +1,139 @@
+{
+  "about": "How a build is sized, and the documents each rule comes from. src/lib/sizing.ts applies it; the build pages show it. Every source is fetched, checked for its quotes and archived by `pnpm sizing:sources`, which stamps fetched and snapshot_hash. Edit a rule only together with its source.",
+  "kv_cache": {
+    "rule": "Each person's session keeps its conversation in memory (the KV cache), and that memory grows with every token. We work out the memory per token from the model's own published configuration with the formulas below, at 16-bit. Layers that keep a fixed-size state instead of a growing cache are not counted.",
+    "precision_bytes": 2,
+    "sources": [
+      "nvidia-kv-cache",
+      "deepseek-v2-mla",
+      "vllm-kv-cache-dtype",
+      "llamacpp-kv-cache-type"
+    ]
+  },
+  "runtimes": {
+    "vllm": {
+      "rule": "vLLM, the inference server, uses 92% of GPU memory by default. The weights and every session must fit in that.",
+      "usable_fraction": 0.92,
+      "sources": [
+        "vllm-gpu-memory-utilization"
+      ]
+    },
+    "llama.cpp": {
+      "rule": "llama.cpp, the inference server, fits the model and its sessions into memory and leaves 1 GiB free on each GPU. The weights and every session must fit in what remains.",
+      "margin_gib_per_device": 1,
+      "sources": [
+        "llamacpp-fit-target"
+      ]
+    },
+    "mlx": {
+      "rule": "MLX publishes no rule for how much memory it leaves usable, so we do not estimate a fit for MLX builds.",
+      "sources": []
+    }
+  },
+  "apple_unified_memory": {
+    "rule": "On a Mac, macOS lets the GPU use only part of the unified memory and does not publish how much. We show the sum against total memory and confirm the fit by measuring.",
+    "sources": []
+  },
+  "measured": {
+    "rule": "Once a build is running, vLLM reports at startup how many sessions of a given length its memory holds (\"Maximum concurrency for N tokens per request\"). We save that line with the build, and it replaces the estimate.",
+    "sources": [
+      "vllm-max-concurrency"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nvidia-kv-cache",
+      "title": "Mastering LLM Techniques: Inference Optimization",
+      "publisher": "NVIDIA Technical Blog (Shashank Verma, Neal Vaidya), 2023-11-17",
+      "url": "https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/",
+      "quotes": [
+        "Size of KV cache per token in bytes = 2 * (num_layers) * (num_heads * dim_head) * precision_in_bytes"
+      ],
+      "used_for": "KV cache per token for standard and grouped-query attention, with the model's KV heads as num_heads.",
+      "fetched": "2026-11-17",
+      "snapshot_hash": "a8363ee2d8c0326b34741be30164ede4d8ba2780e1a7f676b2a9e667cabbfbc2",
+      "snapshot_ext": "html"
+    },
+    {
+      "id": "deepseek-v2-mla",
+      "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model, Table 1",
+      "publisher": "DeepSeek-AI, arXiv 2405.04434 (v5)",
+      "url": "https://arxiv.org/html/2405.04434v5",
+      "quotes": [
+        "denote the KV compression dimension and the per-head dimension of the decoupled queries and key in MLA"
+      ],
+      "used_for": "KV cache per token for multi-head latent attention: (d_c + d_h^R) × l elements, i.e. kv_lora_rank + qk_rope_head_dim per layer (GLM-5.3, Kimi K3.1).",
+      "fetched": "2026-11-17",
+      "snapshot_hash": "2b95222a510a3b4edccd243afced25db7b88284bb78ad548b4086d3888b45cbb",
+      "snapshot_ext": "html"
+    },
+    {
+      "id": "vllm-kv-cache-dtype",
+      "title": "vLLM CacheConfig.cache_dtype",
+      "publisher": "vLLM source, vllm/config/cache.py at 7a1d2818",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/7a1d2818b63ed86d3c17bae533206b20d37906db/vllm/config/cache.py",
+      "quotes": [
+        "Data type for kv cache storage. If \"auto\", will use model data type."
+      ],
+      "used_for": "KV cache precision under vLLM: the model's 16-bit data type unless set otherwise.",
+      "fetched": "2026-11-17",
+      "snapshot_hash": "b47a78ed5e82fe5edc9cec7b551f19794bc059cbacf2e89bd4023541b38dd080",
+      "snapshot_ext": "txt"
+    },
+    {
+      "id": "llamacpp-kv-cache-type",
+      "title": "llama.cpp common_params cache_type_k / cache_type_v",
+      "publisher": "llama.cpp source, common/common.h at 3574df84",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/3574df84b776611928d9b227bf614be71fbb9849/common/common.h",
+      "quotes": [
+        "ggml_type cache_type_k = GGML_TYPE_F16; // KV cache data type for the K",
+        "ggml_type cache_type_v = GGML_TYPE_F16; // KV cache data type for the V"
+      ],
+      "used_for": "KV cache precision under llama.cpp: 16-bit by default.",
+      "fetched": "2026-11-17",
+      "snapshot_hash": "0f8c3391f855e654f3a3a69be6b99edcf657ea43abb43b48773371cdc65ffdbe",
+      "snapshot_ext": "txt"
+    },
+    {
+      "id": "vllm-gpu-memory-utilization",
+      "title": "vLLM CacheConfig.gpu_memory_utilization",
+      "publisher": "vLLM source, vllm/config/cache.py at 7a1d2818",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/7a1d2818b63ed86d3c17bae533206b20d37906db/vllm/config/cache.py",
+      "quotes": [
+        "DEFAULT_GPU_MEMORY_UTILIZATION: ClassVar[float] = 0.92",
+        "The fraction of GPU memory to be used for the model executor"
+      ],
+      "used_for": "The share of GPU memory vLLM uses for weights and KV cache.",
+      "fetched": "2026-11-17",
+      "snapshot_hash": "b47a78ed5e82fe5edc9cec7b551f19794bc059cbacf2e89bd4023541b38dd080",
+      "snapshot_ext": "txt"
+    },
+    {
+      "id": "llamacpp-fit-target",
+      "title": "llama.cpp common_params fit_params_target",
+      "publisher": "llama.cpp source, common/common.h at 3574df84",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/3574df84b776611928d9b227bf614be71fbb9849/common/common.h",
+      "quotes": [
+        "margin per device in bytes for fitting parameters to free memory",
+        "std::vector<size_t> fit_params_target = std::vector<size_t>(llama_max_devices(), 1024 * 1024*1024);"
+      ],
+      "used_for": "The memory llama.cpp leaves free on each device when it fits a model: 1 GiB.",
+      "fetched": "2026-11-17",
+      "snapshot_hash": "0f8c3391f855e654f3a3a69be6b99edcf657ea43abb43b48773371cdc65ffdbe",
+      "snapshot_ext": "txt"
+    },
+    {
+      "id": "vllm-max-concurrency",
+      "title": "vLLM KV cache capacity log line",
+      "publisher": "vLLM source, vllm/v1/core/kv_cache_utils.py at 7a1d2818",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/7a1d2818b63ed86d3c17bae533206b20d37906db/vllm/v1/core/kv_cache_utils.py",
+      "quotes": [
+        "Maximum concurrency for %s tokens per request: %.2fx"
+      ],
+      "used_for": "What a deployed build's measured concurrency is: the line vLLM logs at startup.",
+      "fetched": "2026-11-17",
+      "snapshot_hash": "8afd3490219441ff03281ffc74babfcdff22bddf8a79bcbc284ae9d7d29de33d",
+      "snapshot_ext": "txt"
+    }
+  ]
+}

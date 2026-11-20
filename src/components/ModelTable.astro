@@ -1,0 +1,109 @@
+---
+import { entityName, factNum, factStr, type Entity } from '../lib/facts';
+import { resolveModelLogo } from '../utils/resolveLogo';
+import { brandColorForCompany } from '../data/schemas/brandColors';
+
+interface Props {
+  models: Entity[];
+}
+
+const { models } = Astro.props;
+
+const modelLogos = new Map(models.map(m => [m.slug, resolveModelLogo(m.slug, factStr(m, 'company_slug'))]));
+
+// Cache company display names (avoid re-reading company JSON per row)
+const companyCache = new Map<string, string>();
+function companyName(slug: string | null): string {
+  if (!slug) return '';
+  const cached = companyCache.get(slug);
+  if (cached !== undefined) return cached;
+  const name = entityName('company', slug) ?? slug;
+  companyCache.set(slug, name);
+  return name;
+}
+
+function fmtParam(v: number | null): string {
+  return v === null ? '—' : v.toFixed(0) + 'B';
+}
+
+function fmtContext(n: number | null): string {
+  if (n === null) return '—';
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(0) + 'M';
+  if (n >= 1_000) return (n / 1_000).toFixed(0) + 'K';
+  return String(n);
+}
+
+function fmtDate(d: string | null): string {
+  if (!d) return '—';
+  const [y, m] = d.split('-');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return months[parseInt(m)-1] + ' ' + y;
+}
+---
+
+<div class="overflow-x-auto rounded-lg border border-nord-800">
+  <table class="w-full text-sm border-collapse">
+    <thead>
+      <tr class="border-b border-nord-700 bg-nord-900">
+        <th class="px-4 py-3 text-left font-medium text-nord-300 whitespace-nowrap">Model</th>
+        <th class="px-3 py-3 text-right font-medium text-nord-300 whitespace-nowrap">Params</th>
+        <th class="px-3 py-3 text-center font-medium text-nord-300 whitespace-nowrap">Type</th>
+        <th class="px-3 py-3 text-right font-medium text-nord-300 whitespace-nowrap">Context</th>
+        <th class="px-3 py-3 text-center font-medium text-nord-300 whitespace-nowrap">License</th>
+        <th class="px-3 py-3 text-left font-medium text-nord-300 whitespace-nowrap">Released</th>
+      </tr>
+    </thead>
+    <tbody>
+      {models.map((model, i) => {
+        const rowBg = i % 2 === 0 ? 'bg-nord-950' : 'bg-nord-900/50';
+        const params = factNum(model, 'parameters_b');
+        const paramsActive = factNum(model, 'parameters_active_b');
+        const archType = factStr(model, 'architecture.type');
+        const ctx = factNum(model, 'context_length');
+        const license = factStr(model, 'license');
+        const released = factStr(model, 'released');
+        const companySlug = factStr(model, 'company_slug');
+        const developer = companyName(companySlug);
+        const isMoE = archType === 'moe';
+        const brandColor = brandColorForCompany(companySlug);
+        return (
+          <tr class={`${rowBg} border-b border-nord-800/50 hover:bg-nord-800/60 transition-colors cursor-pointer`}
+            onclick={`window.location.href='/models/${model.slug}'`}>
+            <td class="px-4 py-3 whitespace-nowrap relative"
+              style={`box-shadow: inset 3px 0 0 ${brandColor};`}>
+              <a href={`/models/${model.slug}`} class="flex items-center gap-3">
+                {modelLogos.get(model.slug) && (
+                  <img src={modelLogos.get(model.slug)} alt="" class="w-6 h-6 rounded shrink-0" />
+                )}
+                <div class="flex flex-col gap-0.5">
+                  <span class="font-medium text-nord-100">{model.name}</span>
+                  <span class="text-xs text-nord-500">
+                    {developer}
+                    {isMoE && paramsActive ? ` (${paramsActive}B active)` : ''}
+                  </span>
+                </div>
+              </a>
+            </td>
+            <td class="px-3 py-3 text-right font-mono tabular-nums text-nord-300 whitespace-nowrap">
+              {fmtParam(params)}
+            </td>
+            <td class="px-3 py-3 text-center whitespace-nowrap">
+              <span class="text-xs px-1.5 py-0.5 rounded bg-nord-800 text-nord-400 border border-nord-700">
+                {archType === 'moe' ? 'MoE' : archType === 'dense' ? 'Dense' : '—'}
+              </span>
+            </td>
+            <td class="px-3 py-3 text-right font-mono tabular-nums text-nord-300 whitespace-nowrap">
+              {fmtContext(ctx)}
+            </td>
+            <td class="px-3 py-3 text-center whitespace-nowrap">
+              <span class="text-xs text-nord-400">{license ?? '—'}</span>
+            </td>
+            <td class="px-3 py-3 text-left text-nord-400 whitespace-nowrap text-xs">
+              {fmtDate(released)}
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>

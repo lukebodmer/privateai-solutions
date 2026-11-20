@@ -1,0 +1,398 @@
+---
+/**
+ * The word the hero's first line ends on, taken away and put back by a band of
+ * Game of Life cells.
+ *
+ * The cells run right to left across the word and the word goes with them;
+ * they die out, and then run left to right while the other word is built
+ * behind them. Both words are real text in one grid cell, so the box is as
+ * wide as the longer of the two and the line never moves, and the sweep clips
+ * them column by column. The cells are drawn on a canvas over the top, and are
+ * the only thing that canvas draws; they keep to the width of the word that is
+ * on screen, so the field never runs out past its first or last letter.
+ *
+ * It swaps every eight seconds or so, and only while the hero is on screen. A
+ * visitor who has asked for less motion keeps `from`: the headline as it stands.
+ */
+interface Props {
+  from: string;
+  to: string;
+  class?: string;
+}
+const { from, to, class: cls = '' } = Astro.props;
+---
+
+<span class:list={['life-word', cls]} data-life-word>
+  <span class="life-word-text" data-life-text>{from}</span>
+  <span class="life-word-text" data-life-text aria-hidden="true">{to}</span>
+  <canvas class="life-word-cells" data-life-cells aria-hidden="true"></canvas>
+</span>
+
+<style>
+  /* One grid cell holds both words: the box takes the width of the longer one,
+     so nothing after the headline moves when they change places. */
+  .life-word {
+    display: inline-grid;
+    grid-template-areas: 'word';
+    vertical-align: baseline;
+    position: relative;
+  }
+  .life-word-text {
+    grid-area: word;
+    justify-self: start;
+    white-space: nowrap;
+  }
+  /* Before the script takes over, the second word only holds the box open, and
+     it is never what a selection copies: the headline reads as the first word. */
+  .life-word-text + .life-word-text {
+    clip-path: inset(100%);
+    user-select: none;
+  }
+  .life-word-cells {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 140ms ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .life-word-cells {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // The site's mark is a glider (GliderMark.astro); this puts the same rule to
+  // work in the headline. The words stay text and are revealed by a clip, so
+  // the cells on the canvas never have to draw type.
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // The first change comes a few seconds in, once the headline has been read;
+  // after that the two words take turns about every eight seconds.
+  const FIRST_WAIT = 3000;
+  const HOLD = 5500;
+
+  // The wipe: across the word and gone, a beat, then back with the other word
+  // building behind it. The cells keep living for a moment after the last
+  // column lands, so they die out there rather than blink off.
+  const ERASE_MS = 1200;
+  const GAP_MS = 200;
+  const BUILD_MS = 1250;
+  const DIE_MS = 300;
+  const STEP_MS = 90; // one generation of cells
+
+  const HIDDEN = 'inset(100%)';
+  const CELL_COLOUR = 'rgba(136, 192, 208, 0.8)'; // frost-400
+
+  // Slow at both ends, so the sweep arrives and leaves rather than snapping.
+  const ease = (t: number) => 0.5 - 0.5 * Math.cos(Math.PI * Math.min(1, Math.max(0, t)));
+  const mix = (from: number, to: number, t: number) => from + (to - from) * t;
+
+  for (const host of document.querySelectorAll<HTMLElement>('[data-life-word]')) {
+    if (!reducedMotion) boot(host);
+  }
+
+  function boot(host: HTMLElement) {
+    const words = [...host.querySelectorAll<HTMLElement>('[data-life-text]')];
+    const canvas = host.querySelector<HTMLCanvasElement>('[data-life-cells]');
+    const ctx = canvas?.getContext('2d');
+    if (words.length !== 2 || !canvas || !ctx) return;
+    const rounded = typeof ctx.roundRect === 'function';
+
+    // Which word is on screen: 0 is `from`, 1 is `to`.
+    let showing = 0;
+
+    // The cell grid over the word, from the first letter to the last: the field
+    // is exactly the text's width, so no square is ever drawn outside it.
+    let width = 0;
+    let height = 0;
+    let cell = 0;
+    let padY = 0;
+    let cols = 0;
+    let rows = 0;
+    let field = new Uint8Array(0);
+    let dpr = 1;
+
+    let onScreen = false;
+    let timer = 0;
+    let raf = 0;
+    // The wipe in flight, if any, brought to its end state.
+    let settle: (() => void) | null = null;
+
+    measure();
+    rest();
+
+    document.fonts.ready.then(refresh);
+    new ResizeObserver(refresh).observe(host);
+
+    new IntersectionObserver(
+      (entries) => {
+        const visible = entries.some((entry) => entry.isIntersecting);
+        if (visible === onScreen) return;
+        onScreen = visible;
+        if (visible) schedule(FIRST_WAIT);
+        else {
+          if (settle) settle(); // never leave the word half taken away
+          stop();
+        }
+      },
+      { threshold: 0.4 },
+    ).observe(host);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (settle) settle();
+        stop();
+      } else if (onScreen) schedule(HOLD);
+    });
+
+    function refresh() {
+      stop();
+      measure();
+      rest();
+      if (onScreen) schedule(FIRST_WAIT);
+    }
+
+    function measure() {
+      const box = host.getBoundingClientRect();
+      const fontSize = parseFloat(getComputedStyle(words[0]).fontSize) || 16;
+      width = box.width;
+      height = box.height;
+      // A square is a sixth of the type's height: small enough to read as cells
+      // laid over the letters, large enough to see at phone size.
+      cell = Math.max(5, Math.min(11, fontSize / 6));
+      padY = cell * 0.5;
+      cols = Math.ceil(width / cell);
+      rows = Math.ceil((height + padY * 2) / cell);
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.style.left = '0px';
+      canvas.style.top = `${-padY}px`;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height + padY * 2}px`;
+      canvas.width = Math.max(1, Math.round(width * dpr));
+      canvas.height = Math.max(1, Math.round((height + padY * 2) * dpr));
+      field = new Uint8Array(cols * rows);
+    }
+
+    /** Both words parked: the one on screen plain, the other out of sight. */
+    function rest() {
+      words[showing].style.clipPath = 'none';
+      words[1 - showing].style.clipPath = HIDDEN;
+      field.fill(0);
+      paint(0);
+      canvas.style.opacity = '0';
+    }
+
+    /** The cells on the field, kept inside the word on screen (`limit` wide). */
+    function paint(limit: number) {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height + padY * 2);
+      if (limit <= 0) return;
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(0, 0, limit, height + padY * 2);
+      ctx.clip();
+      ctx.beginPath();
+      const gap = cell * 0.17;
+      const size = cell - gap;
+      for (let j = 0; j < rows; j++) {
+        for (let i = 0; i < cols; i++) {
+          if (!field[j * cols + i]) continue;
+          const x = i * cell + gap / 2;
+          const y = j * cell + gap / 2;
+          if (rounded) ctx.roundRect(x, y, size, size, size * 0.22);
+          else ctx.rect(x, y, size, size);
+        }
+      }
+      ctx.fillStyle = CELL_COLOUR;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    /** One generation of the rule, the band travelling with the wipe. */
+    function evolve(direction: number, front: number) {
+      const next = new Uint8Array(field.length);
+      for (let j = 0; j < rows; j++) {
+        for (let i = 0; i < cols; i++) {
+          let neighbours = 0;
+          for (let dj = -1; dj <= 1; dj++) {
+            const y = j + dj;
+            if (y < 0 || y >= rows) continue;
+            for (let di = -1; di <= 1; di++) {
+              const x = i + di;
+              if ((!di && !dj) || x < 0 || x >= cols) continue;
+              neighbours += field[y * cols + x];
+            }
+          }
+          const alive = field[j * cols + i];
+          next[j * cols + i] = neighbours === 3 || (neighbours === 2 && alive) ? 1 : 0;
+        }
+      }
+      field = next;
+
+      // The front drops new cells in ahead of it and takes the ones it has left
+      // behind off the field, so the band moves and the trail dies out.
+      if (!direction) return;
+      for (let i = 0; i < cols; i++) {
+        const past = (front - (i + 0.5) * cell) * direction;
+        if (past > cell * 4) {
+          for (let j = 0; j < rows; j++) field[j * cols + i] = 0;
+        } else if (past > -cell * 2 && past < cell * 0.6) {
+          for (let j = 0; j < rows; j++) {
+            if (Math.random() < 0.5) field[j * cols + i] = 1;
+          }
+        }
+      }
+    }
+
+    function schedule(delay: number) {
+      clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        timer = 0;
+        if (onScreen) swap();
+      }, delay);
+    }
+
+    function stop() {
+      clearTimeout(timer);
+      timer = 0;
+      cancelAnimationFrame(raf);
+      raf = 0;
+      settle = null;
+    }
+
+    function swap() {
+      if (!onScreen) return;
+      const play = prepare();
+      const started = performance.now();
+      const frame = (now: number) => {
+        if (play(now - started)) raf = requestAnimationFrame(frame);
+      };
+      raf = requestAnimationFrame(frame);
+    }
+
+    /**
+     * Set one wipe up and return its renderer: handed how far into the wipe it
+     * is, it moves the clip and the cells on, and answers whether more is to come.
+     */
+    function prepare() {
+      const from = words[showing];
+      const to = words[1 - showing];
+      const fromWidth = from.getBoundingClientRect().width;
+      const toWidth = to.getBoundingClientRect().width;
+
+      // Each column turns when the front reaches its own mark, a little off its
+      // centre, so the edge of the wipe is ragged the way a field of cells is.
+      const marks = Array.from(
+        { length: cols },
+        (_, i) => (i + 0.5) * cell + (Math.random() - 0.5) * cell * 1.4,
+      );
+
+      /** The columns the front has passed, as one polygon. */
+      const clip = (front: number) => {
+        // Each run of neighbouring columns is a rectangle, and the runs are
+        // joined along the bottom edge so the outline never crosses itself.
+        const runs: [number, number][] = [];
+        let start = -1;
+        for (let i = 0; i <= cols; i++) {
+          const on = i < cols && marks[i] < front;
+          if (on && start < 0) start = i;
+          else if (!on && start >= 0) {
+            runs.push([start, i]);
+            start = -1;
+          }
+        }
+        if (!runs.length) return HIDDEN;
+
+        const x = (column: number) => Math.round(column * cell * 10) / 10;
+        const top = -cell; // past the box: the clip must not cut ascenders or tails
+        const bottom = height + cell;
+        const points: string[] = [];
+        for (const [first, last] of runs) {
+          if (points.length) points.push(`${x(first)}px ${bottom}px`);
+          points.push(
+            `${x(first)}px ${top}px`,
+            `${x(last)}px ${top}px`,
+            `${x(last)}px ${bottom}px`,
+            `${x(first)}px ${bottom}px`,
+          );
+        }
+        points.push(`${x(runs[0][0])}px ${bottom}px`);
+        return `polygon(${points.join(', ')})`;
+      };
+
+      const total = ERASE_MS + GAP_MS + BUILD_MS + DIE_MS;
+      let phase = '';
+      let generation = -1;
+      let alive = false;
+
+      field.fill(0);
+      to.style.clipPath = HIDDEN;
+      canvas.style.opacity = '1';
+      settle = finish;
+
+      function finish() {
+        settle = null;
+        showing = 1 - showing;
+        rest();
+        schedule(HOLD);
+      }
+
+      return function play(t: number) {
+        const at =
+          t < ERASE_MS
+            ? 'erase'
+            : t < ERASE_MS + GAP_MS
+              ? 'gap'
+              : t < ERASE_MS + GAP_MS + BUILD_MS
+                ? 'build'
+                : 'die';
+        if (t >= total) {
+          finish();
+          return false;
+        }
+
+        if (at !== phase) {
+          if (at !== 'erase') from.style.clipPath = HIDDEN;
+          if (at === 'gap') to.style.clipPath = HIDDEN;
+          phase = at;
+        }
+
+        let front = 0;
+        let direction = 0;
+        // Both sweeps start and end a couple of cells beyond the word, so no
+        // column is left half turned at either end: the first letter is whole
+        // when the cells reach it and the last letter is whole when they leave.
+        if (at === 'erase') {
+          front = mix(fromWidth + cell * 2, -cell, ease(t / ERASE_MS));
+          direction = -1;
+          from.style.clipPath = clip(front);
+        } else if (at === 'build') {
+          front = mix(-cell, toWidth + cell * 2, ease((t - ERASE_MS - GAP_MS) / BUILD_MS));
+          direction = 1;
+          to.style.clipPath = clip(front);
+        } else if (at === 'die') {
+          front = toWidth + cell * 2;
+        }
+
+        if (at === 'gap') {
+          if (alive) {
+            alive = false;
+            field.fill(0);
+            paint(0);
+          }
+        } else {
+          alive = true;
+          const step = Math.floor(t / STEP_MS);
+          if (step !== generation) {
+            generation = step;
+            evolve(direction, front);
+            paint(at === 'erase' ? fromWidth : toWidth);
+          }
+        }
+        return true;
+      };
+    }
+  }
+</script>

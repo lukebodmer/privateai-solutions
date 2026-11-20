@@ -1,0 +1,125 @@
+{
+  "name": "Moonshot AI",
+  "slug": "moonshot",
+  "facts": {
+    "country": {
+      "value": "China",
+      "source": "https://www.moonshot.ai",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "founded": {
+      "value": "2023-03",
+      "source": "https://www.moonshot.ai",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "weights_availability": {
+      "value": "open-with-restrictions",
+      "source": "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "hq_city": {
+      "value": "Beijing",
+      "source": "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "legal_structure": {
+      "value": "for-profit",
+      "source": "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "ownership": {
+      "value": "private",
+      "source": "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parent_company": {
+      "value": null,
+      "source": "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "employee_tier": {
+      "value": "50-500",
+      "source": "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.official": {
+      "value": "https://www.moonshot.ai",
+      "source": "https://www.moonshot.ai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "60a368947e0e6b716f688ae2fe73daa4c79538f66c80914e108b72dac54aca2d",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "source": "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "960b83ca99e47eb560e9b82c2636d83ad8b6495d24235a14cb78e2725c6c83f3",
+      "snapshot_ext": "html"
+    },
+    "snapshot.huggingface_org": {
+      "value": "https://huggingface.co/moonshotai",
+      "source": "https://huggingface.co/moonshotai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "ab729030486dfd5e1baed14fe5c080bf77512e4a3ad8ace9eea3df7e322373eb",
+      "snapshot_ext": "html"
+    },
+    "snapshot.github_org": {
+      "value": "https://github.com/MoonshotAI",
+      "source": "https://github.com/MoonshotAI",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "285b292da99b0c3589a8cefc2d798e6e0c38f66e580de7d36cea5e203e33a413",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "Moonshot AI — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Moonshot_AI",
+      "author": "Wikipedia",
+      "date": "2023"
+    },
+    {
+      "title": "Moonshot AI — Official Site",
+      "url": "https://www.moonshot.ai",
+      "author": "Moonshot AI",
+      "date": "2023"
+    },
+    {
+      "title": "Moonshot AI — HuggingFace",
+      "url": "https://huggingface.co/moonshotai",
+      "author": "Moonshot AI",
+      "date": "2023"
+    }
+  ]
+}

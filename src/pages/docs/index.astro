@@ -1,0 +1,48 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import DocCard from '../../components/DocCard.astro';
+import GearScene from '../../components/GearScene.astro';
+import { docGroups } from '../../lib/docs';
+
+const groups = await docGroups();
+---
+
+<DocsLayout
+  title="Neuman docs"
+  description="Documentation for setting up, maintaining, and customizing Neuman for tailored local AI."
+  current=""
+  header={false}
+  wide
+>
+  <!-- The header carries the gear train behind it. The title and its prose
+       sit over the object, so the scrim between them is what keeps the words
+       legible. -->
+  <section class="relative overflow-hidden flex items-center min-h-[300px] lg:min-h-[360px]">
+    <GearScene class="absolute inset-0 z-0 opacity-80" />
+
+    <div
+      class="pointer-events-none absolute inset-0 z-0 sm:hidden"
+      style="background: linear-gradient(90deg, rgba(30,35,43,0.97) 0%, rgba(30,35,43,0.93) 55%, rgba(30,35,43,0.72) 80%, rgba(30,35,43,0.55) 100%)"></div>
+    <div
+      class="pointer-events-none absolute inset-0 z-0 hidden sm:block"
+      style="background: linear-gradient(90deg, rgba(30,35,43,0.97) 0%, rgba(30,35,43,0.94) 30%, rgba(30,35,43,0.78) 48%, rgba(30,35,43,0.26) 68%, rgba(30,35,43,0) 84%)"></div>
+
+    <div class="relative z-10 max-w-lg">
+      <PageHeader eyebrow="Documentation" title="Neuman docs">
+        <p>
+          Documentation for setting up, maintaining, and customizing Neuman for tailored local AI.
+        </p>
+      </PageHeader>
+    </div>
+  </section>
+
+  {groups.map(g => (
+    <section class="mt-10">
+      <h2 class="text-[11px] uppercase tracking-wider text-nord-500 mb-3">{g.label}</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {g.docs.map(d => <DocCard doc={d} />)}
+      </div>
+    </section>
+  ))}
+</DocsLayout>

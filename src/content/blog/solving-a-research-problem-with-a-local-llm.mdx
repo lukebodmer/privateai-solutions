@@ -1,0 +1,110 @@
+---
+title: "Solving a Research Problem with a Local LLM on a 3090 GPU"
+description: "A neuro-oncology lab had biopsy points planned on brain scans by a proprietary navigation system, and no one could say where those points were in the other scans. The data was full of protected health information that couldn't be sent to a cloud AI provider. Neuman was able to solve the problem using only a 3090 GPU."
+date: 2026-10-23
+tags: ["local AI", "medical imaging", "coordinate frames", "Neuman"]
+---
+
+import CoordFramesDemo from '../../components/CoordFramesDemo.tsx';
+import Callout from '../../components/Callout.astro';
+import SessionTranscript from '../../components/SessionTranscript.astro';
+import demo from '../../data/blog/coord-frames.json';
+import session from '../../data/blog/dicom-research-session.json';
+
+<figure class="mb-10">
+  <CoordFramesDemo data={demo} client:load />
+  <figcaption>Five scans of one patient, each drawn in its own coordinates, with the same biopsy points marked in each. <em>Register all scans</em> moves every scan into the reference frame, and the points line up.</figcaption>
+</figure>
+
+A neuro-oncology lab I was working with had the following problem. They had a
+bunch of patient data folders that contained MRI and CT images of a patient
+over time, a JSON file that they knew somehow represented the coordinates of
+nervous tissue biopsy points in those MRI and CT scans, and a ground truth
+snapshot showing the biopsy points in one of those scans. The problem was that
+the data was from a proprietary surgical-navigation system, and no one could
+interpret the JSON file to know exactly where those points sat in each of the
+images. Each image had the same patient's head in it, but the coordinate
+systems and orientations were all slightly different.
+
+They asked me if I could figure out how to interpret the JSON data to find the
+biopsy points in each of the patient's MRI and CT scans.
+
+I thought this would make a good case study to show what a language
+model running on limited hardware could do. A problem like
+this can't go to the cloud, because the data is full of protected health
+information (PHI). PHI is trickier than it might seem. It is not only names and
+dates of birth in the file headers. A head MRI contains the patient's face,
+and software can rebuild that face from the scan well enough to recognize the
+person. The scans are exactly what you need to solve the problem, and the lab
+can't send them to a cloud AI service and still keep its obligation of privacy to
+its patients.
+
+When I read through the JSON, I noticed it was full of 4×4 matrices that
+suggested 3D transformation matrices. The DICOM folder contained many MRI and CT
+scans, and each scan had its own coordinate system. My guess was that the JSON
+wrote the biopsy points in one of those scans' coordinate systems and used the
+matrices to get from that scan to each of the others.
+
+## The problem
+
+I set up Neuman on a 3090 GPU using the [Qwen 3.8 27B](/models/qwen3.8-27b)
+model with a 4-bit quantization, gave it the DICOM images, the JSON file,
+and a Python environment with `matplotlib`, `numpy`, `pydicom`, `scipy`, and
+`simpleitk`, and the following prompt:
+
+<Callout title="The prompt">
+You have a DICOM folder of MRI and CT scans of one patient, taken at many
+different times. You have a JSON file that we think does two things: it gives
+the biopsy points in the coordinate system of one of those scans, and it gives
+a way to get from that scan's coordinate system to each of the others.
+
+You also have one piece of ground truth: a screenshot from the navigation
+system, showing a biopsy point on the axial, coronal and sagittal slices of
+the MRI. Whatever answer we reach has to put the point in the same place as the screenshot.
+</Callout>
+
+The figure at the top of this post is this problem, solved.
+
+<Callout title="About the data">
+Because the real scans contain PHI, everything shown in this post is a
+representation of the problem, not the lab's data. The scans, points and
+matrices have the same structure as the real ones, but they are not from the
+patient.
+</Callout>
+
+## Working it out with Neuman
+
+Below I've reproduced the Neuman session on the 3090 GPU that was able to solve
+the problem.
+
+<SessionTranscript session={session} class="my-8" />
+
+## What it found
+
+After about thirty minutes of talking the problem through with Neuman, I had
+these facts:
+
+- **The JSON names a reference scan.** One scan's coordinate system is marked
+  as the reference, and the biopsy points are written in it.
+- **Each 4×4 matrix maps the reference scan into one other scan.** Every other
+  scan has its own rigid transformation from the reference frame into its
+  frame.
+- **The answer matches the ground truth.** I used the matrices to bring every
+  scan into the reference frame, then looked at the axial, coronal and
+  sagittal slices of the MRI at each biopsy point. They matched the
+  screenshot from the navigation system.
+
+Neuman had also correctly found where each of the biopsy points is located in
+the coordinate system of each image.
+
+## What this means
+
+The principal investigator of the lab told me that several people had tried to
+answer this question before, and no one had managed it. Before AI, this was a
+genuinely difficult problem. A person well enough versed in math could solve
+it, but it would require a lot of trial and error and some pretty sophisticated
+programming skills. That's the beauty of local AI. You get an extremely capable
+assistant and you don't have to worry about where your data goes, who will see
+it, or who will keep it and use it for their own purposes. You can put a model
+to work on the difficult, tedious problems, and solve them quickly to move on
+to the more exciting work.

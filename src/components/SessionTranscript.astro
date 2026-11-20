@@ -1,0 +1,551 @@
+---
+// A Neuman session, drawn the way Neuman draws it: a user bubble, then each
+// turn as a timeline — the thinking, the reply, and a row per tool call with
+// the call's code and its output behind it. A call that returned a picture
+// shows it under its row. Everything renders at build time and the disclosure
+// rows are plain <details>; the one script lets a picture open at the size of
+// the window instead of in a new tab.
+//
+// The data is one session fetched from Neuman (`src/data/blog/*.json`); the
+// pictures it names live under `public/`.
+interface ResultImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  name: string | null;
+}
+
+interface CallResult {
+  exit: number;
+  text: string;
+  image?: ResultImage;
+}
+
+interface ToolCall {
+  name: string;
+  args: Record<string, any>;
+  result: CallResult;
+}
+
+interface Message {
+  role: 'user' | 'assistant';
+  text?: string;
+  thinking?: string;
+  calls?: ToolCall[];
+}
+
+interface Session {
+  model: string;
+  reasoning: string;
+  started: string;
+  ended: string;
+  messages: Message[];
+}
+
+interface Props {
+  session: Session;
+  class?: string;
+}
+
+const { session, class: className = '' } = Astro.props;
+
+const esc = (s: string) =>
+  s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+
+// Just enough markdown for a reply: paragraphs, lists, headings, tables, fenced
+// code, bold, italic and inline code. The class names are written into the output
+// because the nodes come from `set:html`, which the component's scoped styles do
+// not reach.
+const inline = (s: string) =>
+  esc(s)
+    .replace(/`([^`\n]+)`/g, (_m, code) => `<code class="rounded border border-nord-800 bg-nord-900 px-1 py-0.5 font-mono text-[12px] text-frost-300">${code}</code>`)
+    .replace(/\*\*([^*\n]+)\*\*/g, (_m, text) => `<strong class="font-semibold text-nord-50">${text}</strong>`)
+    .replace(/\*([^*\n]+)\*/g, (_m, text) => `<em class="italic">${text}</em>`);
+
+function markdown(source: string): string {
+  const lines = source.replace(/\r\n?/g, '\n').split('\n');
+  const out: string[] = [];
+  let paragraph: string[] = [];
+  let list: { ordered: boolean; items: string[] } | null = null;
+  let code: string[] | null = null;
+  let table: string[] | null = null;
+
+  const flushParagraph = () => {
+    if (paragraph.length) out.push(`<p class="mt-3 first:mt-0">${inline(paragraph.join(' '))}</p>`);
+    paragraph = [];
+  };
+  const flushList = () => {
+    if (!list) return;
+    const tag = list.ordered ? 'ol' : 'ul';
+    const items = list.items.map((item) => `<li class="pl-0.5">${inline(item)}</li>`).join('');
+    out.push(
+      `<${tag} class="mt-3 list-${list.ordered ? 'decimal' : 'disc'} space-y-1.5 pl-5 marker:text-nord-600">${items}</${tag}>`,
+    );
+    list = null;
+  };
+  const flushCode = () => {
+    if (code === null) return;
+    out.push(
+      `<pre class="mt-3 overflow-x-auto rounded-lg border border-nord-800 bg-nord-950 p-3 text-[12px] leading-relaxed text-nord-300"><code>${esc(code.join('\n'))}</code></pre>`,
+    );
+    code = null;
+  };
+  // A pipe table: the first row is the head, the `|---|` row that follows says
+  // nothing a browser needs, and the rest are rows. It can be wider than a phone,
+  // so it scrolls on its own rather than squeezing its columns.
+  const flushTable = () => {
+    if (table === null) return;
+    const rows = table.map((line) =>
+      line.trim().replace(/^\||\|$/g, '').split('|').map((cell) => cell.trim()),
+    );
+    table = null;
+    const [head, ...rest] = rows;
+    const body = rest.filter((row) => !row.every((cell) => /^:?-{2,}:?$/.test(cell)));
+    const th = head
+      .map((cell) => `<th class="whitespace-nowrap border-b border-nord-700 bg-nord-900/60 px-2.5 py-1.5 text-left font-medium text-nord-200">${inline(cell)}</th>`)
+      .join('');
+    // A short cell is a name or a number: keep it on one line and let the table
+    // scroll sideways rather than break `(130.7,` from `60.2, 90.0)`.
+    const tr = body
+      .map((row) => `<tr class="border-b border-nord-800 last:border-0">${row.map((cell) => `<td class="px-2.5 py-1.5 align-top text-nord-300${cell.length <= 24 ? ' whitespace-nowrap' : ''}">${inline(cell)}</td>`).join('')}</tr>`)
+      .join('');
+    out.push(
+      `<div class="mt-3 overflow-x-auto rounded-lg border border-nord-800"><table class="w-full border-collapse text-[12px]"><thead><tr>${th}</tr></thead><tbody>${tr}</tbody></table></div>`,
+    );
+  };
+
+  for (const line of lines) {
+    if (code !== null) {
+      if (/^\s*```/.test(line)) flushCode();
+      else code.push(line);
+      continue;
+    }
+    if (/^\s*```/.test(line)) {
+      flushParagraph();
+      flushList();
+      flushTable();
+      code = [];
+      continue;
+    }
+    if (!line.trim()) {
+      flushParagraph();
+      flushList();
+      flushTable();
+      continue;
+    }
+    if (/^\s*\|.*\|\s*$/.test(line)) {
+      flushParagraph();
+      flushList();
+      (table ??= []).push(line);
+      continue;
+    }
+    flushTable();
+    const heading = line.match(/^\s*(#{1,6})\s+(.*)$/);
+    if (heading) {
+      flushParagraph();
+      flushList();
+      const level = Math.min(heading[1].length + 1, 6);
+      out.push(
+        `<h${level} class="mt-4 text-[13.5px] font-semibold text-nord-50 first:mt-0">${inline(heading[2])}</h${level}>`,
+      );
+      continue;
+    }
+    if (/^\s*([-*_])\1{2,}\s*$/.test(line)) {
+      flushParagraph();
+      flushList();
+      out.push('<hr class="mt-4 border-nord-800" />');
+      continue;
+    }
+    const bullet = line.match(/^\s*[-*]\s+(.*)$/);
+    const numbered = line.match(/^\s*\d+[.)]\s+(.*)$/);
+    if (bullet || numbered) {
+      flushParagraph();
+      const ordered = Boolean(numbered);
+      if (!list || list.ordered !== ordered) {
+        flushList();
+        list = { ordered, items: [] };
+      }
+      list.items.push((bullet ?? numbered)![1]);
+      continue;
+    }
+    paragraph.push(line.trim());
+  }
+  flushParagraph();
+  flushList();
+  flushCode();
+  flushTable();
+  return out.join('\n');
+}
+
+// The row's one-line preview. Markdown markers are syntax, not speech, so the
+// summary says what the thought is about in words.
+function preview(text: string): string {
+  const first = text
+    .split('\n')
+    .map((line) => line.replace(/^[#>\s*-]+/, '').replace(/[`*_]/g, '').trim())
+    .find(Boolean) ?? '';
+  const flat = first.replace(/\s+/g, ' ');
+  return flat.length > 130 ? `${flat.slice(0, 130).trimEnd()}…` : flat;
+}
+
+// `'export'` is quoted because Astro's frontmatter hoisting reads a line that
+// starts with `export` as a module export, which would split this object.
+const BLENDER_VERB: Record<string, string> = {
+  exec: 'Blender',
+  new: 'New scene',
+  open: 'Open in Blender',
+  save: 'Save',
+  'export': 'Export',
+  render: 'Render',
+};
+
+const firstLine = (text: string) => text.split('\n').map((l) => l.trim()).find(Boolean) ?? '';
+const basename = (path: string) => path.split('/').pop() ?? path;
+const humanBytes = (text: string) => {
+  const n = Buffer.byteLength(text, 'utf8');
+  return n < 1024 ? `${n} B` : `${(n / 1024).toFixed(1)} kB`;
+};
+
+// A script's comments are what name what it does — the `blender` exec calls say
+// which part they build, a python run says what it is testing — so they make the
+// row's subject.
+function codeSubject(code: string): string {
+  return code
+    .split('\n')
+    .filter((line) => line.trim().startsWith('#'))
+    .map((line) =>
+      line
+        .trim()
+        .replace(/^#+\s*/, '')
+        .replace(/^[-–—\s]+|[-–—\s]+$/g, '')
+        .trim(),
+    )
+    .filter(Boolean)
+    .join(' · ');
+}
+
+// Where a script has no comments, the modules it loads and its length still tell
+// one run from the next.
+function pythonSubject(code: string): string {
+  if (!code.trim()) return '';
+  const named = codeSubject(code);
+  if (named) return named;
+  const modules = [...new Set([...code.matchAll(/^\s*(?:import|from)\s+([\w.]+)/gm)].map((m) => m[1].split('.')[0]))];
+  return [modules.join(', '), `${code.split('\n').length} lines`].filter(Boolean).join(' · ');
+}
+
+function callHead(call: ToolCall): { verb: string; subject: string } {
+  const args = call.args ?? {};
+  switch (call.name) {
+    case 'blender': {
+      const verb = BLENDER_VERB[args.action] ?? 'Blender';
+      const subject =
+        args.action === 'exec'
+          ? codeSubject(String(args.code ?? '')) || 'Python'
+          : String(args.path ?? '');
+      return { verb, subject };
+    }
+    case 'blender_scene':
+      return { verb: 'Describe', subject: String(args.object ?? 'the scene') };
+    case 'blender_view':
+      return {
+        verb: 'Look at',
+        subject: [args.object ?? 'the scene', args.view ?? 'iso', args.shading].filter(Boolean).join(' · '),
+      };
+    case 'fs_image':
+      return { verb: 'Look at', subject: basename(String(args.path ?? '')) };
+    case 'fs_list':
+      return { verb: 'List', subject: basename(String(args.path ?? '')) };
+    case 'fs_read':
+      return { verb: 'Read', subject: basename(String(args.path ?? '')) };
+    case 'fs_write':
+      return { verb: 'Write', subject: `${basename(String(args.path ?? ''))} · ${humanBytes(String(args.content ?? ''))}` };
+    case 'fs_edit': {
+      const n = Array.isArray(args.edits) ? args.edits.length : 0;
+      return { verb: 'Edit', subject: `${basename(String(args.path ?? ''))} · ${n} edit${n === 1 ? '' : 's'}` };
+    }
+    case 'python':
+      return args.action === 'run'
+        ? { verb: 'Run Python', subject: pythonSubject(String(args.code ?? '')) }
+        : { verb: 'Describe Python', subject: '' };
+    case 'shell':
+      return { verb: 'Run', subject: firstLine(String(args.command ?? '')) };
+    default:
+      return { verb: call.name, subject: '' };
+  }
+}
+
+const date = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+}).format(new Date(session.started));
+
+const seconds = Math.round((Date.parse(session.ended) - Date.parse(session.started)) / 1000);
+const duration = `${Math.floor(seconds / 60)} min ${String(seconds % 60).padStart(2, '0')} s`;
+const calls = session.messages.reduce((n, m) => n + (m.calls?.length ?? 0), 0);
+const pictures = session.messages.reduce(
+  (n, m) => n + (m.calls?.filter((c) => c.result.image).length ?? 0),
+  0,
+);
+const messages = session.messages.length + calls;
+---
+
+<section class={className} aria-label="The full Neuman session">
+  <div class="overflow-hidden rounded-xl border border-nord-800 bg-nord-900/40 shadow-[0_24px_80px_-48px_rgba(136,192,208,0.35)]">
+    <header class="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-nord-800 bg-nord-900/70 px-4 py-2.5">
+      <span class="inline-flex items-center gap-2 text-xs font-medium text-nord-100">
+        <span class="h-2 w-2 rounded-[2px] bg-frost-400/80" aria-hidden="true"></span>
+        Neuman session
+      </span>
+      <span class="font-mono text-[10.5px] text-nord-500">
+        {session.model} · reasoning {session.reasoning}
+      </span>
+      <span class="ml-auto font-mono text-[10.5px] text-nord-500">{duration} · {messages} messages</span>
+    </header>
+
+    <div
+      class="session-scroll h-[72vh] max-h-[46rem] overflow-y-auto overscroll-contain px-4 py-4"
+      tabindex="0"
+      role="region"
+      aria-label="Session transcript, scrollable"
+    >
+      <div class="space-y-5">
+        {session.messages.map((message) =>
+          message.role === 'user' ? (
+            <div class="flex justify-end">
+              <div class="max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-sm border border-frost-800/60 bg-frost-950/40 px-3.5 py-2.5 text-[13.5px] leading-relaxed text-nord-100">
+                {message.text}
+              </div>
+            </div>
+          ) : (
+            <div class="relative ml-0.5 border-l border-nord-800 pl-4">
+              {/* Each row's dot is centred on the rail: the box's padding starts
+                  1px inside its border, so -5px lands an 8–9px dot across it. */}
+              {/* Thinking: a dim row and the whole thought behind it. */}
+              {message.thinking && (
+                <details class="group/think -ml-2">
+                  <summary class="flex cursor-pointer list-none items-baseline gap-2 rounded px-2 py-1 hover:bg-nord-800/40 [&::-webkit-details-marker]:hidden">
+                    <span class="absolute -left-[5px] top-[9px] h-2 w-2 rounded-full border border-nord-600 bg-nord-950" aria-hidden="true"></span>
+                    <span class="text-[10px] font-medium uppercase tracking-[0.08em] text-nord-500">thinking</span>
+                    <span class="min-w-0 flex-1 truncate text-[11.5px] italic text-nord-500">{preview(message.thinking)}</span>
+                    <svg class="h-2.5 w-2.5 shrink-0 text-nord-600 transition-transform group-open/think:rotate-90" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" /></svg>
+                  </summary>
+                  <div class="mb-2 mt-1 max-h-72 overflow-y-auto overscroll-contain whitespace-pre-wrap rounded-lg border border-nord-800 bg-nord-950/70 px-3 py-2.5 text-[12px] leading-relaxed text-nord-400">
+                    {message.thinking}
+                  </div>
+                </details>
+              )}
+
+              {message.text && (
+                <div class="mt-2 text-[13.5px] leading-relaxed text-nord-200" set:html={markdown(message.text)} />
+              )}
+
+              {message.calls?.map((call) => {
+                const head = callHead(call);
+                const failed = call.result.exit !== 0;
+                const image = call.result.image;
+                const code =
+                  call.name === 'python'
+                    ? String(call.args.code ?? '')
+                    : call.name === 'blender' && call.args.action === 'exec'
+                      ? String(call.args.code ?? '')
+                      : '';
+                const content = call.name === 'fs_write' ? String(call.args.content ?? '') : '';
+                const edits = call.name === 'fs_edit' && Array.isArray(call.args.edits) ? call.args.edits : [];
+                const output = call.result.text;
+                return (
+                  <>
+                    <details class={`group/tool -ml-2 mt-0.5 ${failed ? 'text-red-300' : ''}`}>
+                      <summary class="grid cursor-pointer list-none grid-cols-[auto_minmax(0,1fr)_auto_auto] items-baseline gap-x-2 rounded px-2 py-1 hover:bg-nord-800/40 [&::-webkit-details-marker]:hidden">
+                        <span class={`absolute -left-[5px] top-[7px] h-[9px] w-[9px] rounded-full ${failed ? 'bg-red-400' : 'bg-frost-500/70'}`} aria-hidden="true"></span>
+                        <span class="text-[11.5px] font-semibold text-frost-400">{head.verb}</span>
+                        <span class="truncate font-mono text-[11.5px] text-nord-400">{head.subject}</span>
+                        <span class="text-[10px] font-medium text-red-300">{failed ? 'failed' : ''}</span>
+                        <svg class="h-2.5 w-2.5 shrink-0 text-nord-600 transition-transform group-open/tool:rotate-90" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" /></svg>
+                      </summary>
+
+                      <div class="mb-2 mt-1 overflow-hidden rounded-lg border border-nord-800 bg-nord-950/70">
+                        {code && (
+                          <div class="max-h-64 overflow-auto whitespace-pre p-3 font-mono text-[11.5px] leading-relaxed text-nord-300">{code}</div>
+                        )}
+                        {content && (
+                          <div class="max-h-64 overflow-auto whitespace-pre p-3 font-mono text-[11.5px] leading-relaxed text-nord-300">{content}</div>
+                        )}
+                        {edits.length > 0 && (
+                          <div class="space-y-1 p-2">
+                            {edits.map((edit: any) => (
+                              <>
+                                <div class="overflow-hidden rounded border border-red-900/60 bg-red-950/30">
+                                  <div class="border-b border-red-900/40 px-2.5 py-0.5 font-mono text-[9.5px] uppercase tracking-[0.08em] text-red-400">removed</div>
+                                  <div class="max-h-48 overflow-auto whitespace-pre p-2.5 font-mono text-[11.5px] leading-relaxed text-red-200">{String(edit.old_text ?? '')}</div>
+                                </div>
+                                <div class="overflow-hidden rounded border border-teal-900/60 bg-teal-950/30">
+                                  <div class="border-b border-teal-900/40 px-2.5 py-0.5 font-mono text-[9.5px] uppercase tracking-[0.08em] text-teal-400">added</div>
+                                  <div class="max-h-48 overflow-auto whitespace-pre p-2.5 font-mono text-[11.5px] leading-relaxed text-teal-200">{String(edit.new_text ?? '')}</div>
+                                </div>
+                              </>
+                            ))}
+                          </div>
+                        )}
+                        {call.name === 'shell' && (
+                          <div class="border-b border-nord-800 px-3 py-2 font-mono text-[11.5px] text-nord-300">
+                            <span class="text-frost-500">$</span> {String(call.args.command ?? '')}
+                          </div>
+                        )}
+                        {output && (
+                          <div class={`max-h-64 overflow-auto whitespace-pre-wrap p-3 font-mono text-[11.5px] leading-relaxed text-nord-400 ${code || content || edits.length ? 'border-t border-nord-800' : ''}`}>{output}</div>
+                        )}
+                      </div>
+                    </details>
+
+                    {image && (
+                      <figure class="mb-2 mt-1">
+                        <a
+                          href={image.src}
+                          target="_blank"
+                          rel="noopener"
+                          title="Expand picture"
+                          data-session-image
+                          data-width={image.width}
+                          data-height={image.height}
+                          class="block w-fit max-w-full cursor-zoom-in"
+                        >
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            width={image.width}
+                            height={image.height}
+                            loading="lazy"
+                            decoding="async"
+                            class="max-h-[30rem] max-w-full rounded-lg border border-nord-800 transition-colors hover:border-frost-700"
+                          />
+                        </a>
+                        {image.name && (
+                          <div class="mt-1 font-mono text-[10px] text-nord-500">
+                            {image.name} · {image.width} × {image.height}
+                          </div>
+                        )}
+                      </figure>
+                    )}
+                  </>
+                );
+              })}
+            </div>
+          ),
+        )}
+      </div>
+    </div>
+
+    <footer class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-nord-800 bg-nord-900/50 px-4 py-2 font-mono text-[10.5px] text-nord-500">
+      <span>{date}</span>
+      <span>{calls} tool calls · {pictures} pictures</span>
+    </footer>
+  </div>
+
+  {/* One dialog per transcript: the picture opens where it sits, at the size
+      of the window, instead of a new tab. The link stays a link, so without
+      script it still opens the file. */}
+  <dialog
+    data-session-lightbox
+    aria-label="Picture from the session, enlarged"
+    class="m-0 h-full w-full max-w-none max-h-none border-0 bg-transparent p-0 text-nord-100"
+  >
+    <div class="flex h-full w-full items-center justify-center p-3 sm:p-8">
+      <figure class="relative">
+        <img
+          data-lightbox-image
+          alt=""
+          class="max-h-[88vh] max-w-[94vw] rounded-lg border border-nord-700 bg-nord-950 shadow-[0_40px_160px_-30px_rgba(0,0,0,0.95)]"
+        />
+        <button
+          type="button"
+          data-lightbox-close
+          aria-label="Close picture"
+          class="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full border border-nord-700/70 bg-nord-950/80 text-nord-200 backdrop-blur transition-colors hover:bg-nord-900 hover:text-white"
+        >
+          <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8" /></svg>
+        </button>
+      </figure>
+    </div>
+  </dialog>
+</section>
+
+<style is:global>
+  /* The dialog lives in the top layer, so the site's nav cannot sit over it. */
+  dialog[data-session-lightbox]::backdrop {
+    background: rgba(12, 15, 19, 0.9);
+    backdrop-filter: blur(4px);
+  }
+</style>
+
+<script>
+  // A picture in the transcript opens where it sits and grows to the window,
+  // the way the demo videos expand. Escape, the close button and the backdrop
+  // all close it; the page behind is held still while it is open.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  for (const dialog of document.querySelectorAll<HTMLDialogElement>('dialog[data-session-lightbox]')) {
+    const image = dialog.querySelector<HTMLImageElement>('[data-lightbox-image]')!;
+    const close = dialog.querySelector<HTMLButtonElement>('[data-lightbox-close]')!;
+    const section = dialog.closest('section')!;
+    let restoreOverflow = '';
+
+    close.addEventListener('click', () => dialog.close());
+
+    // The backdrop is everything but the picture; clicking it closes, while
+    // the picture and its close button do not.
+    dialog.addEventListener('click', (event) => {
+      if ((event.target as Element).closest('figure')) return;
+      dialog.close();
+    });
+
+    // The `close` event is not delivered in every browser, so the dialog's
+    // own `open` attribute is the signal: it goes away however the dialog was
+    // closed — the button, the backdrop, or Escape.
+    new MutationObserver(() => {
+      if (dialog.open) return;
+      document.documentElement.style.overflow = restoreOverflow;
+      image.removeAttribute('src');
+      image.alt = '';
+    }).observe(dialog, { attributes: true, attributeFilter: ['open'] });
+
+    for (const link of section.querySelectorAll<HTMLAnchorElement>('a[data-session-image]')) {
+      link.addEventListener('click', (event) => {
+        // The modifier keys keep the link's own behaviour: open the file.
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+
+        const thumb = link.querySelector('img')!;
+        const from = thumb.getBoundingClientRect();
+        image.src = link.href;
+        image.alt = thumb.alt;
+        if (link.dataset.width) image.width = Number(link.dataset.width);
+        if (link.dataset.height) image.height = Number(link.dataset.height);
+
+        restoreOverflow = document.documentElement.style.overflow;
+        document.documentElement.style.overflow = 'hidden';
+        dialog.showModal();
+
+        // Measured in the frame before the dialog is painted, so the picture
+        // grows from the thumbnail and is never seen at full size first. If
+        // the frame does not come, the picture is simply already in place.
+        requestAnimationFrame(() => {
+          const to = image.getBoundingClientRect();
+          if (reduceMotion || !to.width || !to.height) return;
+          const dx = from.left + from.width / 2 - (to.left + to.width / 2);
+          const dy = from.top + from.height / 2 - (to.top + to.height / 2);
+          image.animate(
+            [
+              { transform: `translate(${dx}px, ${dy}px) scale(${from.width / to.width}, ${from.height / to.height})` },
+              { transform: 'none' },
+            ],
+            { duration: 260, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)' },
+          );
+        });
+      });
+    }
+  }
+</script>

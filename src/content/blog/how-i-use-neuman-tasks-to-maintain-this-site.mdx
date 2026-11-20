@@ -1,0 +1,114 @@
+---
+title: "How I Use Neuman's Tasks to Maintain This Site"
+description: "A main selling point of AI is to automate repetitive, boring tasks. That's why I created the tasks feature in Neuman: so it could do things on a schedule without you having to worry about it."
+date: 2026-11-19
+tags: ["Neuman", "this site", "local AI"]
+---
+
+import DemoVideo from '../../components/DemoVideo.astro';
+
+<DemoVideo
+  name="task"
+  class="mb-10"
+  label="Screen recording: Neuman running the privateai.solutions update task, showing the prepare, research and check steps and the Mistral onboarding research in the report."
+  caption="Running a task in Neuman to onboard the company Mistral onto the site."
+/>
+
+This site is full of facts. Every model, company, harness, part and build has
+values that need a source, a date and someone who checked them. I need that
+for my own work, and my clients need it too. If I tell someone a GPU has
+96 GB of memory or a model costs a certain amount, they should be able to see
+where the number came from.
+
+When I was building the site, I had to find a way to keep track of all those
+facts, verify them, and keep them current. That's when I created the tasks
+feature in Neuman.
+
+The idea was basically a chat session that runs on an interval, already has
+its prompts, commands, context and the files it needs, and can write its output
+automatically. Building it as an automatic chat session gave more flexibility to
+how I could set up the admin panel.
+
+## The dashboard
+
+The admin panel is where I keep track of the site: models, companies,
+harnesses, parts and builds. Don't try to access it, it's only available on the local
+development build.
+
+In the admin panel, every fact gets a card showing whether it is
+verified, when it was last checked, and what the source is. I can also add
+news and see recent task runs. Almost any information on the site can be maintained here
+(other than the blogs which are just stored in files I edit in emacs).
+
+<DemoVideo
+  name="admin-panel"
+  class="mb-10"
+  label="Screen recording: the admin dashboard, the company onboarding modal for Mistral, and the queued onboarding run appearing in Recent update runs."
+  caption="Adding a new company to the task queue."
+/>
+
+## The workflow
+
+Neuman runs one task on a schedule. Mine runs in the morning, and I can run
+it on demand when I don't want to wait.
+
+Every run has three steps:
+
+1. **prepare** runs the API syncs, decides what the run is for, and writes a
+   brief.
+2. **research** is the agent. It reads the brief, researches the web, and
+   writes claims.
+3. **check** is a command with no model in it. It fetches every source itself
+   and decides what can publish.
+
+When I add a company or model in the dashboard, it doesn't go straight onto
+the site. It creates a request in a task queue. The next run takes the oldest
+request first. If nothing is queued, the run does the weekly sweep: it checks the price of every part that
+has a listing the checker can read, re-checks facts whose review date has come
+around, and looks for notable new releases.
+
+Prices are the weekly thing. They move, so they get looked at every week. Most
+other facts don't move. A release date or a specific model's memory size is fixed, so it is
+checked when the entity is onboarded and then left alone. The facts that can
+change, such as licenses, ownership, capabilities and snapshots, get a yearly
+review. New models and companies are the opposite: they need a wide range of sources,
+and they are the reason the queue exists.
+
+## The files a run leaves
+
+A run lives in its own directory outside the repository. The files I care
+about are:
+
+- `brief.md`: the instructions for this run, built from the site's schema.
+- `claims.json`: the facts Neuman proposes, each with a source and a quote.
+- `report.md`: what it found, what it could not find, and what got in the way.
+- `result.json`: the checker's verdict on every claim, plus my review decisions.
+- `neuman-run.json`: Neuman's own record of the run: steps, status and cost.
+
+`claims.json` is the most important output for the site. 
+It contains claims like, "this value is on this page, in this quote." The checker then
+fetches that page itself, archives the bytes as a receipt, and asks whether
+the quote is really there and whether the claimed value is in it.
+
+If the claim passes, it publishes with the checker's receipt and the date it
+was checked. If it is an identity or classification claim, or it contradicts
+something I signed off, or the number moves too far, it waits in the dashboard
+for me to accept or reject.
+
+## What it looks like day to day
+
+Most weeks, the sweep confirms a few prices and gives me a short list of new
+releases. The onboarding runs are a bit more intensive (shown in the screengrabs on this page)
+
+I open the dashboard, check the review queue, read the report's candidates to
+onboard, and commit the data. The task does the repetitive part: re-read the
+price, check the page, notice the release.
+
+<DemoVideo
+  name="task-result"
+  class="mb-10"
+  label="Screen recording: the admin dashboard's Recent update runs panel after the Mistral onboarding, showing the run's claims with Accept and Reject and the facts the checker already applied."
+  caption="The outcome of a task run. Neuman's given me a collection of facts and their sources for me to sign off on."
+/>
+
+That's the point of the tasks feature, to do the repetitive, boring work.

@@ -1,0 +1,106 @@
+{
+  "name": "Anthropic",
+  "slug": "anthropic",
+  "facts": {
+    "country": {
+      "value": "United States",
+      "source": "https://en.wikipedia.org/wiki/Anthropic",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "founded": {
+      "value": "2021-01-26",
+      "source": "https://en.wikipedia.org/wiki/Anthropic",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "weights_availability": {
+      "value": "closed",
+      "source": "https://huggingface.co/Anthropic",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "hq_city": {
+      "value": "San Francisco",
+      "source": "https://en.wikipedia.org/wiki/Anthropic",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "legal_structure": {
+      "value": "pbc",
+      "source": "https://en.wikipedia.org/wiki/Anthropic",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "ownership": {
+      "value": "private",
+      "source": "https://en.wikipedia.org/wiki/Anthropic",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parent_company": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "employee_tier": {
+      "value": "500-5k",
+      "source": "https://en.wikipedia.org/wiki/Anthropic",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.official": {
+      "value": "https://www.anthropic.com",
+      "source": "https://www.anthropic.com",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/Anthropic",
+      "source": "https://en.wikipedia.org/wiki/Anthropic",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "snapshot.huggingface_org": {
+      "value": "https://huggingface.co/Anthropic",
+      "source": "https://huggingface.co/Anthropic",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "snapshot.github_org": {
+      "value": "https://github.com/anthropics",
+      "source": "https://github.com/anthropics",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "hidden": {
+      "value": true,
+      "source": null,
+      "fetched": "2026-11-13",
+      "verified_by": "luke",
+      "verified_at": "2026-11-13"
+    }
+  },
+  "references": []
+}

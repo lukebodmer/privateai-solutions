@@ -1,0 +1,118 @@
+{
+  "name": "Starter workstation",
+  "slug": "starter-workstation",
+  "facts": {
+    "kind": {
+      "value": "custom",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "runtime": {
+      "value": "llama.cpp",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "parts": {
+      "value": [
+        {
+          "part": "rtx-5090",
+          "quantity": 1
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "models": {
+      "value": [
+        {
+          "model": "qwen3.8-27b",
+          "weights": "UD-Q4_K_XL"
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "photo_credit": {
+      "value": "A similar desktop, for illustration. Photo: EmpoweredPC.",
+      "source": "https://empoweredpc.com/cdn/shop/files/PanoramaXL_AIO_DawnPro_Aqua.jpg",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "37695ad01c25a8f6940a6c39aa54bb1c25df2b3b4e21409b6957df894c7b41f4",
+      "snapshot_ext": "html"
+    },
+    "price_range": {
+      "value": "$9,300–12,300 in parts",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "context_per_session": {
+      "value": 65536,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "concurrent_sessions": {
+      "value": 3,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "team_min": {
+      "value": 3,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "team_max": {
+      "value": 9,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "components": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "measured.output_tokens_per_second": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "measured.max_concurrency": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": []
+}

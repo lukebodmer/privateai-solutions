@@ -1,0 +1,108 @@
+{
+  "name": "DGX Station",
+  "slug": "dgx-station",
+  "facts": {
+    "kind": {
+      "value": "system",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "runtime": {
+      "value": "llama.cpp",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "parts": {
+      "value": [
+        {
+          "part": "dgx-station",
+          "quantity": 1
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "models": {
+      "value": [
+        {
+          "model": "glm-5.3",
+          "weights": "UD-Q4_K_XL"
+        },
+        {
+          "model": "deepseek-v4.1-flash-1017",
+          "weights": "UD-Q4_K_XL"
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "context_per_session": {
+      "value": 65536,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "concurrent_sessions": {
+      "value": 32,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "team_min": {
+      "value": 32,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "team_max": {
+      "value": 96,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "measured.output_tokens_per_second": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "measured.max_concurrency": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "photo_credit": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "my_take": {
+      "value": "The DGX Sparks is a great machine for a research lab or a small team. With 748GB of memory, it's an extremely powerful machine. The footprint is not too big either and looks like a large desktop computer.",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    }
+  },
+  "references": []
+}

@@ -1,0 +1,11 @@
+key: benchmark.arena_text_coding
+title: Arena Text — Coding
+short_title: Arena · Coding
+description: >
+  Arena's rating from people comparing two anonymous models on coding
+  prompts and voting for the better answer. Style-controlled, so length and
+  formatting don't win votes on their own.
+scale_min: 1300
+scale_max: 1600
+source_url: https://arena.ai/leaderboard/text/coding
+order: 2

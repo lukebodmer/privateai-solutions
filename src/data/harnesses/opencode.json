@@ -1,0 +1,143 @@
+{
+  "name": "OpenCode",
+  "slug": "opencode",
+  "facts": {
+    "developer": {
+      "value": "Anomaly",
+      "source": "https://github.com/anomalyco",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "license": {
+      "value": "MIT",
+      "source": "https://github.com/anomalyco/opencode",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "0b94fb03676a09121bcae5abf74e447d40ca997ac0b4d97afe6ce9c8b9426d78",
+      "snapshot_ext": "json"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://raw.githubusercontent.com/anomalyco/opencode/dev/LICENSE",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "language": {
+      "value": [
+        {
+          "name": "TypeScript",
+          "percent": 85.6
+        },
+        {
+          "name": "MDX",
+          "percent": 10.4
+        },
+        {
+          "name": "CSS",
+          "percent": 3
+        },
+        {
+          "name": "Other",
+          "percent": 1.1
+        }
+      ],
+      "source": "https://github.com/anomalyco/opencode",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "6894e5502f9b1c7382457ef114b662450957a8806556ac784a36a4796c6f37c0",
+      "snapshot_ext": "json"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "developer_company_slug": {
+      "value": null,
+      "source": "https://github.com/anomalyco",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "philosophy": {
+      "value": "open-source AI coding agent",
+      "source": "https://raw.githubusercontent.com/anomalyco/opencode/dev/README.md",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "install_method": {
+      "value": "curl -fsSL https://opencode.ai/install | bash",
+      "source": "https://raw.githubusercontent.com/anomalyco/opencode/dev/README.md",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.github": {
+      "value": "https://github.com/anomalyco/opencode",
+      "source": "https://github.com/anomalyco/opencode",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "8a754f294f5f29e35e68d9cac1b9b3275b07d1af4061a296eb5de9c94a01e515",
+      "snapshot_ext": "html"
+    },
+    "snapshot.website": {
+      "value": "https://opencode.ai",
+      "source": "https://opencode.ai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "3b3cfb84c04e4336f0c84a32ddd64c66ad0dbd31aab1b4e5716879568fd1a3fc",
+      "snapshot_ext": "html"
+    },
+    "snapshot.docs": {
+      "value": "https://opencode.ai/docs",
+      "source": "https://opencode.ai/docs",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "19cad39ebbddd2a122f5e8e36256b1f4e739d21571c213982ff8b26f1bf4e7a5",
+      "snapshot_ext": "html"
+    },
+    "snapshot.package": {
+      "value": "https://www.npmjs.com/package/opencode-ai",
+      "source": "https://www.npmjs.com/package/opencode-ai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": [
+    {
+      "title": "OpenCode — GitHub",
+      "url": "https://github.com/anomalyco/opencode",
+      "author": "Anomalyco",
+      "date": "2025"
+    },
+    {
+      "title": "OpenCode — Official Site",
+      "url": "https://opencode.ai",
+      "author": "Anomalyco",
+      "date": "2025"
+    },
+    {
+      "title": "OpenCode — Docs",
+      "url": "https://opencode.ai/docs",
+      "author": "Anomalyco",
+      "date": "2025"
+    },
+    {
+      "title": "OpenCode — npm Package",
+      "url": "https://www.npmjs.com/package/opencode-ai",
+      "author": "Anomalyco",
+      "date": "2025"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '@fontsource-variable/inter/opsz.css';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Private AI Solutions — AI consulting, product builds, and local hardware installation.' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Link previews fetch this, and most of them need a raster image at an
+// absolute URL. Rebuild it with `pnpm brand` (scripts/brand-images.mjs).
+const ogImage = new URL('/og-image.png', Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Private AI Solutions. Neuman: free your AI from the cloud. The future of AI is local and open source." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Cloudflare Web Analytics -->
+    <!-- Replace with your Cloudflare Web Analytics token from dash.cloudflare.com -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_CLOUDFLARE_TOKEN"}'></script>
+
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col bg-nord-950 text-nord-100">
+    <Nav />
+    <slot />
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+
+<Base
+  title="Blog — Private AI Solutions"
+  description="Notes from building and running local AI: experiments, benchmarks, and write-ups from real work."
+>
+  <main class="max-w-3xl w-full mx-auto px-4 sm:px-6 py-12">
+    <PageHeader eyebrow="Writing" title="Blog" class="mb-10" />
+
+    <ul class="space-y-4">
+      {posts.map((post) => (
+        <li>
+          <a
+            href={`/blog/${post.slug}/`}
+            class="block group border border-nord-800 rounded-xl p-5 hover:border-nord-600 hover:bg-nord-900/40 transition-colors"
+          >
+            <div class="flex items-baseline justify-between gap-4">
+              <h2 class="text-lg font-semibold text-nord-100 group-hover:text-white leading-snug">
+                {post.data.title}
+              </h2>
+              <span class="text-[11px] text-nord-500 font-mono shrink-0">{fmt(post.data.date)}</span>
+            </div>
+            <p class="text-nord-400 text-sm mt-2 leading-relaxed">{post.data.description}</p>
+            {post.data.tags.length > 0 && (
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                {post.data.tags.map((t) => (
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-nord-800/80 text-nord-400">{t}</span>
+                ))}
+              </div>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    {posts.length === 0 && (
+      <p class="text-nord-500 text-sm">No posts yet.</p>
+    )}
+  </main>
+</Base>

@@ -1,0 +1,232 @@
+---
+import Base from '../../layouts/Base.astro';
+import SourceLinks from '../../components/SourceLinks.astro';
+import FactLedger from '../../components/FactLedger.astro';
+import { loadEntities, loadEntity, factStr } from '../../lib/facts';
+import { resolveLogo } from '../../utils/resolveLogo';
+
+export async function getStaticPaths() {
+  return loadEntities('company').map(c => ({
+    params: { slug: c.slug },
+    props: { slug: c.slug },
+  }));
+}
+
+const { slug } = Astro.props;
+const company = loadEntity('company', slug)!;
+const logo = resolveLogo('companies', company.slug);
+
+const country = factStr(company, 'country');
+const hqCity = factStr(company, 'hq_city');
+const founded = factStr(company, 'founded');
+const weightsAvailability = factStr(company, 'weights_availability');
+const legalStructure = factStr(company, 'legal_structure');
+const ownership = factStr(company, 'ownership');
+const employeeTier = factStr(company, 'employee_tier');
+const parentCompany = factStr(company, 'parent_company');
+
+// Models made by this company
+const models = loadEntities('model').filter(m => factStr(m, 'company_slug') === company.slug);
+// Harnesses developed by this company
+const harnesses = loadEntities('harness').filter(h => factStr(h, 'developer_company_slug') === company.slug);
+
+function fmtDateFull(d: string | null): string {
+  if (!d) return '';
+  const [y, m, day] = d.split('-');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  if (!m) return y;
+  return day ? `${months[parseInt(m)-1]} ${parseInt(day)}, ${y}` : `${months[parseInt(m)-1]} ${y}`;
+}
+
+const weightLabels: Record<string, string> = {
+  'open-fully': 'Fully open',
+  'open-with-restrictions': 'Open with restrictions',
+  'research-only': 'Research only',
+  'gated': 'Gated',
+  'closed': 'Closed',
+};
+
+const weightColors: Record<string, string> = {
+  'open-fully': 'bg-frost-900/40 text-frost-400 border-frost-800',
+  'open-with-restrictions': 'bg-amber-900/40 text-amber-400 border-amber-800',
+  'research-only': 'bg-red-900/40 text-red-400 border-red-800',
+  'gated': 'bg-nord-800 text-nord-400 border-nord-700',
+  'closed': 'bg-nord-800 text-nord-400 border-nord-700',
+};
+
+const legalLabels: Record<string, string> = {
+  'for-profit': 'For-profit',
+  'pbc': 'Public Benefit Corp',
+  'llc': 'LLC',
+  'nonprofit': 'Nonprofit',
+  'other': 'Other',
+};
+
+const ownershipLabels: Record<string, string> = {
+  'public': 'Public',
+  'private': 'Private',
+  'subsidiary': 'Subsidiary',
+};
+
+const wa = weightsAvailability ?? 'closed';
+const locationLine = [hqCity, country].filter(Boolean).join(', ');
+---
+
+<Base
+  title={`${company.name} — Open-Weight AI Company Profile`}
+  description={`${company.name}: country, licensing stance, model releases.`}
+>
+  <main class="max-w-3xl w-full mx-auto px-4 sm:px-6 py-10">
+
+    <a href="/ecosystem" class="inline-flex items-center gap-1.5 text-sm text-nord-500 hover:text-nord-300 transition-colors mb-8">
+      <span>←</span> Ecosystem
+    </a>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center gap-4">
+        {logo && (
+          <img src={logo} alt="" class="w-10 h-10 rounded shrink-0" />
+        )}
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold text-nord-100 leading-tight">{company.name}</h1>
+          <p class="text-nord-500 mt-1 text-sm">
+            {locationLine}{founded ? `${locationLine ? ' · ' : ''}Founded ${fmtDateFull(founded)}` : ''}
+          </p>
+          {parentCompany && (
+            <p class="text-nord-500 mt-0.5 text-xs">
+              Subsidiary of {parentCompany}
+            </p>
+          )}
+        </div>
+      </div>
+
+      <div class="mt-4 space-y-3">
+        <div class="flex flex-wrap gap-2">
+          <span class={`inline-block px-2 py-1 rounded text-xs border font-medium ${weightColors[wa] ?? weightColors.closed}`}>
+            {weightLabels[wa] ?? wa}
+          </span>
+          {ownership && (
+            <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">
+              {ownershipLabels[ownership] ?? ownership}
+            </span>
+          )}
+          {legalStructure && (
+            <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">
+              {legalLabels[legalStructure] ?? legalStructure}
+            </span>
+          )}
+          {employeeTier && (
+            <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700 font-mono">
+              {employeeTier} employees
+            </span>
+          )}
+        </div>
+        <SourceLinks
+          entity={company}
+          keys={['snapshot.official', 'snapshot.wikipedia', 'snapshot.huggingface_org', 'snapshot.github_org']}
+          officialLogo={logo}
+        />
+      </div>
+    </div>
+
+    <!-- My take -->
+    {company.my_take && (
+      <section class="mb-8">
+        <div class="p-4 bg-nord-900 border border-nord-800 rounded-lg text-sm text-nord-300 leading-relaxed border-l-2 border-l-frost-700 whitespace-pre-wrap">
+          {company.my_take}
+        </div>
+      </section>
+    )}
+
+    <!-- Models from this company -->
+    {models.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">Models</h2>
+        <div class="space-y-1.5">
+          {models.map(m => {
+            const dist = factStr(m, 'distribution');
+            const isOpen = dist === 'open' || dist === 'gated';
+            const params = factStr(m, 'parameters_b');
+            const license = factStr(m, 'license');
+            const meta = [
+              params ? `${params}B` : null,
+              license,
+              dist === 'closed' ? 'closed' : dist === 'gated' ? 'gated' : null,
+            ].filter(Boolean).join(' · ') || '—';
+            const rowClass = 'flex items-center justify-between px-3 py-2 rounded bg-nord-900 border border-nord-800 hover:border-nord-600 hover:bg-nord-800/60 transition-colors';
+            return isOpen ? (
+              <a href={`/models/${m.slug}`} class={rowClass}>
+                <span class="text-sm text-nord-200">{m.name}</span>
+                <span class="text-xs text-nord-500 font-mono">{meta}</span>
+              </a>
+            ) : (
+              <div class={rowClass + ' cursor-default hover:border-nord-800 hover:bg-nord-900'}>
+                <span class="text-sm text-nord-300">{m.name}</span>
+                <span class="text-xs text-nord-500 font-mono">{meta}</span>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    <!-- Harnesses from this company -->
+    {harnesses.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">Harnesses</h2>
+        <div class="space-y-1.5">
+          {harnesses.map(h => (
+            <a href={`/harnesses/${h.slug}`}
+              class="flex items-center justify-between px-3 py-2 rounded bg-nord-900 border border-nord-800 hover:border-nord-600 hover:bg-nord-800/60 transition-colors">
+              <span class="text-sm text-nord-200">{h.name}</span>
+              <span class="text-xs text-nord-500 font-mono">
+                {factStr(h, 'language') ?? '—'} · {factStr(h, 'license') ?? '—'}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <FactLedger entity={company} />
+
+    <!-- References -->
+    {company.references.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">References</h2>
+        <ul class="space-y-2">
+          {company.references.map(ref => (
+            <li class="text-sm text-nord-400 leading-relaxed">
+              <a href={ref.url} target="_blank" rel="noopener noreferrer"
+                class="text-frost-400 hover:text-frost-300 hover:underline">
+                {ref.title}
+              </a>
+              {ref.author ? ` — ${ref.author}` : ''}
+              {ref.date ? ` (${ref.date})` : ''}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- CTA -->
+    <div class="mt-12 pt-8 border-t border-nord-800">
+      <p class="text-nord-400 text-sm mb-4">
+        Want to discuss how these companies' models fit into your infrastructure?
+      </p>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
+        <a href="/services"
+          class="px-4 py-2 rounded-full bg-frost-500 hover:bg-frost-400 text-nord-950 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(136,192,208,0.6)] transition-colors">
+          View services
+        </a>
+        <a href="/ecosystem"
+          class="group inline-flex items-center gap-1.5 text-sm font-medium text-nord-300 hover:text-white transition-colors">
+          <span class="text-frost-400 transition-transform group-hover:-translate-x-0.5" aria-hidden="true">&larr;</span>
+          Back to the ecosystem
+        </a>
+      </div>
+    </div>
+
+  </main>
+</Base>

@@ -1,0 +1,419 @@
+---
+/**
+ * The office, as a viewer: the model from `assets/office` in
+ * `public/office/office.glb`, playing its own animation, turned with the
+ * pointer and zoomed with the wheel or a two-finger pinch.
+ *
+ * The hero (`OfficeScene.astro`) sweeps the camera itself; this one hands the
+ * camera to the reader, so it is a figure on its own, fitted to its panel.
+ */
+interface Props {
+  class?: string;
+  caption?: string;
+}
+
+const { class: cls = '', caption } = Astro.props;
+---
+
+<figure class={cls} data-office-viewer>
+  <div
+    class="relative aspect-[16/10] rounded-xl border border-nord-800 bg-nord-950 overflow-hidden"
+  >
+    <div class="absolute inset-0" data-office-viewer-mount aria-hidden="true"></div>
+    <p
+      class="pointer-events-none absolute bottom-2 right-3 text-[10px] tracking-wide text-nord-500"
+    >
+      Drag to orbit &middot; scroll or pinch to zoom
+    </p>
+  </div>
+  {caption && (
+    <figcaption class="mt-3 text-xs text-nord-500 leading-relaxed">{caption}</figcaption>
+  )}
+</figure>
+
+<script>
+  import type * as THREE from 'three';
+
+  const mount = document.querySelector<HTMLElement>('[data-office-viewer-mount]');
+  if (mount) boot(mount).catch(() => {});
+
+  async function boot(mount: HTMLElement) {
+    const three = await import('three');
+    const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new three.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+    } catch {
+      throw new Error('WebGL is not available');
+    }
+
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearAlpha(0);
+    renderer.outputColorSpace = three.SRGBColorSpace;
+    renderer.toneMapping = three.AgXToneMapping;
+    renderer.toneMappingExposure = 0.95;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = three.PCFSoftShadowMap;
+    renderer.domElement.style.cssText =
+      'display:block;width:100%;height:100%;touch-action:none;cursor:grab';
+    mount.appendChild(renderer.domElement);
+
+    const scene = new three.Scene();
+    const camera = new three.PerspectiveCamera(34, 1, 0.1, 400);
+
+    // The room the glass and the server reflect: frost above, the page's
+    // near-black below, one soft box for a highlight.
+    const envScene = new three.Scene();
+    envScene.add(
+      new three.Mesh(
+        new three.SphereGeometry(1, 32, 16),
+        new three.ShaderMaterial({
+          side: three.BackSide,
+          vertexShader: /* glsl */ `
+            varying vec3 vDir;
+            void main() {
+              vDir = normalize(position);
+              gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+          `,
+          fragmentShader: /* glsl */ `
+            varying vec3 vDir;
+            void main() {
+              vec3 dir = normalize(vDir);
+              float t = clamp(dir.y * 0.5 + 0.5, 0.0, 1.0);
+              vec3 below = vec3(0.018, 0.022, 0.028);
+              vec3 above = vec3(0.72, 0.92, 1.12);
+              vec3 col = mix(below, above, smoothstep(0.38, 0.95, t));
+              float box = smoothstep(0.48, 0.90, dot(dir, normalize(vec3(-0.40, 0.88, 0.28))));
+              col += box * vec3(2.6, 3.1, 3.7);
+              gl_FragColor = vec4(col, 1.0);
+            }
+          `,
+        }),
+      ),
+    );
+
+    const pmrem = new three.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(envScene, 0.04).texture;
+    scene.environmentIntensity = 0.55;
+    scene.add(new three.AmbientLight(0x4c566a, 0.12));
+
+    const key = new three.DirectionalLight(0xdfe9f2, 1.35);
+    key.position.set(-10, 17, 13);
+    key.castShadow = true;
+    key.shadow.mapSize.set(2048, 2048);
+    key.shadow.camera.near = 1;
+    key.shadow.camera.far = 70;
+    key.shadow.bias = -0.0004;
+    key.shadow.normalBias = 0.02;
+    scene.add(key);
+    scene.add(key.target);
+
+    const rim = new three.DirectionalLight(0x88c0d0, 0.6);
+    rim.position.set(9, 7, -14);
+    scene.add(rim);
+
+    const fill = new three.DirectionalLight(0x81a1c1, 0.35);
+    fill.position.set(14, 5, 9);
+    scene.add(fill);
+
+    const gltf = await new GLTFLoader().loadAsync('/office/office.glb');
+    const model: THREE.Object3D = gltf.scene;
+    scene.add(model);
+
+    const mixer = new three.AnimationMixer(model);
+    for (const clip of gltf.animations) mixer.clipAction(clip).play();
+    const duration = Math.max(...gltf.animations.map((clip) => clip.duration), 0);
+
+    const box = new three.Box3().setFromObject(model);
+    const centre = box.getCenter(new three.Vector3());
+    key.target.position.copy(centre);
+    key.shadow.camera.left = -11;
+    key.shadow.camera.right = 11;
+    key.shadow.camera.top = 11;
+    key.shadow.camera.bottom = -11;
+    key.shadow.camera.updateProjectionMatrix();
+
+    const lineMats: THREE.MeshStandardMaterial[] = [];
+    const seenMats = new Set<THREE.Material>();
+    model.traverse((child) => {
+      const mesh = child as THREE.Mesh;
+      if (!mesh.isMesh) return;
+      const material = mesh.material as THREE.Material;
+      mesh.castShadow = !material.transparent;
+      mesh.receiveShadow = !material.transparent;
+      const standard = material as THREE.MeshStandardMaterial;
+      if ((standard.name === 'data_line' || standard.name === 'neon') && !seenMats.has(material)) {
+        seenMats.add(material);
+        standard.userData.base = standard.emissiveIntensity;
+        lineMats.push(standard);
+      }
+    });
+
+    const baseYaw = Math.PI / 4;
+    const basePitch = Math.asin(1 / Math.sqrt(3));
+    const YAW_LIMIT = 1.55;
+    const PITCH_MIN = 0.16;
+    const PITCH_MAX = 1.30;
+    const ZOOM_MIN = 0.5;
+    const ZOOM_MAX = 2.1;
+
+    const corners = [
+      [box.min.x, box.min.y, box.min.z], [box.max.x, box.min.y, box.min.z],
+      [box.min.x, box.max.y, box.min.z], [box.max.x, box.max.y, box.min.z],
+      [box.min.x, box.min.y, box.max.z], [box.max.x, box.min.y, box.max.z],
+      [box.min.x, box.max.y, box.max.z], [box.max.x, box.max.y, box.max.z],
+    ].map(([x, y, z]) => new three.Vector3(x, y, z).sub(centre));
+
+    const dir = new three.Vector3();
+    const right = new three.Vector3();
+    const up = new three.Vector3();
+    const back = new three.Vector3();
+    let baseDistance = 1;
+    let zoom = 1;
+
+    // The reader can turn the room most of the way round, and the frame has to
+    // hold it at every one of those angles, so the fit is the worst angle's.
+    function needAt(yaw: number, pitch: number) {
+      dir.set(Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), Math.cos(yaw) * Math.cos(pitch));
+      camera.position.copy(centre).addScaledVector(dir, 1);
+      camera.lookAt(centre);
+      camera.updateMatrixWorld();
+
+      right.setFromMatrixColumn(camera.matrixWorld, 0);
+      up.setFromMatrixColumn(camera.matrixWorld, 1);
+      back.setFromMatrixColumn(camera.matrixWorld, 2);
+
+      const vFov = three.MathUtils.degToRad(camera.fov);
+      const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+
+      let need = 0;
+      for (const p of corners) {
+        need = Math.max(
+          need,
+          p.dot(back) + Math.abs(p.dot(right)) / Math.tan(hFov / 2),
+          p.dot(back) + Math.abs(p.dot(up)) / Math.tan(vFov / 2),
+        );
+      }
+      return need;
+    }
+
+    function fit() {
+      let need = 0;
+      for (let i = 0; i <= 6; i++) {
+        const yaw = baseYaw - YAW_LIMIT + (i / 6) * YAW_LIMIT * 2;
+        need = Math.max(need, needAt(yaw, PITCH_MIN), needAt(yaw, basePitch), needAt(yaw, PITCH_MAX));
+      }
+      baseDistance = need * 1.04;
+    }
+
+    function place(yawOffset: number, pitchOffset: number) {
+      const yaw = baseYaw + yawOffset;
+      const pitch = three.MathUtils.clamp(basePitch + pitchOffset, PITCH_MIN, PITCH_MAX);
+      dir.set(Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), Math.cos(yaw) * Math.cos(pitch));
+      camera.position.copy(centre).addScaledVector(dir, baseDistance * zoom);
+      camera.lookAt(centre);
+      camera.updateMatrixWorld();
+    }
+
+    function draw() {
+      renderer.render(scene, camera);
+    }
+
+    function resize() {
+      const w = mount.clientWidth;
+      const h = mount.clientHeight;
+      if (!w || !h) return;
+
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h, false);
+      fit();
+      place(orbit.yaw, orbit.pitch);
+      draw();
+    }
+
+    // Pointer state: one finger turns, two pinch the distance.
+    const aim = { yaw: 0, pitch: 0 };
+    const orbit = { yaw: 0, pitch: 0 };
+    const pointers = new Map<number, { x: number; y: number }>();
+    let dragging = false;
+    let lastX = 0;
+    let lastY = 0;
+    let pinchStart = 0;
+    let pinchZoom = 1;
+
+    function applyZoom(next: number) {
+      const clamped = three.MathUtils.clamp(next, ZOOM_MIN, ZOOM_MAX);
+      if (clamped === zoom) return;
+      zoom = clamped;
+      place(orbit.yaw, orbit.pitch);
+      draw();
+    }
+
+    const canvas = renderer.domElement;
+
+    canvas.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      event.preventDefault();
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      canvas.setPointerCapture(event.pointerId);
+
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        pinchStart = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
+        pinchZoom = zoom;
+        dragging = false;
+      } else if (pointers.size === 1) {
+        dragging = true;
+        lastX = event.clientX;
+        lastY = event.clientY;
+      }
+      canvas.style.cursor = 'grabbing';
+    });
+
+    canvas.addEventListener('pointermove', (event) => {
+      if (!pointers.has(event.pointerId)) return;
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        const distance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
+        applyZoom(pinchZoom * pinchStart / distance);
+        return;
+      }
+      if (!dragging) return;
+
+      const w = Math.max(1, mount.clientWidth);
+      const h = Math.max(1, mount.clientHeight);
+
+      aim.yaw = three.MathUtils.clamp(
+        aim.yaw - ((event.clientX - lastX) / w) * 2.4,
+        -YAW_LIMIT,
+        YAW_LIMIT,
+      );
+      aim.pitch = three.MathUtils.clamp(
+        aim.pitch - ((event.clientY - lastY) / h) * 1.6,
+        PITCH_MIN - basePitch,
+        PITCH_MAX - basePitch,
+      );
+      lastX = event.clientX;
+      lastY = event.clientY;
+
+      // With reduced motion there is no frame loop to carry the change.
+      if (reduced) {
+        orbit.yaw = aim.yaw;
+        orbit.pitch = aim.pitch;
+        place(orbit.yaw, orbit.pitch);
+        draw();
+      }
+    });
+
+    const endDrag = (event: PointerEvent) => {
+      if (!pointers.has(event.pointerId)) return;
+      pointers.delete(event.pointerId);
+      if (pointers.size < 2) pinchStart = 0;
+
+      if (pointers.size === 1) {
+        // one finger of a pinch stayed down: carry on turning with it
+        const [left] = [...pointers.values()];
+        dragging = true;
+        lastX = left.x;
+        lastY = left.y;
+      } else if (pointers.size === 0) {
+        dragging = false;
+        canvas.style.cursor = 'grab';
+      }
+
+      if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+    };
+    canvas.addEventListener('pointerup', endDrag);
+    canvas.addEventListener('pointercancel', endDrag);
+    canvas.addEventListener('pointerleave', () => {
+      if (!dragging && pointers.size === 0) canvas.style.cursor = 'grab';
+    });
+
+    canvas.addEventListener(
+      'wheel',
+      (event) => {
+        event.preventDefault();
+        applyZoom(zoom * Math.exp(event.deltaY * 0.0012));
+      },
+      { passive: false },
+    );
+
+    new ResizeObserver(resize).observe(mount);
+
+    // Stand in for the animation when someone has asked for no motion: the
+    // moment the coffee guy has his hand on the pot.
+    if (reduced) {
+      mixer.setTime(Math.min(duration * 0.5, 4.4));
+      model.updateMatrixWorld(true);
+      resize();
+      return;
+    }
+
+    const PULSE_PERIOD = 2.4;
+    let raf = 0;
+    let running = false;
+    let last = performance.now();
+    let elapsed = 0;
+
+    function frame(now: number) {
+      raf = requestAnimationFrame(frame);
+      const dt = Math.min(0.1, (now - last) / 1000);
+      last = now;
+      elapsed += dt;
+
+      mixer.update(dt);
+
+      if (orbit.yaw !== aim.yaw || orbit.pitch !== aim.pitch) {
+        const ease = 1 - Math.exp(-dt * 10);
+        orbit.yaw += (aim.yaw - orbit.yaw) * ease;
+        orbit.pitch += (aim.pitch - orbit.pitch) * ease;
+        if (Math.abs(aim.yaw - orbit.yaw) < 1e-5) orbit.yaw = aim.yaw;
+        if (Math.abs(aim.pitch - orbit.pitch) < 1e-5) orbit.pitch = aim.pitch;
+        place(orbit.yaw, orbit.pitch);
+      }
+
+      const pulse = 0.5 + 0.5 * Math.sin((elapsed / PULSE_PERIOD) * Math.PI * 2);
+      for (const material of lineMats) {
+        const base = (material.userData.base as number) ?? 1;
+        material.emissiveIntensity = base * (0.75 + (material.name === 'neon' ? 1.1 : 0.55) * pulse);
+      }
+
+      draw();
+    }
+
+    function play() {
+      if (running) return;
+      running = true;
+      last = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
+
+    function pause() {
+      running = false;
+      cancelAnimationFrame(raf);
+    }
+
+    new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) play();
+        else pause();
+      },
+      { threshold: 0.15 },
+    ).observe(mount);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) pause();
+      else play();
+    });
+
+    resize();
+    play();
+  }
+</script>

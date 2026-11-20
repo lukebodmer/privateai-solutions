@@ -1,0 +1,539 @@
+---
+import Base from '../../layouts/Base.astro';
+import SourceLinks from '../../components/SourceLinks.astro';
+import FactLedger from '../../components/FactLedger.astro';
+import BenchmarkGrid from '../../components/BenchmarkGrid.astro';
+import { loadEntities, loadEntity, fact, factStr, factNum, factBool, factValue, relatedEntity } from '../../lib/facts';
+import { resolveModelLogo } from '../../utils/resolveLogo';
+import { fitBuild } from '../../lib/sizing';
+import { fmtGb } from '../../lib/builds';
+
+export async function getStaticPaths() {
+  // Every tracked model gets a page. Closed models render a shorter,
+  // editorial layout (see `isClosed` branch below) — the site's identity
+  // is open-weight-first, so closed pages don't pretend to be spec sheets.
+  return loadEntities('model').map(m => ({
+    params: { slug: m.slug },
+    props: { slug: m.slug },
+  }));
+}
+
+const { slug } = Astro.props;
+const model = loadEntity('model', slug)!;
+const logo = resolveModelLogo(model.slug, factStr(model, 'company_slug'));
+const company = relatedEntity(model, 'company_slug', 'company');
+
+const distribution = factStr(model, 'distribution');
+const isClosed = distribution === 'closed';
+
+const family = factStr(model, 'family');
+const released = factStr(model, 'released');
+const params = factNum(model, 'parameters_b');
+const paramsActive = factNum(model, 'parameters_active_b');
+const archType = factStr(model, 'architecture.type');
+const experts = factNum(model, 'architecture.experts');
+const license = factStr(model, 'license');
+const licenseCommercial = factBool(model, 'license_commercial');
+const contextLength = factNum(model, 'context_length');
+const supportsTools = factBool(model, 'supports_tools');
+const supportsVision = factBool(model, 'supports_vision');
+const supportsStructured = factBool(model, 'supports_structured_output');
+const nativeSizeGb = factNum(model, 'native_size_gb');
+const isMoE = archType === 'moe';
+const displayDeveloper = company?.name ?? '';
+
+// The builds set up to run this model, with how it fits on each.
+const runsOn = loadEntities('build')
+  .map(b => ({ build: b, fit: fitBuild(b) }))
+  .map(({ build, fit }) => ({ build, fit, row: fit.models.find(m => m.slug === slug) }))
+  .filter(r => r.row !== undefined)
+  .sort((a, b) => (a.fit.totalMemoryGb ?? Infinity) - (b.fit.totalMemoryGb ?? Infinity));
+const kvPerToken = factNum(model, 'kv_cache_bytes_per_token');
+
+function fmtContext(n: number | null): string {
+  if (n === null) return '—';
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(0) + 'M';
+  if (n >= 1_000) return (n / 1_000).toFixed(0) + 'K';
+  return String(n);
+}
+
+function fmtVram(v: number | null): string {
+  return v === null ? '—' : v.toFixed(0);
+}
+
+function fmtDate(d: string | null): string {
+  if (!d) return '';
+  const [y, m, day] = d.split('-');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${months[parseInt(m)-1]} ${parseInt(day)}, ${y}`;
+}
+
+interface QuantRow {
+  name: string;
+  size_gb: number | null;
+}
+interface QuantSection {
+  publisher: string;
+  key: string;
+  rows: QuantRow[];
+  repoUrl: string | null;
+}
+const quantSections: QuantSection[] = (['unsloth', 'bartowski'] as const)
+  .map(publisher => {
+    const key = `quantizations_${publisher}`;
+    const val = factValue<QuantRow[]>(model, key);
+    return {
+      publisher,
+      key,
+      rows: Array.isArray(val) ? val : [],
+      repoUrl: fact(model, key)?.source ?? null,
+    };
+  })
+  .filter(s => s.rows.length > 0);
+
+const allQuantSizes = quantSections
+  .flatMap(s => s.rows)
+  .map(r => r.size_gb)
+  .filter((n): n is number => typeof n === 'number');
+const smallestQuant = allQuantSizes.length > 0
+  ? quantSections.flatMap(s => s.rows).reduce((min, r) =>
+      (r.size_gb !== null && (min === null || r.size_gb < min.size_gb!)) ? r : min,
+      null as QuantRow | null)
+  : null;
+
+// Pricing across providers (OpenRouter) + speed (AA)
+interface ProviderRow {
+  provider: string;
+  quantization: string;
+  input: number;
+  output: number;
+  cached_input: number | null;
+  context_length: number | null;
+}
+const priceInput = factNum(model, 'pricing.input_per_m_usd');
+const priceOutput = factNum(model, 'pricing.output_per_m_usd');
+const priceCached = factNum(model, 'pricing.cached_input_per_m_usd');
+const priceBlended = factNum(model, 'pricing.blended_per_m_usd');
+const priceBlendedMin = factNum(model, 'pricing.blended_min_per_m_usd');
+const providers = factValue<ProviderRow[]>(model, 'providers') ?? [];
+const pricingSource = fact(model, 'pricing.blended_per_m_usd')?.source ?? 'https://openrouter.ai/';
+const speedTps = factNum(model, 'speed.output_tokens_per_second');
+const speedTtft = factNum(model, 'speed.time_to_first_token_seconds');
+
+function fmtUsd(v: number | null): string {
+  if (v === null) return '—';
+  if (v < 1) return '$' + v.toFixed(3);
+  return '$' + v.toFixed(2);
+}
+---
+
+<Base
+  title={`${model.name} — Hardware & Benchmarks`}
+  description={`${model.name} by ${displayDeveloper}: benchmarks, hardware requirements for local inference, and sourcing.`}
+>
+  <main class="max-w-3xl w-full mx-auto px-4 sm:px-6 py-10">
+
+    <a href="/ecosystem" class="inline-flex items-center gap-1.5 text-sm text-nord-500 hover:text-nord-300 transition-colors mb-8">
+      <span>←</span> Ecosystem
+    </a>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center gap-4">
+        {logo && (
+          <img src={logo} alt="" class="w-10 h-10 rounded shrink-0" />
+        )}
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold text-nord-100 leading-tight">{model.name}</h1>
+          <p class="text-nord-500 mt-1">
+            {company ? (
+              <a href={`/companies/${company.slug}`} class="text-frost-400 hover:underline">{company.name}</a>
+            ) : displayDeveloper}
+            {released ? ` · Released ${released}` : ''}
+            {!isClosed && params ? ` · ${params}B params` : ''}
+            {!isClosed && isMoE && paramsActive ? ` (${paramsActive}B active)` : ''}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mt-4">
+        {isClosed && (
+          <span class="px-2 py-1 rounded text-xs border font-medium bg-amber-950/40 text-amber-400 border-amber-900">
+            Closed
+          </span>
+        )}
+        {!isClosed && licenseCommercial !== null && (
+          <span class={`px-2 py-1 rounded text-xs border font-medium ${licenseCommercial ? 'bg-frost-900/40 text-frost-400 border-frost-800' : 'bg-nord-800 text-nord-400 border-nord-700'}`}>
+            {licenseCommercial ? 'Commercial OK' : 'Research only'}
+          </span>
+        )}
+        {!isClosed && license && (
+          <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">
+            {license}
+          </span>
+        )}
+        {!isClosed && archType && (
+          <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">
+            {isMoE ? 'MoE' : 'Dense'}
+          </span>
+        )}
+        {supportsVision && (
+          <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">Vision</span>
+        )}
+        {supportsTools && (
+          <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">Tool use</span>
+        )}
+        {isClosed && supportsStructured && (
+          <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">Structured output</span>
+        )}
+        {contextLength && (
+          <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">
+            {fmtContext(contextLength)} context
+          </span>
+        )}
+      </div>
+
+      <div class="mt-3">
+        <SourceLinks
+          entity={model}
+          keys={isClosed
+            ? ['snapshot.official_announcement']
+            : ['snapshot.huggingface_card', 'snapshot.unsloth_gguf', 'snapshot.bartowski_gguf', 'snapshot.github', 'snapshot.official_announcement']}
+        />
+      </div>
+    </div>
+
+    <!-- Editorial framing for closed models — sets expectations before any data. -->
+    {isClosed && (
+      <section class="mb-8 p-4 bg-amber-950/10 border border-amber-900/30 rounded-lg border-l-2 border-l-amber-700">
+        <p class="text-sm text-nord-300 leading-relaxed">
+          This is a <strong class="text-amber-300">closed model</strong>. You can't run it locally.
+          You don't own it. You must rely on {company ? company.name : displayDeveloper}'s terms of service
+          and API pricing — both of which can change at any time. The benchmarks below let you compare it
+          against open-weight alternatives you can actually deploy on your own hardware.
+        </p>
+      </section>
+    )}
+
+    <!-- My take -->
+    {model.my_take && (
+      <section class="mb-8">
+        <div class="p-4 bg-nord-900 border border-nord-800 rounded-lg text-sm text-nord-300 leading-relaxed border-l-2 border-l-frost-700 whitespace-pre-wrap">
+          {model.my_take}
+        </div>
+      </section>
+    )}
+
+    <!-- Benchmarks — same grid as the models index, with this model highlighted -->
+    <h2 class="text-lg font-semibold text-nord-100 mb-3">Benchmarks</h2>
+    <BenchmarkGrid highlightSlug={model.slug} />
+
+    <!-- Builds that run it -->
+    {runsOn.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">Builds that run it</h2>
+        <div class="space-y-2">
+          {runsOn.map(({ build, fit, row }) => (
+            <a href={`/builds/${build.slug}`} class="flex items-center justify-between gap-3 px-4 py-3 rounded-lg bg-nord-900 border border-nord-800 hover:border-nord-600 transition-colors">
+              <span class="min-w-0">
+                <span class="block text-sm text-nord-100">{build.name}</span>
+                <span class="block text-xs text-nord-500 font-mono mt-0.5">
+                  {[row!.weights === 'native' ? 'native weights' : row!.weights, fit.totalMemoryGb !== null ? `${fmtGb(fit.totalMemoryGb)} memory` : null, row!.maxSessions !== null ? `room for ${row!.maxSessions} sessions` : null].filter(Boolean).join(' · ')}
+                </span>
+              </span>
+              <span class="text-xs text-nord-400 whitespace-nowrap">{row!.status === 'fits' ? 'Fits' : row!.status === 'short' ? 'Does not fit' : 'Not yet sized'}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Sizing / quantizations / architecture / capabilities are open-weight
+         concerns; skip the whole block for closed models. -->
+    {!isClosed && (nativeSizeGb !== null || smallestQuant !== null) && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">Deployment Sizing</h2>
+        <p class="text-xs text-nord-600 mb-3">
+          The memory the weights need before any conversation. Each session then holds
+          {kvPerToken !== null ? ` ${fmtGb(kvPerToken * 65536 / 1e9)} more at a 64K-token context` : ' more memory as its context grows'};
+          the builds below show the whole sum.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="p-4 rounded bg-nord-900 border border-nord-800">
+            <div class="text-xs text-nord-500 mb-1">Native (BF16 / FP16)</div>
+            <div class="text-2xl font-mono text-nord-100">
+              {nativeSizeGb !== null ? `${nativeSizeGb} GB` : '—'}
+            </div>
+            <div class="text-xs text-nord-500 mt-2 leading-relaxed">
+              vLLM / SGLang / TGI — production servers with batching.
+            </div>
+          </div>
+          <div class="p-4 rounded bg-nord-900 border border-nord-800">
+            <div class="text-xs text-nord-500 mb-1">Smallest GGUF quant</div>
+            <div class="text-2xl font-mono text-nord-100">
+              {smallestQuant?.size_gb !== null && smallestQuant?.size_gb !== undefined
+                ? `${smallestQuant.size_gb} GB`
+                : '—'}
+              {smallestQuant?.name && (
+                <span class="text-sm text-nord-500 ml-2">{smallestQuant.name}</span>
+              )}
+            </div>
+            <div class="text-xs text-nord-500 mt-2 leading-relaxed">
+              llama.cpp / Ollama / LM Studio — single-user or small teams on modest hardware.
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Quantizations (open weights only) -->
+    {!isClosed && (
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold text-nord-100 mb-3">Available Quantizations</h2>
+      <p class="text-xs text-nord-600 mb-3">
+        GGUF file sizes on disk. Add headroom for KV cache and framework
+        overhead — real runtime VRAM varies by inference stack.
+      </p>
+      {quantSections.length === 0 ? (
+        <p class="text-sm text-nord-500 italic">No GGUF quantizations published by Unsloth or bartowski yet.</p>
+      ) : quantSections.map(section => (
+        <div class="mb-6 last:mb-0">
+          <div class="flex items-baseline gap-2 mb-2">
+            <h3 class="text-sm font-semibold text-nord-200 capitalize">{section.publisher}</h3>
+            {section.repoUrl && (
+              <a href={section.repoUrl} target="_blank" rel="noopener noreferrer"
+                class="text-xs text-frost-400 hover:underline">↗ repo</a>
+            )}
+            <span class="text-xs text-nord-600">· {section.rows.length} quant{section.rows.length === 1 ? '' : 's'}</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-nord-500 text-xs text-left">
+                  <th class="pb-2 pr-4">Quant</th>
+                  <th class="pb-2">Size (GB)</th>
+                </tr>
+              </thead>
+              <tbody class="text-nord-300">
+                {section.rows.map(q => (
+                  <tr class="border-t border-nord-800">
+                    <td class="py-2 pr-4 font-mono">{q.name}</td>
+                    <td class="py-2 font-mono">{fmtVram(q.size_gb)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+    </section>
+    )}
+
+    <!-- Architecture (open weights only) -->
+    {!isClosed && archType && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">Architecture</h2>
+        <div class="space-y-3 text-sm">
+          <div>
+            <div class="text-nord-500 text-xs">Type</div>
+            <div class="font-mono text-nord-300">{archType}</div>
+          </div>
+          {isMoE && paramsActive !== null && (
+            <div>
+              <div class="text-nord-500 text-xs">Active params</div>
+              <div class="font-mono text-nord-300">{paramsActive}B</div>
+            </div>
+          )}
+          {experts !== null && (
+            <div>
+              <div class="text-nord-500 text-xs">Experts</div>
+              <div class="font-mono text-nord-300">{experts}</div>
+            </div>
+          )}
+          {contextLength !== null && (
+            <div>
+              <div class="text-nord-500 text-xs">Context</div>
+              <div class="font-mono text-nord-300">{fmtContext(contextLength)}</div>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    <!-- Capabilities (full section for open models; closed models get the
+         inline capability chips in the header instead — no need for a
+         dedicated section that just repeats them). -->
+    {!isClosed && (
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold text-nord-100 mb-3">Capabilities</h2>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <span class="text-nord-500">Tools: <span class={supportsTools ? 'text-frost-400' : 'text-nord-600'}>{supportsTools ? 'Yes' : 'No'}</span></span>
+        <span class="text-nord-500">Vision: <span class={supportsVision ? 'text-frost-400' : 'text-nord-600'}>{supportsVision ? 'Yes' : 'No'}</span></span>
+        <span class="text-nord-500">Structured output: <span class={supportsStructured ? 'text-frost-400' : 'text-nord-600'}>{supportsStructured ? 'Yes' : 'No'}</span></span>
+      </div>
+    </section>
+    )}
+
+    <!-- Pricing across providers (OpenRouter) -->
+    {priceBlended !== null && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">Pricing</h2>
+        <p class="text-xs text-nord-500 mb-3">
+          Per 1M tokens, the median across the {providers.length} {providers.length === 1 ? 'provider' : 'providers'}
+          <a href={pricingSource} target="_blank" rel="noopener noreferrer" class="text-frost-400 hover:underline">OpenRouter</a> routes this model to.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-sm">
+          {priceInput !== null && (
+            <div class="p-3 rounded bg-nord-900 border border-nord-800">
+              <div class="text-[10px] text-nord-500 uppercase tracking-wide">Input</div>
+              <div class="font-mono text-nord-100 mt-1">{fmtUsd(priceInput)}</div>
+            </div>
+          )}
+          {priceOutput !== null && (
+            <div class="p-3 rounded bg-nord-900 border border-nord-800">
+              <div class="text-[10px] text-nord-500 uppercase tracking-wide">Output</div>
+              <div class="font-mono text-nord-100 mt-1">{fmtUsd(priceOutput)}</div>
+            </div>
+          )}
+          {priceCached !== null && (
+            <div class="p-3 rounded bg-nord-900 border border-nord-800">
+              <div class="text-[10px] text-nord-500 uppercase tracking-wide">Cached input</div>
+              <div class="font-mono text-nord-100 mt-1">{fmtUsd(priceCached)}</div>
+            </div>
+          )}
+          <div class="p-3 rounded bg-nord-900 border border-nord-800">
+              <div class="text-[10px] text-nord-500 uppercase tracking-wide">Blended 3:1</div>
+              <div class="font-mono text-nord-100 mt-1">{fmtUsd(priceBlended)}</div>
+            </div>
+          {priceBlendedMin !== null && (
+            <div class="p-3 rounded bg-nord-900 border border-nord-800">
+              <div class="text-[10px] text-nord-500 uppercase tracking-wide">Cheapest blended</div>
+              <div class="font-mono text-nord-100 mt-1">{fmtUsd(priceBlendedMin)}</div>
+            </div>
+          )}
+        </div>
+
+        {providers.length > 0 && (
+          <details class="mt-4 group">
+            <summary class="text-xs text-nord-400 cursor-pointer hover:text-nord-200 select-none">
+              Where to run it: {providers.length} {providers.length === 1 ? 'provider' : 'providers'}, cheapest first
+            </summary>
+            <div class="mt-2 overflow-x-auto border border-nord-800 rounded-lg">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="text-[10px] uppercase tracking-wider text-nord-500 text-left bg-nord-900/60">
+                    <th class="font-medium px-3 py-2">Provider</th>
+                    <th class="font-medium px-2 py-2">Weights</th>
+                    <th class="font-medium px-2 py-2 text-right">Input</th>
+                    <th class="font-medium px-2 py-2 text-right">Output</th>
+                    <th class="font-medium px-2 py-2 text-right">Cached</th>
+                    <th class="font-medium px-3 py-2 text-right">Context</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-nord-800/70">
+                  {providers.map(p => (
+                    <tr>
+                      <td class="px-3 py-1.5 text-nord-200">{p.provider}</td>
+                      <td class="px-2 py-1.5 font-mono text-nord-400">{p.quantization}</td>
+                      <td class="px-2 py-1.5 text-right font-mono text-nord-300">{fmtUsd(p.input)}</td>
+                      <td class="px-2 py-1.5 text-right font-mono text-nord-300">{fmtUsd(p.output)}</td>
+                      <td class="px-2 py-1.5 text-right font-mono text-nord-500">{fmtUsd(p.cached_input)}</td>
+                      <td class="px-3 py-1.5 text-right font-mono text-nord-500">{fmtContext(p.context_length)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="text-[10px] text-nord-600 mt-2">
+              Weights is the precision the provider serves: bf16/fp16 is the full model, fp8 and fp4 are quantized.
+            </p>
+          </details>
+        )}
+      </section>
+    )}
+
+    <!-- Speed (AA) -->
+    {(speedTps !== null || speedTtft !== null) && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">Hosted speed</h2>
+        <p class="text-xs text-nord-500 mb-3">
+          Median across the providers <a href="https://artificialanalysis.ai/" target="_blank" rel="noopener noreferrer"
+            class="text-frost-400 hover:underline">Artificial Analysis</a> measures. Your own GPU will differ.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-sm">
+          {speedTps !== null && (
+            <div class="p-3 rounded bg-nord-900 border border-nord-800">
+              <div class="text-[10px] text-nord-500 uppercase tracking-wide">Output speed</div>
+              <div class="font-mono text-nord-100 mt-1">{speedTps.toFixed(0)} tok/s</div>
+            </div>
+          )}
+          {speedTtft !== null && (
+            <div class="p-3 rounded bg-nord-900 border border-nord-800">
+              <div class="text-[10px] text-nord-500 uppercase tracking-wide">Time to first token</div>
+              <div class="font-mono text-nord-100 mt-1">{speedTtft.toFixed(2)}s</div>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    <FactLedger entity={model} />
+
+    <!-- References -->
+    {model.references.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">References</h2>
+        <ul class="space-y-2">
+          {model.references.map(ref => (
+            <li class="text-sm text-nord-400 leading-relaxed">
+              <a href={ref.url} target="_blank" rel="noopener noreferrer"
+                class="text-frost-400 hover:text-frost-300 hover:underline">
+                {ref.title}
+              </a>
+              {ref.author ? ` — ${ref.author}` : ''}
+              {ref.date ? ` (${ref.date})` : ''}
+            </li>
+          ))}
+        </ul>
+        {(() => {
+          const snapshotEntries = Object.entries(model.facts)
+            .filter(([k, v]) => k.startsWith('snapshot.') && v && !v.na && typeof v.value === 'string' && v.value);
+          if (snapshotEntries.length === 0) return null;
+          return (
+            <details class="mt-3">
+              <summary class="text-xs text-nord-600 cursor-pointer hover:text-nord-400">Raw sources ({snapshotEntries.length})</summary>
+              <ul class="mt-2 space-y-1">
+                {snapshotEntries.map(([k, v]) => (
+                  <li class="text-xs text-nord-600">
+                    <span class="font-mono text-nord-700">[{k.replace(/^snapshot\./, '')}]</span>{' '}
+                    <a href={v.value as string} target="_blank" rel="noopener noreferrer"
+                      class="hover:text-nord-400 break-all">{v.value as string}</a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          );
+        })()}
+      </section>
+    )}
+
+    <!-- CTA -->
+    <div class="mt-12 pt-8 border-t border-nord-800">
+      <p class="text-nord-400 text-sm mb-4">
+        Need help sourcing hardware or deploying this model?
+      </p>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
+        <a href="/services"
+          class="px-4 py-2 rounded-full bg-frost-500 hover:bg-frost-400 text-nord-950 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(136,192,208,0.6)] transition-colors">
+          View services
+        </a>
+        <a href="/ecosystem"
+          class="group inline-flex items-center gap-1.5 text-sm font-medium text-nord-300 hover:text-white transition-colors">
+          <span class="text-frost-400 transition-transform group-hover:-translate-x-0.5" aria-hidden="true">&larr;</span>
+          Back to the ecosystem
+        </a>
+      </div>
+    </div>
+
+  </main>
+</Base>

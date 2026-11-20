@@ -1,0 +1,799 @@
+{
+  "name": "DeepSeek V4.1 Flash 1017",
+  "slug": "deepseek-v4.1-flash-1017",
+  "facts": {
+    "distribution": {
+      "value": "open",
+      "source": "https://api-docs.deepseek.com/news/news261017",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "Hugging Face: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "snapshot_hash": "d413e3710c414153d92c3a3d13d87e37e9e1a6cb129f300ed3c5f8a805581ac8",
+      "snapshot_ext": "html"
+    },
+    "snapshot.official_announcement": {
+      "value": "https://api-docs.deepseek.com/news/news261017",
+      "source": "https://api-docs.deepseek.com/news/news261017",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "DeepSeek-V4.1-Flash-1017 is here!",
+      "snapshot_hash": "d413e3710c414153d92c3a3d13d87e37e9e1a6cb129f300ed3c5f8a805581ac8",
+      "snapshot_ext": "html"
+    },
+    "released": {
+      "value": "2026-10-17",
+      "source": "https://api-docs.deepseek.com/updates",
+      "fetched": "2026-11-12",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-12",
+      "quote": "Date: 2026-10-17",
+      "snapshot_hash": "87061f0b988b0c03ed46107bcd8d36228049f83359257b34ce58af821466e6e7",
+      "snapshot_ext": "html"
+    },
+    "parameters_b": {
+      "value": 763,
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "fetched": "2026-11-12",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-12",
+      "quote": "Image-Text-to-Text model with 763B parameters.",
+      "snapshot_hash": "255da4041e783179a9aefda1c48b63c4bc0cade7f1d82941aafc4e8bc0a486e5",
+      "snapshot_ext": "html"
+    },
+    "snapshot.huggingface_card": {
+      "value": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "deepseek-ai/DeepSeek-V4.1-Flash-1017 · Hugging Face",
+      "snapshot_hash": "255da4041e783179a9aefda1c48b63c4bc0cade7f1d82941aafc4e8bc0a486e5",
+      "snapshot_ext": "html"
+    },
+    "snapshot.hf_config": {
+      "value": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "\"model_type\": \"deepseek_v41\"",
+      "snapshot_hash": "8be45ce0476004a3f529fd896115a4a2e800a129ad2d3ec05b16050f52e21879",
+      "snapshot_ext": "txt"
+    },
+    "snapshot.github": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "family": {
+      "value": "DeepSeek V4.1 Flash",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "DeepSeek-V4.1-Flash-1017 is a minor update to DeepSeek-V4.1-Flash, delivering substantial improvements across reasoning, coding, agentic tasks, and visual benchmarks.",
+      "snapshot_hash": "255da4041e783179a9aefda1c48b63c4bc0cade7f1d82941aafc4e8bc0a486e5",
+      "snapshot_ext": "html"
+    },
+    "company_slug": {
+      "value": "deepseek",
+      "source": "https://api-docs.deepseek.com/news/news261017",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "Copyright © 2026 DeepSeek, Inc.",
+      "snapshot_hash": "d413e3710c414153d92c3a3d13d87e37e9e1a6cb129f300ed3c5f8a805581ac8",
+      "snapshot_ext": "html"
+    },
+    "license": {
+      "value": "MIT",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/LICENSE",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "MIT License",
+      "snapshot_hash": "f2c6c602815669d292889e5be8c802f2ed950653b77999b1584e8e6aed25d040",
+      "snapshot_ext": "txt"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/LICENSE",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software",
+      "snapshot_hash": "f2c6c602815669d292889e5be8c802f2ed950653b77999b1584e8e6aed25d040",
+      "snapshot_ext": "txt"
+    },
+    "supports_tools": {
+      "value": true,
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "with test cases for multi-turn conversations, tool calling, thinking mode, numeric reasoning effort, mid-conversation system messages, and interleaved image content",
+      "snapshot_hash": "255da4041e783179a9aefda1c48b63c4bc0cade7f1d82941aafc4e8bc0a486e5",
+      "snapshot_ext": "html"
+    },
+    "supports_vision": {
+      "value": true,
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "delivering substantial improvements across reasoning, coding, agentic tasks, and visual benchmarks.",
+      "snapshot_hash": "255da4041e783179a9aefda1c48b63c4bc0cade7f1d82941aafc4e8bc0a486e5",
+      "snapshot_ext": "html"
+    },
+    "supports_structured_output": {
+      "value": true,
+      "source": "https://api-docs.deepseek.com/guides/json_mode.md",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "DeepSeek provides JSON Output to ensure the model outputs valid JSON strings.",
+      "snapshot_hash": "7b64fcde3b13c0cf571f49f49b8f17ab5656f0fc1fb0874bdbbff5dc5f0f4275",
+      "snapshot_ext": "html"
+    },
+    "aa_id": {
+      "value": "f151fd0b-2139-40cf-a3ec-995e8cedc592",
+      "source": "https://artificialanalysis.ai/api/v2/language/models/free",
+      "fetched": "2026-11-13",
+      "verified_by": "luke",
+      "verified_at": "2026-11-13",
+      "quote": "DeepSeek V4.1 Flash 1017 (Max)"
+    },
+    "arena_name": {
+      "value": "DeepSeek-V4.1-Flash-20260910 (Max)",
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-13",
+      "verified_by": "luke",
+      "verified_at": "2026-11-13",
+      "quote": "DeepSeek-V4.1-Flash-20260910 (Max)"
+    },
+    "native_size_gb": {
+      "value": 510.3,
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "d58d86bdb15608e72a5345cd34855219c943ba4912f20911b9fee8560e87dd4c",
+      "snapshot_ext": "json"
+    },
+    "architecture.type": {
+      "value": "moe",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "8be45ce0476004a3f529fd896115a4a2e800a129ad2d3ec05b16050f52e21879",
+      "snapshot_ext": "json"
+    },
+    "architecture.experts": {
+      "value": 384,
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "8be45ce0476004a3f529fd896115a4a2e800a129ad2d3ec05b16050f52e21879",
+      "snapshot_ext": "json"
+    },
+    "context_length": {
+      "value": 1048576,
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "8be45ce0476004a3f529fd896115a4a2e800a129ad2d3ec05b16050f52e21879",
+      "snapshot_ext": "json"
+    },
+    "snapshot.unsloth_gguf": {
+      "value": "https://huggingface.co/unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+      "source": "https://huggingface.co/unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "0debb9a592ac2d78500832a889242cc2ed3514e16a25c4b9d1f02df1e4f1c60d",
+      "snapshot_ext": "json"
+    },
+    "quantizations_unsloth": {
+      "value": [
+        {
+          "name": "UD-IQ1_S",
+          "size_gb": 233
+        },
+        {
+          "name": "UD-IQ1_M",
+          "size_gb": 250.4
+        },
+        {
+          "name": "UD-IQ2_XXS",
+          "size_gb": 300.5
+        },
+        {
+          "name": "UD-Q2_K_XL",
+          "size_gb": 334.8
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "size_gb": 394.7
+        },
+        {
+          "name": "UD-IQ3_S",
+          "size_gb": 423.6
+        },
+        {
+          "name": "UD-Q3_K_XL",
+          "size_gb": 485.1
+        },
+        {
+          "name": "UD-Q4_K_XL",
+          "size_gb": 500.7
+        },
+        {
+          "name": "UD-Q8_K_XL",
+          "size_gb": 508.4
+        }
+      ],
+      "source": "https://huggingface.co/unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "0debb9a592ac2d78500832a889242cc2ed3514e16a25c4b9d1f02df1e4f1c60d",
+      "snapshot_ext": "json"
+    },
+    "quantizations_bartowski": {
+      "value": [],
+      "source": "https://huggingface.co/bartowski",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12"
+    },
+    "pricing.input_per_m_usd": {
+      "value": 0.15,
+      "source": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "cdd040ebb1071bdefbb7a028f175c6f89d4a9e76a8d2d9f36932b6300c9ac3db",
+      "snapshot_ext": "json"
+    },
+    "pricing.output_per_m_usd": {
+      "value": 0.666,
+      "source": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "cdd040ebb1071bdefbb7a028f175c6f89d4a9e76a8d2d9f36932b6300c9ac3db",
+      "snapshot_ext": "json"
+    },
+    "pricing.cached_input_per_m_usd": {
+      "value": 0.0046,
+      "source": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "cdd040ebb1071bdefbb7a028f175c6f89d4a9e76a8d2d9f36932b6300c9ac3db",
+      "snapshot_ext": "json"
+    },
+    "pricing.blended_per_m_usd": {
+      "value": 0.2663,
+      "source": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "cdd040ebb1071bdefbb7a028f175c6f89d4a9e76a8d2d9f36932b6300c9ac3db",
+      "snapshot_ext": "json"
+    },
+    "pricing.blended_min_per_m_usd": {
+      "value": 0.085,
+      "source": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "cdd040ebb1071bdefbb7a028f175c6f89d4a9e76a8d2d9f36932b6300c9ac3db",
+      "snapshot_ext": "json"
+    },
+    "providers": {
+      "value": [
+        {
+          "provider": "Particle AI",
+          "quantization": "unknown",
+          "input": 0.03,
+          "output": 0.25,
+          "cached_input": 0.003,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Ambient",
+          "quantization": "fp4",
+          "input": 0.045,
+          "output": 0.25,
+          "cached_input": 0.0025,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Pearl Research",
+          "quantization": "fp8",
+          "input": 0.05,
+          "output": 0.3,
+          "cached_input": 0.003,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DeepInfra",
+          "quantization": "fp8",
+          "input": 0.0784,
+          "output": 0.2352,
+          "cached_input": 0.0024,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DeepInfra",
+          "quantization": "fp8",
+          "input": 0.098,
+          "output": 0.294,
+          "cached_input": 0.0029,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Wafer",
+          "quantization": "mxfp4",
+          "input": 0.036,
+          "output": 0.5,
+          "cached_input": 0.01,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Particle AI",
+          "quantization": "unknown",
+          "input": 0.06,
+          "output": 0.5,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Morph",
+          "quantization": "fp8",
+          "input": 0.059,
+          "output": 0.52,
+          "cached_input": 0.005,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Wafer",
+          "quantization": "mxfp4",
+          "input": 0.066,
+          "output": 0.5,
+          "cached_input": 0.0065,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Tenstorrent",
+          "quantization": "fp8",
+          "input": 0.1,
+          "output": 0.4,
+          "cached_input": 0.003,
+          "context_length": 1048576
+        },
+        {
+          "provider": "StepFun",
+          "quantization": "fp8",
+          "input": 0.105,
+          "output": 0.42,
+          "cached_input": 0.0021,
+          "context_length": 1000000
+        },
+        {
+          "provider": "Cohere",
+          "quantization": "fp8",
+          "input": 0.115,
+          "output": 0.4,
+          "cached_input": 0.0025,
+          "context_length": 1048576
+        },
+        {
+          "provider": "StreamLake",
+          "quantization": "fp8",
+          "input": 0.111,
+          "output": 0.444,
+          "cached_input": 0.0022,
+          "context_length": 1024000
+        },
+        {
+          "provider": "PrimeIntellect",
+          "quantization": "unknown",
+          "input": 0.0437,
+          "output": 0.7,
+          "cached_input": 0.0024,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Ant Digital",
+          "quantization": "fp8",
+          "input": 0.12,
+          "output": 0.48,
+          "cached_input": 0.0024,
+          "context_length": 1048576
+        },
+        {
+          "provider": "River",
+          "quantization": "unknown",
+          "input": 0.12,
+          "output": 0.48,
+          "cached_input": 0.0024,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Relace",
+          "quantization": "fp4",
+          "input": 0.12,
+          "output": 0.5,
+          "cached_input": 0.003,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DeepInfra",
+          "quantization": "fp8",
+          "input": 0.147,
+          "output": 0.441,
+          "cached_input": 0.0044,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Cloudflare",
+          "quantization": "unknown",
+          "input": 0.1,
+          "output": 0.6,
+          "cached_input": 0.003,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DekaLLM",
+          "quantization": "unknown",
+          "input": 0.1,
+          "output": 0.6,
+          "cached_input": 0.003,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Inceptron",
+          "quantization": "fp4",
+          "input": 0.1,
+          "output": 0.6,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "InferenceNet",
+          "quantization": "fp8",
+          "input": 0.08,
+          "output": 0.666,
+          "cached_input": 0.008,
+          "context_length": 1040000
+        },
+        {
+          "provider": "InferenceNet",
+          "quantization": "fp8",
+          "input": 0.08,
+          "output": 0.666,
+          "cached_input": 0.008,
+          "context_length": 1040000
+        },
+        {
+          "provider": "Fireworks",
+          "quantization": "unknown",
+          "input": 0.15,
+          "output": 0.6,
+          "cached_input": 0.003,
+          "context_length": 1048576
+        },
+        {
+          "provider": "SiliconFlow",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 0.6,
+          "cached_input": 0.003,
+          "context_length": 1048576
+        },
+        {
+          "provider": "OpenInference",
+          "quantization": "fp4",
+          "input": 0.06,
+          "output": 0.9,
+          "cached_input": 0.002,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Novita",
+          "quantization": "fp8",
+          "input": 0.165,
+          "output": 0.66,
+          "cached_input": 0.0033,
+          "context_length": 1048576
+        },
+        {
+          "provider": "ModelRun",
+          "quantization": "fp4",
+          "input": 0.17,
+          "output": 0.67,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Ionstream",
+          "quantization": "unknown",
+          "input": 0.21,
+          "output": 0.62,
+          "cached_input": 0.0105,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Makora",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 0.8,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Alibaba",
+          "quantization": "unknown",
+          "input": 0.18,
+          "output": 0.72,
+          "cached_input": 0.0036,
+          "context_length": 1000000
+        },
+        {
+          "provider": "DigitalOcean",
+          "quantization": "unknown",
+          "input": 0.18,
+          "output": 0.72,
+          "cached_input": 0.0036,
+          "context_length": 1048576
+        },
+        {
+          "provider": "GMICloud",
+          "quantization": "fp8",
+          "input": 0.18,
+          "output": 0.72,
+          "cached_input": 0.0036,
+          "context_length": 1048575
+        },
+        {
+          "provider": "Nebius",
+          "quantization": "fp4",
+          "input": 0.18,
+          "output": 0.72,
+          "cached_input": 0.0036,
+          "context_length": 1048576
+        },
+        {
+          "provider": "AtlasCloud",
+          "quantization": "fp8",
+          "input": 0.195,
+          "output": 0.78,
+          "cached_input": 0.0039,
+          "context_length": 1048576
+        },
+        {
+          "provider": "PrimaLabs",
+          "quantization": "unknown",
+          "input": 0.24,
+          "output": 0.96,
+          "cached_input": 0.0048,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Modal",
+          "quantization": "unknown",
+          "input": 0.25,
+          "output": 1,
+          "cached_input": 0.005,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Baidu",
+          "quantization": "fp8",
+          "input": 0.28,
+          "output": 1.13,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Crusoe",
+          "quantization": "fp8",
+          "input": 0.29,
+          "output": 1.2,
+          "cached_input": 0.007,
+          "context_length": 1048576
+        },
+        {
+          "provider": "BaseTen",
+          "quantization": "unknown",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.007,
+          "context_length": 1048576
+        },
+        {
+          "provider": "CoreWeave",
+          "quantization": "fp8",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Fireworks",
+          "quantization": "unknown",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Mistral",
+          "quantization": "fp8",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.007,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Near AI",
+          "quantization": "unknown",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Parasail",
+          "quantization": "fp8",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Together",
+          "quantization": "unknown",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.006,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Venice",
+          "quantization": "fp8",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.0075,
+          "context_length": 1000000
+        },
+        {
+          "provider": "Fireworks",
+          "quantization": "unknown",
+          "input": 0.45,
+          "output": 1.8,
+          "cached_input": 0.009,
+          "context_length": 1048576
+        },
+        {
+          "provider": "BaseTen",
+          "quantization": "unknown",
+          "input": 0.6,
+          "output": 2.4,
+          "cached_input": 0.014,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Morph",
+          "quantization": "fp8",
+          "input": 0.6,
+          "output": 2.4,
+          "cached_input": 0.014,
+          "context_length": 1048576
+        }
+      ],
+      "source": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "cdd040ebb1071bdefbb7a028f175c6f89d4a9e76a8d2d9f36932b6300c9ac3db",
+      "snapshot_ext": "json"
+    },
+    "benchmark.aa_intelligence_index": {
+      "value": 32.6,
+      "source": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017",
+      "fetched": "2026-11-13",
+      "verified_by": "auto",
+      "verified_at": "2026-11-13",
+      "snapshot_hash": "b6d14031be3884462964be422623377cc783285f0e08372f03d79d4962a76f6c",
+      "snapshot_ext": "json"
+    },
+    "speed.output_tokens_per_second": {
+      "value": 160.35,
+      "source": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "96ac6b94310077209a45be91767586c523ba491107b0b2091d0ee56862e63457",
+      "snapshot_ext": "json"
+    },
+    "speed.time_to_first_token_seconds": {
+      "value": 1.06,
+      "source": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "96ac6b94310077209a45be91767586c523ba491107b0b2091d0ee56862e63457",
+      "snapshot_ext": "json"
+    },
+    "benchmark.arena_text_coding": {
+      "value": 1525,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-13",
+      "verified_by": "auto",
+      "verified_at": "2026-11-13",
+      "snapshot_hash": "888ce39ccc2489eb4cfc6d400c0684e55d92e18aa606ad2ed6040b85fe3a8265",
+      "snapshot_ext": "parquet"
+    },
+    "benchmark.arena_text_legal": {
+      "value": 1461,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "benchmark.arena_text_science": {
+      "value": 1489,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "snapshot.bartowski_gguf": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "parameters_active_b": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "kv_cache_bytes_per_token": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": []
+}

@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadEntities, factStr } from '../../lib/facts';
+import { resolveLogo } from '../../utils/resolveLogo';
+
+const companies = loadEntities('company');
+const models = loadEntities('model');
+const companyLogos = new Map(companies.map(c => [c.slug, resolveLogo('companies', c.slug)]));
+
+function modelLine(family: string): string {
+  const f = family.toLowerCase();
+  if (f.startsWith('deepseek')) return 'DeepSeek';
+  if (f.startsWith('qwen')) return 'Qwen';
+  if (f.startsWith('kimi')) return 'Kimi';
+  if (f.startsWith('glm')) return 'GLM';
+  return family;
+}
+
+const companyLines = new Map<string, string[]>();
+for (const m of models) {
+  const cSlug = factStr(m, 'company_slug');
+  const family = factStr(m, 'family');
+  if (!cSlug || !family) continue;
+  const line = modelLine(family);
+  const existing = companyLines.get(cSlug) ?? [];
+  if (!existing.includes(line)) existing.push(line);
+  companyLines.set(cSlug, existing);
+}
+
+function fmtDate(d: string | null): string {
+  if (!d) return '';
+  const [y, m] = d.split('-');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  if (!m) return y;
+  return months[parseInt(m)-1] + ' ' + y;
+}
+
+const weightLabels: Record<string, string> = {
+  'open-fully': 'Fully open',
+  'open-with-restrictions': 'Open with restrictions',
+  'research-only': 'Research only',
+  'gated': 'Gated',
+  'closed': 'Closed',
+};
+---
+
+<Base
+  title="Open-Weight AI Model Companies — Private AI Solutions"
+  description="Company profiles for the organizations behind the major open-weight AI models."
+>
+  <main class="max-w-3xl w-full mx-auto px-4 sm:px-6 py-10">
+
+    <div class="mb-8">
+      <h1 class="text-2xl sm:text-3xl font-bold text-nord-100 mb-3 leading-tight">Companies</h1>
+      <p class="text-nord-400 text-sm leading-relaxed">
+        Profiles of the organizations releasing open-weight AI models.
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      {companies.map(c => {
+        const cLogo = companyLogos.get(c.slug);
+        const wa = factStr(c, 'weights_availability') ?? 'closed';
+        const wLabel = weightLabels[wa] ?? wa;
+        const country = factStr(c, 'country');
+        const founded = factStr(c, 'founded');
+        const lines = companyLines.get(c.slug) ?? [];
+        return (
+        <a href={`/companies/${c.slug}`}
+          class="block bg-nord-900 border border-nord-800 rounded-lg px-4 py-4 hover:border-nord-600 hover:bg-nord-800/60 transition-colors">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-3 min-w-0">
+              {cLogo && <img src={cLogo} alt="" class="w-8 h-8 rounded shrink-0" />}
+              <div class="min-w-0">
+                <span class="font-medium text-nord-100 text-sm">{c.name}</span>
+                <span class="block text-xs text-nord-500 mt-0.5">
+                  {country ?? ''}{founded ? ` · Founded ${fmtDate(founded)}` : ''}
+                </span>
+                {lines.length > 0 && (
+                  <div class="flex flex-wrap gap-1.5 mt-1.5">
+                    {lines.map(l => (
+                      <span class="text-[11px] px-2 py-0.5 rounded-full bg-nord-800/60 text-nord-300 border border-nord-700/60 leading-none">{l}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-nord-800 text-nord-400 border border-nord-700 whitespace-nowrap">{wLabel}</span>
+          </div>
+        </a>
+      );})}
+    </div>
+
+  </main>
+</Base>

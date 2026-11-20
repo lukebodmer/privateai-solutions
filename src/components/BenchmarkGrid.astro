@@ -1,0 +1,159 @@
+---
+import { loadBenchmarks, barPct } from '../utils/loadBenchmarks';
+import BenchmarkCredit from './BenchmarkCredit.astro';
+import { loadEntity, factStr } from '../lib/facts';
+import { resolveModelLogo } from '../utils/resolveLogo';
+import { brandColorForCompany, barStyle } from '../data/schemas/brandColors';
+
+interface Props {
+  /** When set, the matching model column stays vivid across all tiles
+   *  and every other column is dimmed. Used on the model detail page. */
+  highlightSlug?: string;
+}
+const { highlightSlug } = Astro.props as Props;
+
+const tiles = loadBenchmarks();
+
+// Precompute per-model presentation data once (color, logo, company slug).
+// Every tile references the same set of models, and we want the column
+// order to be stable across tiles for visual scanning.
+const allModels = new Map<string, { color: string; logo: string | null; label: string; isOpen: boolean }>();
+for (const tile of tiles) {
+  for (const row of tile.rows) {
+    if (!allModels.has(row.model_slug)) {
+      allModels.set(row.model_slug, {
+        color: brandColorForCompany(row.company_slug),
+        logo: resolveModelLogo(row.model_slug, row.company_slug),
+        label: row.short_label,
+        isOpen: row.is_open,
+      });
+    }
+  }
+}
+
+// Stable column order across all tiles, the same as /ecosystem's: by overall
+// score, each benchmark placed on its tile's own 0–100 scale (barPct) and
+// averaged over the benchmarks that rate the model.
+const tileScores = new Map<string, number[]>();
+for (const tile of tiles) {
+  for (const row of tile.rows) {
+    if (!tileScores.has(row.model_slug)) tileScores.set(row.model_slug, []);
+    tileScores.get(row.model_slug)!.push(barPct(tile, row.score));
+  }
+}
+const overall = (slug: string) => {
+  const xs = tileScores.get(slug) ?? [];
+  return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : -1;
+};
+const columnOrder: string[] = [...new Set(tiles.flatMap(t => t.rows.map(r => r.model_slug)))]
+  .sort((a, b) => overall(b) - overall(a));
+
+function formatScore(v: number | null): string {
+  return v === null ? '—' : v.toFixed(0);
+}
+
+// When a highlight is requested, non-matching columns get a persistent
+// dim class so the target model reads at a glance across every tile.
+const dimOthers = (slug: string) =>
+  highlightSlug && slug !== highlightSlug ? 'opacity-[0.18]' : '';
+---
+
+<section class="mb-12">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+    {tiles.map(tile => {
+      // Build a slug → score lookup for this tile so we can render columns
+      // in the fixed columnOrder (missing scores just show an empty column).
+      const scoreBySlug = new Map(tile.rows.map(r => [r.model_slug, r.score]));
+
+      return (
+        <div class="border border-nord-800 rounded-lg overflow-hidden flex flex-col">
+          <div class="px-3 py-2 bg-nord-900/60 border-b border-nord-800">
+            <div class="flex items-baseline justify-between gap-2">
+              <h3 class="text-sm font-semibold text-nord-100">{tile.short_title}</h3>
+              <a href={tile.source_url} target="_blank" rel="noopener noreferrer"
+                class="text-[10px] text-nord-500 hover:text-frost-400 whitespace-nowrap">{new URL(tile.source_url).hostname} ↗</a>
+            </div>
+            <p class="text-[10px] text-nord-500 mt-0.5 leading-snug line-clamp-2">{tile.description}</p>
+          </div>
+
+          <div class="bg-nord-900/20 p-2 aspect-[4/3] flex flex-col">
+            {tile.rows.length === 0 ? (
+              <div class="flex-1 flex items-center justify-center text-xs text-nord-500 italic">No data yet.</div>
+            ) : (
+              <>
+                {/* Bars share a baseline; gridlines at quarters of the scale sit behind them */}
+                <div class="relative flex-1 flex items-end gap-[3px] min-h-0 pb-0.5">
+                  {[25, 50, 75, 100].map(q => (
+                    <div class="absolute inset-x-0 border-t border-nord-800/70 pointer-events-none" style={`bottom: ${q}%;`}></div>
+                  ))}
+                  {columnOrder.map(slug => {
+                    const info = allModels.get(slug)!;
+                    const score = scoreBySlug.get(slug);
+                    const hasScore = typeof score === 'number';
+                    const pct = hasScore ? Math.max(1, barPct(tile, score)) : 0;
+                    return (
+                      <a
+                        href={`/models/${slug}`}
+                        class={`group flex-1 flex flex-col justify-end items-stretch h-full relative min-w-0 transition-opacity ${dimOthers(slug)}`}
+                        title={`${info.label}: ${formatScore(hasScore ? score : null)}`}
+                      >
+                        {/* Bar — wrapped so the hover-score can anchor above its top edge, not the column top */}
+                        <div class="relative w-full" style={`height: ${pct}%;`}>
+                          <div
+                            class="w-full h-full rounded-t-sm transition-opacity group-hover:opacity-80"
+                            style={`${barStyle(info.color, info.isOpen)} min-height: 1px;`}
+                          ></div>
+                          {/* Score label on hover — sits just above the bar's top edge */}
+                          <span class="absolute bottom-full mb-0.5 left-1/2 -translate-x-1/2 text-[9px] font-mono tabular-nums text-nord-300 opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap">
+                            {formatScore(hasScore ? score : null)}
+                          </span>
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
+
+                {/* Axis: logos row, then slanted name row */}
+                <div class="flex gap-[3px] mt-1 border-t border-nord-700 pt-1">
+                  {columnOrder.map(slug => {
+                    const info = allModels.get(slug)!;
+                    return (
+                      <div class={`flex-1 min-w-0 flex justify-center transition-opacity ${dimOthers(slug)}`}>
+                        {info.logo ? (
+                          <img src={info.logo} alt="" class="w-3.5 h-3.5 rounded-sm object-contain" />
+                        ) : (
+                          <span class="w-3.5 h-3.5 rounded-sm" style={barStyle(info.color, info.isOpen)}></span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Slanted labels — reserve fixed height so tiles stay square-ish */}
+                <div class="flex gap-[3px] mt-0.5 h-8 relative">
+                  {columnOrder.map(slug => {
+                    const info = allModels.get(slug)!;
+                    return (
+                      <div class={`flex-1 min-w-0 relative transition-opacity ${dimOthers(slug)}`}>
+                        <span
+                          class="absolute top-0 left-1/2 origin-top-left text-[8px] text-nord-500 font-medium whitespace-nowrap"
+                          style="transform: rotate(45deg) translate(0, -0.5em);"
+                        >{info.label}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <p class="text-[10px] text-nord-600 mt-3 inline-flex items-center gap-1.5">
+    <span class="inline-block w-2.5 h-2.5 rounded-sm" style={barStyle('#9aa8bc', false)}></span>
+    Hollow bars are closed models, shown for reference.
+  </p>
+  <BenchmarkCredit tiles={tiles} class="mt-1" />
+</section>

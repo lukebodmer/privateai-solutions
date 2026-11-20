@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+// The quote's face, self-hosted like Inter; only this page loads it.
+import '@fontsource/instrument-serif/latin-400-italic.css';
+
+const verticals = [
+  { name: 'Research', desc: 'Literature review, data analysis.' },
+  { name: 'Healthcare', desc: 'Clinical documentation, imaging.' },
+  { name: 'Legal', desc: 'Confidential document review.' },
+  { name: 'Construction', desc: 'Estimating, plans and specs.' },
+  { name: 'Enterprise', desc: 'Internal knowledge, workflow automation.' },
+];
+---
+
+<Base
+  title="About — Private AI Solutions"
+  description="Luke Bodmer — AI architect with a PhD in computational science and experience shipping AI at scale in healthcare and construction."
+>
+  <main class="max-w-3xl w-full mx-auto px-4 sm:px-6 py-16">
+
+    <PageHeader eyebrow="Who we are" title="About" class="mb-10" />
+
+    <div class="prose prose-invert prose-zinc max-w-none">
+
+      <div class="mb-10 p-6 bg-nord-900 border border-nord-800 rounded-xl">
+        <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+          <div>
+            <h2 class="text-xl font-semibold text-nord-100 mb-1">Luke Bodmer<span class="text-base font-light text-nord-400">, PhD</span></h2>
+            <p class="text-frost-400 text-sm mb-4">Founder</p>
+            <p class="text-nord-400 leading-relaxed text-justify hyphens-auto">
+              I started this business when I saw that open-weight models had been released,
+              specifically DeepSeek V4.1 Flash, that had performance comparable to the
+              state-of-the-art frontier models from the big tech companies. Prior to that I was
+              developing AI research strategies for medical research labs and overseeing AI
+              strategies at Fortune-level companies. I have a deep belief that open source ideas
+              are key to creating a more prosperous, free and fair future where people have rights
+              to their own privacy and control their own data.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- On hover the words brighten and the quote marks take the frost accent. -->
+      <blockquote class="group not-prose my-10 text-center">
+        <p class="font-['Instrument_Serif'] italic text-xl sm:text-2xl leading-snug text-nord-400 transition-colors duration-500 group-hover:text-nord-200">
+          <span class="transition-colors duration-500 group-hover:text-frost-400">&ldquo;</span>If the equation is correct, then it belongs to everyone.<span class="transition-colors duration-500 group-hover:text-frost-400">&rdquo;</span>
+        </p>
+      </blockquote>
+
+      <h2 class="text-lg font-semibold text-nord-100 mb-4">Background</h2>
+      <p class="text-nord-400 leading-relaxed mb-6">
+        Private AI Solutions grew out of a path through science, medicine and building things.
+        I graduated summa cum laude from the University at Buffalo with degrees in math,
+        physics and history. After undergrad, I learned the trades, specializing in carpentry,
+        and started a business building single family homes. I went on to study medicine in
+        Córdoba, Argentina, and then completed a PhD focused on using AI to develop novel,
+        affordable mobile medical imaging technology. I also run a
+        small <a href="https://tanzaniaeducationproject.org/" target="_blank" rel="noopener noreferrer" class="text-frost-400 hover:underline">education-based charity</a>.
+      </p>
+
+      <p class="text-nord-400 leading-relaxed mb-6">
+        The deeper you dive into the abilities of modern artificial intelligence, the more you
+        start to realize the power of these tools. It's hard to imagine a future where
+        concentrating this power into a handful of tech companies doesn't lead to bad outcomes.
+        Luckily, researchers and companies across the world have created open source and open
+        weight solutions that are rivaling the top models from these tech companies, turning
+        cloud-based AI solutions obsolete.
+      </p>
+
+      <p class="text-nord-400 leading-relaxed mb-6">
+        We've just entered a world where, for an affordable price, a business can own the
+        hardware to host extremely capable, open weight local AI models. They can own their
+        own data, they can maintain their privacy and they can still have access to
+        state-of-the-art tools.
+      </p>
+
+      <p class="text-nord-400 leading-relaxed mb-10">
+        That is the work of Private AI Solutions: helping businesses bring AI in-house, on
+        hardware they own, so they can protect their clients, maintain their privacy, and own
+        their data.
+      </p>
+
+      <h2 class="text-lg font-semibold text-nord-100 mb-4">Verticals</h2>
+      <div class="space-y-3 mb-10">
+        {verticals.map(v => (
+          <div class="flex gap-3">
+            <span class="text-frost-500 shrink-0 mt-0.5">◆</span>
+            <div>
+              <span class="text-nord-200 font-medium">{v.name}</span>
+              <span class="text-nord-500 mx-2">—</span>
+              <span class="text-nord-400 text-sm">{v.desc}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center">
+        <a
+          href="/contact"
+          class="inline-block px-5 py-2 rounded-full bg-frost-500 hover:bg-frost-400 text-nord-950 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(136,192,208,0.6)] transition-colors"
+        >
+          Work together
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+</Base>

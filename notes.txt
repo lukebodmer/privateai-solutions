@@ -1,0 +1,54 @@
+https://www.minimax.io/
+https://en.wikipedia.org/wiki/MiniMax_Group
+https://huggingface.co/MiniMaxAI
+This is MiniMax, the Chinese AI Company.
+
+Ok, I will leave them as they are and
+     unverify / reverify to fetch and snapshot. One more question, closed models
+     that we previously on boarded, before we had a closed model type, still have
+      verified parameters like architecture.type, license, license_commerical,
+     parameters_b and snapshot.github in the dashboard and these don't make sense
+      for closed models. Can we make sure old closed models are marked
+     accordingly and remove these things from the dashboard?
+
+
+
+
+I'm still trying to figure out why OpenAI made this model. My hunch is that it is a response to criticism that their name (and founding purpose) references "open"ness, but they are a proprietary, data hoarding company.
+
+The press release from OpenAI on August 5, 2026 said "Releasing gpt-oss-120b and gpt-oss-20b marks a significant step forward for open-weight models". That is quite the claim and doesn't seem truthful. They then go on to say "A healthy open model ecosystem is one dimension to helping make AI widely accessible and beneficial for everyone". I assume the other dimensions involve privatizing and profiting from AI.
+
+The one selling point to the GPT-oss is its small footprint. At around 65GB, GPT-oss can fit on a single 80 GB GPU.
+
+However, at a similar cost-per-task you can use the DeepSeek v4 Flash 0731 which has much better performance. You can also run Qwen3,8 27B on a single 80GB GPU so I really don't see a reason to use this model.
+
+
+
+
+
+- We need to switch our benchmark data to use the free artificial intellegence api
+- I think we should do it like this:
+  - Each model that we onboard has its canonical cites: the press release page, the wikipedia, the hugging face, etc.
+  - We take a snapshot and save that data
+  - Neuman fills in all the facts and when I click to check, it shows me the actual place that it used to base the fact off of
+  - having this data over time is great.
+- We also need to think about other aspects of the fact retrieval that might be able to be made more determinisitc.
+- We need to rethink the sources in this new light. It seems to be that the combination of canonical verified sources and the extra sources that neuman finds is a nice source of data, and we should also think about how we mantain that, and how neuman can glance at that bank of sources to get ideas of where to search.
+- I had an interesting idea for a home page. Its a newtwork of the site and its info (think org roam network map). It just shows the outer network (companies, models, harnesses, hardware) and you click on one of those and it zooms in to show all its children (for hardware it would show nvidia, amd, mac, cerebras, etc), then click again and see the children of that a,d you can walk through the network like that to find things.
+
+
+In my recent refactor of how sources work in the fact dashboard, I think I've muddled up the architecture a bit. I want to fully explain my vision for it, then you and I can come up with a way to refactor it to make it clean and well architectured. Remember, we haven't released this site yet, so any change we make should have no regard to previous attempts, ideas, or versions. The first version should be a clean slash that implements our best undrestanding of the architecture we want (no old code cruft anywhere!).
+
+So this is my vision of source and its relation to the fact dashboard. First off, we have a lot of good sources built up already. This is good data. This is data that we could keep in a file and have neuman query from that file to say "ok I need the bf16 flops for a new gpu i'm onboarding into the system, let me check where I found that information for other similar gpus and look there". Then the source data becomes a living set of data that can evolve over time and becomes a great reference for neuman.
+
+Secondly, I want to focus on producing an architecture that allows us to quickly and easily onboard a new entitiy (model, hardware, harness, company) into our site. This means thinking of the fact dashboard as more of an administrative dashboard, and in that dashboard I can do things like update facts, verify facts (like we can do now) and also onboard new entities.
+
+The onboard process should be as deterministic as possible. We recently switch to using AA API for the benchmark data, that is great. what else could be fetched more deterministically (if anything)? For example, can we get GPU prices deterministically from like an price API or ebay API or something? Can we get programing lanuage percent breakdown for harnesses via a github api?
+
+What is left is for neuman to use his intellegence for. That intelligence is best used with sort of strict gaurdrails, to rein in token spend, and make sure neuman is only doing what he is supposed to be doing.
+
+Every place that neuman finds a fact, and is a reputable source, we should save a snapshot of exactly where he found that fact (save the snapshot to disk in the /data drive). That becomes our "Reciepts" for all the claims we are making. Plus it creates an interesting data vault for my company and for further research or blog posts.
+
+Finally, I don't want to muddle up the work flow with a bunch of scripts patched together. I'd like to ideally press a button to refresh, all the api dterministic stuff is done, then a temrinal is spawned, cd into this direcotyr, neuman is started and the prompt is launched, when neuman finishes some more things will be ran to save everthing and update everything deterministically.
+
+Perhaps what we should do is, with this in mind, audit the current architecture of the project, and let's make an on-boarding option for a new model in the admin dashboard. That should take in an official press release, and from that we determine everything about the model and onboard it. This means that the first "Fact" will be automatic because I will have to paste in the actual official public release announcement (we should stop using the word "blog" in the dashboard. I want the official release announcement). The only thing I want to caution is that some models sound similar (and some GPUs sound similar) but we want to be exact at what we are looking at (is it DeepSeek v4 flash preview or 0731? 3090 GPU? Ok be more exact with a model so we can research the specific one be specific!).

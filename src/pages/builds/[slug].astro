@@ -1,0 +1,241 @@
+---
+import Base from '../../layouts/Base.astro';
+import Provenance from '../../components/Provenance.astro';
+import FactLedger from '../../components/FactLedger.astro';
+import { loadEntities, loadEntity, fact, factStr, factNum, factValue } from '../../lib/facts';
+import { fitBuild, sourcesFor, SIZING } from '../../lib/sizing';
+import { buildImage, buildPrice, fmtGb, fmtUsd, partImage, teamLabel } from '../../lib/builds';
+
+export async function getStaticPaths() {
+  return loadEntities('build').map(b => ({ params: { slug: b.slug }, props: { slug: b.slug } }));
+}
+
+const { slug } = Astro.props;
+const build = loadEntity('build', slug)!;
+const fit = fitBuild(build);
+const price = buildPrice(build);
+const kind = factStr(build, 'kind');
+const team = teamLabel(build);
+const components = factValue<{ name: string; quantity: number }[]>(build, 'components') ?? [];
+const measuredConcurrency = fact(build, 'measured.max_concurrency');
+const measuredSpeed = fact(build, 'measured.output_tokens_per_second');
+
+const PLACEMENT: Record<string, string> = { desk: 'On a desk', deskside: 'Beside a desk, on office power', rack: 'In a server rack' };
+const RUNTIME: Record<string, string> = { vllm: 'vLLM', 'llama.cpp': 'llama.cpp', mlx: 'MLX' };
+
+const parts = fit.parts.map(({ part, slug: s, quantity }) => ({
+  slug: s, quantity, part,
+  image: part ? partImage(part) : null,
+  memory: part ? factNum(part, 'memory_gb') : null,
+  gpuMemory: part ? factNum(part, 'gpu_memory_gb') : null,
+  bandwidth: part ? factNum(part, 'memory_bandwidth_gbps') : null,
+  power: part ? factNum(part, 'power_w') : null,
+  placement: part ? factStr(part, 'placement') : null,
+  priceFact: part ? fact(part, 'price.new_usd') : null,
+}));
+const hero = buildImage(build);
+// A photo that is not of this build itself says so, and whose it is.
+const credit = fact(build, 'photo_credit');
+const totalPower = parts.every(p => p.power !== null) ? parts.reduce((a, p) => a + p.quantity * p.power!, 0) : null;
+const placement = parts.map(p => p.placement).find(Boolean) ?? null;
+
+const runtimeRule = fit.runtime ? (SIZING.runtimes as Record<string, { sources: string[] }>)[fit.runtime] : null;
+const ruleSources = sourcesFor([...(SIZING.kv_cache.sources), ...(runtimeRule?.sources ?? []), ...SIZING.measured.sources]);
+const fmtCtx = (n: number | null) => n === null ? '—' : n >= 1024 ? `${Math.round(n / 1024)}K tokens` : `${n} tokens`;
+const fmtDate = (d: string | null) => d ? new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : null;
+---
+
+<Base
+  title={`${build.name} — Builds`}
+  description={`${build.name}: what it runs, who it is for, and how it is sized.`}
+>
+  <main class="max-w-3xl w-full mx-auto px-4 sm:px-6 py-10">
+
+    <a href="/ecosystem" class="inline-flex items-center gap-1.5 text-sm text-nord-500 hover:text-nord-300 transition-colors mb-8">
+      <span>←</span> Ecosystem
+    </a>
+
+    {hero && (
+      <figure class="mb-6">
+        <div class="bg-nord-900 border border-nord-800 rounded-lg overflow-hidden">
+          <img src={hero} alt={credit?.value ? String(credit.value) : build.name} class="w-full h-auto max-h-80 object-contain" />
+        </div>
+        {credit?.value && (
+          <figcaption class="text-xs text-nord-500 mt-2">
+            {credit.source
+              ? <a href={credit.source} target="_blank" rel="noopener noreferrer" class="hover:text-nord-300">{String(credit.value)}</a>
+              : String(credit.value)}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
+    <header class="mb-8">
+      <h1 class="text-2xl sm:text-3xl font-bold text-nord-100 leading-tight">{build.name}</h1>
+      <p class="text-nord-500 mt-1 text-sm">
+        {[kind === 'system' ? 'Off-the-shelf system' : 'Custom build', team, fit.runtime ? `Runs on ${RUNTIME[fit.runtime] ?? fit.runtime}` : null].filter(Boolean).join(' · ')}
+      </p>
+    </header>
+
+    {build.my_take && (
+      <section class="mb-8">
+        <div class="p-4 bg-nord-900 border border-nord-800 rounded-lg text-sm text-nord-300 leading-relaxed border-l-2 border-l-frost-700 whitespace-pre-wrap">{build.my_take}</div>
+      </section>
+    )}
+
+    <!-- At a glance -->
+    <section class="mb-8">
+      <dl class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+        <div class="px-3 py-2 rounded bg-nord-900 border border-nord-800">
+          <dt class="text-xs text-nord-500">Memory</dt>
+          <dd class="text-nord-200 font-mono">{fit.totalMemoryGb !== null ? fmtGb(fit.totalMemoryGb) : 'pending'}</dd>
+        </div>
+        <div class="px-3 py-2 rounded bg-nord-900 border border-nord-800">
+          <dt class="text-xs text-nord-500">Sessions at once</dt>
+          <dd class="text-nord-200 font-mono">{fit.sessions ?? '—'}</dd>
+        </div>
+        <div class="px-3 py-2 rounded bg-nord-900 border border-nord-800">
+          <dt class="text-xs text-nord-500">Power</dt>
+          <dd class="text-nord-200 font-mono">{totalPower !== null ? `${totalPower.toLocaleString('en-US')} W` : '—'}</dd>
+        </div>
+        <div class="px-3 py-2 rounded bg-nord-900 border border-nord-800">
+          <dt class="text-xs text-nord-500">Price</dt>
+          <dd class="text-nord-200 font-mono">{price.label ?? '—'}</dd>
+        </div>
+      </dl>
+      {placement && <p class="text-xs text-nord-500 mt-2">{PLACEMENT[placement] ?? placement}.</p>}
+    </section>
+
+    <!-- What it runs -->
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold text-nord-100 mb-1">What it runs</h2>
+      <p class="text-xs text-nord-500 mb-3">
+        Each model is loaded on its own. Sized for {fit.sessions ?? '—'} sessions at once, each holding {fmtCtx(fit.contextTokens)} of context.
+      </p>
+      <div class="space-y-3">
+        {fit.models.map(m => (
+          <div class="p-4 rounded-lg bg-nord-900 border border-nord-800">
+            <div class="flex items-start justify-between gap-3">
+              <div class="min-w-0">
+                {m.model
+                  ? <a href={`/models/${m.slug}`} class="font-medium text-nord-100 hover:text-frost-300">{m.model.name}</a>
+                  : <span class="font-medium text-nord-100">{m.slug}</span>}
+                <span class="block text-xs text-nord-500 font-mono mt-0.5">{m.weights === 'native' ? 'native weights' : m.weights} · {fmtGb(m.weightsGb)}</span>
+              </div>
+              <span class={`text-xs px-2 py-0.5 rounded border whitespace-nowrap ${
+                m.status === 'fits' ? 'bg-frost-400/10 text-frost-300 border-frost-700'
+                : m.status === 'short' ? 'bg-red-400/10 text-red-300 border-red-800'
+                : 'bg-nord-800 text-nord-400 border-nord-700'}`}>
+                {m.status === 'fits' ? 'Fits' : m.status === 'short' ? 'Does not fit' : 'Not yet sized'}
+              </span>
+            </div>
+            <dl class="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-2 mt-3 text-xs">
+              <div><dt class="text-nord-500">Per session</dt><dd class="font-mono text-nord-300">{fmtGb(m.sessionGb)}</dd></div>
+              <div><dt class="text-nord-500">Needed</dt><dd class="font-mono text-nord-300">{fmtGb(m.neededGb)}</dd></div>
+              <div><dt class="text-nord-500">Usable</dt><dd class="font-mono text-nord-300">{fmtGb(fit.usableGb)}</dd></div>
+              <div><dt class="text-nord-500">Room for</dt><dd class="font-mono text-nord-300">{m.maxSessions !== null ? `${m.maxSessions} sessions` : '—'}</dd></div>
+            </dl>
+            {fit.gpuMemoryGb !== null && m.weightsGb !== null && m.weightsGb > fit.gpuMemoryGb && (
+              <p class="text-xs text-nord-400 mt-3">
+                The weights are larger than the {fmtGb(fit.gpuMemoryGb)} of GPU memory, so part of the model runs from the
+                slower CPU memory. It fits; how fast it runs is something we measure.
+              </p>
+            )}
+            {[...fit.reasons, ...m.reasons].length > 0 && (
+              <ul class="mt-3 text-xs text-nord-500 list-disc pl-4 space-y-0.5">
+                {[...new Set([...fit.reasons, ...m.reasons])].map(r => <li>{r}</li>)}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+      {(measuredConcurrency?.value != null || measuredSpeed?.value != null) && (
+        <dl class="grid grid-cols-2 gap-3 text-sm mt-3">
+          {measuredConcurrency?.value != null && (
+            <div class="px-3 py-2 rounded bg-nord-900 border border-nord-800">
+              <dt class="text-xs text-nord-500">Measured concurrency</dt>
+              <dd class="text-nord-200 font-mono">{String(measuredConcurrency.value)}×</dd>
+              <dd class="mt-1"><Provenance fact={measuredConcurrency} /></dd>
+            </div>
+          )}
+          {measuredSpeed?.value != null && (
+            <div class="px-3 py-2 rounded bg-nord-900 border border-nord-800">
+              <dt class="text-xs text-nord-500">Measured speed, one session</dt>
+              <dd class="text-nord-200 font-mono">{String(measuredSpeed.value)} tokens/s</dd>
+              <dd class="mt-1"><Provenance fact={measuredSpeed} /></dd>
+            </div>
+          )}
+        </dl>
+      )}
+    </section>
+
+    <!-- What it is -->
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold text-nord-100 mb-3">What it is</h2>
+      <div class="space-y-3">
+        {parts.map(p => (
+          <div class="relative flex gap-4 p-4 rounded-lg bg-nord-900 border border-nord-800 hover:border-nord-600 hover:bg-nord-800/60 transition-colors group">
+            {p.image && <img src={p.image} alt="" class="w-16 h-16 rounded object-cover shrink-0" />}
+            <div class="min-w-0 flex-1">
+              {p.part
+                ? <a href={`/parts/${p.slug}`} class="font-medium text-nord-100 text-sm group-hover:text-frost-300 after:absolute after:inset-0 after:content-['']">{p.quantity}× {p.part.name}</a>
+                : <span class="font-medium text-nord-100 text-sm">{p.quantity}× {p.slug}</span>}
+              <span class="block text-xs text-nord-400 font-mono mt-1">
+                {[
+                  p.memory !== null ? `${fmtGb(p.memory)} memory${p.gpuMemory !== null ? ` (${fmtGb(p.gpuMemory)} on the GPU)` : ''}` : 'specs pending',
+                  p.bandwidth !== null ? `${p.bandwidth.toLocaleString('en-US')} GB/s` : null,
+                  p.power !== null ? `${p.power.toLocaleString('en-US')} W` : null,
+                ].filter(Boolean).join(' · ')}
+              </span>
+              {kind === 'system' && p.priceFact && (
+                <span class="block text-xs mt-1.5">
+                  <span class="font-mono text-nord-300">{p.priceFact.value != null ? fmtUsd(p.priceFact.value as number) : 'Priced on quote'}</span>
+                  <span class="ml-2 relative z-10"><Provenance fact={p.priceFact} /></span>
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
+        {components.length > 0 && (
+          <ul class="px-4 py-3 rounded-lg bg-nord-900 border border-nord-800 text-sm text-nord-300 space-y-1">
+            {components.map(c => <li>{c.quantity}× {c.name}</li>)}
+          </ul>
+        )}
+      </div>
+      {kind === 'custom' && (
+        <p class="text-xs text-nord-500 mt-2">
+          A custom build's price depends on the parts market and the setup it needs, so we quote it per customer{price.label ? `. Today that is ${price.label}, before assembly and setup` : ''}.
+        </p>
+      )}
+    </section>
+
+    <!-- How it is sized -->
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold text-nord-100 mb-1">How it is sized</h2>
+      <ul class="text-sm text-nord-400 leading-relaxed list-disc pl-5 space-y-1.5 mb-4">
+        <li>{SIZING.kv_cache.rule}</li>
+        {fit.usableRule && <li>{fit.usableRule}</li>}
+        <li>{SIZING.measured.rule}</li>
+      </ul>
+      <details class="rounded-lg border border-nord-800 bg-nord-900/50">
+        <summary class="cursor-pointer px-4 py-2.5 text-xs text-nord-400 hover:text-nord-200">The {ruleSources.length} documents these rules come from</summary>
+        <ul class="px-4 pb-3 space-y-3">
+          {ruleSources.map(s => (
+            <li class="text-xs leading-relaxed">
+              <a href={s.url} target="_blank" rel="noopener noreferrer" class="text-frost-400 hover:text-frost-300 hover:underline">{s.title}</a>
+              <span class="text-nord-500"> — {s.publisher}</span>
+              <span class="block text-nord-400 mt-0.5">{s.used_for}</span>
+              {s.quotes.map(q => <span class="block font-mono text-nord-500 mt-0.5">“{q}”</span>)}
+              <span class="block text-nord-600 mt-0.5">
+                {s.snapshot_hash ? `Archived ${fmtDate(s.fetched)}` : 'Not yet archived'}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </section>
+
+    <FactLedger entity={build} />
+
+  </main>
+</Base>

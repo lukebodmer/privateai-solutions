@@ -1,0 +1,103 @@
+{
+  "name": "Mac Studio (M5 Ultra, 512 GB, 16 TB)",
+  "slug": "mac-studio",
+  "facts": {
+    "class": {
+      "value": "system",
+      "source": "https://www.apple.com/mac-studio/specs/",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Mac Studio - Technical Specifications",
+      "snapshot_hash": "ce92c6472155d01ac38b8f855fc67f44d01d75e909bd6e28425a22eec7f7ca16",
+      "snapshot_ext": "html"
+    },
+    "snapshot.maker": {
+      "value": "https://www.apple.com/mac-studio/specs/",
+      "source": "https://www.apple.com/mac-studio/specs/",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Mac Studio - Technical Specifications",
+      "snapshot_hash": "ce92c6472155d01ac38b8f855fc67f44d01d75e909bd6e28425a22eec7f7ca16",
+      "snapshot_ext": "html"
+    },
+    "released": {
+      "value": "2026-09-22",
+      "source": "https://en.wikipedia.org/wiki/Mac_Studio",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-17",
+      "quote": "September 22, 2026",
+      "snapshot_hash": "a08c3d2c490aefba598d4a3069ea93f09afe6d207b2ab2ab8238ede0bc18b9a7",
+      "snapshot_ext": "html"
+    },
+    "memory_gb": {
+      "value": 512,
+      "source": "https://www.apple.com/mac-studio/specs/",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-17",
+      "quote": "256GB or 512GB",
+      "snapshot_hash": "ce92c6472155d01ac38b8f855fc67f44d01d75e909bd6e28425a22eec7f7ca16",
+      "snapshot_ext": "html"
+    },
+    "power_w": {
+      "value": 480,
+      "source": "https://www.apple.com/mac-studio/specs/",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-17",
+      "quote": "Maximum continuous power: 480W",
+      "snapshot_hash": "ce92c6472155d01ac38b8f855fc67f44d01d75e909bd6e28425a22eec7f7ca16",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/Mac_Studio",
+      "source": "https://en.wikipedia.org/wiki/Mac_Studio",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Mac Studio",
+      "snapshot_hash": "a08c3d2c490aefba598d4a3069ea93f09afe6d207b2ab2ab8238ede0bc18b9a7",
+      "snapshot_ext": "html"
+    },
+    "maker": {
+      "value": "Apple",
+      "source": "https://www.apple.com/mac-studio/specs/",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Apple M5 Ultra chip",
+      "snapshot_hash": "ce92c6472155d01ac38b8f855fc67f44d01d75e909bd6e28425a22eec7f7ca16",
+      "snapshot_ext": "html"
+    },
+    "placement": {
+      "value": "desk",
+      "source": "https://www.apple.com/mac-studio/specs/",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Weight (M5 Ultra): 8.0 pounds (3.6 kg)",
+      "snapshot_hash": "ce92c6472155d01ac38b8f855fc67f44d01d75e909bd6e28425a22eec7f7ca16",
+      "snapshot_ext": "html"
+    },
+    "price.new_usd": {
+      "value": 29799,
+      "source": "https://www.apple.com/shop/buy-mac/mac-studio/m5-ultra-chip-36-core-cpu-80-core-gpu-512gb-memory-16tb-storage",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "snapshot_hash": "772b613497ba126038d38028d0965b46c83a9f2d8c096b90b01a1d7d13ce3fd1",
+      "snapshot_ext": "html"
+    },
+    "price.swept": {
+      "value": false,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": []
+}

@@ -1,0 +1,10 @@
+key: benchmark.arena_text_legal
+title: Arena Text — Legal & Government
+short_title: Arena · Legal
+description: >
+  Arena's rating from people comparing two anonymous models on legal and
+  government questions and voting for the better answer. Style-controlled.
+scale_min: 1300
+scale_max: 1600
+source_url: https://arena.ai/leaderboard/text
+order: 3

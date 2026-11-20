@@ -1,0 +1,123 @@
+---
+title: "How I use Neuman to model 3D objects in Blender"
+description: "Programs that can be driven from a script can now be driven by an AI agent. I built a small toolkit that lets Neuman work in Blender, on hardware I own, while I watch. Here is how it works."
+date: 2026-11-19
+tags: ["Neuman", "Blender", "3D modeling", "local AI"]
+---
+
+import DemoVideo from '../../components/DemoVideo.astro';
+import SessionTranscript from '../../components/SessionTranscript.astro';
+import ArmScene from '../../components/ArmScene.astro';
+import OfficeViewer from '../../components/OfficeViewer.astro';
+import session from '../../data/blog/blender-arm-session.json';
+
+<DemoVideo
+  name="blender-demo"
+  class="mb-10"
+  label="Screen recording: Neuman is asked to model an attached image of a ball bearing in Blender. It inspects the image and the scene, builds the rings and balls, then renders the camera view to check the result."
+/>
+
+Long before AI, many programs offered a way to be controlled by commands
+instead of clicks: from the command line, or from a script, often in Python.
+That was always useful to programmers. Now it is useful to AI agents too. An
+agent can reason about what is happening in a program, make decisions from
+that context, and actually drive the application for you.
+
+One program I have tried to learn several times, but never had the time to
+learn as deeply as I wanted, is Blender. Blender is an incredible 3D modeling
+and animation program, and it is completely open source. I decided to build a
+toolkit to see whether Neuman could drive Blender well enough to make 3D
+objects and animations I would be happy to use in my work.
+
+## A note on MCP
+
+Some of you will immediately think of MCP, the Model Context Protocol: an open
+standard, introduced by Anthropic in 2024, for how AI models talk to programs.
+It is often described as "a USB-C port for AI applications," which I think is a
+poor description. A USB-C port suggests a new kind of connection. MCP is
+closer to a wrapper over API calls.
+
+An MCP server takes functions a program already exposes through its API and
+gives each one a name, a plain-language description and a list of the
+arguments it accepts. The model reads those descriptions, picks a function and
+fills in the arguments, and the server makes the API call. Nothing new becomes
+possible in the program; MCP describes what was already there so a model can
+use it. In other words, it is a natural-language interface to an API, such as
+Blender's Python API.
+
+That is useful, but I wanted something that did exactly what I needed, so I
+wrote my own wrapper around Blender's Python API.
+
+## How the toolkit works
+
+- **It drives my own Blender.** The first time Neuman needs Blender, Blender
+  opens in a normal window on my machine. I can watch every change land, and
+  work in the same scene while Neuman does.
+- **An add-on listens inside Blender.** Blender starts with a small add-on that
+  answers Neuman over a private socket that only my user account can open.
+  Blender integrations I found online listen on a network port with no
+  password, which any program on the machine can reach.
+- **Three tools, split by whether they change anything:**
+  - `blender` runs Python inside Blender, and can start a new scene, open,
+    save, export and render. Because it changes things, Neuman asks before
+    each call unless I've told it otherwise.
+  - `blender_scene` describes the scene as text: every object's name, size,
+    position, materials and modifiers.
+  - `blender_view` returns a picture of the scene from any angle, without
+    moving my own view.
+- **Looking never needs approval.** Building a model is a loop of change,
+  look, change again. The two looking tools change nothing, so that loop runs
+  without a prompt after every glance.
+- **Every change can be undone.** Each `blender` call is one step on Blender's
+  undo stack, named "Neuman: …", so Ctrl-Z takes back Neuman's edit like any of
+  mine.
+- **Files can't run their own code.** A `.blend` file can carry a script that
+  runs when it opens. Neuman starts Blender with that turned off.
+- **The tools teach the craft.** Their descriptions tell the model how to
+  work: in metres with Z up, one part per call, modifiers instead of
+  vertex-by-vertex modeling, and a look from more than one angle after every
+  change.
+- **It ships as a package.** An administrator turns the Blender package on
+  for the machines that need it. Neuman doesn't install Blender; each person
+  uses the copy they already have.
+
+## Here's what that looks like
+
+<SessionTranscript session={session} class="my-8" />
+
+## Result
+
+<ArmScene
+  class="my-8"
+  caption="A test-tube arm built for a lab-automation prototype: base, turret, two links and a three-finger claw gripping a 16 mm tube. It is the .blend exported as glTF, playing its own baked work cycle in the page. Drag it to turn the arm; scroll or pinch to zoom."
+/>
+
+Everything in it — base, links, claw, rack, tubes — was modelled through the
+same three tools, in one sitting. The motion is a work cycle: reach, grip,
+lift, carry, hold, return. Every joint angle in it came out of Blender, baked
+into the glTF, so the page is not animating a robot; it is playing back what
+the arm did.
+
+## More examples
+
+The office behind this site's front page came out of the same tools: one scene
+built box by box, rigged at the joints the brief called for, and baked into a
+glTF the page plays back.
+
+<OfficeViewer
+  class="my-8"
+  caption="Neuman's office: the work pod, the conference room, the private office, the coffee point and the lounge, with the lines running into the cabinet. Everyone is at work and the room is doing its own loop. Drag to orbit; scroll or pinch to zoom."
+/>
+
+## Tailored to your workflow
+
+One thing I wanted to get right with Neuman is that you can tailor it to
+exactly how you work. That is why toolkits are easy to add, and they can be
+built for almost any program: certainly any program with an MCP server or an
+API, which is most of them.
+
+## Get started
+
+You can start customizing your own AI today: the [docs](/docs) cover setting
+Neuman up and adding tools. If you'd like help building a toolkit for the
+programs your team relies on, [get in touch](/contact).

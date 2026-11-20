@@ -1,0 +1,123 @@
+{
+  "name": "Alibaba Cloud",
+  "slug": "alibaba",
+  "facts": {
+    "country": {
+      "value": "China",
+      "source": "https://qwen.ai",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-05"
+    },
+    "founded": {
+      "value": "2009-09",
+      "source": "https://en.wikipedia.org/wiki/Alibaba_Cloud",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "weights_availability": {
+      "value": "open-with-restrictions",
+      "source": "https://qwen.ai",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "my_take": {
+      "value": "Alibaba is a company out of China. Its market cap is about 250 billion, making it roughly the size of Toyota. A division of that company called Alibaba Cloud is responsible for making the Qwen models. The US government has accused Alibaba of distilling models proprietary models from the US to create this model. It's hard to have a problem with that when companies like Anthropic and OpenAI have stolen the corpus of all human produced text and video to train their models. \n\nAs far as the Qwen models, they are some of the best models you can run on limited hardware. For example, Qwen 3.8 27B takes up just 56 gigabytes of room in memory, making it a game changer for local LLM setups on a budget.",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "hq_city": {
+      "value": "Hangzhou",
+      "source": "https://en.wikipedia.org/wiki/Alibaba_Cloud",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "legal_structure": {
+      "value": "for-profit",
+      "source": "https://baike.baidu.com/item/%E9%98%BF%E9%87%8C%E4%BA%91",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "ownership": {
+      "value": "subsidiary",
+      "source": "https://en.wikipedia.org/wiki/Alibaba_Cloud",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parent_company": {
+      "value": "Alibaba Group",
+      "source": "https://en.wikipedia.org/wiki/Alibaba_Group",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "employee_tier": {
+      "value": "5k-50k",
+      "source": "https://www.reveliolabs.com/companies/alibaba-cloud-computing/employees",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.official": {
+      "value": "https://www.alibabacloud.com",
+      "source": "https://www.alibabacloud.com",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "18108f304736f57c10841e3cb68f7b3cb43461012bb9a12950aabe1cae59ca15",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/Alibaba_Cloud",
+      "source": "https://en.wikipedia.org/wiki/Alibaba_Cloud",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "c50083b17a63f3afc4869c20198e6b94a170aab4358a480ef0200bcd825d1905",
+      "snapshot_ext": "html"
+    },
+    "snapshot.huggingface_org": {
+      "value": "https://huggingface.co/Qwen",
+      "source": "https://huggingface.co/Qwen",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "snapshot.github_org": {
+      "value": "https://github.com/alibaba",
+      "source": "https://github.com/alibaba",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "2540ca27cabc0ab372c2eaeb63fa72b8d52789e09e29ce6c7c2b026cc00b1496",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "Alibaba Cloud — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Alibaba_Cloud",
+      "author": "Wikipedia",
+      "date": "2026"
+    },
+    {
+      "title": "Alibaba Cloud — Official Site",
+      "url": "https://www.alibabacloud.com",
+      "author": "Alibaba Cloud",
+      "date": "2026"
+    },
+    {
+      "title": "Qwen — HuggingFace",
+      "url": "https://huggingface.co/Qwen",
+      "author": "Alibaba Cloud",
+      "date": "2026"
+    }
+  ]
+}

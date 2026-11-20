@@ -1,0 +1,113 @@
+{
+  "name": "RTX PRO 6000 Blackwell",
+  "slug": "rtx-pro-6000-blackwell",
+  "facts": {
+    "class": {
+      "value": "gpu",
+      "source": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "the most powerful desktop GPU ever created, redefining performance and capability for professionals",
+      "snapshot_hash": "f86d3e555dd5d5d6c299eed4fe022685b1494879235dfc16bfa8f59682cad13f",
+      "snapshot_ext": "html"
+    },
+    "snapshot.maker": {
+      "value": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
+      "source": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "snapshot_hash": "34fd46b249730aedeea4e2869da553bf8493cda44900f21c5bd9e7162dbc71ca",
+      "snapshot_ext": "html"
+    },
+    "released": {
+      "value": "2025-03-18",
+      "source": "https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-17",
+      "quote": "Mar 18, 2025",
+      "snapshot_hash": "e1c4d93bbee5539d3b887f3c28e873f3aaa1965674a2f16ff69dcc815ffd4c4a",
+      "snapshot_ext": "html"
+    },
+    "memory_gb": {
+      "value": 96,
+      "source": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-17",
+      "quote": "equipped with 96 GB of ultra-fast GDDR7 memory",
+      "snapshot_hash": "f86d3e555dd5d5d6c299eed4fe022685b1494879235dfc16bfa8f59682cad13f",
+      "snapshot_ext": "html"
+    },
+    "memory_bandwidth_gbps": {
+      "value": 1792,
+      "source": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-17",
+      "quote": "Memory Bandwidth | 1792 GB/sec",
+      "snapshot_hash": "f86d3e555dd5d5d6c299eed4fe022685b1494879235dfc16bfa8f59682cad13f",
+      "snapshot_ext": "html"
+    },
+    "power_w": {
+      "value": 600,
+      "source": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-17",
+      "quote": "Max Power Consumption | 600 W",
+      "snapshot_hash": "f86d3e555dd5d5d6c299eed4fe022685b1494879235dfc16bfa8f59682cad13f",
+      "snapshot_ext": "html"
+    },
+    "maker": {
+      "value": "NVIDIA",
+      "source": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "snapshot_hash": "f86d3e555dd5d5d6c299eed4fe022685b1494879235dfc16bfa8f59682cad13f",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units",
+      "source": "https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "RTX PRO 6000 Blackwell Workstation Edition",
+      "snapshot_hash": "e1c4d93bbee5539d3b887f3c28e873f3aaa1965674a2f16ff69dcc815ffd4c4a",
+      "snapshot_ext": "html"
+    },
+    "form_factor": {
+      "value": "dual-slot",
+      "source": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000.md",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "Form Factor | 5.4” H x 12.0” L, dual slot",
+      "snapshot_hash": "f86d3e555dd5d5d6c299eed4fe022685b1494879235dfc16bfa8f59682cad13f",
+      "snapshot_ext": "html"
+    },
+    "bf16_tflops": {
+      "value": 503.8,
+      "source": "https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "c6ef23e5dc5a17128d3d3de91c736c3f3e13fd2f5b1d42a572efe081858e7105",
+      "snapshot_ext": "html"
+    },
+    "price.swept": {
+      "value": false,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": []
+}

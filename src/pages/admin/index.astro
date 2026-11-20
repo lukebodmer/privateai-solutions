@@ -1,0 +1,133 @@
+---
+import Base from '../../layouts/Base.astro';
+import AdminDashboard from '../../components/AdminDashboard';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+import type { FactEntry } from '../../types/fact';
+import { FACT_SCHEMAS, factApplies, type EntityType } from '../../data/schemas/factSchemas';
+import { ENTITY_DIR } from '../../lib/entityTypes';
+
+interface FlatFact {
+  entity_name: string;
+  entity_slug: string;
+  entity_type: string;
+  fact_key: string;
+  value: unknown;
+  source: string | null;
+  fetched: string | null;
+  verified_by: string | null;
+  verified_at: string | null;
+  missing: boolean;  // true = key in schema but not in file
+  na: boolean;       // true = fact marked N/A for this entity
+  snapshot_hash: string | null;
+  snapshot_ext: string | null;
+}
+
+interface EntityFile {
+  slug: string;
+  name: string;
+  facts: Record<string, FactEntry>;
+  raw: Record<string, unknown>;
+}
+
+
+function readEntities(type: EntityType): EntityFile[] {
+  const fullPath = join(process.cwd(), 'src/data', ENTITY_DIR[type]);
+  return readdirSync(fullPath)
+    .filter(f => f.endsWith('.json'))
+    .map(f => {
+      const slug = f.replace(/\.json$/, '');
+      const raw = JSON.parse(readFileSync(join(fullPath, f), 'utf8'));
+      return { slug, name: raw.name || slug, facts: raw.facts || {}, raw };
+    });
+}
+
+function scanType(type: EntityType): FlatFact[] {
+  const entities = readEntities(type);
+  const schemaByKey = new Map(FACT_SCHEMAS[type].map(s => [s.key, s]));
+  const result: FlatFact[] = [];
+
+  for (const entity of entities) {
+    const { slug, name, facts } = entity;
+    const seen = new Set<string>();
+    for (const [key, entry] of Object.entries(facts)) {
+      const fe = entry as FactEntry;
+      seen.add(key);
+      // Fact declared with `applies_when` that no longer matches → hide
+      // entirely. The on-disk data is preserved untouched; it just stops
+      // being surfaced (e.g. HF snapshot facts on a model whose distribution
+      // flipped to closed). Absence of a schema entry means "extra fact on
+      // disk" — still surface it so it doesn't silently disappear.
+      const schemaEntry = schemaByKey.get(key);
+      if (schemaEntry && !factApplies(schemaEntry, entity)) continue;
+      result.push({
+        entity_name: name, entity_slug: slug, entity_type: type,
+        fact_key: key,
+        value: fe.value, source: fe.source, fetched: fe.fetched,
+        verified_by: fe.verified_by, verified_at: fe.verified_at,
+        missing: false,
+        na: fe.na === true,
+        snapshot_hash: fe.snapshot_hash ?? null,
+        snapshot_ext: fe.snapshot_ext ?? null,
+      });
+    }
+    for (const [key, schemaEntry] of schemaByKey) {
+      if (seen.has(key)) continue;
+      if (!factApplies(schemaEntry, entity)) continue;   // schema-inapplicable — don't render as missing
+      result.push({
+        entity_name: name, entity_slug: slug, entity_type: type,
+        fact_key: key,
+        value: null, source: null, fetched: null,
+        verified_by: null, verified_at: null,
+        missing: true, na: false,
+        snapshot_hash: null, snapshot_ext: null,
+      });
+    }
+  }
+  return result;
+}
+
+const allFacts: FlatFact[] = [
+  ...scanType('model'),
+  ...scanType('build'),
+  ...scanType('part'),
+  ...scanType('company'),
+  ...scanType('harness'),
+];
+
+const entityPayloads: Record<EntityType, EntityFile[]> = {
+  model: readEntities('model'),
+  build: readEntities('build'),
+  part: readEntities('part'),
+  company: readEntities('company'),
+  harness: readEntities('harness'),
+};
+
+// Fact sort: entity type → entity name → fact key, my_take pinned last.
+allFacts.sort((a, b) => {
+  const t = a.entity_type.localeCompare(b.entity_type);
+  if (t !== 0) return t;
+  const n = a.entity_name.localeCompare(b.entity_name);
+  if (n !== 0) return n;
+  const aM = a.fact_key === 'my_take' ? 1 : 0;
+  const bM = b.fact_key === 'my_take' ? 1 : 0;
+  if (aM !== bM) return aM - bM;
+  return a.fact_key.localeCompare(b.fact_key);
+});
+
+const isDev = import.meta.env.DEV;
+---
+
+{isDev && <>
+<Base title="Admin — Dashboard" description="Provenance dashboard for all site facts">
+  <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 py-10">
+
+    <AdminDashboard
+      facts={allFacts}
+      entityPayloads={entityPayloads}
+      client:load
+    />
+
+  </main>
+</Base>
+</>}

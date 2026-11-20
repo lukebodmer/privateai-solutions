@@ -1,0 +1,25 @@
+---
+// A small, quiet arrow between two sections of a long page that scrolls to
+// the next one. `label` names where it goes, for screen readers and as the
+// tooltip; the arrow itself says nothing.
+interface Props {
+  href: string;
+  label: string;
+  class?: string;
+}
+
+const { href, label, class: className = '' } = Astro.props;
+---
+
+<div class={`flex justify-center ${className}`}>
+  <a
+    href={href}
+    title={label}
+    aria-label={`Next: ${label}`}
+    class="group flex items-center justify-center w-8 h-8 rounded-full border border-nord-800 text-nord-600 hover:border-frost-700 hover:text-frost-400 transition-colors"
+  >
+    <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 6l4 4 4-4" />
+    </svg>
+  </a>
+</div>

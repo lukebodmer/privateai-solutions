@@ -1,0 +1,321 @@
+---
+/**
+ * The hero's office, running.
+ *
+ * The room Neuman lives in, built by `assets/office/build_lib.py` and exported
+ * to `public/office/office.glb`. The people type, talk, cross and bounce a
+ * leg, the coffee is reached for, and the light runs along the lines to the
+ * cabinet; the model carries all of it, so this component only has to load it,
+ * set it in the dark, and sweep the camera slowly across its front.
+ *
+ * glTF splits an animation into one clip per animated object, so every clip
+ * plays at once on one mixer, the way ArmScene does it.
+ */
+interface Props {
+  class?: string;
+}
+
+const { class: cls = '' } = Astro.props;
+---
+
+<div class={`pointer-events-none ${cls}`} data-office aria-hidden="true">
+  <div class="office-field" data-office-field></div>
+</div>
+
+<style>
+  /* Where the room sits. On a wide screen the words take the left of the
+     panel, so the office takes the right; below lg it fills the row the hero
+     gives it among the words. */
+  .office-field {
+    position: absolute;
+    top: 3%;
+    right: 1%;
+    width: 60%;
+    height: 94%;
+  }
+
+  @media (max-width: 1023px) {
+    .office-field {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+    }
+  }
+</style>
+
+<script>
+  import type * as THREE from 'three';
+
+  const mount = document.querySelector<HTMLElement>('[data-office-field]');
+  if (mount) {
+    boot(mount).catch(() => {
+      // No WebGL, or the room would not load: close the slot rather than leave
+      // the hero holding an empty one.
+      if (mount.parentElement) mount.parentElement.style.display = 'none';
+    });
+  }
+
+  async function boot(mount: HTMLElement) {
+    const three = await import('three');
+    const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new three.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+    } catch {
+      throw new Error('WebGL is not available');
+    }
+
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearAlpha(0);
+    renderer.outputColorSpace = three.SRGBColorSpace;
+    renderer.toneMapping = three.AgXToneMapping;
+    renderer.toneMappingExposure = 0.95;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = three.PCFSoftShadowMap;
+    renderer.domElement.style.cssText = 'display:block;width:100%;height:100%';
+    mount.appendChild(renderer.domElement);
+
+    const scene = new three.Scene();
+    const camera = new three.PerspectiveCamera(32, 1, 0.1, 400);
+
+    // The room the glass and the server reflect: frost above, the page's
+    // near-black below, one soft box for a highlight. Without it the cabinet's
+    // dark glass reads as black paint.
+    const envScene = new three.Scene();
+    envScene.add(
+      new three.Mesh(
+        new three.SphereGeometry(1, 32, 16),
+        new three.ShaderMaterial({
+          side: three.BackSide,
+          vertexShader: /* glsl */ `
+            varying vec3 vDir;
+            void main() {
+              vDir = normalize(position);
+              gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+          `,
+          fragmentShader: /* glsl */ `
+            varying vec3 vDir;
+            void main() {
+              vec3 dir = normalize(vDir);
+              float t = clamp(dir.y * 0.5 + 0.5, 0.0, 1.0);
+              vec3 below = vec3(0.018, 0.022, 0.028);
+              vec3 above = vec3(0.72, 0.92, 1.12);
+              vec3 col = mix(below, above, smoothstep(0.38, 0.95, t));
+              float box = smoothstep(0.48, 0.90, dot(dir, normalize(vec3(-0.40, 0.88, 0.28))));
+              col += box * vec3(2.6, 3.1, 3.7);
+              gl_FragColor = vec4(col, 1.0);
+            }
+          `,
+        }),
+      ),
+    );
+
+    const pmrem = new three.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(envScene, 0.04).texture;
+    scene.environmentIntensity = 0.55;
+    scene.add(new three.AmbientLight(0x4c566a, 0.12));
+
+    // Nord: snow-white key, frost rim, sky fill. The key is the only one that
+    // casts, so there is one soft shadow rather than three fighting ones.
+    const key = new three.DirectionalLight(0xdfe9f2, 1.35);
+    key.position.set(-10, 17, 13);
+    key.castShadow = true;
+    key.shadow.mapSize.set(2048, 2048);
+    key.shadow.camera.near = 1;
+    key.shadow.camera.far = 70;
+    key.shadow.bias = -0.0004;
+    key.shadow.normalBias = 0.02;
+    scene.add(key);
+    scene.add(key.target);
+
+    const rim = new three.DirectionalLight(0x88c0d0, 0.6);
+    rim.position.set(9, 7, -14);
+    scene.add(rim);
+
+    const fill = new three.DirectionalLight(0x81a1c1, 0.35);
+    fill.position.set(14, 5, 9);
+    scene.add(fill);
+
+    const gltf = await new GLTFLoader().loadAsync('/office/office.glb');
+    const model: THREE.Object3D = gltf.scene;
+    scene.add(model);
+
+    const mixer = new three.AnimationMixer(model);
+    for (const clip of gltf.animations) mixer.clipAction(clip).play();
+    const duration = Math.max(...gltf.animations.map((clip) => clip.duration), 0);
+
+    const box = new three.Box3().setFromObject(model);
+    const centre = box.getCenter(new three.Vector3());
+    key.target.position.copy(centre);
+    key.shadow.camera.left = -11;
+    key.shadow.camera.right = 11;
+    key.shadow.camera.top = 11;
+    key.shadow.camera.bottom = -11;
+    key.shadow.camera.updateProjectionMatrix();
+
+    // Glass and the glowing lines are transparent; a shadow map is depth, so
+    // glass written into it would throw a solid black slab. They cast nothing.
+    const lineMats: THREE.MeshStandardMaterial[] = [];
+    const seenMats = new Set<THREE.Material>();
+    model.traverse((child) => {
+      const mesh = child as THREE.Mesh;
+      if (!mesh.isMesh) return;
+      const material = mesh.material as THREE.Material;
+      mesh.castShadow = !material.transparent;
+      mesh.receiveShadow = !material.transparent;
+      const standard = material as THREE.MeshStandardMaterial;
+      if ((standard.name === 'data_line' || standard.name === 'neon') && !seenMats.has(material)) {
+        seenMats.add(material);
+        standard.userData.base = standard.emissiveIntensity;
+        lineMats.push(standard);
+      }
+    });
+
+    // Seen from the same three-quarter corner the stills were rendered from,
+    // in the model's own coordinates (Y up, the open front towards +Z).
+    const baseYaw = Math.PI / 4;
+    const basePitch = Math.asin(1 / Math.sqrt(3));
+
+    const corners = [
+      [box.min.x, box.min.y, box.min.z], [box.max.x, box.min.y, box.min.z],
+      [box.min.x, box.max.y, box.min.z], [box.max.x, box.max.y, box.min.z],
+      [box.min.x, box.min.y, box.max.z], [box.max.x, box.min.y, box.max.z],
+      [box.min.x, box.max.y, box.max.z], [box.max.x, box.max.y, box.max.z],
+    ].map(([x, y, z]) => new three.Vector3(x, y, z).sub(centre));
+
+    const dir = new three.Vector3();
+    const right = new three.Vector3();
+    const up = new three.Vector3();
+    const back = new three.Vector3();
+    let baseDistance = 1;
+
+    // How far back the view must sit for every corner to be inside both fields
+    // of view. Measured once from the opening angle; the arc is small enough
+    // that the frame does not need to breathe with it.
+    function fit() {
+      const vFov = three.MathUtils.degToRad(camera.fov);
+      const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+
+      dir.set(Math.sin(baseYaw) * Math.cos(basePitch), Math.sin(basePitch), Math.cos(baseYaw) * Math.cos(basePitch));
+      camera.position.copy(centre).addScaledVector(dir, 1);
+      camera.lookAt(centre);
+      camera.updateMatrixWorld();
+
+      right.setFromMatrixColumn(camera.matrixWorld, 0);
+      up.setFromMatrixColumn(camera.matrixWorld, 1);
+      back.setFromMatrixColumn(camera.matrixWorld, 2);
+
+      let need = 0;
+      for (const p of corners) {
+        need = Math.max(
+          need,
+          p.dot(back) + Math.abs(p.dot(right)) / Math.tan(hFov / 2),
+          p.dot(back) + Math.abs(p.dot(up)) / Math.tan(vFov / 2),
+        );
+      }
+      // A wide screen keeps a little air around the room, which sits beside
+      // the words; between the words below lg it takes the whole width.
+      const air = window.matchMedia('(min-width: 1024px)').matches ? 1.06 : 1.0;
+      baseDistance = need * air;
+    }
+
+    function place(yawOffset: number, pitchOffset: number) {
+      const yaw = baseYaw + yawOffset;
+      const pitch = basePitch + pitchOffset;
+      dir.set(Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), Math.cos(yaw) * Math.cos(pitch));
+      camera.position.copy(centre).addScaledVector(dir, baseDistance);
+      camera.lookAt(centre);
+      camera.updateMatrixWorld();
+    }
+
+    function resize() {
+      const w = mount.clientWidth;
+      const h = mount.clientHeight;
+      if (!w || !h) return;
+
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h, false);
+      fit();
+      place(0, 0);
+
+      if (reduced) renderer.render(scene, camera);
+    }
+
+    resize();
+    new ResizeObserver(resize).observe(mount);
+
+    // The camera sweeps slowly back and forth across the room's open side.
+    // Reduced motion asks for no sweep, so it gets the opening pose instead.
+    if (reduced) {
+      mixer.setTime(Math.min(duration * 0.5, 4.4));
+      model.updateMatrixWorld(true);
+      renderer.render(scene, camera);
+      return;
+    }
+
+    const SWEEP = 0.16;
+    const SWEEP_PERIOD = 40;
+    const PULSE_PERIOD = 2.4;
+
+    let raf = 0;
+    let running = false;
+    let last = performance.now();
+    let elapsed = 0;
+
+    function frame(now: number) {
+      raf = requestAnimationFrame(frame);
+      const dt = Math.min(0.1, (now - last) / 1000);
+      last = now;
+      elapsed += dt;
+
+      mixer.update(dt);
+
+      const sweep = Math.sin((elapsed / SWEEP_PERIOD) * Math.PI * 2);
+      const lift = Math.sin((elapsed / SWEEP_PERIOD) * Math.PI * 2 + 0.9);
+      place(SWEEP * sweep, 0.012 * lift);
+
+      const pulse = 0.5 + 0.5 * Math.sin((elapsed / PULSE_PERIOD) * Math.PI * 2);
+      for (const material of lineMats) {
+        const base = (material.userData.base as number) ?? 1;
+        material.emissiveIntensity = base * (0.75 + (material.name === 'neon' ? 1.1 : 0.55) * pulse);
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    function play() {
+      if (running) return;
+      running = true;
+      last = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
+
+    function pause() {
+      running = false;
+      cancelAnimationFrame(raf);
+    }
+
+    new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) play();
+        else pause();
+      },
+      { threshold: 0.15 },
+    ).observe(mount);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) pause();
+      else play();
+    });
+
+    play();
+  }
+</script>

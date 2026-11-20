@@ -1,0 +1,37 @@
+---
+// Credit for the benchmark sources a page actually shows, under the charts
+// that show them. Arena's ratings are CC BY 4.0, which asks for a credit and
+// the licence wherever they appear; Artificial Analysis is credited the same
+// way out of courtesy. A source this map does not know is named by its host.
+interface Props {
+  tiles: { source_url: string }[];
+  class?: string;
+}
+
+const { tiles, class: className = '' } = Astro.props;
+
+const KNOWN: Record<string, { name: string; url: string; licence?: { name: string; url: string } }> = {
+  'artificialanalysis.ai': { name: 'Artificial Analysis', url: 'https://artificialanalysis.ai/' },
+  'arena.ai': {
+    name: 'Arena',
+    url: 'https://arena.ai/',
+    licence: { name: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/' },
+  },
+};
+
+const hosts = [...new Set(tiles.map(t => new URL(t.source_url).hostname.replace(/^www\./, '')))];
+const sources = hosts.map(h => KNOWN[h] ?? { name: h, url: `https://${h}/` });
+---
+
+{sources.length > 0 && (
+  <p class={`text-[10px] text-nord-600 ${className}`}>
+    Benchmarks from
+    {sources.map((s, i) => (
+      <>
+        {i > 0 && (i === sources.length - 1 ? ' and ' : ', ')}
+        <a href={s.url} target="_blank" rel="noopener noreferrer" class="hover:text-nord-400 transition-colors">{s.name}</a>
+        {s.licence && <> (<a href={s.licence.url} target="_blank" rel="noopener noreferrer" class="hover:text-nord-400 transition-colors">{s.licence.name}</a>)</>}
+      </>
+    ))}.
+  </p>
+)}

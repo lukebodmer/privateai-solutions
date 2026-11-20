@@ -1,0 +1,125 @@
+{
+  "name": "DeepSeek",
+  "slug": "deepseek",
+  "facts": {
+    "country": {
+      "value": "China",
+      "source": "https://www.deepseek.com",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-05"
+    },
+    "founded": {
+      "value": "2023-07-17",
+      "source": "https://www.deepseek.com",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "weights_availability": {
+      "value": "open-fully",
+      "source": "https://www.deepseek.com",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "my_take": {
+      "value": "Deepseek is another company out of China that started just in twenty twenty-three. It's a medium sized company with under four hundred employees and a private valuation of around $74 billion. \n\nDeepseek produced one of my favorite models of all time. Deepseek V 4.1 flash. This was the model that really caught everyone's attention because people started running it locally and were getting results comparable to Opus 5.5. \n\nIt should be exciting to see what Deepseek does in the future.",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "hq_city": {
+      "value": "Hangzhou",
+      "source": "https://en.wikipedia.org/wiki/DeepSeek",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "legal_structure": {
+      "value": "for-profit",
+      "source": "https://en.wikipedia.org/wiki/DeepSeek",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "ownership": {
+      "value": "subsidiary",
+      "source": "https://en.wikipedia.org/wiki/DeepSeek",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parent_company": {
+      "value": "High-Flyer",
+      "source": "https://en.wikipedia.org/wiki/DeepSeek",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "employee_tier": {
+      "value": "50-500",
+      "source": "https://en.wikipedia.org/wiki/DeepSeek",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.official": {
+      "value": "https://www.deepseek.com",
+      "source": "https://www.deepseek.com",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "3b248d5babf52e4ab2606b8e6fae8208dc9f5a65a0e0a39735fb83333586e8b9",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/DeepSeek",
+      "source": "https://en.wikipedia.org/wiki/DeepSeek",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "751fb2c17b64b2d6a9577e3f3feefb976c55dfa61230e3da9705921ce79685c3",
+      "snapshot_ext": "html"
+    },
+    "snapshot.huggingface_org": {
+      "value": "https://huggingface.co/deepseek-ai",
+      "source": "https://huggingface.co/deepseek-ai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "d3d8479c92a158757afa91afeb4606dc86fd9cf66dcd7b66864248fbe29fccb1",
+      "snapshot_ext": "html"
+    },
+    "snapshot.github_org": {
+      "value": "https://github.com/deepseek-ai",
+      "source": "https://github.com/deepseek-ai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "c2dd42422f6e7c8172427d09f0204caf62b573454b7b3f462e2ada38873d4b57",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "DeepSeek — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/DeepSeek",
+      "author": "Wikipedia",
+      "date": "2023"
+    },
+    {
+      "title": "DeepSeek AI — HuggingFace",
+      "url": "https://huggingface.co/deepseek-ai",
+      "author": "DeepSeek AI",
+      "date": "2023"
+    },
+    {
+      "title": "DeepSeek AI — GitHub",
+      "url": "https://github.com/deepseek-ai",
+      "author": "DeepSeek AI",
+      "date": "2023"
+    }
+  ]
+}

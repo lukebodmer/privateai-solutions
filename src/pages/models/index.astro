@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import ModelTable from '../../components/ModelTable.astro';
+import BenchmarkGrid from '../../components/BenchmarkGrid.astro';
+import { loadEntities, factStr } from '../../lib/facts';
+
+// Open-weight models only. Closed models exist as entities (for chart
+// comparison + dashboard tracking) but don't appear as rows here.
+const models = loadEntities('model').filter(m => factStr(m, 'distribution') !== 'closed');
+const lastUpdated = '2026-09-04';
+---
+
+<Base
+  title="Open-Weight Models for Neuman — Private AI Solutions"
+  description="Open-weight AI models tested and preconfigured for Neuman, with benchmarks, memory requirements, and licenses. Runs on your own hardware."
+>
+  <main class="max-w-5xl w-full mx-auto px-4 sm:px-6 py-10">
+
+    <header class="mb-8 pb-6 border-b border-nord-800">
+      <h1 class="text-xl font-semibold text-nord-100 tracking-tight">Models</h1>
+      <p class="text-sm text-nord-400 leading-relaxed mt-1.5 max-w-xl">
+        Open-weight models we've tested and preconfigured for
+        <a href="/" class="text-frost-400 hover:text-frost-300">Neuman</a>.
+        Each of these models rivals the closed-source frontier models and can run locally on
+        computers you own. Select a model below to learn more.
+      </p>
+      <p class="text-xs text-nord-500 mt-2">Updated {lastUpdated}</p>
+    </header>
+
+    <BenchmarkGrid />
+
+    <ModelTable models={models} />
+
+  </main>
+</Base>

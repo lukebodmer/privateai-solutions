@@ -1,0 +1,113 @@
+{
+  "name": "NVIDIA DGX Spark (128 GB, 4 TB)",
+  "slug": "dgx-spark",
+  "facts": {
+    "class": {
+      "value": "system",
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "d873ee2dbd355751ce5a1fb6eb51d8ccc137022c465e62e5097ba8bf459f6796",
+      "snapshot_ext": "html"
+    },
+    "snapshot.maker": {
+      "value": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "d873ee2dbd355751ce5a1fb6eb51d8ccc137022c465e62e5097ba8bf459f6796",
+      "snapshot_ext": "html"
+    },
+    "placement": {
+      "value": "desk",
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "150 mm L x 150 mm W x 50.5 mm H",
+      "snapshot_hash": "d873ee2dbd355751ce5a1fb6eb51d8ccc137022c465e62e5097ba8bf459f6796",
+      "snapshot_ext": "html"
+    },
+    "memory_gb": {
+      "value": 128,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "128 GB LPDDR5x, coherent unified system memory",
+      "snapshot_hash": "d873ee2dbd355751ce5a1fb6eb51d8ccc137022c465e62e5097ba8bf459f6796",
+      "snapshot_ext": "html"
+    },
+    "memory_bandwidth_gbps": {
+      "value": 273,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "Memory Bandwidth 273 GB/s",
+      "snapshot_hash": "d873ee2dbd355751ce5a1fb6eb51d8ccc137022c465e62e5097ba8bf459f6796",
+      "snapshot_ext": "html"
+    },
+    "power_w": {
+      "value": 240,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "Power Supply 240 Watts",
+      "snapshot_hash": "d873ee2dbd355751ce5a1fb6eb51d8ccc137022c465e62e5097ba8bf459f6796",
+      "snapshot_ext": "html"
+    },
+    "maker": {
+      "value": "NVIDIA",
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "Powered by the NVIDIA GB10 Grace Blackwell Superchip",
+      "snapshot_hash": "d873ee2dbd355751ce5a1fb6eb51d8ccc137022c465e62e5097ba8bf459f6796",
+      "snapshot_ext": "html"
+    },
+    "gpu_count": {
+      "value": 1,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "NVIDIA GB10 Grace Blackwell Superchip",
+      "snapshot_hash": "d873ee2dbd355751ce5a1fb6eb51d8ccc137022c465e62e5097ba8bf459f6796",
+      "snapshot_ext": "html"
+    },
+    "price.new_usd": {
+      "value": 6950,
+      "source": "https://marketplace.nvidia.com/en-us/developer/dgx-spark/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "$6,950.00"
+    },
+    "price.swept": {
+      "value": false,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": [
+    {
+      "title": "NVIDIA DGX Spark: product page and specifications",
+      "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "author": "NVIDIA",
+      "date": "2026"
+    },
+    {
+      "title": "NVIDIA DGX Spark on the NVIDIA Marketplace",
+      "url": "https://marketplace.nvidia.com/en-us/developer/dgx-spark/",
+      "author": "NVIDIA",
+      "date": "2026"
+    }
+  ]
+}

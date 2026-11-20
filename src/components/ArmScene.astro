@@ -1,0 +1,630 @@
+---
+// The test-tube arm, animated in Blender and exported to
+// public/blog/blender-arm/robot-arm.glb.
+//
+// The clip is one work cycle: the arm parks, swings over the middle tube,
+// closes the claw, lifts it clear of the rack, carries it round, holds it up,
+// brings it back and sets it down. The last frame is the first, so the loop
+// joins without a cut.
+//
+// glTF splits an animation into one clip per animated object — the four
+// joints, the three fingers and the tube — so every clip plays at once on one
+// mixer, which is what puts the arm and the tube it is holding back together.
+interface Props {
+  class?: string;
+  caption?: string;
+}
+
+const { class: cls = '', caption } = Astro.props;
+---
+
+<figure class={cls} data-arm>
+  <div
+    class="relative aspect-[4/3] rounded-xl border border-nord-800 bg-nord-950 overflow-hidden"
+  >
+    <!-- The still from the render, hidden unless the canvas cannot start:
+         no WebGL, or the model does not arrive. It is not a poster — the
+         still is lit like a product shot and the scene is lit like the page,
+         so showing it first would flash. -->
+    <img
+      src="/blog/blender-arm/16-final-render.webp"
+      alt="A three-fingered robot arm reaching into a rack of test tubes"
+      class="hidden absolute inset-0 w-full h-full object-cover"
+      data-arm-fallback
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="absolute inset-0" data-arm-mount aria-hidden="true"></div>
+  </div>
+  {caption && (
+    <figcaption class="mt-3 text-xs text-nord-500 leading-relaxed">{caption}</figcaption>
+  )}
+</figure>
+
+<script>
+  import type * as THREE from 'three';
+
+  const mount = document.querySelector<HTMLElement>('[data-arm-mount]');
+  if (mount) {
+    boot(mount).catch(() => {
+      mount.closest<HTMLElement>('[data-arm]')
+        ?.querySelector('[data-arm-fallback]')
+        ?.classList.remove('hidden');
+    });
+  }
+
+  async function boot(mount: HTMLElement) {
+    const three = await import('three');
+    const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new three.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+    } catch {
+      throw new Error('WebGL is not available');
+    }
+
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearAlpha(0);
+    renderer.outputColorSpace = three.SRGBColorSpace;
+    renderer.toneMapping = three.AgXToneMapping;
+    renderer.toneMappingExposure = 1.08;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = three.PCFSoftShadowMap;
+    renderer.domElement.style.cssText = 'display:block;width:100%;height:100%';
+    mount.appendChild(renderer.domElement);
+
+    const scene = new three.Scene();
+    const camera = new three.PerspectiveCamera(34, 1, 0.01, 20);
+
+    // A room for the metal to reflect. An arm that is mostly aluminium looks
+    // black without one: the polished faces have almost no diffuse response,
+    // so what you see of them is whatever is above and behind the camera.
+    // Frost above, the page's near-black below, and one soft box so a flat
+    // face mirrors a gradient rather than a flat ceiling.
+    const envScene = new three.Scene();
+    envScene.add(
+      new three.Mesh(
+        new three.SphereGeometry(1, 32, 16),
+        new three.ShaderMaterial({
+          side: three.BackSide,
+          vertexShader: /* glsl */ `
+            varying vec3 vDir;
+            void main() {
+              vDir = normalize(position);
+              gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+          `,
+          fragmentShader: /* glsl */ `
+            varying vec3 vDir;
+            void main() {
+              vec3 dir = normalize(vDir);
+              float t = clamp(dir.y * 0.5 + 0.5, 0.0, 1.0);
+              vec3 below = vec3(0.020, 0.024, 0.030);
+              vec3 above = vec3(0.80, 1.05, 1.30);
+              vec3 col = mix(below, above, smoothstep(0.40, 0.95, t));
+              float box = smoothstep(0.50, 0.88, dot(dir, normalize(vec3(-0.45, 0.85, 0.35))));
+              col += box * vec3(3.2, 3.8, 4.4);
+              gl_FragColor = vec4(col, 1.0);
+            }
+          `,
+        }),
+      ),
+    );
+
+    const pmrem = new three.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(envScene, 0.04).texture;
+    scene.environmentIntensity = 0.95;
+    scene.add(new three.AmbientLight(0x4c566a, 0.25));
+
+    // Nord: snow-white key, frost rim, sky fill. The key is the only one that
+    // casts: one shadow soft enough to read as a softbox, not three that fight.
+    const key = new three.DirectionalLight(0xd8dee9, 2.4);
+    key.position.set(-0.6, 1.0, 0.7);
+    key.castShadow = true;
+    key.shadow.mapSize.set(1024, 1024);
+    key.shadow.camera.near = 0.05;
+    key.shadow.camera.far = 4;
+    key.shadow.bias = -0.0006;
+    key.shadow.normalBias = 0.004;
+    scene.add(key);
+    scene.add(key.target);
+
+    const rim = new three.DirectionalLight(0x88c0d0, 2.6);
+    rim.position.set(0.9, 0.5, -0.9);
+    scene.add(rim);
+
+    const fill = new three.DirectionalLight(0x81a1c1, 1.2);
+    fill.position.set(0.9, 0.3, 0.6);
+    scene.add(fill);
+
+    const gltf = await new GLTFLoader().loadAsync('/blog/blender-arm/robot-arm.glb');
+    const model: THREE.Object3D = gltf.scene;
+    const clips: THREE.AnimationClip[] = gltf.animations;
+    scene.add(model);
+
+    const mixer = new three.AnimationMixer(model);
+    for (const clip of clips) mixer.clipAction(clip).play();
+    const duration = Math.max(...clips.map((clip) => clip.duration));
+
+    // The arm sweeps a wider volume than any one pose occupies, so the camera
+    // is fitted to the animation, not to the frame it happens to load in.
+    const box = new three.Box3();
+    const pose = new three.Box3();
+    const SAMPLES = 16;
+    for (let i = 0; i < SAMPLES; i++) {
+      mixer.setTime((i / SAMPLES) * duration);
+      model.updateMatrixWorld(true);
+      pose.setFromObject(model);
+      box.union(pose);
+    }
+    mixer.setTime(0);
+    model.updateMatrixWorld(true);
+
+    const centre = box.getCenter(new three.Vector3());
+    key.target.position.copy(centre);
+    key.shadow.camera.left = -0.95;
+    key.shadow.camera.right = 0.95;
+    key.shadow.camera.top = 0.95;
+    key.shadow.camera.bottom = -0.95;
+    key.shadow.camera.updateProjectionMatrix();
+
+    // Opaque parts cast into the shadow map. The tubes do not: a shadow map
+    // is depth, so a caster is either in it or not, and glass written into it
+    // throws the same black shadow as the cap. Theirs is drawn below instead.
+    model.traverse((child) => {
+      const mesh = child as THREE.Mesh;
+      if (!mesh.isMesh) return;
+      const material = mesh.material as THREE.Material;
+      mesh.castShadow = !material.transparent;
+    });
+
+    // A plane that shows only the shadow the arm drops on it, so the base
+    // meets the floor instead of hovering over it.
+    const shadowCatcher = new three.Mesh(
+      new three.PlaneGeometry(4, 4),
+      new three.ShadowMaterial({ color: 0x000000, opacity: 0.16 }),
+    );
+    shadowCatcher.rotation.x = -Math.PI / 2;
+    shadowCatcher.position.set(centre.x, box.min.y, centre.z);
+    shadowCatcher.renderOrder = 0;
+    shadowCatcher.receiveShadow = true;
+    scene.add(shadowCatcher);
+
+    // The floor: a frost hairline on a 40 mm pitch, faded out before the
+    // panel's edge, so the arm sits in the dark rather than on a plane.
+    const gridMaterial = new three.ShaderMaterial({
+      uniforms: {
+        uColor: { value: new three.Color(0x88c0d0) },
+        uSpacing: { value: 0.04 },
+        uFadeStart: { value: 0.14 },
+        uFadeEnd: { value: 0.46 },
+        uOrigin: { value: new three.Vector3(centre.x, 0, centre.z) },
+      },
+      vertexShader: /* glsl */ `
+        varying vec3 vWorld;
+        void main() {
+          vec4 world = modelMatrix * vec4(position, 1.0);
+          vWorld = world.xyz;
+          gl_Position = projectionMatrix * viewMatrix * world;
+        }
+      `,
+      fragmentShader: /* glsl */ `
+        uniform vec3 uColor;
+        uniform vec3 uOrigin;
+        uniform float uSpacing;
+        uniform float uFadeStart;
+        uniform float uFadeEnd;
+        varying vec3 vWorld;
+        void main() {
+          vec2 p = vWorld.xz - uOrigin.xz;
+          vec2 cell = abs(fract(p / uSpacing - 0.5) - 0.5) / 0.02;
+          float line = 1.0 - min(min(cell.x, cell.y), 1.0);
+          float fade = 1.0 - smoothstep(uFadeStart, uFadeEnd, length(p));
+          float alpha = line * fade * 0.10;
+          if (alpha < 0.002) discard;
+          gl_FragColor = vec4(uColor, alpha);
+          #include <colorspace_fragment>
+        }
+      `,
+      transparent: true,
+      depthWrite: false,
+    });
+    const grid = new three.Mesh(new three.PlaneGeometry(4, 4), gridMaterial);
+    grid.rotation.x = -Math.PI / 2;
+    grid.position.set(centre.x, box.min.y + 0.0008, centre.z);
+    grid.renderOrder = 2;
+    scene.add(grid);
+
+    // A glass tube does cast a shadow — a very faint one — and there is no
+    // per-object shadow strength to ask for. So the tubes' shadows are drawn
+    // rather than projected: one soft capsule per tube, running from where its
+    // foot lands to where its mouth lands along the key light, faint enough to
+    // read as glass and thinning as a tube is lifted.
+    //
+    // It is drawn on two surfaces, because one would not do: the floor, where
+    // a carried tube shows, and the rack's top, where the standing ones do. A
+    // floor-only shadow is hidden under the rack at exactly the moment the
+    // tubes are standing in it.
+    const tubes: THREE.Object3D[] = [];
+    model.traverse((child) => {
+      if (child.name.startsWith('TestTube_') && !child.name.includes('Cap')) tubes.push(child);
+    });
+
+    const tubeLengthBox = new three.Box3();
+    if (tubes.length) tubeLengthBox.setFromObject(tubes[0]);
+    const tubeLength = tubes.length ? tubeLengthBox.max.y - tubeLengthBox.min.y : 0;
+    const lightDir = new three.Vector3().subVectors(key.target.position, key.position).normalize();
+
+    interface TubeShadow {
+      height: number;
+      strength: number;
+      base: { value: THREE.Vector2[] };
+      tip: { value: THREE.Vector2[] };
+      fade: { value: number[] };
+    }
+
+    const tubeShadows: TubeShadow[] = [];
+
+    function addTubeShadow(
+      x: number, y: number, z: number,
+      width: number, depth: number, yaw: number,
+      height: number, strength: number,
+    ) {
+      const base = { value: tubes.map(() => new three.Vector2()) };
+      const tip = { value: tubes.map(() => new three.Vector2()) };
+      const fade = { value: tubes.map(() => 0) };
+
+      const material = new three.ShaderMaterial({
+        uniforms: { uBase: base, uTip: tip, uStrength: fade, uWidth: { value: 0.013 } },
+        defines: { TUBES: tubes.length },
+        vertexShader: /* glsl */ `
+          varying vec3 vWorld;
+          void main() {
+            vec4 world = modelMatrix * vec4(position, 1.0);
+            vWorld = world.xyz;
+            gl_Position = projectionMatrix * viewMatrix * world;
+          }
+        `,
+        fragmentShader: /* glsl */ `
+          uniform vec2 uBase[TUBES];
+          uniform vec2 uTip[TUBES];
+          uniform float uStrength[TUBES];
+          uniform float uWidth;
+          varying vec3 vWorld;
+          void main() {
+            vec2 p = vWorld.xz;
+            float a = 0.0;
+            for (int i = 0; i < TUBES; i++) {
+              if (uStrength[i] > 0.0) {
+                vec2 ba = uTip[i] - uBase[i];
+                vec2 pa = p - uBase[i];
+                float h = clamp(dot(pa, ba) / max(dot(ba, ba), 1e-6), 0.0, 1.0);
+                float d = length(pa - ba * h);
+                a += (1.0 - smoothstep(uWidth * 0.45, uWidth * 1.7, d)) * uStrength[i];
+              }
+            }
+            if (a < 0.002) discard;
+            gl_FragColor = vec4(0.0, 0.0, 0.0, min(a, 0.5));
+          }
+        `,
+        transparent: true,
+        depthWrite: false,
+      });
+
+      const mesh = new three.Mesh(new three.PlaneGeometry(width, depth), material);
+      mesh.rotation.order = 'YXZ';
+      mesh.rotation.set(-Math.PI / 2, yaw, 0);
+      mesh.position.set(x, y, z);
+      mesh.renderOrder = 1;
+      scene.add(mesh);
+
+      tubeShadows.push({ height, strength, base, tip, fade });
+    }
+
+    if (tubes.length) {
+      addTubeShadow(centre.x, box.min.y + 0.0012, centre.z, 4, 4, 0, box.min.y, 0.085);
+
+      const rack = model.getObjectByName('Rack_Block') as THREE.Mesh | undefined;
+      if (rack) {
+        rack.geometry.computeBoundingBox();
+        const bb = rack.geometry.boundingBox;
+        if (bb) {
+          const top = rack.localToWorld(new three.Vector3(
+            (bb.min.x + bb.max.x) / 2, bb.max.y, (bb.min.z + bb.max.z) / 2,
+          ));
+          const yaw = new three.Euler().setFromRotationMatrix(rack.matrixWorld, 'YXZ').y;
+          addTubeShadow(
+            top.x, top.y + 0.0006, top.z,
+            bb.max.x - bb.min.x, bb.max.z - bb.min.z, yaw,
+            top.y, 0.11,
+          );
+        }
+      }
+    }
+
+    const tubePos = new three.Vector3();
+
+    // Where a point at height y lands on a surface at height h, along the key.
+    function projectTo(h: number, y: number, p: THREE.Vector3, out: THREE.Vector2) {
+      const t = (y - h) / -lightDir.y;
+      return out.set(p.x + lightDir.x * t, p.z + lightDir.z * t);
+    }
+
+    function updateTubeShadows() {
+      for (const shadow of tubeShadows) {
+        for (let i = 0; i < tubes.length; i++) {
+          tubes[i].getWorldPosition(tubePos);
+          const foot = Math.max(tubePos.y, shadow.height);
+          const head = tubePos.y + tubeLength;
+
+          if (head - foot < 0.002) {
+            shadow.fade.value[i] = 0;
+            continue;
+          }
+
+          projectTo(shadow.height, foot, tubePos, shadow.base.value[i]);
+          projectTo(shadow.height, head, tubePos, shadow.tip.value[i]);
+
+          // Up in the air a tube's shadow spreads and thins; here it just
+          // thins, which is the part the eye reads. It never goes to nothing:
+          // a carried tube still has to leave a mark on the floor.
+          const lift = Math.max(0, tubePos.y - box.min.y - 0.012);
+          shadow.fade.value[i] = shadow.strength * three.MathUtils.clamp(1 - lift / 0.30, 0.3, 1);
+        }
+      }
+    }
+
+    updateTubeShadows();
+
+    // Seen from the same three-quarter side the still was rendered from, in
+    // the model's own coordinates.
+    const base = new three.Vector3(0.605, 0.365, 0.925).normalize();
+    const baseYaw = Math.atan2(base.x, base.z);
+    const basePitch = Math.asin(base.y);
+
+    // The view is those angles plus an offset the pointer can turn. It is
+    // kept as an offset so the model opens on the pose it was rendered in.
+    const orbit = { yaw: 0, pitch: 0 };
+    const aim = { yaw: 0, pitch: 0 };
+    const PITCH_MIN = 0.02;
+    const PITCH_MAX = 1.25;
+    const yawLimit = Math.PI;
+    const pitchLow = PITCH_MIN - basePitch;
+    const pitchHigh = PITCH_MAX - basePitch;
+
+    const corners = [
+      [box.min.x, box.min.y, box.min.z], [box.max.x, box.min.y, box.min.z],
+      [box.min.x, box.max.y, box.min.z], [box.max.x, box.max.y, box.min.z],
+      [box.min.x, box.min.y, box.max.z], [box.max.x, box.min.y, box.max.z],
+      [box.min.x, box.max.y, box.max.z], [box.max.x, box.max.y, box.max.z],
+    ].map(([x, y, z]) => new three.Vector3(x, y, z).sub(centre));
+
+    const dir = new three.Vector3();
+    let zoom = 1;
+
+    // Refit on every change rather than once: a view from the side needs a
+    // different distance from a view along the arm, and the animation sweeps
+    // a volume bigger than any one pose.
+    function place() {
+      const w = mount.clientWidth;
+      const h = mount.clientHeight;
+      if (!w || !h) return;
+
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+
+      const yaw = baseYaw + orbit.yaw;
+      const pitch = three.MathUtils.clamp(basePitch + orbit.pitch, PITCH_MIN, PITCH_MAX);
+      dir.set(Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), Math.cos(yaw) * Math.cos(pitch));
+
+      // Look at the centre from one unit out, then find how far back that view
+      // must sit for every corner to be inside both fields of view.
+      camera.position.copy(centre).addScaledVector(dir, 1);
+      camera.lookAt(centre);
+      camera.updateMatrixWorld();
+
+      const right = new three.Vector3().setFromMatrixColumn(camera.matrixWorld, 0);
+      const up = new three.Vector3().setFromMatrixColumn(camera.matrixWorld, 1);
+      const back = new three.Vector3().setFromMatrixColumn(camera.matrixWorld, 2);
+
+      const vFov = three.MathUtils.degToRad(camera.fov);
+      const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+
+      let need = 0;
+      for (const p of corners) {
+        need = Math.max(
+          need,
+          p.dot(back) + Math.abs(p.dot(right)) / Math.tan(hFov / 2),
+          p.dot(back) + Math.abs(p.dot(up)) / Math.tan(vFov / 2),
+        );
+      }
+
+      camera.position.copy(centre).addScaledVector(dir, 1.015 * need * zoom);
+      camera.lookAt(centre);
+      camera.updateMatrixWorld();
+    }
+
+    function resize() {
+      const w = mount.clientWidth;
+      const h = mount.clientHeight;
+      if (!w || !h) return;
+
+      renderer.setSize(w, h, false);
+      place();
+
+      if (reduced) renderer.render(scene, camera);
+    }
+
+    resize();
+    new ResizeObserver(resize).observe(mount);
+
+    // The arm can be turned with the pointer, and brought closer with the
+    // wheel or a two-finger pinch. Touch is enabled on the canvas itself
+    // (`touch-action: none`), so a finger drag orbits instead of scrolling
+    // the page; the page still scrolls anywhere else in the figure.
+    const canvas = renderer.domElement;
+    canvas.style.touchAction = 'none';
+    canvas.style.cursor = 'grab';
+    canvas.style.userSelect = 'none';
+
+    let dragging = false;
+    let lastX = 0;
+    let lastY = 0;
+    const ZOOM_MIN = 0.55;
+    const ZOOM_MAX = 2.0;
+    const pointers = new Map<number, { x: number; y: number }>();
+    let pinchStart = 0;
+    let pinchZoom = 1;
+
+    function applyZoom(next: number) {
+      const clamped = three.MathUtils.clamp(next, ZOOM_MIN, ZOOM_MAX);
+      if (clamped === zoom) return;
+      zoom = clamped;
+      place();
+      renderer.render(scene, camera);
+    }
+
+    canvas.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      event.preventDefault();
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      canvas.setPointerCapture(event.pointerId);
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        pinchStart = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
+        pinchZoom = zoom;
+        dragging = false;
+      } else if (pointers.size === 1) {
+        dragging = true;
+        lastX = event.clientX;
+        lastY = event.clientY;
+      }
+      canvas.style.cursor = 'grabbing';
+    });
+
+    canvas.addEventListener('pointermove', (event) => {
+      if (!pointers.has(event.pointerId)) return;
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        const distance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
+        applyZoom(pinchZoom * pinchStart / distance);
+        return;
+      }
+      if (!dragging) return;
+
+      const w = Math.max(1, mount.clientWidth);
+      const h = Math.max(1, mount.clientHeight);
+
+      // A drag across the whole panel is half a turn one way and a little
+      // over half a turn the other: enough to see the back of the arm.
+      aim.yaw = three.MathUtils.clamp(aim.yaw - ((event.clientX - lastX) / w) * Math.PI * 2, -yawLimit, yawLimit);
+      aim.pitch = three.MathUtils.clamp(aim.pitch - ((event.clientY - lastY) / h) * Math.PI * 1.2, pitchLow, pitchHigh);
+      lastX = event.clientX;
+      lastY = event.clientY;
+
+      // With reduced motion there is no frame loop to carry the change.
+      if (reduced) {
+        orbit.yaw = aim.yaw;
+        orbit.pitch = aim.pitch;
+        place();
+        renderer.render(scene, camera);
+      }
+    });
+
+    const endDrag = (event: PointerEvent) => {
+      if (!pointers.has(event.pointerId)) return;
+      pointers.delete(event.pointerId);
+      if (pointers.size < 2) pinchStart = 0;
+
+      if (pointers.size === 1) {
+        // one finger of a pinch stayed down: carry on turning with it
+        const [left] = [...pointers.values()];
+        dragging = true;
+        lastX = left.x;
+        lastY = left.y;
+      } else if (pointers.size === 0) {
+        dragging = false;
+        canvas.style.cursor = 'grab';
+      }
+
+      if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+    };
+    canvas.addEventListener('pointerup', endDrag);
+    canvas.addEventListener('pointercancel', endDrag);
+    canvas.addEventListener('pointerleave', () => {
+      if (!dragging && pointers.size === 0) canvas.style.cursor = 'grab';
+    });
+
+    canvas.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      applyZoom(zoom * Math.exp(event.deltaY * 0.0012));
+    }, { passive: false });
+
+    // Stand in for the animation when someone has asked for no motion: the
+    // arm holding the tube up, which is the pose worth seeing anyway.
+    if (reduced) {
+      mixer.setTime(Math.min(duration - 0.1, 8.75));
+      model.updateMatrixWorld(true);
+      updateTubeShadows();
+      renderer.render(scene, camera);
+      return;
+    }
+
+    let raf = 0;
+    let running = false;
+    let last = performance.now();
+
+    function frame(now: number) {
+      raf = requestAnimationFrame(frame);
+      const dt = Math.min(0.1, (now - last) / 1000);
+      last = now;
+
+      mixer.update(dt);
+      updateTubeShadows();
+
+      // The camera follows the drag rather than jumping to it.
+      if (orbit.yaw !== aim.yaw || orbit.pitch !== aim.pitch) {
+        const ease = 1 - Math.exp(-dt * 10);
+        orbit.yaw += (aim.yaw - orbit.yaw) * ease;
+        orbit.pitch += (aim.pitch - orbit.pitch) * ease;
+        if (Math.abs(aim.yaw - orbit.yaw) < 1e-5) orbit.yaw = aim.yaw;
+        if (Math.abs(aim.pitch - orbit.pitch) < 1e-5) orbit.pitch = aim.pitch;
+        place();
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    function play() {
+      if (running) return;
+      running = true;
+      last = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
+
+    function pause() {
+      running = false;
+      cancelAnimationFrame(raf);
+    }
+
+    new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) play();
+        else pause();
+      },
+      { threshold: 0.15 },
+    ).observe(mount);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) pause();
+      else play();
+    });
+
+    play();
+  }
+</script>

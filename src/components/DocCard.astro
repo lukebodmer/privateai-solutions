@@ -1,0 +1,16 @@
+---
+// One of Neuman's docs as a card: its title and the opening of its first
+// paragraph, linking to its page. The /docs index lists every doc this way;
+// the home page shows a few.
+import type { Doc } from '../lib/docs';
+
+interface Props { doc: Doc }
+
+const { doc } = Astro.props;
+---
+
+<a href={`/docs/${doc.slug}`}
+  class="group block border border-nord-800 rounded-lg p-4 bg-nord-900/30 hover:border-nord-600 hover:bg-nord-900/60 transition-colors">
+  <span class="block text-sm font-semibold text-nord-100 group-hover:text-frost-400">{doc.data.title}</span>
+  {doc.data.description && <span class="block text-xs text-nord-400 leading-relaxed mt-1.5 line-clamp-3">{doc.data.description}</span>}
+</a>

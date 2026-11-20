@@ -1,0 +1,41 @@
+---
+/**
+ * One line saying where a value came from and when it was last checked.
+ * The public face of a fact's `verified_by`: a reader can tell a number
+ * Luke signed off from one an API supplied, one Neuman found and the
+ * checker confirmed on the cited page, and one nobody has checked.
+ * A `neuman` fact's quote is shown on hover — what the page said.
+ */
+import type { FactEntry } from '../types/fact';
+
+interface Props {
+  fact: FactEntry;
+}
+
+const { fact } = Astro.props;
+
+const SIGNERS: Record<string, { label: string; title: string; cls: string }> = {
+  luke: { label: 'checked by Luke', title: 'Luke read the source and signed this value off.', cls: 'text-frost-400/80' },
+  auto: { label: 'from the source API', title: 'Written by a scheduled sync from the source\'s own API.', cls: 'text-frost-400/60' },
+  neuman: { label: 'found by Neuman', title: 'Neuman found this value; an automatic checker fetched the cited page itself and confirmed the quoted text and value are on it.', cls: 'text-sky-400/80' },
+};
+const signer = fact.verified_by ? SIGNERS[fact.verified_by] : null;
+
+let host: string | null = null;
+try { host = fact.source ? new URL(fact.source).hostname.replace(/^www\./, '') : null; } catch { host = null; }
+
+function fmt(d: string | null): string | null {
+  if (!d) return null;
+  const t = Date.parse(d);
+  return Number.isNaN(t) ? null : new Date(t).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+}
+const checked = fmt(fact.verified_at);
+---
+
+<span class="text-[11px] text-nord-500" title={fact.quote ? `The page said: “${fact.quote}”` : undefined}>
+  {signer
+    ? <span class={signer.cls} title={signer.title}>{signer.label}</span>
+    : <span class="text-amber-400/70" title="Nobody has checked this value yet.">unverified</span>}
+  {checked && <> · {checked}</>}
+  {host && <> · <a href={fact.source!} target="_blank" rel="noopener noreferrer" class="hover:text-nord-300 underline decoration-nord-700 underline-offset-2">{host}</a></>}
+</span>

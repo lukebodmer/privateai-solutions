@@ -1,0 +1,129 @@
+{
+  "name": "DeepSeek Harness",
+  "slug": "deepseek-harness",
+  "facts": {
+    "developer": {
+      "value": "DeepSeek",
+      "source": "https://www.deepseek.com/harness/en/",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "license": {
+      "value": "MIT",
+      "source": "https://github.com/deepseek-ai/deepseek-harness",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "62242a52523512879d209ff94505d859a048f1522ec05197384e34aacd23e958",
+      "snapshot_ext": "json"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://api.github.com/repos/deepseek-ai/deepseek-harness/license",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "language": {
+      "value": [
+        {
+          "name": "TypeScript",
+          "percent": 95.4
+        },
+        {
+          "name": "Other",
+          "percent": 4.6
+        }
+      ],
+      "source": "https://github.com/deepseek-ai/deepseek-harness",
+      "fetched": "2026-11-17",
+      "verified_by": "auto",
+      "verified_at": "2026-11-17",
+      "snapshot_hash": "e212361db40eae10a918923b228109bb4d73f76b5c293d1a104f02ab6f3e432d",
+      "snapshot_ext": "json"
+    },
+    "my_take": {
+      "value": "This is a solid harness From Deep Seek. It's tuned to be most useful with Deep Seek models, but it serves as a great source of information for Neuman as Deep Seek tends to innovate and share their progress.",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "developer_company_slug": {
+      "value": "deepseek",
+      "source": "https://github.com/deepseek-ai",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "philosophy": {
+      "value": "Everything is a Plugin",
+      "source": "https://github.com/deepseek-ai/deepseek-harness",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "install_method": {
+      "value": "npx @deepseek-ai/dsh web",
+      "source": "https://github.com/deepseek-ai/deepseek-harness",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.github": {
+      "value": "https://github.com/deepseek-ai/deepseek-harness",
+      "source": "https://github.com/deepseek-ai/deepseek-harness",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "b159d7acdc532c1451e7aa0a92834a606ba39d86bb4cc5d07fb0254b9d7d4ae1",
+      "snapshot_ext": "html"
+    },
+    "snapshot.website": {
+      "value": "https://www.deepseek.com/harness/en/",
+      "source": "https://www.deepseek.com/harness/en/",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "3f6d1410db2de89c586c8ff4a9aec1a2f558a00f19454bb940afd74b17db4cf9",
+      "snapshot_ext": "html"
+    },
+    "snapshot.docs": {
+      "value": "https://deepseek-harness.github.io/deepseek-harness/",
+      "source": "https://deepseek-harness.github.io/deepseek-harness/",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "2705797fbbd97866b97252cbbbd7df5ceb10d75cc6c3875761749f85614d4141",
+      "snapshot_ext": "html"
+    },
+    "snapshot.package": {
+      "value": "https://www.npmjs.com/package/@deepseek-ai/dsh",
+      "source": "https://www.npmjs.com/package/@deepseek-ai/dsh",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    }
+  },
+  "references": [
+    {
+      "title": "DeepSeek Harness — GitHub",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "author": "DeepSeek AI",
+      "date": "2026"
+    },
+    {
+      "title": "DeepSeek Harness — Official Site",
+      "url": "https://www.deepseek.com/harness/en/",
+      "author": "DeepSeek AI",
+      "date": "2026"
+    },
+    {
+      "title": "DeepSeek Harness — Documentation",
+      "url": "https://deepseek-harness.github.io/deepseek-harness/",
+      "author": "DeepSeek AI",
+      "date": "2026"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const services = [
+  {
+    title: 'AI Product Builds',
+    icon: '⬡',
+    description:
+      'End-to-end development of production AI applications — from architecture design to deployment. Specializing in retrieval-augmented generation (RAG), agentic workflows, fine-tuning, and integration with existing enterprise systems.',
+    deliverables: [
+      'System architecture and model selection',
+      'RAG pipelines with structured and unstructured data',
+      'Agentic workflows and tool-use orchestration',
+      'Fine-tuning and domain adaptation',
+      'Production deployment and monitoring',
+    ],
+  },
+  {
+    title: 'Local AI Hardware',
+    icon: '⬡',
+    description:
+      'Turnkey local inference infrastructure — hardware selection, procurement, physical installation, network configuration, and model deployment. Run frontier AI on-premises with full data sovereignty and no API costs.',
+    deliverables: [
+      'Hardware selection and cost optimization for your use case',
+      'GPU server sourcing (new and used)',
+      'Physical installation and rack integration',
+      'CUDA/ROCm driver and software setup',
+      'Model deployment via llama.cpp or vLLM',
+      'Ongoing maintenance and model upgrade support',
+    ],
+  },
+  {
+    title: 'AI Architecture Consulting',
+    icon: '⬡',
+    description:
+      'Strategic guidance for organizations evaluating or scaling AI adoption. Architecture audits, model selection for specific workloads, infrastructure planning, and technology roadmapping — grounded in real production experience.',
+    deliverables: [
+      'Model selection for specific workloads and constraints',
+      'Build vs. buy vs. API cost modeling',
+      'Data pipeline and infrastructure design',
+      'Team capability planning',
+      'Regulatory and compliance considerations',
+    ],
+  },
+];
+---
+
+<Base
+  title="Services — Private AI Solutions"
+  description="AI product builds, local hardware procurement and installation, and AI architecture consulting."
+>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+
+    <PageHeader eyebrow="What we do" title="Services" class="mb-12" />
+
+    <div class="space-y-8">
+      {services.map((service) => (
+        <div class="p-8 bg-nord-900 border border-nord-800 rounded-xl hover:border-nord-700 transition-colors">
+          <h2 class="text-xl font-semibold text-nord-100 mb-3 flex items-center gap-2">
+            <span class="text-frost-400 text-sm">◆</span>
+            {service.title}
+          </h2>
+          <p class="text-nord-400 leading-relaxed mb-5">{service.description}</p>
+          <ul class="space-y-1.5">
+            {service.deliverables.map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-nord-400">
+                <span class="text-frost-500 mt-0.5 shrink-0">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-nord-400 mb-5">Ready to discuss your project?</p>
+      <a
+        href="/contact"
+        class="inline-block px-5 py-2 rounded-full bg-frost-500 hover:bg-frost-400 text-nord-950 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(136,192,208,0.6)] transition-colors"
+      >
+        Get in touch
+      </a>
+    </div>
+
+  </main>
+</Base>

@@ -1,0 +1,102 @@
+{
+  "name": "Kimi server",
+  "slug": "kimi-server",
+  "facts": {
+    "kind": {
+      "value": "system",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "runtime": {
+      "value": "vllm",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "parts": {
+      "value": [
+        {
+          "part": "hgx-b300",
+          "quantity": 1
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "models": {
+      "value": [
+        {
+          "model": "kimi-k3.1-pro",
+          "weights": "native"
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "context_per_session": {
+      "value": 65536,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "concurrent_sessions": {
+      "value": 300,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "team_min": {
+      "value": 300,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "team_max": {
+      "value": 900,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "measured.output_tokens_per_second": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "measured.max_concurrency": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "photo_credit": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": []
+}

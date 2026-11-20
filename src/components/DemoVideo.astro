@@ -1,0 +1,289 @@
+---
+// A screen recording of Neuman at work: muted, played once while on screen,
+// with a seek bar, a pause button, a "Watch again" overlay at the end and an
+// expand button that lifts it into a large view over the page.
+// Expects `public/neuman/<name>.webm` (AV1), `<name>.mp4` (H.264, faststart)
+// and `<name>-poster.jpg`, made from `assets/neuman/<name>-source.*` at
+// 1080p30 with no audio, cropped of the screen grab's border and cut before
+// any fade to black, so the last frame is worth looking at behind the replay
+// button.
+interface Props {
+  name: string;
+  label: string;
+  caption?: string;
+  class?: string;
+}
+
+const { name, label, caption, class: className = '' } = Astro.props;
+---
+
+<figure class={className} data-demo>
+  <!-- Holds the recording's place on the page while it is expanded. -->
+  <div class="relative aspect-video">
+  <div data-backdrop class="fixed inset-0 z-[60] bg-nord-950/85 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" aria-hidden="true"></div>
+  <div data-stage class="group/demo absolute inset-0 rounded-xl border border-nord-800 bg-nord-950 shadow-[0_30px_120px_-40px_rgba(136,192,208,0.35)] overflow-hidden">
+    <video
+      class="absolute inset-0 w-full h-full object-cover cursor-pointer"
+      poster={`/neuman/${name}-poster.jpg`}
+      muted
+      playsinline
+      preload="metadata"
+      aria-label={label}
+    >
+      <source src={`/neuman/${name}.webm`} type='video/webm; codecs="av01.0.08M.08"' />
+      <source src={`/neuman/${name}.mp4`} type="video/mp4" />
+    </video>
+
+    <!-- Shown when the recording ends. -->
+    <button
+      type="button"
+      data-replay
+      class="hidden absolute inset-0 items-center justify-center bg-nord-950/55 group"
+      aria-label="Watch again"
+    >
+      <span class="flex flex-col items-center gap-2">
+        <span class="flex items-center justify-center w-14 h-14 rounded-full bg-nord-950/80 border border-nord-700 text-nord-100 backdrop-blur transition-colors group-hover:border-frost-400 group-hover:text-frost-300">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7" /><path d="M3 4v5h5" /></svg>
+        </span>
+        <span class="text-xs font-medium text-nord-300 group-hover:text-white">Watch again</span>
+      </span>
+    </button>
+
+    <!-- Expand into a large view over the page, and back. -->
+    <button
+      type="button"
+      data-expand
+      aria-label="Expand video"
+      title="Expand"
+      class="absolute top-3 right-3 z-10 inline-flex items-center justify-center w-8 h-8 rounded-full bg-nord-950/75 backdrop-blur text-nord-200 border border-nord-700/70 hover:bg-nord-900 hover:text-white transition-colors"
+    >
+      <svg data-icon="expand" class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5h3.5V6" /><path d="M13.5 2.5 9 7" /><path d="M6 13.5H2.5V10" /><path d="M2.5 13.5 7 9" /></svg>
+      <svg data-icon="collapse" class="w-3.5 h-3.5 hidden" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 6H10V2.5" /><path d="M10 6l4.5-4.5" /><path d="M2.5 10H6v3.5" /><path d="M6 10l-4.5 4.5" /></svg>
+    </button>
+
+    <!-- Time and pause, above the seek bar. -->
+    <span
+      data-time
+      class="absolute bottom-5 left-3 rounded-full bg-nord-950/75 backdrop-blur px-2.5 py-1 text-[11px] font-medium tabular-nums text-nord-300 border border-nord-700/70 pointer-events-none"
+      aria-hidden="true"
+    >0:00 / 0:00</span>
+
+    <button
+      type="button"
+      data-toggle
+      class="absolute bottom-5 right-3 inline-flex items-center gap-1.5 rounded-full bg-nord-950/75 backdrop-blur px-3 py-1.5 text-[11px] font-medium text-nord-200 border border-nord-700/70 hover:bg-nord-900 hover:text-white transition-colors"
+    >
+      <svg data-icon="pause" class="w-3 h-3" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="2" y="1.5" width="2.75" height="9" rx="0.6" /><rect x="7.25" y="1.5" width="2.75" height="9" rx="0.6" /></svg>
+      <svg data-icon="play" class="w-3 h-3 hidden" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M3 1.8v8.4a.6.6 0 0 0 .9.52l7-4.2a.6.6 0 0 0 0-1.04l-7-4.2A.6.6 0 0 0 3 1.8Z" /></svg>
+      <span data-label>Pause</span>
+    </button>
+
+    <!-- Seek bar: a tall, invisible hit area over a thin track that thickens on hover. -->
+    <div
+      data-scrub
+      role="slider"
+      tabindex="0"
+      aria-label="Seek"
+      aria-valuemin="0"
+      aria-valuemax="0"
+      aria-valuenow="0"
+      aria-valuetext="0:00 of 0:00"
+      class="group/scrub absolute inset-x-0 bottom-0 z-10 h-4 flex items-end cursor-pointer touch-none select-none focus:outline-none"
+    >
+      <div class="relative w-full h-1 bg-white/15 transition-[height] duration-150 group-hover/scrub:h-1.5 group-focus-visible/scrub:h-1.5 group-data-[dragging]/scrub:h-1.5">
+        <div data-hover class="absolute inset-y-0 left-0 bg-white/20 opacity-0 group-hover/scrub:opacity-100" style="width: 0%"></div>
+        <div data-fill class="absolute inset-y-0 left-0 bg-frost-400" style="width: 0%"></div>
+        <div
+          data-knob
+          class="absolute top-1/2 w-3 h-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-frost-300 shadow scale-0 transition-transform duration-150 group-hover/scrub:scale-100 group-focus-visible/scrub:scale-100 group-data-[dragging]/scrub:scale-100"
+          style="left: 0%"
+        ></div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {caption && (
+    <figcaption class="mt-3 text-xs text-nord-500 leading-relaxed">{caption}</figcaption>
+  )}
+</figure>
+
+<style>
+  /* Expanded: as large as the window allows at 16:9, centred over the page. */
+  [data-demo][data-expanded] [data-stage] {
+    position: fixed;
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    z-index: 61;
+    width: min(94vw, calc(88vh * 16 / 9));
+    aspect-ratio: 16 / 9;
+    translate: -50% -50%;
+  }
+  [data-demo][data-expanded] [data-backdrop] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  // Play each recording once while it is on screen, never for someone who has
+  // asked for reduced motion, and let everyone pause, seek and replay it.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const clock = (s: number) => {
+    const t = Math.max(0, Math.floor(s || 0));
+    return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`;
+  };
+
+  for (const figure of document.querySelectorAll<HTMLElement>('[data-demo]')) {
+    const video = figure.querySelector('video')!;
+    const toggle = figure.querySelector<HTMLButtonElement>('[data-toggle]')!;
+    const replay = figure.querySelector<HTMLButtonElement>('[data-replay]')!;
+    const time = figure.querySelector<HTMLElement>('[data-time]')!;
+    const scrub = figure.querySelector<HTMLElement>('[data-scrub]')!;
+    const fill = figure.querySelector<HTMLElement>('[data-fill]')!;
+    const knob = figure.querySelector<HTMLElement>('[data-knob]')!;
+    const hover = figure.querySelector<HTMLElement>('[data-hover]')!;
+    const stage = figure.querySelector<HTMLElement>('[data-stage]')!;
+    const backdrop = figure.querySelector<HTMLElement>('[data-backdrop]')!;
+    const expand = figure.querySelector<HTMLButtonElement>('[data-expand]')!;
+    let pausedByViewer = reduceMotion;
+    let frame = 0;
+
+    // Buttons follow the play state; the bar follows the clock.
+    const render = () => {
+      const playing = !video.paused;
+      toggle.classList.toggle('hidden', video.ended);
+      replay.classList.toggle('hidden', !video.ended);
+      replay.classList.toggle('flex', video.ended);
+      toggle.querySelector('[data-icon="pause"]')!.classList.toggle('hidden', !playing);
+      toggle.querySelector('[data-icon="play"]')!.classList.toggle('hidden', playing);
+      toggle.querySelector('[data-label]')!.textContent = playing ? 'Pause' : 'Play';
+    };
+
+    const renderProgress = () => {
+      const d = video.duration || 0;
+      const t = video.currentTime;
+      const pct = d ? Math.min(100, (t / d) * 100) : 0;
+      fill.style.width = `${pct}%`;
+      knob.style.left = `${pct}%`;
+      time.textContent = `${clock(t)} / ${clock(d)}`;
+      scrub.setAttribute('aria-valuemax', String(Math.round(d)));
+      scrub.setAttribute('aria-valuenow', String(Math.round(t)));
+      scrub.setAttribute('aria-valuetext', `${clock(t)} of ${clock(d)}`);
+    };
+
+    // Smooth while playing; timeupdate alone moves the bar in steps.
+    const tick = () => {
+      renderProgress();
+      frame = video.paused ? 0 : requestAnimationFrame(tick);
+    };
+
+    const play = () => video.play().catch(() => {});
+
+    video.addEventListener('play', () => { render(); cancelAnimationFrame(frame); tick(); });
+    video.addEventListener('pause', render);
+    video.addEventListener('ended', () => { render(); renderProgress(); });
+    video.addEventListener('loadedmetadata', renderProgress);
+    video.addEventListener('seeked', () => { render(); renderProgress(); });
+    video.addEventListener('timeupdate', renderProgress);
+    render();
+    renderProgress();
+
+    // The button and the picture itself both play and pause.
+    const togglePlay = () => {
+      pausedByViewer = !video.paused;
+      if (video.paused) play();
+      else video.pause();
+    };
+    toggle.addEventListener('click', togglePlay);
+    video.addEventListener('click', togglePlay);
+
+    replay.addEventListener('click', () => {
+      pausedByViewer = false;
+      video.currentTime = 0;
+      play();
+    });
+
+    // Seeking: click or drag anywhere on the bar. Playback holds while
+    // dragging and carries on afterwards unless the viewer had paused it.
+    const fraction = (e: PointerEvent) => {
+      const r = scrub.getBoundingClientRect();
+      return Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    };
+    const seekTo = (f: number) => {
+      if (!video.duration) return;
+      video.currentTime = f * video.duration;
+      renderProgress();
+    };
+    let dragging = false;
+
+    scrub.addEventListener('pointerdown', e => {
+      if (e.button !== 0) return;
+      dragging = true;
+      scrub.dataset.dragging = '';
+      scrub.setPointerCapture(e.pointerId);
+      video.pause();
+      seekTo(fraction(e));
+    });
+    scrub.addEventListener('pointermove', e => {
+      hover.style.width = `${fraction(e) * 100}%`;
+      if (dragging) seekTo(fraction(e));
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      delete scrub.dataset.dragging;
+      if (!pausedByViewer && !video.ended) play();
+      render();
+    };
+    scrub.addEventListener('pointerup', endDrag);
+    scrub.addEventListener('pointercancel', endDrag);
+
+    scrub.addEventListener('keydown', e => {
+      const step = { ArrowLeft: -2, ArrowRight: 2, ArrowDown: -5, ArrowUp: 5 }[e.key];
+      if (e.key === 'Home') video.currentTime = 0;
+      else if (e.key === 'End') video.currentTime = video.duration || 0;
+      else if (step !== undefined) video.currentTime = Math.min(video.duration || 0, Math.max(0, video.currentTime + step));
+      else return;
+      e.preventDefault();
+      renderProgress();
+    });
+
+    // Expand: the same player, lifted out of the page and grown from where it
+    // sat, so playback carries on without a break. Escape, the backdrop or
+    // the button puts it back.
+    const setExpanded = (on: boolean) => {
+      if (on === figure.hasAttribute('data-expanded')) return;
+      const from = stage.getBoundingClientRect();
+      figure.toggleAttribute('data-expanded', on);
+      document.documentElement.style.overflow = on ? 'hidden' : '';
+      expand.setAttribute('aria-label', on ? 'Shrink video' : 'Expand video');
+      expand.title = on ? 'Shrink' : 'Expand';
+      expand.querySelector('[data-icon="expand"]')!.classList.toggle('hidden', on);
+      expand.querySelector('[data-icon="collapse"]')!.classList.toggle('hidden', !on);
+      if (!reduceMotion) {
+        const to = stage.getBoundingClientRect();
+        const dx = from.left + from.width / 2 - (to.left + to.width / 2);
+        const dy = from.top + from.height / 2 - (to.top + to.height / 2);
+        stage.animate(
+          [{ transform: `translate(${dx}px, ${dy}px) scale(${from.width / to.width})` }, { transform: 'none' }],
+          { duration: 260, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)' },
+        );
+      }
+      expand.focus();
+    };
+    expand.addEventListener('click', () => setExpanded(!figure.hasAttribute('data-expanded')));
+    backdrop.addEventListener('click', () => setExpanded(false));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') setExpanded(false);
+    });
+
+    new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (entry.isIntersecting && !pausedByViewer && !video.ended && !dragging) play();
+        else if (!entry.isIntersecting) video.pause();
+      }
+    }, { threshold: 0.35 }).observe(video);
+  }
+</script>

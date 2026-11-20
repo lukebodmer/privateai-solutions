@@ -1,0 +1,147 @@
+{
+  "name": "Qwen Code",
+  "slug": "qwen-code",
+  "facts": {
+    "developer": {
+      "value": "Alibaba (Qwen)",
+      "source": "https://qwen.ai/qwencode",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "license": {
+      "value": "Apache-2.0",
+      "source": "https://github.com/QwenLM/qwen-code",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "3832e4812787cc8b415e267b43a9c134756a39cfb04b9e50ab72e6ff4c11f163",
+      "snapshot_ext": "json"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://raw.githubusercontent.com/QwenLM/qwen-code/main/LICENSE",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "language": {
+      "value": [
+        {
+          "name": "TypeScript",
+          "percent": 77
+        },
+        {
+          "name": "Java",
+          "percent": 11
+        },
+        {
+          "name": "JavaScript",
+          "percent": 4.7
+        },
+        {
+          "name": "Rust",
+          "percent": 4.3
+        },
+        {
+          "name": "Other",
+          "percent": 3
+        }
+      ],
+      "source": "https://github.com/QwenLM/qwen-code",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "c5f3744f80ea244f9b39c4bc3ed18a4131566a15d743d18717d17a795f159df2",
+      "snapshot_ext": "json"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "developer_company_slug": {
+      "value": "alibaba",
+      "source": "https://github.com/QwenLM",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "philosophy": {
+      "value": "open-source AI agent for the terminal, optimized for Qwen series models",
+      "source": "https://qwen.ai/qwencode",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "install_method": {
+      "value": "curl -fsSL https://qwen-code-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen-standalone.sh | bash",
+      "source": "https://github.com/QwenLM/qwen-code#installation",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.github": {
+      "value": "https://github.com/QwenLM/qwen-code",
+      "source": "https://github.com/QwenLM/qwen-code",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "b92223b8566e4ad1a53746b54df32d02f4d7c8a0643c7cc8820e6f92d88d1cff",
+      "snapshot_ext": "html"
+    },
+    "snapshot.website": {
+      "value": "https://qwen.ai/qwencode",
+      "source": "https://qwen.ai/qwencode",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "0673258bf39a9551b49ae52a5d75538f8cc7df2634032978e5b1c9675fe9df2e",
+      "snapshot_ext": "html"
+    },
+    "snapshot.package": {
+      "value": "https://www.npmjs.com/package/@qwen-code/qwen-code",
+      "source": "https://www.npmjs.com/package/@qwen-code/qwen-code",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "snapshot.docs": {
+      "value": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+      "source": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "aca13a943e7a1c0069ab995280793eb2a0aed178e2c42223dbf46e9ea2e041d1",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "Qwen Code — GitHub",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "author": "Qwen (Alibaba)",
+      "date": "2025"
+    },
+    {
+      "title": "Qwen Code — Official Site",
+      "url": "https://qwen.ai/qwencode",
+      "author": "Qwen (Alibaba)",
+      "date": "2025"
+    },
+    {
+      "title": "Qwen Code — Documentation",
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+      "author": "Qwen (Alibaba)",
+      "date": "2025"
+    },
+    {
+      "title": "Qwen Code — npm Package",
+      "url": "https://www.npmjs.com/package/@qwen-code/qwen-code",
+      "author": "Qwen (Alibaba)",
+      "date": "2025"
+    }
+  ]
+}

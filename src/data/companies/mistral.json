@@ -1,0 +1,48 @@
+{
+  "name": "Mistral",
+  "slug": "mistral",
+  "facts": {
+    "snapshot.official": {
+      "value": "https://mistral.ai/",
+      "source": "https://mistral.ai/",
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/Mistral_AI",
+      "source": "https://en.wikipedia.org/wiki/Mistral_AI",
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null
+    },
+    "snapshot.huggingface_org": {
+      "value": "https://huggingface.co/docs/transformers/model_doc/mistral",
+      "source": "https://huggingface.co/docs/transformers/model_doc/mistral",
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null
+    },
+    "country": {
+      "value": "France",
+      "source": "https://en.wikipedia.org/wiki/Mistral_AI",
+      "fetched": "2026-11-19",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-19",
+      "quote": "Headquarters Paris, France",
+      "snapshot_hash": "fe7909a3f2b0e72e4c1e2ad56d1476d6fd18b5f545c1ad2a4f615c912589e4bb",
+      "snapshot_ext": "html"
+    },
+    "hq_city": {
+      "value": "Paris",
+      "source": "https://en.wikipedia.org/wiki/Mistral_AI",
+      "fetched": "2026-11-19",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-19",
+      "quote": "Headquarters Paris, France",
+      "snapshot_hash": "fe7909a3f2b0e72e4c1e2ad56d1476d6fd18b5f545c1ad2a4f615c912589e4bb",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": []
+}

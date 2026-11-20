@@ -1,0 +1,25 @@
+---
+/**
+ * One panel of the home dashboard: a header that links to the section,
+ * then whatever rows the page slots in. Rows link to entity pages on their
+ * own, so the panel itself is not one big anchor.
+ */
+interface Props {
+  title: string;
+  href: string;
+  class?: string;
+}
+
+const { title, href, class: className = '' } = Astro.props;
+---
+
+<section class={`border border-nord-800 rounded-lg bg-nord-900/30 flex flex-col min-w-0 ${className}`}>
+  <a href={href}
+    class="group flex items-baseline justify-between gap-3 px-3.5 py-2.5 border-b border-nord-800 hover:bg-nord-900/60 transition-colors rounded-t-lg">
+    <h2 class="text-sm font-semibold text-nord-100 group-hover:text-white">{title}</h2>
+    <span class="text-frost-400 text-xs group-hover:translate-x-0.5 transition-transform">→</span>
+  </a>
+  <div class="flex-1 min-h-0">
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,108 @@
+{
+  "name": "Mac Studio, 512 GB",
+  "slug": "mac-studio-512",
+  "facts": {
+    "kind": {
+      "value": "system",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "runtime": {
+      "value": "llama.cpp",
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "parts": {
+      "value": [
+        {
+          "part": "mac-studio",
+          "quantity": 1
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "models": {
+      "value": [
+        {
+          "model": "minimax-m3",
+          "weights": "UD-Q4_K_XL"
+        },
+        {
+          "model": "glm-5.3",
+          "weights": "UD-IQ4_XS"
+        }
+      ],
+      "source": null,
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "context_per_session": {
+      "value": 65536,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "concurrent_sessions": {
+      "value": 2,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "team_min": {
+      "value": 2,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "team_max": {
+      "value": 6,
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "measured.output_tokens_per_second": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "measured.max_concurrency": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "na": true
+    },
+    "photo_credit": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": []
+}

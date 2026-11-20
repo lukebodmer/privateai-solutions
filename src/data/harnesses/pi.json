@@ -1,0 +1,133 @@
+{
+  "name": "Pi Agent Harness",
+  "slug": "pi",
+  "facts": {
+    "developer": {
+      "value": "Earendil Works",
+      "source": "https://pi.dev",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "license": {
+      "value": "MIT",
+      "source": "https://github.com/earendil-works/pi",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "2547cf9515365c11d3d8f19b46de7952b3839e8d59ba941a022b778209dd683e",
+      "snapshot_ext": "json"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://github.com/earendil-works/pi",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "language": {
+      "value": [
+        {
+          "name": "TypeScript",
+          "percent": 87
+        },
+        {
+          "name": "HTML",
+          "percent": 10.2
+        },
+        {
+          "name": "Other",
+          "percent": 2.8
+        }
+      ],
+      "source": "https://github.com/earendil-works/pi",
+      "fetched": "2026-11-17",
+      "verified_by": "auto",
+      "verified_at": "2026-11-17",
+      "snapshot_hash": "63574031e448fc2d51240b32539c5e301b9fff587e2d019ffb75ec644b7a5173",
+      "snapshot_ext": "json"
+    },
+    "my_take": {
+      "value": "Pi is one of my favorite harnesses. I used it extensively before building Neuman and partially to build Neuman. What I love about Pi is its simplicity. A lot of these harnesses become a mass of code produced by swarms of agents running 24/7, and they become completely incomprehensible and often very buggy. Pi took a very different approach in being a very minimal harness that you can customize. I think it's a great project and it serves as a invaluable source of information for guiding Neuman's harness.",
+      "source": null,
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "developer_company_slug": {
+      "value": null,
+      "source": "https://api.github.com/orgs/earendil-works",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "philosophy": {
+      "value": "minimal agent harness",
+      "source": "https://pi.dev",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "install_method": {
+      "value": "curl -fsSL https://pi.dev/install.sh | sh",
+      "source": "https://pi.dev/docs/latest",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.github": {
+      "value": "https://github.com/earendil-works/pi",
+      "source": "https://github.com/earendil-works/pi",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "d37ae9f3b9ebea043fb0b64f30aa0fc3681819c9915b27fcd01a021b86cbc7b1",
+      "snapshot_ext": "html"
+    },
+    "snapshot.website": {
+      "value": "https://pi.dev",
+      "source": "https://pi.dev",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "813eedd6e074cb22797e66a81d762b13506fad21451229b9d9eb6138887bd86b",
+      "snapshot_ext": "html"
+    },
+    "snapshot.package": {
+      "value": "https://www.npmjs.com/package/@earendil-works/pi-coding-agent",
+      "source": "https://www.npmjs.com/package/@earendil-works/pi-coding-agent",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18"
+    },
+    "snapshot.docs": {
+      "value": "https://pi.dev/docs/latest",
+      "source": "https://pi.dev/docs/latest",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "snapshot_hash": "37dd6d62006283a601af05f086058090ee9dbdd9a04bd31937934bb9b277c64c",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "Pi Agent Harness — GitHub",
+      "url": "https://github.com/earendil-works/pi",
+      "author": "Earendil Works",
+      "date": "2025"
+    },
+    {
+      "title": "Pi.dev — Official Site",
+      "url": "https://pi.dev",
+      "author": "Earendil Works",
+      "date": "2025"
+    },
+    {
+      "title": "Pi — npm Package",
+      "url": "https://www.npmjs.com/package/@earendil-works/pi-coding-agent",
+      "author": "Earendil Works",
+      "date": "2025"
+    }
+  ]
+}

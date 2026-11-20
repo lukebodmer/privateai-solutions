@@ -1,0 +1,4939 @@
+{
+  "fetched": "2026-11-20T04:19:42.899Z",
+  "attribution": "https://openrouter.ai/",
+  "source_url": "https://openrouter.ai/api/v1/models",
+  "catalog_snapshot_hash": "a8d48972730f67653b28773da2ac74719e1ba6d63585470191f5a1bed24dc38b",
+  "catalog": [
+    {
+      "id": "mistralai/pixtral-large-2502",
+      "name": "Mistral: Pixtral Large 2502",
+      "hugging_face_id": null,
+      "created": 1795135865
+    },
+    {
+      "id": "google/gemini-4-neon",
+      "name": "Google: Gemini 4 Neon",
+      "hugging_face_id": null,
+      "created": 1795006977
+    },
+    {
+      "id": "google/gemini-4-neon:batch",
+      "name": "Google: Gemini 4 Neon (batch)",
+      "hugging_face_id": null,
+      "created": 1795006977
+    },
+    {
+      "id": "openai/gpt-6.2-astra-pro",
+      "name": "OpenAI: GPT-6.2 Astra Pro",
+      "hugging_face_id": null,
+      "created": 1794938432
+    },
+    {
+      "id": "openai/gpt-6.2-astra-pro:batch",
+      "name": "OpenAI: GPT-6.2 Astra Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1794938432
+    },
+    {
+      "id": "openai/gpt-6.2-astra",
+      "name": "OpenAI: GPT-6.2 Astra",
+      "hugging_face_id": null,
+      "created": 1794938423
+    },
+    {
+      "id": "openai/gpt-6.2-astra:batch",
+      "name": "OpenAI: GPT-6.2 Astra (batch)",
+      "hugging_face_id": null,
+      "created": 1794938423
+    },
+    {
+      "id": "openai/gpt-6.2-sol-pro",
+      "name": "OpenAI: GPT-6.2 Sol Pro",
+      "hugging_face_id": null,
+      "created": 1794938409
+    },
+    {
+      "id": "openai/gpt-6.2-sol-pro:batch",
+      "name": "OpenAI: GPT-6.2 Sol Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1794938409
+    },
+    {
+      "id": "openai/gpt-6.2-sol",
+      "name": "OpenAI: GPT-6.2 Sol",
+      "hugging_face_id": null,
+      "created": 1794938371
+    },
+    {
+      "id": "openai/gpt-6.2-sol:batch",
+      "name": "OpenAI: GPT-6.2 Sol (batch)",
+      "hugging_face_id": null,
+      "created": 1794938371
+    },
+    {
+      "id": "tencent/hy4-flash",
+      "name": "Tencent: Hy4 flash",
+      "hugging_face_id": "tencent/Hy4-flash",
+      "created": 1794838706
+    },
+    {
+      "id": "qwen/qwen4-max",
+      "name": "Qwen: Qwen4 Max",
+      "hugging_face_id": null,
+      "created": 1794795526
+    },
+    {
+      "id": "inclusionai/ling-3.2-flash:free",
+      "name": "inclusionAI: Ling 3.2 Flash (free)",
+      "hugging_face_id": "inclusionAI/Ling-3.2-flash",
+      "created": 1794591958
+    },
+    {
+      "id": "google/gemini-4-hydrogen",
+      "name": "Google: Gemini 4 Hydrogen",
+      "hugging_face_id": null,
+      "created": 1794506460
+    },
+    {
+      "id": "google/gemini-4-hydrogen:batch",
+      "name": "Google: Gemini 4 Hydrogen (batch)",
+      "hugging_face_id": null,
+      "created": 1794506460
+    },
+    {
+      "id": "baidu/ernie-5.5-flash-preview:free",
+      "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
+      "hugging_face_id": "baidu/ERNIE-5.5-Flash-Preview",
+      "created": 1794333533
+    },
+    {
+      "id": "baidu/ernie-light-dt-1.0-intl",
+      "name": "Baidu: ERNIE-Light-DT-1.0",
+      "hugging_face_id": null,
+      "created": 1794331260
+    },
+    {
+      "id": "google/gemini-4-carbon",
+      "name": "Google: Gemini 4 Carbon",
+      "hugging_face_id": null,
+      "created": 1794326871
+    },
+    {
+      "id": "google/gemini-4-carbon:batch",
+      "name": "Google: Gemini 4 Carbon (batch)",
+      "hugging_face_id": null,
+      "created": 1794326871
+    },
+    {
+      "id": "nex-agi/nex-n2.6",
+      "name": "Nex AGI: Nex-N2.6",
+      "hugging_face_id": "nex-agi/Nex-N2.6",
+      "created": 1794282379
+    },
+    {
+      "id": "thinkingmachines/inkling-2-small",
+      "name": "Thinking Machines: Inkling 2 Small",
+      "hugging_face_id": "thinkingmachines/Inkling-2-Small",
+      "created": 1794261847
+    },
+    {
+      "id": "anthropic/claude-fable-5.2",
+      "name": "Anthropic: Claude Fable 5.2",
+      "hugging_face_id": null,
+      "created": 1794253781
+    },
+    {
+      "id": "anthropic/claude-fable-5.2:batch",
+      "name": "Anthropic: Claude Fable 5.2 (batch)",
+      "hugging_face_id": null,
+      "created": 1794253781
+    },
+    {
+      "id": "meta/muse-ember",
+      "name": "Meta: Muse Ember",
+      "hugging_face_id": null,
+      "created": 1794247648
+    },
+    {
+      "id": "liquid/lfm-3-1.7b",
+      "name": "LiquidAI: LFM3-1.7B",
+      "hugging_face_id": "LiquidAI/LFM3-1.7B",
+      "created": 1794009477
+    },
+    {
+      "id": "liquid/lfm-3-1.7b:free",
+      "name": "LiquidAI: LFM3-1.7B (free)",
+      "hugging_face_id": "LiquidAI/LFM3-1.7B",
+      "created": 1794009477
+    },
+    {
+      "id": "google/gemini-omni-1.2-flash",
+      "name": "Google: Gemini Omni 1.2 Flash",
+      "hugging_face_id": null,
+      "created": 1793898961
+    },
+    {
+      "id": "kt/midm-k-3.0-pro",
+      "name": "KT: Mi:dm K 3.0 Pro",
+      "hugging_face_id": null,
+      "created": 1793897701
+    },
+    {
+      "id": "google/gemini-omni-1.1-flash",
+      "name": "Google: Gemini Omni 1.1 Flash",
+      "hugging_face_id": null,
+      "created": 1793825668
+    },
+    {
+      "id": "ricursiveai/ripple-65b-preview",
+      "name": "Ricursive: Ripple 65B Preview",
+      "hugging_face_id": "ricursiveAI/Ripple-65B-Preview",
+      "created": 1793818990
+    },
+    {
+      "id": "tencent/hy4",
+      "name": "Tencent: Hy4",
+      "hugging_face_id": "tencent/Hy4",
+      "created": 1793766031
+    },
+    {
+      "id": "motif-technologies/motif-3",
+      "name": "Motif Technologies: Motif 3",
+      "hugging_face_id": "Motif-Technologies/Motif-3",
+      "created": 1793655334
+    },
+    {
+      "id": "z-ai/glm-5.3-flashx-legal",
+      "name": "Z.ai: GLM 5.3 FlashX Legal",
+      "hugging_face_id": null,
+      "created": 1793626154
+    },
+    {
+      "id": "particle-ai/particle-1",
+      "name": "Particle AI: Particle-1",
+      "hugging_face_id": null,
+      "created": 1793207893
+    },
+    {
+      "id": "particle-ai/particle-1:free",
+      "name": "Particle AI: Particle-1 (free)",
+      "hugging_face_id": null,
+      "created": 1793207893
+    },
+    {
+      "id": "openai/gpt-6.1-terra-pro",
+      "name": "OpenAI: GPT-6.1 Terra Pro",
+      "hugging_face_id": null,
+      "created": 1793038556
+    },
+    {
+      "id": "openai/gpt-6.1-terra-pro:batch",
+      "name": "OpenAI: GPT-6.1 Terra Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1793038556
+    },
+    {
+      "id": "openai/gpt-6.1-terra",
+      "name": "OpenAI: GPT-6.1 Terra",
+      "hugging_face_id": null,
+      "created": 1793038409
+    },
+    {
+      "id": "openai/gpt-6.1-terra:batch",
+      "name": "OpenAI: GPT-6.1 Terra (batch)",
+      "hugging_face_id": null,
+      "created": 1793038409
+    },
+    {
+      "id": "moonshotai/kimi-k3.1-pro",
+      "name": "MoonshotAI: Kimi K3.1 Pro",
+      "hugging_face_id": "moonshotai/Kimi-K3.1-Pro",
+      "created": 1792778188
+    },
+    {
+      "id": "moonshotai/kimi-k3.1-pro:batch",
+      "name": "MoonshotAI: Kimi K3.1 Pro (batch)",
+      "hugging_face_id": "moonshotai/Kimi-K3.1-Pro",
+      "created": 1792778188
+    },
+    {
+      "id": "recursive/flint-v1.0:free",
+      "name": "Recursive: Flint (free)",
+      "hugging_face_id": "RecursiveSI/flint",
+      "created": 1792622765
+    },
+    {
+      "id": "minimax/minimax-m3.1-flash",
+      "name": "MiniMax: MiniMax M3.1 Flash",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M3.1-Flash",
+      "created": 1792379569
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash-1017",
+      "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "created": 1792225624
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash-1017:batch",
+      "name": "DeepSeek: DeepSeek V4.1 Flash 1017 (batch)",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "created": 1792225624
+    },
+    {
+      "id": "elorian/glimpse",
+      "name": "Elorian: Glimpse",
+      "hugging_face_id": null,
+      "created": 1792206629
+    },
+    {
+      "id": "reflection/beam-1.0-501b-a23b",
+      "name": "Reflection: Beam 1.0 501B A23B",
+      "hugging_face_id": "reflection/Beam-1.0-501B-A23B",
+      "created": 1792160499
+    },
+    {
+      "id": "prism-ml/ternary-bonsai-2-9b",
+      "name": "PrismML: Ternary Bonsai 2 9B",
+      "hugging_face_id": "prism-ml/Ternary-Bonsai-2-9B-gguf",
+      "created": 1792130995
+    },
+    {
+      "id": "moondream/moondream3-preview",
+      "name": "Moondream: Moondream 3 Preview",
+      "hugging_face_id": "moondream/moondream3-preview",
+      "created": 1792102385
+    },
+    {
+      "id": "moondream/moondream3.1-9b-a2b",
+      "name": "Moondream: Moondream 3.1",
+      "hugging_face_id": "moondream/moondream3.1-9B-A2B",
+      "created": 1792102373
+    },
+    {
+      "id": "meta/muse-spark-open",
+      "name": "Meta: Muse Spark Open",
+      "hugging_face_id": "meta-models/Muse-Spark-Open-816B-A42B",
+      "created": 1792087069
+    },
+    {
+      "id": "nvidia/nemotron-3.5-super-vl",
+      "name": "NVIDIA: Nemotron 3.5 Super VL",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "created": 1792076662
+    },
+    {
+      "id": "nvidia/nemotron-3.5-super-vl:free",
+      "name": "NVIDIA: Nemotron 3.5 Super VL (free)",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "created": 1792076662
+    },
+    {
+      "id": "unbiased/pareto-26.10",
+      "name": "Pareto 26.10",
+      "hugging_face_id": null,
+      "created": 1792073620
+    },
+    {
+      "id": "~unbiased/pareto-latest",
+      "name": "Pareto Latest",
+      "hugging_face_id": null,
+      "created": 1791933050
+    },
+    {
+      "id": "unbiased/pareto-26.9",
+      "name": "Pareto 26.9",
+      "hugging_face_id": null,
+      "created": 1791930537
+    },
+    {
+      "id": "liquid/lfm-2.5-24b-a2b",
+      "name": "LiquidAI: LFM2.5-24B-A2B",
+      "hugging_face_id": "LiquidAI/LFM2.5-24B-A2B",
+      "created": 1791912025
+    },
+    {
+      "id": "google/gemini-4-argon",
+      "name": "Google: Gemini 4 Argon",
+      "hugging_face_id": null,
+      "created": 1791907477
+    },
+    {
+      "id": "google/gemini-4-argon:batch",
+      "name": "Google: Gemini 4 Argon (batch)",
+      "hugging_face_id": null,
+      "created": 1791907477
+    },
+    {
+      "id": "scaledown/summarize",
+      "name": "ScaleDown: Summarize",
+      "hugging_face_id": null,
+      "created": 1791893360
+    },
+    {
+      "id": "scaledown/extract",
+      "name": "ScaleDown: Extract",
+      "hugging_face_id": null,
+      "created": 1791893351
+    },
+    {
+      "id": "meta/muse-wonder",
+      "name": "Meta: Muse Wonder",
+      "hugging_face_id": null,
+      "created": 1791807945
+    },
+    {
+      "id": "stepfun/step-5-preview",
+      "name": "StepFun: Step 5 Preview",
+      "hugging_face_id": "stepfun-ai/Step-5-Preview",
+      "created": 1791462849
+    },
+    {
+      "id": "anthropic/claude-haiku-5.5",
+      "name": "Anthropic: Claude Haiku 5.5",
+      "hugging_face_id": null,
+      "created": 1791397883
+    },
+    {
+      "id": "anthropic/claude-haiku-5.5:batch",
+      "name": "Anthropic: Claude Haiku 5.5 (batch)",
+      "hugging_face_id": null,
+      "created": 1791397883
+    },
+    {
+      "id": "google/gemini-nano-banana-2.1",
+      "name": "Google: Nano Banana 2.1",
+      "hugging_face_id": null,
+      "created": 1791300825
+    },
+    {
+      "id": "mistralai/mistral-large-4-0",
+      "name": "Mistral: Mistral Large 4",
+      "hugging_face_id": "mistralai/Mistral-Large-4-1T-A52B",
+      "created": 1791294122
+    },
+    {
+      "id": "inclusionai/ling-3.1-flash",
+      "name": "inclusionAI: Ling 3.1 Flash",
+      "hugging_face_id": "inclusionAI/Ling-3.1-flash",
+      "created": 1790950024
+    },
+    {
+      "id": "unbiased/pareto-26.10-preview",
+      "name": "Pareto 26.10 Preview",
+      "hugging_face_id": null,
+      "created": 1790863623
+    },
+    {
+      "id": "openai/gpt-6.1-sol-pro",
+      "name": "OpenAI: GPT-6.1 Sol Pro",
+      "hugging_face_id": null,
+      "created": 1790702886
+    },
+    {
+      "id": "openai/gpt-6.1-sol-pro:batch",
+      "name": "OpenAI: GPT-6.1 Sol Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1790702886
+    },
+    {
+      "id": "openai/gpt-6.1-sol",
+      "name": "OpenAI: GPT-6.1 Sol",
+      "hugging_face_id": null,
+      "created": 1790702882
+    },
+    {
+      "id": "openai/gpt-6.1-sol:batch",
+      "name": "OpenAI: GPT-6.1 Sol (batch)",
+      "hugging_face_id": null,
+      "created": 1790702882
+    },
+    {
+      "id": "anthropic/claude-sonnet-5.5",
+      "name": "Anthropic: Claude Sonnet 5.5",
+      "hugging_face_id": null,
+      "created": 1790618686
+    },
+    {
+      "id": "anthropic/claude-sonnet-5.5:batch",
+      "name": "Anthropic: Claude Sonnet 5.5 (batch)",
+      "hugging_face_id": null,
+      "created": 1790618686
+    },
+    {
+      "id": "perceptron/perceptron-mk1.5",
+      "name": "Perceptron: Perceptron Mk1.5",
+      "hugging_face_id": null,
+      "created": 1790352661
+    },
+    {
+      "id": "fireworks/ember-1",
+      "name": "Fireworks: Ember-1",
+      "hugging_face_id": null,
+      "created": 1790208461
+    },
+    {
+      "id": "z-ai/glm-5.3-prime",
+      "name": "Z.ai: GLM 5.3 Prime",
+      "hugging_face_id": null,
+      "created": 1790199651
+    },
+    {
+      "id": "qwen/qwen3.8-max-prime",
+      "name": "Qwen: Qwen3.8 Max Prime",
+      "hugging_face_id": null,
+      "created": 1790191228
+    },
+    {
+      "id": "aion-labs/aion-3.5-mini",
+      "name": "AionLabs: Aion 3.5 Mini",
+      "hugging_face_id": null,
+      "created": 1790170962
+    },
+    {
+      "id": "aion-labs/aion-3.5",
+      "name": "AionLabs: Aion 3.5",
+      "hugging_face_id": null,
+      "created": 1790170961
+    },
+    {
+      "id": "upstage/solar-mini4",
+      "name": "Upstage: Solar Mini 4",
+      "hugging_face_id": null,
+      "created": 1790160358
+    },
+    {
+      "id": "cohere/command-a-plus",
+      "name": "Cohere: Command A+",
+      "hugging_face_id": "CohereLabs/command-a-plus-05-2026-bf16",
+      "created": 1790102896
+    },
+    {
+      "id": "openai/gpt-6-luna-pro",
+      "name": "OpenAI: GPT-6 Luna Pro",
+      "hugging_face_id": null,
+      "created": 1790100791
+    },
+    {
+      "id": "openai/gpt-6-luna-pro:batch",
+      "name": "OpenAI: GPT-6 Luna Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1790100791
+    },
+    {
+      "id": "openai/gpt-6-luna",
+      "name": "OpenAI: GPT-6 Luna",
+      "hugging_face_id": null,
+      "created": 1790100786
+    },
+    {
+      "id": "openai/gpt-6-luna:batch",
+      "name": "OpenAI: GPT-6 Luna (batch)",
+      "hugging_face_id": null,
+      "created": 1790100786
+    },
+    {
+      "id": "openai/gpt-6-sol-pro",
+      "name": "OpenAI: GPT-6 Sol Pro",
+      "hugging_face_id": null,
+      "created": 1790100781
+    },
+    {
+      "id": "openai/gpt-6-sol-pro:batch",
+      "name": "OpenAI: GPT-6 Sol Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1790100781
+    },
+    {
+      "id": "openai/gpt-6-sol",
+      "name": "OpenAI: GPT-6 Sol",
+      "hugging_face_id": null,
+      "created": 1790100775
+    },
+    {
+      "id": "openai/gpt-6-sol:batch",
+      "name": "OpenAI: GPT-6 Sol (batch)",
+      "hugging_face_id": null,
+      "created": 1790100775
+    },
+    {
+      "id": "anthropic/claude-opus-5.5",
+      "name": "Anthropic: Claude Opus 5.5",
+      "hugging_face_id": null,
+      "created": 1790094732
+    },
+    {
+      "id": "anthropic/claude-opus-5.5:batch",
+      "name": "Anthropic: Claude Opus 5.5 (batch)",
+      "hugging_face_id": null,
+      "created": 1790094732
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+      "name": "Xiaomi: MiMo-V2.6-Pro-UltraSpeed",
+      "hugging_face_id": null,
+      "created": 1790021267
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-flash",
+      "name": "Xiaomi: MiMo-V2.6-Flash",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "created": 1790021264
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-pro",
+      "name": "Xiaomi: MiMo-V2.6-Pro",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "created": 1790021259
+    },
+    {
+      "id": "x-ai/grok-4.7",
+      "name": "SpaceXSI: Grok 4.7",
+      "hugging_face_id": null,
+      "created": 1790007541
+    },
+    {
+      "id": "x-ai/grok-4.7:batch",
+      "name": "SpaceXSI: Grok 4.7 (batch)",
+      "hugging_face_id": null,
+      "created": 1790007541
+    },
+    {
+      "id": "qwen/qwen3.8-omni-flash",
+      "name": "Qwen: Qwen3.8 Omni Flash",
+      "hugging_face_id": null,
+      "created": 1789959954
+    },
+    {
+      "id": "prism-ml/ternary-bonsai-2-27b",
+      "name": "PrismML: Ternary Bonsai 2 27B",
+      "hugging_face_id": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+      "created": 1789754046
+    },
+    {
+      "id": "z-ai/glm-5.3-flashx",
+      "name": "Z.ai: GLM 5.3 FlashX",
+      "hugging_face_id": null,
+      "created": 1789744020
+    },
+    {
+      "id": "~deepseek/deepseek-pro-latest",
+      "name": "DeepSeek: DeepSeek Pro Latest",
+      "hugging_face_id": null,
+      "created": 1789399174
+    },
+    {
+      "id": "~deepseek/deepseek-flash-latest",
+      "name": "DeepSeek: DeepSeek Flash Latest",
+      "hugging_face_id": null,
+      "created": 1789399150
+    },
+    {
+      "id": "inference-net/schematron-v2-turbo",
+      "name": "Inference.net: Schematron V2 Turbo",
+      "hugging_face_id": "inference-net/schematron-v2-granite-4.0-h-micro",
+      "created": 1789176949
+    },
+    {
+      "id": "inference-net/schematron-v2-small",
+      "name": "Inference.net: Schematron V2 Small",
+      "hugging_face_id": "inference-net/schematron-v2-llama-3.2-3b",
+      "created": 1789176933
+    },
+    {
+      "id": "~openai/gpt-astra-latest",
+      "name": "OpenAI: GPT Astra Latest",
+      "hugging_face_id": null,
+      "created": 1789130932
+    },
+    {
+      "id": "~openai/gpt-sol-latest",
+      "name": "OpenAI: GPT Sol Latest",
+      "hugging_face_id": null,
+      "created": 1789130928
+    },
+    {
+      "id": "~openai/gpt-terra-latest",
+      "name": "OpenAI: GPT Terra Latest",
+      "hugging_face_id": null,
+      "created": 1789130925
+    },
+    {
+      "id": "~openai/gpt-luna-latest",
+      "name": "OpenAI: GPT Luna Latest",
+      "hugging_face_id": null,
+      "created": 1789130922
+    },
+    {
+      "id": "sakana/fugu-ultra-v2",
+      "name": "Sakana: Fugu Ultra v2",
+      "hugging_face_id": null,
+      "created": 1789105383
+    },
+    {
+      "id": "sakana/fugu-max",
+      "name": "Sakana: Fugu Max",
+      "hugging_face_id": null,
+      "created": 1789104771
+    },
+    {
+      "id": "inclusionai/ling-3.0-flash-vl",
+      "name": "inclusionAI: Ling 3.0 Flash VL",
+      "hugging_face_id": "inclusionAI/Ling-3.0-flash-VL",
+      "created": 1789056114
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "name": "DeepSeek: DeepSeek V4.1 Flash",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "created": 1789021285
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash:batch",
+      "name": "DeepSeek: DeepSeek V4.1 Flash (batch)",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "created": 1789021285
+    },
+    {
+      "id": "nex-agi/nex-n2.5-mini",
+      "name": "Nex AGI: Nex-N2.5-Mini",
+      "hugging_face_id": "nex-agi/Nex-N2.5-mini",
+      "created": 1788890061
+    },
+    {
+      "id": "nex-agi/nex-n2.5-pro",
+      "name": "Nex AGI: Nex-N2.5-Pro",
+      "hugging_face_id": "nex-agi/Nex-N2.5-Pro",
+      "created": 1788890050
+    },
+    {
+      "id": "openai/gpt-6-astra",
+      "name": "OpenAI: GPT-6 Astra",
+      "hugging_face_id": null,
+      "created": 1788552838
+    },
+    {
+      "id": "openai/gpt-6-astra:batch",
+      "name": "OpenAI: GPT-6 Astra (batch)",
+      "hugging_face_id": null,
+      "created": 1788552838
+    },
+    {
+      "id": "openai/gpt-6-astra-pro",
+      "name": "OpenAI: GPT-6 Astra Pro",
+      "hugging_face_id": null,
+      "created": 1788552835
+    },
+    {
+      "id": "openai/gpt-6-astra-pro:batch",
+      "name": "OpenAI: GPT-6 Astra Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1788552835
+    },
+    {
+      "id": "qwen/qwen3.8-max-0902",
+      "name": "Qwen: Qwen3.8 Max (0902)",
+      "hugging_face_id": null,
+      "created": 1788469704
+    },
+    {
+      "id": "qwen/qwen3.8-max-0902:batch",
+      "name": "Qwen: Qwen3.8 Max (0902) (batch)",
+      "hugging_face_id": null,
+      "created": 1788469704
+    },
+    {
+      "id": "meta/muse-spark-1.3",
+      "name": "Meta: Muse Spark 1.3",
+      "hugging_face_id": null,
+      "created": 1788378359
+    },
+    {
+      "id": "google/gemini-3.8-flash",
+      "name": "Google: Gemini 3.8 Flash",
+      "hugging_face_id": null,
+      "created": 1788362056
+    },
+    {
+      "id": "google/gemini-3.8-flash:batch",
+      "name": "Google: Gemini 3.8 Flash (batch)",
+      "hugging_face_id": null,
+      "created": 1788362056
+    },
+    {
+      "id": "anthropic/claude-fable-5.1",
+      "name": "Anthropic: Claude Fable 5.1",
+      "hugging_face_id": null,
+      "created": 1788285838
+    },
+    {
+      "id": "anthropic/claude-fable-5.1:batch",
+      "name": "Anthropic: Claude Fable 5.1 (batch)",
+      "hugging_face_id": null,
+      "created": 1788285838
+    },
+    {
+      "id": "ibm-granite/granite-4.2-8b",
+      "name": "IBM: Granite 4.2 8B",
+      "hugging_face_id": "ibm-granite/granite-4.2-8b",
+      "created": 1788206780
+    },
+    {
+      "id": "tencent/hy4-preview",
+      "name": "Tencent: Hy4 preview",
+      "hugging_face_id": "tencent/Hy4-preview",
+      "created": 1787897375
+    },
+    {
+      "id": "~z-ai/glm-flash-latest",
+      "name": "Z.ai: GLM Flash Latest",
+      "hugging_face_id": null,
+      "created": 1787817633
+    },
+    {
+      "id": "qwen/qwen3.8-flash",
+      "name": "Qwen: Qwen3.8 Flash",
+      "hugging_face_id": "Qwen/Qwen3.8-Flash-Next",
+      "created": 1787773060
+    },
+    {
+      "id": "z-ai/glm-5.3-flash",
+      "name": "Z.ai: GLM 5.3 Flash",
+      "hugging_face_id": "zai-org/GLM-5.3-Flash",
+      "created": 1787752741
+    },
+    {
+      "id": "z-ai/glm-5.3-flash:batch",
+      "name": "Z.ai: GLM 5.3 Flash (batch)",
+      "hugging_face_id": "zai-org/GLM-5.3-Flash",
+      "created": 1787752741
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-vision-exp",
+      "name": "DeepSeek: DeepSeek V4 Flash Vision Exp",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "created": 1787311563
+    },
+    {
+      "id": "tencent/hy-mt2-1.8b",
+      "name": "Tencent: Hy-MT2-1.8B",
+      "hugging_face_id": "tencent/Hy-MT2-1.8B",
+      "created": 1787231581
+    },
+    {
+      "id": "tencent/hy-mt2-30b-a3b",
+      "name": "Tencent: Hy-MT2-30B-A3B",
+      "hugging_face_id": "tencent/Hy-MT2-30B-A3B",
+      "created": 1787231561
+    },
+    {
+      "id": "~z-ai/glm-latest",
+      "name": "Z.ai: GLM Latest",
+      "hugging_face_id": null,
+      "created": 1787151053
+    },
+    {
+      "id": "tencent/hy-mt2-7b",
+      "name": "Tencent: Hy-MT2-7B",
+      "hugging_face_id": "tencent/Hy-MT2-7B",
+      "created": 1787148797
+    },
+    {
+      "id": "z-ai/glm-5.3",
+      "name": "Z.ai: GLM 5.3",
+      "hugging_face_id": "zai-org/GLM-5.3",
+      "created": 1787086655
+    },
+    {
+      "id": "z-ai/glm-5.3:batch",
+      "name": "Z.ai: GLM 5.3 (batch)",
+      "hugging_face_id": "zai-org/GLM-5.3",
+      "created": 1787086655
+    },
+    {
+      "id": "qwen/qwen3.8-27b",
+      "name": "Qwen: Qwen3.8 27B",
+      "hugging_face_id": "Qwen/Qwen3.8-27B",
+      "created": 1786722910
+    },
+    {
+      "id": "qwen/qwen3.8-27b:batch",
+      "name": "Qwen: Qwen3.8 27B (batch)",
+      "hugging_face_id": "Qwen/Qwen3.8-27B",
+      "created": 1786722910
+    },
+    {
+      "id": "dots-studio/dots-3-note-preview:free",
+      "name": "Dots Studio: Dots3-Note Preview (free)",
+      "hugging_face_id": "dots-studio/dots3-note-prev",
+      "created": 1786680361
+    },
+    {
+      "id": "google/gemini-3.7-flash",
+      "name": "Google: Gemini 3.7 Flash",
+      "hugging_face_id": null,
+      "created": 1786640581
+    },
+    {
+      "id": "google/gemini-3.7-flash:batch",
+      "name": "Google: Gemini 3.7 Flash (batch)",
+      "hugging_face_id": null,
+      "created": 1786640581
+    },
+    {
+      "id": "bytedance-seed/seed-2-1-turbo",
+      "name": "ByteDance Seed: Seed 2.1 Turbo",
+      "hugging_face_id": null,
+      "created": 1786552176
+    },
+    {
+      "id": "qwen/qwen3.8-2.4t-a95b",
+      "name": "Qwen: Qwen3.8 2.4T A95B",
+      "hugging_face_id": "Qwen/Qwen3.8-2.4T-A95B",
+      "created": 1786551702
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro-0813",
+      "name": "DeepSeek: DeepSeek V4 Pro 0813",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "created": 1786549364
+    },
+    {
+      "id": "x-ai/grok-4.6",
+      "name": "SpaceXSI: Grok 4.6",
+      "hugging_face_id": null,
+      "created": 1786548957
+    },
+    {
+      "id": "x-ai/grok-4.6:batch",
+      "name": "SpaceXSI: Grok 4.6 (batch)",
+      "hugging_face_id": null,
+      "created": 1786548957
+    },
+    {
+      "id": "nvidia/nemotron-3.5-lightning",
+      "name": "NVIDIA: Nemotron 3.5 Lightning",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "created": 1786452751
+    },
+    {
+      "id": "nvidia/nemotron-3.5-lightning:free",
+      "name": "NVIDIA: Nemotron 3.5 Lightning (free)",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "created": 1786452751
+    },
+    {
+      "id": "upstage/solar-pro4",
+      "name": "Upstage: Solar Pro 4",
+      "hugging_face_id": null,
+      "created": 1786371636
+    },
+    {
+      "id": "meta/muse-glimmer-30b",
+      "name": "Meta: Muse Glimmer 30B",
+      "hugging_face_id": "meta-models/Muse-Glimmer-30B",
+      "created": 1786302394
+    },
+    {
+      "id": "meta/muse-glimmer-30b:batch",
+      "name": "Meta: Muse Glimmer 30B (batch)",
+      "hugging_face_id": "meta-models/Muse-Glimmer-30B",
+      "created": 1786302394
+    },
+    {
+      "id": "inclusionai/ling-3.0-tiny",
+      "name": "inclusionAI: Ling 3.0 Tiny",
+      "hugging_face_id": "inclusionAI/Ling-3.0-tiny",
+      "created": 1786034890
+    },
+    {
+      "id": "meta/muse-spark-1.2",
+      "name": "Meta: Muse Spark 1.2",
+      "hugging_face_id": null,
+      "created": 1785959287
+    },
+    {
+      "id": "~deepseek/deepseek-v4-flash-latest",
+      "name": "DeepSeek: DeepSeek V4 Flash Latest",
+      "hugging_face_id": null,
+      "created": 1785606009
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "name": "DeepSeek: DeepSeek V4 Flash 0731",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "created": 1785478908
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-0731:batch",
+      "name": "DeepSeek: DeepSeek V4 Flash 0731 (batch)",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "created": 1785478908
+    },
+    {
+      "id": "thinkingmachines/inkling-small",
+      "name": "Thinking Machines: Inkling Small",
+      "hugging_face_id": "thinkingmachines/Inkling-Small",
+      "created": 1785443117
+    },
+    {
+      "id": "thinkingmachines/inkling-small:batch",
+      "name": "Thinking Machines: Inkling Small (batch)",
+      "hugging_face_id": "thinkingmachines/Inkling-Small",
+      "created": 1785443117
+    },
+    {
+      "id": "qwen/qwen3.7-flash",
+      "name": "Qwen: Qwen3.7 Flash",
+      "hugging_face_id": null,
+      "created": 1785190561
+    },
+    {
+      "id": "anthropic/claude-opus-5",
+      "name": "Anthropic: Claude Opus 5",
+      "hugging_face_id": null,
+      "created": 1784912544
+    },
+    {
+      "id": "anthropic/claude-opus-5:batch",
+      "name": "Anthropic: Claude Opus 5 (batch)",
+      "hugging_face_id": null,
+      "created": 1784912544
+    },
+    {
+      "id": "inclusionai/ling-3.0-flash",
+      "name": "inclusionAI: Ling 3.0 Flash",
+      "hugging_face_id": "inclusionAI/Ling-3.0-flash",
+      "created": 1784818580
+    },
+    {
+      "id": "google/gemini-3.6-flash",
+      "name": "Google: Gemini 3.6 Flash",
+      "hugging_face_id": null,
+      "created": 1784646733
+    },
+    {
+      "id": "google/gemini-3.6-flash:batch",
+      "name": "Google: Gemini 3.6 Flash (batch)",
+      "hugging_face_id": null,
+      "created": 1784646733
+    },
+    {
+      "id": "google/gemini-3.5-flash-lite",
+      "name": "Google: Gemini 3.5 Flash Lite",
+      "hugging_face_id": null,
+      "created": 1784646726
+    },
+    {
+      "id": "google/gemini-3.5-flash-lite:batch",
+      "name": "Google: Gemini 3.5 Flash Lite (batch)",
+      "hugging_face_id": null,
+      "created": 1784646726
+    },
+    {
+      "id": "meituan/longcat-2.0",
+      "name": "Meituan: LongCat 2.0",
+      "hugging_face_id": "meituan-longcat/LongCat-2.0",
+      "created": 1784554658
+    },
+    {
+      "id": "thinkingmachines/inkling",
+      "name": "Thinking Machines: Inkling",
+      "hugging_face_id": "thinkingmachines/Inkling",
+      "created": 1784325956
+    },
+    {
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "hugging_face_id": "moonshotai/Kimi-K3",
+      "created": 1784215858
+    },
+    {
+      "id": "moonshotai/kimi-k3:batch",
+      "name": "MoonshotAI: Kimi K3 (batch)",
+      "hugging_face_id": "moonshotai/Kimi-K3",
+      "created": 1784215858
+    },
+    {
+      "id": "meta/muse-spark-1.1",
+      "name": "Meta: Muse Spark 1.1",
+      "hugging_face_id": null,
+      "created": 1784215741
+    },
+    {
+      "id": "openai/gpt-5.6-luna-pro",
+      "name": "OpenAI: GPT-5.6 Luna Pro",
+      "hugging_face_id": null,
+      "created": 1783590867
+    },
+    {
+      "id": "openai/gpt-5.6-luna-pro:batch",
+      "name": "OpenAI: GPT-5.6 Luna Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1783590867
+    },
+    {
+      "id": "openai/gpt-5.6-luna",
+      "name": "OpenAI: GPT-5.6 Luna",
+      "hugging_face_id": null,
+      "created": 1783590864
+    },
+    {
+      "id": "openai/gpt-5.6-luna:batch",
+      "name": "OpenAI: GPT-5.6 Luna (batch)",
+      "hugging_face_id": null,
+      "created": 1783590864
+    },
+    {
+      "id": "openai/gpt-5.6-terra-pro",
+      "name": "OpenAI: GPT-5.6 Terra Pro",
+      "hugging_face_id": null,
+      "created": 1783590861
+    },
+    {
+      "id": "openai/gpt-5.6-terra-pro:batch",
+      "name": "OpenAI: GPT-5.6 Terra Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1783590861
+    },
+    {
+      "id": "openai/gpt-5.6-terra",
+      "name": "OpenAI: GPT-5.6 Terra",
+      "hugging_face_id": null,
+      "created": 1783590857
+    },
+    {
+      "id": "openai/gpt-5.6-terra:batch",
+      "name": "OpenAI: GPT-5.6 Terra (batch)",
+      "hugging_face_id": null,
+      "created": 1783590857
+    },
+    {
+      "id": "openai/gpt-5.6-sol-pro",
+      "name": "OpenAI: GPT-5.6 Sol Pro",
+      "hugging_face_id": null,
+      "created": 1783590854
+    },
+    {
+      "id": "openai/gpt-5.6-sol-pro:batch",
+      "name": "OpenAI: GPT-5.6 Sol Pro (batch)",
+      "hugging_face_id": null,
+      "created": 1783590854
+    },
+    {
+      "id": "openai/gpt-5.6-sol",
+      "name": "OpenAI: GPT-5.6 Sol",
+      "hugging_face_id": null,
+      "created": 1783590850
+    },
+    {
+      "id": "openai/gpt-5.6-sol:batch",
+      "name": "OpenAI: GPT-5.6 Sol (batch)",
+      "hugging_face_id": null,
+      "created": 1783590850
+    },
+    {
+      "id": "x-ai/grok-4.5",
+      "name": "SpaceXSI: Grok 4.5",
+      "hugging_face_id": null,
+      "created": 1783523154
+    },
+    {
+      "id": "~x-ai/grok-latest",
+      "name": "xAI: Grok Latest",
+      "hugging_face_id": null,
+      "created": 1783519360
+    },
+    {
+      "id": "aion-labs/aion-3.0-mini",
+      "name": "AionLabs: Aion-3.0-Mini",
+      "hugging_face_id": null,
+      "created": 1783443096
+    },
+    {
+      "id": "aion-labs/aion-3.0",
+      "name": "AionLabs: Aion-3.0",
+      "hugging_face_id": null,
+      "created": 1783443095
+    },
+    {
+      "id": "tencent/hy3",
+      "name": "Tencent: Hy3",
+      "hugging_face_id": "tencent/Hy3",
+      "created": 1783344048
+    },
+    {
+      "id": "anthropic/claude-sonnet-5",
+      "name": "Anthropic: Claude Sonnet 5",
+      "hugging_face_id": null,
+      "created": 1782843083
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite-image",
+      "name": "Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+      "hugging_face_id": null,
+      "created": 1782837225
+    },
+    {
+      "id": "sakana/fugu-ultra",
+      "name": "Sakana: Fugu Ultra",
+      "hugging_face_id": null,
+      "created": 1782276303
+    },
+    {
+      "id": "google/gemini-3.1-flash-image",
+      "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image)",
+      "hugging_face_id": null,
+      "created": 1781754065
+    },
+    {
+      "id": "google/gemini-3-pro-image",
+      "name": "Google: Nano Banana Pro (Gemini 3 Pro Image)",
+      "hugging_face_id": null,
+      "created": 1781754054
+    },
+    {
+      "id": "z-ai/glm-5.2",
+      "name": "Z.ai: GLM 5.2",
+      "hugging_face_id": "zai-org/GLM-5.2",
+      "created": 1781631930
+    },
+    {
+      "id": "z-ai/glm-5.2:batch",
+      "name": "Z.ai: GLM 5.2 (batch)",
+      "hugging_face_id": "zai-org/GLM-5.2",
+      "created": 1781631930
+    },
+    {
+      "id": "moonshotai/kimi-k2.7-code",
+      "name": "MoonshotAI: Kimi K2.7 Code",
+      "hugging_face_id": "moonshotai/Kimi-K2.7-Code",
+      "created": 1781266361
+    },
+    {
+      "id": "~anthropic/claude-fable-latest",
+      "name": "Anthropic: Claude Fable Latest",
+      "hugging_face_id": null,
+      "created": 1781029944
+    },
+    {
+      "id": "anthropic/claude-fable-5",
+      "name": "Anthropic: Claude Fable 5",
+      "hugging_face_id": null,
+      "created": 1781007515
+    },
+    {
+      "id": "nvidia/nemotron-3.5-content-safety",
+      "name": "NVIDIA: Nemotron 3.5 Content Safety",
+      "hugging_face_id": "nvidia/Nemotron-3.5-Content-Safety",
+      "created": 1780581864
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "name": "NVIDIA: Nemotron 3 Ultra",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+      "created": 1780551208
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "name": "NVIDIA: Nemotron 3 Ultra (free)",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+      "created": 1780551208
+    },
+    {
+      "id": "qwen/qwen3.7-plus",
+      "name": "Qwen: Qwen3.7 Plus",
+      "hugging_face_id": null,
+      "created": 1780491783
+    },
+    {
+      "id": "qwen/qwen3.7-plus:batch",
+      "name": "Qwen: Qwen3.7 Plus (batch)",
+      "hugging_face_id": null,
+      "created": 1780491783
+    },
+    {
+      "id": "minimax/minimax-m3",
+      "name": "MiniMax: MiniMax M3",
+      "hugging_face_id": "MiniMaxAI/Minimax-M3",
+      "created": 1780245374
+    },
+    {
+      "id": "minimax/minimax-m3:batch",
+      "name": "MiniMax: MiniMax M3 (batch)",
+      "hugging_face_id": "MiniMaxAI/Minimax-M3",
+      "created": 1780245374
+    },
+    {
+      "id": "stepfun/step-3.7-flash",
+      "name": "StepFun: Step 3.7 Flash",
+      "hugging_face_id": "stepfun-ai/Step-3.7-Flash",
+      "created": 1779985069
+    },
+    {
+      "id": "anthropic/claude-opus-4.8",
+      "name": "Anthropic: Claude Opus 4.8",
+      "hugging_face_id": null,
+      "created": 1779905091
+    },
+    {
+      "id": "qwen/qwen3.7-max",
+      "name": "Qwen: Qwen3.7 Max",
+      "hugging_face_id": null,
+      "created": 1779376861
+    },
+    {
+      "id": "google/gemini-3.5-flash",
+      "name": "Google: Gemini 3.5 Flash",
+      "hugging_face_id": null,
+      "created": 1779193800
+    },
+    {
+      "id": "google/gemini-3.5-flash:batch",
+      "name": "Google: Gemini 3.5 Flash (batch)",
+      "hugging_face_id": null,
+      "created": 1779193800
+    },
+    {
+      "id": "perceptron/perceptron-mk1",
+      "name": "Perceptron: Perceptron Mk1",
+      "hugging_face_id": null,
+      "created": 1778597029
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite",
+      "name": "Google: Gemini 3.1 Flash Lite",
+      "hugging_face_id": null,
+      "created": 1778168828
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite:batch",
+      "name": "Google: Gemini 3.1 Flash Lite (batch)",
+      "hugging_face_id": null,
+      "created": 1778168828
+    },
+    {
+      "id": "openai/gpt-chat-latest",
+      "name": "OpenAI: GPT Chat Latest",
+      "hugging_face_id": null,
+      "created": 1778000212
+    },
+    {
+      "id": "x-ai/grok-4.3",
+      "name": "SpaceXSI: Grok 4.3",
+      "hugging_face_id": null,
+      "created": 1777591821
+    },
+    {
+      "id": "x-ai/grok-4.3:batch",
+      "name": "SpaceXSI: Grok 4.3 (batch)",
+      "hugging_face_id": null,
+      "created": 1777591821
+    },
+    {
+      "id": "mistralai/mistral-medium-3-5",
+      "name": "Mistral: Mistral Medium 3.5",
+      "hugging_face_id": "mistralai/Mistral-Medium-3.5-128B",
+      "created": 1777570439
+    },
+    {
+      "id": "mistralai/mistral-medium-3-5:batch",
+      "name": "Mistral: Mistral Medium 3.5 (batch)",
+      "hugging_face_id": "mistralai/Mistral-Medium-3.5-128B",
+      "created": 1777570439
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
+      "hugging_face_id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
+      "created": 1777393095
+    },
+    {
+      "id": "~anthropic/claude-haiku-latest",
+      "name": "Anthropic: Claude Haiku Latest",
+      "hugging_face_id": null,
+      "created": 1777318492
+    },
+    {
+      "id": "~openai/gpt-mini-latest",
+      "name": "OpenAI: GPT Mini Latest",
+      "hugging_face_id": null,
+      "created": 1777318471
+    },
+    {
+      "id": "~google/gemini-pro-latest",
+      "name": "Google: Gemini Pro Latest",
+      "hugging_face_id": null,
+      "created": 1777318451
+    },
+    {
+      "id": "~moonshotai/kimi-latest",
+      "name": "MoonshotAI: Kimi Latest",
+      "hugging_face_id": null,
+      "created": 1777318428
+    },
+    {
+      "id": "~google/gemini-flash-latest",
+      "name": "Google: Gemini Flash Latest",
+      "hugging_face_id": null,
+      "created": 1777318398
+    },
+    {
+      "id": "~anthropic/claude-sonnet-latest",
+      "name": "Anthropic: Claude Sonnet Latest",
+      "hugging_face_id": null,
+      "created": 1777318368
+    },
+    {
+      "id": "qwen/qwen3.5-plus-20260420",
+      "name": "Qwen: Qwen3.5 Plus 2026-04-20",
+      "hugging_face_id": null,
+      "created": 1777261368
+    },
+    {
+      "id": "qwen/qwen3.6-flash",
+      "name": "Qwen: Qwen3.6 Flash",
+      "hugging_face_id": null,
+      "created": 1777261362
+    },
+    {
+      "id": "qwen/qwen3.6-35b-a3b",
+      "name": "Qwen: Qwen3.6 35B A3B",
+      "hugging_face_id": "Qwen/Qwen3.6-35B-A3B",
+      "created": 1777260255
+    },
+    {
+      "id": "qwen/qwen3.6-27b",
+      "name": "Qwen: Qwen3.6 27B",
+      "hugging_face_id": "Qwen/Qwen3.6-27B",
+      "created": 1777255064
+    },
+    {
+      "id": "openai/gpt-5.5-pro",
+      "name": "OpenAI: GPT-5.5 Pro",
+      "hugging_face_id": null,
+      "created": 1777051896
+    },
+    {
+      "id": "openai/gpt-5.5",
+      "name": "OpenAI: GPT-5.5",
+      "hugging_face_id": null,
+      "created": 1777051893
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek: DeepSeek V4 Pro 0423",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4-Pro",
+      "created": 1777000679
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash",
+      "name": "DeepSeek: DeepSeek V4 Flash 0423",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4-Flash",
+      "created": 1777000666
+    },
+    {
+      "id": "tencent/hy3-preview",
+      "name": "Tencent: Hy3 preview",
+      "hugging_face_id": "tencent/Hy3-preview",
+      "created": 1776878150
+    },
+    {
+      "id": "xiaomi/mimo-v2.5-pro",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2.5-Pro",
+      "created": 1776874273
+    },
+    {
+      "id": "xiaomi/mimo-v2.5",
+      "name": "Xiaomi: MiMo-V2.5",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2.5",
+      "created": 1776874269
+    },
+    {
+      "id": "openai/gpt-5.4-image-2",
+      "name": "OpenAI: GPT-5.4 Image 2",
+      "hugging_face_id": null,
+      "created": 1776797528
+    },
+    {
+      "id": "~anthropic/claude-opus-latest",
+      "name": "Anthropic: Claude Opus Latest",
+      "hugging_face_id": null,
+      "created": 1776795361
+    },
+    {
+      "id": "moonshotai/kimi-k2.6",
+      "name": "MoonshotAI: Kimi K2.6",
+      "hugging_face_id": "moonshotai/Kimi-K2.6",
+      "created": 1776699402
+    },
+    {
+      "id": "anthropic/claude-opus-4.7",
+      "name": "Anthropic: Claude Opus 4.7",
+      "hugging_face_id": null,
+      "created": 1776351100
+    },
+    {
+      "id": "z-ai/glm-5.1",
+      "name": "Z.ai: GLM 5.1",
+      "hugging_face_id": "zai-org/GLM-5.1",
+      "created": 1775578025
+    },
+    {
+      "id": "google/gemma-4-26b-a4b-it",
+      "name": "Google: Gemma 4 26B A4B ",
+      "hugging_face_id": "google/gemma-4-26B-A4B-it",
+      "created": 1775227989
+    },
+    {
+      "id": "google/gemma-4-26b-a4b-it:free",
+      "name": "Google: Gemma 4 26B A4B  (free)",
+      "hugging_face_id": "google/gemma-4-26B-A4B-it",
+      "created": 1775227989
+    },
+    {
+      "id": "google/gemma-4-31b-it",
+      "name": "Google: Gemma 4 31B",
+      "hugging_face_id": "google/gemma-4-31B-it",
+      "created": 1775148486
+    },
+    {
+      "id": "google/gemma-4-31b-it:free",
+      "name": "Google: Gemma 4 31B (free)",
+      "hugging_face_id": "google/gemma-4-31B-it",
+      "created": 1775148486
+    },
+    {
+      "id": "qwen/qwen3.6-plus",
+      "name": "Qwen: Qwen3.6 Plus",
+      "hugging_face_id": null,
+      "created": 1775133557
+    },
+    {
+      "id": "z-ai/glm-5v-turbo",
+      "name": "Z.ai: GLM 5V Turbo",
+      "hugging_face_id": null,
+      "created": 1775061458
+    },
+    {
+      "id": "x-ai/grok-4.20-multi-agent",
+      "name": "SpaceXSI: Grok 4.20 Multi-Agent",
+      "hugging_face_id": null,
+      "created": 1774979158
+    },
+    {
+      "id": "x-ai/grok-4.20",
+      "name": "SpaceXSI: Grok 4.20",
+      "hugging_face_id": null,
+      "created": 1774979019
+    },
+    {
+      "id": "google/lyria-3-pro-preview",
+      "name": "Google: Lyria 3 Pro Preview",
+      "hugging_face_id": null,
+      "created": 1774907286
+    },
+    {
+      "id": "google/lyria-3-clip-preview",
+      "name": "Google: Lyria 3 Clip Preview",
+      "hugging_face_id": null,
+      "created": 1774907255
+    },
+    {
+      "id": "rekaai/reka-edge",
+      "name": "Reka Edge",
+      "hugging_face_id": "RekaAI/reka-edge-2603",
+      "created": 1774026965
+    },
+    {
+      "id": "minimax/minimax-m2.7",
+      "name": "MiniMax: MiniMax M2.7",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M2.7",
+      "created": 1773836697
+    },
+    {
+      "id": "openai/gpt-5.4-nano",
+      "name": "OpenAI: GPT-5.4 Nano",
+      "hugging_face_id": null,
+      "created": 1773748187
+    },
+    {
+      "id": "openai/gpt-5.4-mini",
+      "name": "OpenAI: GPT-5.4 Mini",
+      "hugging_face_id": null,
+      "created": 1773748178
+    },
+    {
+      "id": "mistralai/mistral-small-2603",
+      "name": "Mistral: Mistral Small 4",
+      "hugging_face_id": "mistralai/Mistral-Small-4-119B-2603",
+      "created": 1773695685
+    },
+    {
+      "id": "z-ai/glm-5-turbo",
+      "name": "Z.ai: GLM 5 Turbo",
+      "hugging_face_id": null,
+      "created": 1773583573
+    },
+    {
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "name": "NVIDIA: Nemotron 3 Super",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+      "created": 1773245239
+    },
+    {
+      "id": "bytedance-seed/seed-2.0-lite",
+      "name": "ByteDance Seed: Seed-2.0-Lite",
+      "hugging_face_id": null,
+      "created": 1773157231
+    },
+    {
+      "id": "qwen/qwen3.5-9b",
+      "name": "Qwen: Qwen3.5-9B",
+      "hugging_face_id": "Qwen/Qwen3.5-9B",
+      "created": 1773152396
+    },
+    {
+      "id": "openai/gpt-5.4-pro",
+      "name": "OpenAI: GPT-5.4 Pro",
+      "hugging_face_id": null,
+      "created": 1772734366
+    },
+    {
+      "id": "openai/gpt-5.4",
+      "name": "OpenAI: GPT-5.4",
+      "hugging_face_id": null,
+      "created": 1772734352
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite-preview",
+      "name": "Google: Gemini 3.1 Flash Lite Preview",
+      "hugging_face_id": null,
+      "created": 1772512673
+    },
+    {
+      "id": "bytedance-seed/seed-2.0-mini",
+      "name": "ByteDance Seed: Seed-2.0-Mini",
+      "hugging_face_id": null,
+      "created": 1772131107
+    },
+    {
+      "id": "google/gemini-3.1-flash-image-preview",
+      "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
+      "hugging_face_id": null,
+      "created": 1772119558
+    },
+    {
+      "id": "qwen/qwen3.5-35b-a3b",
+      "name": "Qwen: Qwen3.5-35B-A3B",
+      "hugging_face_id": "Qwen/Qwen3.5-35B-A3B",
+      "created": 1772053822
+    },
+    {
+      "id": "qwen/qwen3.5-27b",
+      "name": "Qwen: Qwen3.5-27B",
+      "hugging_face_id": "Qwen/Qwen3.5-27B",
+      "created": 1772053810
+    },
+    {
+      "id": "qwen/qwen3.5-122b-a10b",
+      "name": "Qwen: Qwen3.5-122B-A10B",
+      "hugging_face_id": "Qwen/Qwen3.5-122B-A10B",
+      "created": 1772053789
+    },
+    {
+      "id": "qwen/qwen3.5-flash-02-23",
+      "name": "Qwen: Qwen3.5-Flash",
+      "hugging_face_id": null,
+      "created": 1772053776
+    },
+    {
+      "id": "google/gemini-3.1-pro-preview-customtools",
+      "name": "Google: Gemini 3.1 Pro Preview Custom Tools",
+      "hugging_face_id": null,
+      "created": 1772045923
+    },
+    {
+      "id": "openai/gpt-5.3-codex",
+      "name": "OpenAI: GPT-5.3-Codex",
+      "hugging_face_id": null,
+      "created": 1771959164
+    },
+    {
+      "id": "aion-labs/aion-2.0",
+      "name": "AionLabs: Aion-2.0",
+      "hugging_face_id": null,
+      "created": 1771881306
+    },
+    {
+      "id": "google/gemini-3.1-pro-preview",
+      "name": "Google: Gemini 3.1 Pro Preview",
+      "hugging_face_id": null,
+      "created": 1771509627
+    },
+    {
+      "id": "google/gemini-3.1-pro-preview:batch",
+      "name": "Google: Gemini 3.1 Pro Preview (batch)",
+      "hugging_face_id": null,
+      "created": 1771509627
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.6",
+      "name": "Anthropic: Claude Sonnet 4.6",
+      "hugging_face_id": null,
+      "created": 1771342990
+    },
+    {
+      "id": "qwen/qwen3.5-plus-02-15",
+      "name": "Qwen: Qwen3.5 Plus 2026-02-15",
+      "hugging_face_id": null,
+      "created": 1771229416
+    },
+    {
+      "id": "qwen/qwen3.5-397b-a17b",
+      "name": "Qwen: Qwen3.5 397B A17B",
+      "hugging_face_id": "Qwen/Qwen3.5-397B-A17B",
+      "created": 1771223018
+    },
+    {
+      "id": "minimax/minimax-m2.5",
+      "name": "MiniMax: MiniMax M2.5",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M2.5",
+      "created": 1770908502
+    },
+    {
+      "id": "z-ai/glm-5",
+      "name": "Z.ai: GLM 5",
+      "hugging_face_id": "zai-org/GLM-5",
+      "created": 1770829182
+    },
+    {
+      "id": "anthropic/claude-opus-4.6",
+      "name": "Anthropic: Claude Opus 4.6",
+      "hugging_face_id": null,
+      "created": 1770219050
+    },
+    {
+      "id": "qwen/qwen3-coder-next",
+      "name": "Qwen: Qwen3 Coder Next",
+      "hugging_face_id": "Qwen/Qwen3-Coder-Next",
+      "created": 1770164101
+    },
+    {
+      "id": "moonshotai/kimi-k2.5",
+      "name": "MoonshotAI: Kimi K2.5",
+      "hugging_face_id": "moonshotai/Kimi-K2.5",
+      "created": 1769487076
+    },
+    {
+      "id": "writer/palmyra-x5",
+      "name": "Writer: Palmyra X5",
+      "hugging_face_id": null,
+      "created": 1769003823
+    },
+    {
+      "id": "openai/gpt-audio",
+      "name": "OpenAI: GPT Audio",
+      "hugging_face_id": null,
+      "created": 1768862569
+    },
+    {
+      "id": "openai/gpt-audio-mini",
+      "name": "OpenAI: GPT Audio Mini",
+      "hugging_face_id": null,
+      "created": 1768859419
+    },
+    {
+      "id": "z-ai/glm-4.7-flash",
+      "name": "Z.ai: GLM 4.7 Flash",
+      "hugging_face_id": "zai-org/GLM-4.7-Flash",
+      "created": 1768833913
+    },
+    {
+      "id": "openai/gpt-5.2-codex",
+      "name": "OpenAI: GPT-5.2-Codex",
+      "hugging_face_id": null,
+      "created": 1768409315
+    },
+    {
+      "id": "z-ai/glm-4.7",
+      "name": "Z.ai: GLM 4.7",
+      "hugging_face_id": "zai-org/GLM-4.7",
+      "created": 1766378014
+    },
+    {
+      "id": "google/gemini-3-flash-preview",
+      "name": "Google: Gemini 3 Flash Preview",
+      "hugging_face_id": null,
+      "created": 1765987078
+    },
+    {
+      "id": "google/gemini-3-flash-preview:batch",
+      "name": "Google: Gemini 3 Flash Preview (batch)",
+      "hugging_face_id": null,
+      "created": 1765987078
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-30b-a3b",
+      "name": "NVIDIA: Nemotron 3 Nano 30B A3B",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+      "created": 1765731275
+    },
+    {
+      "id": "openai/gpt-5.2-pro",
+      "name": "OpenAI: GPT-5.2 Pro",
+      "hugging_face_id": null,
+      "created": 1765389780
+    },
+    {
+      "id": "openai/gpt-5.2",
+      "name": "OpenAI: GPT-5.2",
+      "hugging_face_id": null,
+      "created": 1765389775
+    },
+    {
+      "id": "mistralai/devstral-2512",
+      "name": "Mistral: Devstral 2 2512",
+      "hugging_face_id": "mistralai/Devstral-2-123B-Instruct-2512",
+      "created": 1765285419
+    },
+    {
+      "id": "relace/relace-search",
+      "name": "Relace: Relace Search",
+      "hugging_face_id": null,
+      "created": 1765213560
+    },
+    {
+      "id": "z-ai/glm-4.6v",
+      "name": "Z.ai: GLM 4.6V",
+      "hugging_face_id": "zai-org/GLM-4.6V",
+      "created": 1765207462
+    },
+    {
+      "id": "openai/gpt-5.1-codex-max",
+      "name": "OpenAI: GPT-5.1-Codex-Max",
+      "hugging_face_id": null,
+      "created": 1764878934
+    },
+    {
+      "id": "amazon/nova-2-lite-v1",
+      "name": "Amazon: Nova 2 Lite",
+      "hugging_face_id": null,
+      "created": 1764696672
+    },
+    {
+      "id": "mistralai/ministral-14b-2512",
+      "name": "Mistral: Ministral 3 14B 2512",
+      "hugging_face_id": "mistralai/Ministral-3-14B-Instruct-2512",
+      "created": 1764681735
+    },
+    {
+      "id": "mistralai/ministral-8b-2512",
+      "name": "Mistral: Ministral 3 8B 2512",
+      "hugging_face_id": "mistralai/Ministral-3-8B-Instruct-2512",
+      "created": 1764681654
+    },
+    {
+      "id": "mistralai/ministral-3b-2512",
+      "name": "Mistral: Ministral 3 3B 2512",
+      "hugging_face_id": "mistralai/Ministral-3-3B-Instruct-2512",
+      "created": 1764681560
+    },
+    {
+      "id": "mistralai/mistral-large-2512",
+      "name": "Mistral: Mistral Large 3 2512",
+      "hugging_face_id": "mistralai/Mistral-Large-3-675B-Instruct-2512",
+      "created": 1764624472
+    },
+    {
+      "id": "deepseek/deepseek-v3.2",
+      "name": "DeepSeek: DeepSeek V3.2",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.2",
+      "created": 1764594642
+    },
+    {
+      "id": "anthropic/claude-opus-4.5",
+      "name": "Anthropic: Claude Opus 4.5",
+      "hugging_face_id": null,
+      "created": 1764010580
+    },
+    {
+      "id": "google/gemini-3-pro-image-preview",
+      "name": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview)",
+      "hugging_face_id": null,
+      "created": 1763653797
+    },
+    {
+      "id": "openai/gpt-5.1",
+      "name": "OpenAI: GPT-5.1",
+      "hugging_face_id": null,
+      "created": 1763060305
+    },
+    {
+      "id": "openai/gpt-5.1-codex",
+      "name": "OpenAI: GPT-5.1-Codex",
+      "hugging_face_id": null,
+      "created": 1763060298
+    },
+    {
+      "id": "openai/gpt-5.1-codex-mini",
+      "name": "OpenAI: GPT-5.1-Codex-Mini",
+      "hugging_face_id": null,
+      "created": 1763057820
+    },
+    {
+      "id": "moonshotai/kimi-k2-thinking",
+      "name": "MoonshotAI: Kimi K2 Thinking",
+      "hugging_face_id": "moonshotai/Kimi-K2-Thinking",
+      "created": 1762440622
+    },
+    {
+      "id": "amazon/nova-premier-v1",
+      "name": "Amazon: Nova Premier 1.0",
+      "hugging_face_id": null,
+      "created": 1761950332
+    },
+    {
+      "id": "perplexity/sonar-pro-search",
+      "name": "Perplexity: Sonar Pro Search",
+      "hugging_face_id": null,
+      "created": 1761854366
+    },
+    {
+      "id": "mistralai/voxtral-small-24b-2507",
+      "name": "Mistral: Voxtral Small 24B 2507",
+      "hugging_face_id": "mistralai/Voxtral-Small-24B-2507",
+      "created": 1761835144
+    },
+    {
+      "id": "openai/gpt-oss-safeguard-20b",
+      "name": "OpenAI: gpt-oss-safeguard-20b",
+      "hugging_face_id": "openai/gpt-oss-safeguard-20b",
+      "created": 1761752836
+    },
+    {
+      "id": "openai/gpt-5-image-mini",
+      "name": "OpenAI: GPT-5 Image Mini",
+      "hugging_face_id": null,
+      "created": 1760624583
+    },
+    {
+      "id": "anthropic/claude-haiku-4.5",
+      "name": "Anthropic: Claude Haiku 4.5",
+      "hugging_face_id": null,
+      "created": 1760547638
+    },
+    {
+      "id": "qwen/qwen3-vl-8b-instruct",
+      "name": "Qwen: Qwen3 VL 8B Instruct",
+      "hugging_face_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "created": 1760463308
+    },
+    {
+      "id": "openai/gpt-5-image",
+      "name": "OpenAI: GPT-5 Image",
+      "hugging_face_id": null,
+      "created": 1760447986
+    },
+    {
+      "id": "google/gemini-2.5-flash-image",
+      "name": "Google: Nano Banana (Gemini 2.5 Flash Image)",
+      "hugging_face_id": null,
+      "created": 1759870431
+    },
+    {
+      "id": "qwen/qwen3-vl-30b-a3b-instruct",
+      "name": "Qwen: Qwen3 VL 30B A3B Instruct",
+      "hugging_face_id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "created": 1759794476
+    },
+    {
+      "id": "openai/gpt-5-pro",
+      "name": "OpenAI: GPT-5 Pro",
+      "hugging_face_id": null,
+      "created": 1759776663
+    },
+    {
+      "id": "z-ai/glm-4.6",
+      "name": "Z.ai: GLM 4.6",
+      "hugging_face_id": "zai-org/GLM-4.6",
+      "created": 1759235576
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.5",
+      "name": "Anthropic: Claude Sonnet 4.5",
+      "hugging_face_id": null,
+      "created": 1759161676
+    },
+    {
+      "id": "deepseek/deepseek-v3.2-exp",
+      "name": "DeepSeek: DeepSeek V3.2 Exp",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.2-Exp",
+      "created": 1759150481
+    },
+    {
+      "id": "thedrummer/cydonia-24b-v4.1",
+      "name": "TheDrummer: Cydonia 24B V4.1",
+      "hugging_face_id": "thedrummer/cydonia-24b-v4.1",
+      "created": 1758931878
+    },
+    {
+      "id": "relace/relace-apply-3",
+      "name": "Relace: Relace Apply 3",
+      "hugging_face_id": null,
+      "created": 1758891572
+    },
+    {
+      "id": "qwen/qwen3-vl-235b-a22b-instruct",
+      "name": "Qwen: Qwen3 VL 235B A22B Instruct",
+      "hugging_face_id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "created": 1758668687
+    },
+    {
+      "id": "deepseek/deepseek-v3.1-terminus",
+      "name": "DeepSeek: DeepSeek V3.1 Terminus",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1-Terminus",
+      "created": 1758548275
+    },
+    {
+      "id": "qwen/qwen3-coder-flash",
+      "name": "Qwen: Qwen3 Coder Flash",
+      "hugging_face_id": null,
+      "created": 1758115536
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-instruct",
+      "name": "Qwen: Qwen3 Next 80B A3B Instruct",
+      "hugging_face_id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+      "created": 1757612213
+    },
+    {
+      "id": "moonshotai/kimi-k2-0905",
+      "name": "MoonshotAI: Kimi K2 0905",
+      "hugging_face_id": "moonshotai/Kimi-K2-Instruct-0905",
+      "created": 1757021147
+    },
+    {
+      "id": "nousresearch/hermes-4-405b",
+      "name": "Nous: Hermes 4 405B",
+      "hugging_face_id": "NousResearch/Hermes-4-405B",
+      "created": 1756235463
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3.1",
+      "name": "DeepSeek: DeepSeek V3.1",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
+      "created": 1755779628
+    },
+    {
+      "id": "mistralai/mistral-medium-3.1",
+      "name": "Mistral: Mistral Medium 3.1",
+      "hugging_face_id": null,
+      "created": 1755095639
+    },
+    {
+      "id": "z-ai/glm-4.5v",
+      "name": "Z.ai: GLM 4.5V",
+      "hugging_face_id": "zai-org/GLM-4.5V",
+      "created": 1754922288
+    },
+    {
+      "id": "openai/gpt-5",
+      "name": "OpenAI: GPT-5",
+      "hugging_face_id": null,
+      "created": 1754587413
+    },
+    {
+      "id": "openai/gpt-5-mini",
+      "name": "OpenAI: GPT-5 Mini",
+      "hugging_face_id": null,
+      "created": 1754587407
+    },
+    {
+      "id": "openai/gpt-5-nano",
+      "name": "OpenAI: GPT-5 Nano",
+      "hugging_face_id": null,
+      "created": 1754587402
+    },
+    {
+      "id": "openai/gpt-5-nano:batch",
+      "name": "OpenAI: GPT-5 Nano (batch)",
+      "hugging_face_id": null,
+      "created": 1754587402
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "name": "OpenAI: gpt-oss-120b",
+      "hugging_face_id": "openai/gpt-oss-120b",
+      "created": 1754414231
+    },
+    {
+      "id": "openai/gpt-oss-120b:batch",
+      "name": "OpenAI: gpt-oss-120b (batch)",
+      "hugging_face_id": "openai/gpt-oss-120b",
+      "created": 1754414231
+    },
+    {
+      "id": "openai/gpt-oss-20b",
+      "name": "OpenAI: gpt-oss-20b",
+      "hugging_face_id": "openai/gpt-oss-20b",
+      "created": 1754414229
+    },
+    {
+      "id": "openai/gpt-oss-20b:batch",
+      "name": "OpenAI: gpt-oss-20b (batch)",
+      "hugging_face_id": "openai/gpt-oss-20b",
+      "created": 1754414229
+    },
+    {
+      "id": "anthropic/claude-opus-4.1",
+      "name": "Anthropic: Claude Opus 4.1",
+      "hugging_face_id": null,
+      "created": 1754411591
+    },
+    {
+      "id": "mistralai/codestral-2508",
+      "name": "Mistral: Codestral 2508",
+      "hugging_face_id": null,
+      "created": 1754079630
+    },
+    {
+      "id": "qwen/qwen3-coder-30b-a3b-instruct",
+      "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
+      "hugging_face_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "created": 1753972379
+    },
+    {
+      "id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "name": "Qwen: Qwen3 30B A3B Instruct 2507",
+      "hugging_face_id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "created": 1753806965
+    },
+    {
+      "id": "z-ai/glm-4.5",
+      "name": "Z.ai: GLM 4.5",
+      "hugging_face_id": "zai-org/GLM-4.5",
+      "created": 1753471347
+    },
+    {
+      "id": "z-ai/glm-4.5-air",
+      "name": "Z.ai: GLM 4.5 Air",
+      "hugging_face_id": "zai-org/GLM-4.5-Air",
+      "created": 1753471258
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b-thinking-2507",
+      "name": "Qwen: Qwen3 235B A22B Thinking 2507",
+      "hugging_face_id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+      "created": 1753449557
+    },
+    {
+      "id": "qwen/qwen3-coder",
+      "name": "Qwen: Qwen3 Coder 480B A35B",
+      "hugging_face_id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "created": 1753230546
+    },
+    {
+      "id": "bytedance/ui-tars-1.5-7b",
+      "name": "ByteDance: UI-TARS 7B ",
+      "hugging_face_id": "ByteDance-Seed/UI-TARS-1.5-7B",
+      "created": 1753205056
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite",
+      "name": "Google: Gemini 2.5 Flash Lite",
+      "hugging_face_id": null,
+      "created": 1753200276
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b-2507",
+      "name": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "hugging_face_id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "created": 1753119555
+    },
+    {
+      "id": "moonshotai/kimi-k2",
+      "name": "MoonshotAI: Kimi K2 0711",
+      "hugging_face_id": "moonshotai/Kimi-K2-Instruct",
+      "created": 1752263252
+    },
+    {
+      "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition",
+      "name": "Venice: Uncensored",
+      "hugging_face_id": "cognitivecomputations/Dolphin-Mistral-24B-Venice-Edition",
+      "created": 1752094966
+    },
+    {
+      "id": "morph/morph-v3-large",
+      "name": "Morph: Morph V3 Large",
+      "hugging_face_id": null,
+      "created": 1751910858
+    },
+    {
+      "id": "morph/morph-v3-large:batch",
+      "name": "Morph: Morph V3 Large (batch)",
+      "hugging_face_id": null,
+      "created": 1751910858
+    },
+    {
+      "id": "morph/morph-v3-fast",
+      "name": "Morph: Morph V3 Fast",
+      "hugging_face_id": null,
+      "created": 1751910002
+    },
+    {
+      "id": "morph/morph-v3-fast:batch",
+      "name": "Morph: Morph V3 Fast (batch)",
+      "hugging_face_id": null,
+      "created": 1751910002
+    },
+    {
+      "id": "mistralai/mistral-small-3.2-24b-instruct",
+      "name": "Mistral: Mistral Small 3.2 24B",
+      "hugging_face_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "created": 1750443016
+    },
+    {
+      "id": "google/gemini-2.5-flash",
+      "name": "Google: Gemini 2.5 Flash",
+      "hugging_face_id": null,
+      "created": 1750172488
+    },
+    {
+      "id": "google/gemini-2.5-pro",
+      "name": "Google: Gemini 2.5 Pro",
+      "hugging_face_id": null,
+      "created": 1750169544
+    },
+    {
+      "id": "openai/o3-pro",
+      "name": "OpenAI: o3 Pro",
+      "hugging_face_id": null,
+      "created": 1749598352
+    },
+    {
+      "id": "google/gemini-2.5-pro-preview",
+      "name": "Google: Gemini 2.5 Pro Preview 06-05",
+      "hugging_face_id": null,
+      "created": 1749137257
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528",
+      "name": "DeepSeek: R1 0528",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1-0528",
+      "created": 1748455170
+    },
+    {
+      "id": "mistralai/mistral-medium-3",
+      "name": "Mistral: Mistral Medium 3",
+      "hugging_face_id": null,
+      "created": 1746627341
+    },
+    {
+      "id": "meta-llama/llama-guard-4-12b",
+      "name": "Meta: Llama Guard 4 12B",
+      "hugging_face_id": "meta-llama/Llama-Guard-4-12B",
+      "created": 1745975193
+    },
+    {
+      "id": "qwen/qwen3-30b-a3b",
+      "name": "Qwen: Qwen3 30B A3B",
+      "hugging_face_id": "Qwen/Qwen3-30B-A3B",
+      "created": 1745878604
+    },
+    {
+      "id": "qwen/qwen3-14b",
+      "name": "Qwen: Qwen3 14B",
+      "hugging_face_id": "Qwen/Qwen3-14B",
+      "created": 1745876478
+    },
+    {
+      "id": "qwen/qwen3-32b",
+      "name": "Qwen: Qwen3 32B",
+      "hugging_face_id": "Qwen/Qwen3-32B",
+      "created": 1745875945
+    },
+    {
+      "id": "openai/o3",
+      "name": "OpenAI: o3",
+      "hugging_face_id": null,
+      "created": 1744823457
+    },
+    {
+      "id": "openai/gpt-4.1",
+      "name": "OpenAI: GPT-4.1",
+      "hugging_face_id": null,
+      "created": 1744651385
+    },
+    {
+      "id": "openai/gpt-4.1-mini",
+      "name": "OpenAI: GPT-4.1 Mini",
+      "hugging_face_id": null,
+      "created": 1744651381
+    },
+    {
+      "id": "openai/gpt-4.1-nano",
+      "name": "OpenAI: GPT-4.1 Nano",
+      "hugging_face_id": null,
+      "created": 1744651369
+    },
+    {
+      "id": "meta-llama/llama-4-maverick",
+      "name": "Meta: Llama 4 Maverick",
+      "hugging_face_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+      "created": 1743881822
+    },
+    {
+      "id": "meta-llama/llama-4-scout",
+      "name": "Meta: Llama 4 Scout",
+      "hugging_face_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "created": 1743881519
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3-0324",
+      "name": "DeepSeek: DeepSeek V3 0324",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3-0324",
+      "created": 1742824755
+    },
+    {
+      "id": "mistralai/mistral-small-3.1-24b-instruct",
+      "name": "Mistral: Mistral Small 3.1 24B",
+      "hugging_face_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      "created": 1742238937
+    },
+    {
+      "id": "google/gemma-3-4b-it",
+      "name": "Google: Gemma 3 4B",
+      "hugging_face_id": "google/gemma-3-4b-it",
+      "created": 1741905510
+    },
+    {
+      "id": "google/gemma-3-12b-it",
+      "name": "Google: Gemma 3 12B",
+      "hugging_face_id": "google/gemma-3-12b-it",
+      "created": 1741902625
+    },
+    {
+      "id": "cohere/command-a",
+      "name": "Cohere: Command A",
+      "hugging_face_id": "CohereForAI/c4ai-command-a-03-2025",
+      "created": 1741894342
+    },
+    {
+      "id": "rekaai/reka-flash-3",
+      "name": "Reka Flash 3",
+      "hugging_face_id": "RekaAI/reka-flash-3",
+      "created": 1741812813
+    },
+    {
+      "id": "google/gemma-3-27b-it",
+      "name": "Google: Gemma 3 27B",
+      "hugging_face_id": "google/gemma-3-27b-it",
+      "created": 1741756359
+    },
+    {
+      "id": "thedrummer/skyfall-36b-v2",
+      "name": "TheDrummer: Skyfall 36B V2",
+      "hugging_face_id": "TheDrummer/Skyfall-36B-v2",
+      "created": 1741636566
+    },
+    {
+      "id": "perplexity/sonar-reasoning-pro",
+      "name": "Perplexity: Sonar Reasoning Pro",
+      "hugging_face_id": null,
+      "created": 1741313308
+    },
+    {
+      "id": "perplexity/sonar-pro",
+      "name": "Perplexity: Sonar Pro",
+      "hugging_face_id": null,
+      "created": 1741312423
+    },
+    {
+      "id": "perplexity/sonar-deep-research",
+      "name": "Perplexity: Sonar Deep Research",
+      "hugging_face_id": null,
+      "created": 1741311246
+    },
+    {
+      "id": "mistralai/mistral-saba",
+      "name": "Mistral: Saba",
+      "hugging_face_id": null,
+      "created": 1739803239
+    },
+    {
+      "id": "aion-labs/aion-rp-llama-3.1-8b",
+      "name": "AionLabs: Aion-RP 1.0 (8B)",
+      "hugging_face_id": "aion-labs/Aion-RP-Llama-3.1-8B",
+      "created": 1738696718
+    },
+    {
+      "id": "qwen/qwen2.5-vl-72b-instruct",
+      "name": "Qwen: Qwen2.5 VL 72B Instruct",
+      "hugging_face_id": "Qwen/Qwen2.5-VL-72B-Instruct",
+      "created": 1738410311
+    },
+    {
+      "id": "qwen/qwen-plus",
+      "name": "Qwen: Qwen-Plus",
+      "hugging_face_id": null,
+      "created": 1738409840
+    },
+    {
+      "id": "mistralai/mistral-small-24b-instruct-2501",
+      "name": "Mistral: Mistral Small 3",
+      "hugging_face_id": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "created": 1738255409
+    },
+    {
+      "id": "perplexity/sonar",
+      "name": "Perplexity: Sonar",
+      "hugging_face_id": null,
+      "created": 1738013808
+    },
+    {
+      "id": "microsoft/phi-4",
+      "name": "Microsoft: Phi 4",
+      "hugging_face_id": "microsoft/phi-4",
+      "created": 1736489872
+    },
+    {
+      "id": "deepseek/deepseek-chat",
+      "name": "DeepSeek: DeepSeek V3",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3",
+      "created": 1735241320
+    },
+    {
+      "id": "cohere/command-r7b-12-2024",
+      "name": "Cohere: Command R7B (12-2024)",
+      "hugging_face_id": "CohereLabs/c4ai-command-r7b-12-2024",
+      "created": 1734158152
+    },
+    {
+      "id": "meta-llama/llama-3.3-70b-instruct",
+      "name": "Meta: Llama 3.3 70B Instruct",
+      "hugging_face_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "created": 1733506137
+    },
+    {
+      "id": "amazon/nova-lite-v1",
+      "name": "Amazon: Nova Lite 1.0",
+      "hugging_face_id": null,
+      "created": 1733437363
+    },
+    {
+      "id": "amazon/nova-micro-v1",
+      "name": "Amazon: Nova Micro 1.0",
+      "hugging_face_id": null,
+      "created": 1733437237
+    },
+    {
+      "id": "amazon/nova-pro-v1",
+      "name": "Amazon: Nova Pro 1.0",
+      "hugging_face_id": null,
+      "created": 1733436303
+    },
+    {
+      "id": "openai/gpt-4o-2024-11-20",
+      "name": "OpenAI: GPT-4o (2024-11-20)",
+      "hugging_face_id": null,
+      "created": 1732127594
+    },
+    {
+      "id": "mistralai/mistral-large-2407",
+      "name": "Mistral Large 2407",
+      "hugging_face_id": "mistralai/Mistral-Large-Instruct-2407",
+      "created": 1731978415
+    },
+    {
+      "id": "qwen/qwen-2.5-coder-32b-instruct",
+      "name": "Qwen2.5 Coder 32B Instruct",
+      "hugging_face_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "created": 1731368400
+    },
+    {
+      "id": "thedrummer/unslopnemo-12b",
+      "name": "TheDrummer: UnslopNemo 12B",
+      "hugging_face_id": "TheDrummer/UnslopNemo-12B-v4.1",
+      "created": 1731103448
+    },
+    {
+      "id": "anthracite-org/magnum-v4-72b",
+      "name": "Magnum v4 72B",
+      "hugging_face_id": "anthracite-org/magnum-v4-72b",
+      "created": 1729555200
+    },
+    {
+      "id": "meta-llama/llama-3.2-1b-instruct",
+      "name": "Meta: Llama 3.2 1B Instruct",
+      "hugging_face_id": "meta-llama/Llama-3.2-1B-Instruct",
+      "created": 1727222400
+    },
+    {
+      "id": "meta-llama/llama-3.2-3b-instruct",
+      "name": "Meta: Llama 3.2 3B Instruct",
+      "hugging_face_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "created": 1727222400
+    },
+    {
+      "id": "qwen/qwen-2.5-72b-instruct",
+      "name": "Qwen2.5 72B Instruct",
+      "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
+      "created": 1726704000
+    },
+    {
+      "id": "cohere/command-r-08-2024",
+      "name": "Cohere: Command R (08-2024)",
+      "hugging_face_id": "CohereLabs/c4ai-command-r-08-2024",
+      "created": 1724976000
+    },
+    {
+      "id": "cohere/command-r-plus-08-2024",
+      "name": "Cohere: Command R+ (08-2024)",
+      "hugging_face_id": "CohereLabs/c4ai-command-r-plus-08-2024",
+      "created": 1724976000
+    },
+    {
+      "id": "sao10k/l3.1-euryale-70b",
+      "name": "Sao10K: Llama 3.1 Euryale 70B v2.2",
+      "hugging_face_id": "Sao10K/L3.1-70B-Euryale-v2.2",
+      "created": 1724803200
+    },
+    {
+      "id": "sao10k/l3-lunaris-8b",
+      "name": "Sao10K: Llama 3 8B Lunaris",
+      "hugging_face_id": "Sao10K/L3-8B-Lunaris-v1",
+      "created": 1723507200
+    },
+    {
+      "id": "openai/gpt-4o-2024-08-06",
+      "name": "OpenAI: GPT-4o (2024-08-06)",
+      "hugging_face_id": null,
+      "created": 1722902400
+    },
+    {
+      "id": "meta-llama/llama-3.1-70b-instruct",
+      "name": "Meta: Llama 3.1 70B Instruct",
+      "hugging_face_id": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+      "created": 1721692800
+    },
+    {
+      "id": "meta-llama/llama-3.1-8b-instruct",
+      "name": "Meta: Llama 3.1 8B Instruct",
+      "hugging_face_id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "created": 1721692800
+    },
+    {
+      "id": "mistralai/mistral-nemo",
+      "name": "Mistral: Mistral Nemo",
+      "hugging_face_id": "mistralai/Mistral-Nemo-Instruct-2407",
+      "created": 1721347200
+    },
+    {
+      "id": "openai/gpt-4o-mini",
+      "name": "OpenAI: GPT-4o-mini",
+      "hugging_face_id": null,
+      "created": 1721260800
+    },
+    {
+      "id": "openai/gpt-4o-mini-2024-07-18",
+      "name": "OpenAI: GPT-4o-mini (2024-07-18)",
+      "hugging_face_id": null,
+      "created": 1721260800
+    },
+    {
+      "id": "google/gemma-2-27b-it",
+      "name": "Google: Gemma 2 27B",
+      "hugging_face_id": "google/gemma-2-27b-it",
+      "created": 1720828800
+    },
+    {
+      "id": "openai/gpt-4o",
+      "name": "OpenAI: GPT-4o",
+      "hugging_face_id": null,
+      "created": 1715558400
+    },
+    {
+      "id": "openai/gpt-4o-2024-05-13",
+      "name": "OpenAI: GPT-4o (2024-05-13)",
+      "hugging_face_id": null,
+      "created": 1715558400
+    },
+    {
+      "id": "mistralai/mixtral-8x22b-instruct",
+      "name": "Mistral: Mixtral 8x22B Instruct",
+      "hugging_face_id": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+      "created": 1713312000
+    },
+    {
+      "id": "mistralai/mistral-large",
+      "name": "Mistral Large",
+      "hugging_face_id": null,
+      "created": 1708905600
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-0613",
+      "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
+      "hugging_face_id": null,
+      "created": 1706140800
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-16k",
+      "name": "OpenAI: GPT-3.5 Turbo 16k",
+      "hugging_face_id": null,
+      "created": 1693180800
+    },
+    {
+      "id": "mancer/weaver",
+      "name": "Mancer: Weaver (alpha)",
+      "hugging_face_id": null,
+      "created": 1690934400
+    },
+    {
+      "id": "undi95/remm-slerp-l2-13b",
+      "name": "ReMM SLERP 13B",
+      "hugging_face_id": "Undi95/ReMM-SLERP-L2-13B",
+      "created": 1689984000
+    },
+    {
+      "id": "gryphe/mythomax-l2-13b",
+      "name": "MythoMax 13B",
+      "hugging_face_id": "Gryphe/MythoMax-L2-13b",
+      "created": 1688256000
+    },
+    {
+      "id": "openai/gpt-4",
+      "name": "OpenAI: GPT-4",
+      "hugging_face_id": null,
+      "created": 1685232000
+    },
+    {
+      "id": "openrouter/auto",
+      "name": "Auto Router",
+      "hugging_face_id": null,
+      "created": 1793885889
+    },
+    {
+      "id": "openrouter/auto-code",
+      "name": "Auto Code",
+      "hugging_face_id": null,
+      "created": 1793884321
+    },
+    {
+      "id": "typesafe/jev-router",
+      "name": "TypeSafe: Jev Router",
+      "hugging_face_id": null,
+      "created": 1790363560
+    },
+    {
+      "id": "nvidia/switchyard",
+      "name": "NVIDIA: Switchyard",
+      "hugging_face_id": null,
+      "created": 1790025947
+    },
+    {
+      "id": "openrouter/auto-beta",
+      "name": "Auto Router (Beta)",
+      "hugging_face_id": null,
+      "created": 1784311165
+    },
+    {
+      "id": "openrouter/fusion",
+      "name": "OpenRouter: Fusion",
+      "hugging_face_id": null,
+      "created": 1781371647
+    },
+    {
+      "id": "openrouter/pareto-code",
+      "name": "Pareto Code Router",
+      "hugging_face_id": null,
+      "created": 1776747900
+    },
+    {
+      "id": "openrouter/free",
+      "name": "Free Models Router",
+      "hugging_face_id": null,
+      "created": 1769917427
+    },
+    {
+      "id": "openrouter/bodybuilder",
+      "name": "Body Builder (beta)",
+      "hugging_face_id": null,
+      "created": 1764903653
+    }
+  ],
+  "models": {
+    "deepseek/deepseek-v4.1-flash-1017": {
+      "snapshot_hash": "cdd040ebb1071bdefbb7a028f175c6f89d4a9e76a8d2d9f36932b6300c9ac3db",
+      "endpoints": [
+        {
+          "provider_name": "Particle AI",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000003",
+            "completion": "0.00000025",
+            "input_cache_read": "0.000000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Wafer",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.000000036",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000001",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "PrimeIntellect",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000004368",
+            "completion": "0.0000007",
+            "input_cache_read": "0.0000000024",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Ambient",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000045",
+            "completion": "0.00000025",
+            "input_cache_read": "0.0000000025",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Pearl Research",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000005",
+            "completion": "0.0000003",
+            "input_cache_read": "0.000000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Morph",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000059",
+            "completion": "0.00000052",
+            "input_cache_read": "0.000000005",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Particle AI",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000006",
+            "completion": "0.0000005",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "OpenInference",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000006",
+            "completion": "0.0000009",
+            "input_cache_read": "0.000000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Wafer",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.000000066",
+            "completion": "0.0000005",
+            "input_cache_read": "0.0000000065",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000000784",
+            "completion": "0.0000002352",
+            "input_cache_read": "0.000000002352",
+            "discount": 0.51
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000008",
+            "completion": "0.000000666",
+            "input_cache_read": "0.000000008",
+            "discount": 0
+          },
+          "context_length": 1040000
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000008",
+            "completion": "0.000000666",
+            "input_cache_read": "0.000000008",
+            "discount": 0
+          },
+          "context_length": 1040000
+        },
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000098",
+            "completion": "0.000000294",
+            "input_cache_read": "0.00000000294",
+            "discount": 0.51
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Tenstorrent",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000004",
+            "input_cache_read": "0.000000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Inceptron",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DekaLLM",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Cloudflare",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "StepFun",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000105",
+            "completion": "0.00000042",
+            "input_cache_read": "0.0000000021",
+            "discount": 0.65
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "StreamLake",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000111",
+            "completion": "0.000000444",
+            "input_cache_read": "0.00000000222",
+            "discount": 0.63
+          },
+          "context_length": 1024000
+        },
+        {
+          "provider_name": "Cohere",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000115",
+            "completion": "0.0000004",
+            "input_cache_read": "0.0000000025",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Ant Digital",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000012",
+            "completion": "0.00000048",
+            "input_cache_read": "0.0000000024",
+            "discount": 0.6
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "River",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000012",
+            "completion": "0.00000048",
+            "input_cache_read": "0.0000000024",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Relace",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000012",
+            "completion": "0.0000005",
+            "input_cache_read": "0.000000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000147",
+            "completion": "0.000000441",
+            "input_cache_read": "0.00000000441",
+            "discount": 0.51
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "SiliconFlow",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Makora",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000008",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Novita",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000165",
+            "completion": "0.00000066",
+            "input_cache_read": "0.0000000033",
+            "discount": 0.45
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "ModelRun",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000017",
+            "completion": "0.00000067",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Nebius",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000018",
+            "completion": "0.00000072",
+            "input_cache_read": "0.0000000036",
+            "discount": 0.4
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DigitalOcean",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000018",
+            "completion": "0.00000072",
+            "input_cache_read": "0.0000000036",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "GMICloud",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000018",
+            "completion": "0.00000072",
+            "input_cache_read": "0.0000000036",
+            "discount": 0.4
+          },
+          "context_length": 1048575
+        },
+        {
+          "provider_name": "Alibaba",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000018",
+            "completion": "0.00000072",
+            "input_cache_read": "0.0000000036",
+            "discount": 0,
+            "overrides": [
+              {
+                "utc_start": 0,
+                "utc_end": 1400,
+                "prompt": "0.00000018",
+                "completion": "0.00000072",
+                "input_cache_read": "0.0000000036"
+              },
+              {
+                "utc_start": 1400,
+                "utc_end": 0,
+                "prompt": "0.00000009",
+                "completion": "0.00000036",
+                "input_cache_read": "0.0000000018"
+              }
+            ]
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "AtlasCloud",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000195",
+            "completion": "0.00000078",
+            "input_cache_read": "0.0000000039",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Ionstream",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000021",
+            "completion": "0.00000062",
+            "input_cache_read": "0.0000000105",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "PrimaLabs",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000024",
+            "completion": "0.00000096",
+            "input_cache_read": "0.0000000048",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Modal",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000025",
+            "completion": "0.000001",
+            "input_cache_read": "0.000000005",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Baidu",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000028",
+            "completion": "0.00000113",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Crusoe",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000029",
+            "completion": "0.0000012",
+            "input_cache_read": "0.000000007",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Mistral",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.000000007",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "CoreWeave",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Near AI",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Venice",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.0000000075",
+            "discount": 0
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "Together",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "BaseTen",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.000000007",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Parasail",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.000000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.0000018",
+            "input_cache_read": "0.000000009",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Morph",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000024",
+            "input_cache_read": "0.000000014",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "BaseTen",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000024",
+            "input_cache_read": "0.000000014",
+            "discount": 0
+          },
+          "context_length": 1048576
+        }
+      ]
+    },
+    "z-ai/glm-5.3-flash": {
+      "snapshot_hash": "9cb9f55dc92c7e081ebf9151b8483b09f83ae209486f48ab8308b4e3cfba4db7",
+      "endpoints": [
+        {
+          "provider_name": "Relace",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000000399",
+            "completion": "0.0000000784",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Wafer",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.000000042",
+            "completion": "0.000000184",
+            "input_cache_read": "0.000000041",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "OpenInference",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000005",
+            "completion": "0.00000045",
+            "input_cache_read": "0.000000025",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Darkbloom",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000065",
+            "completion": "0.00000018",
+            "input_cache_read": "0.000000012",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Wafer",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.000000065",
+            "completion": "0.00000024",
+            "input_cache_read": "0.000000064",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Particle AI",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.000000065",
+            "completion": "0.00000025",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Tenstorrent",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000075",
+            "completion": "0.00000025",
+            "input_cache_read": "0.000000015",
+            "discount": 0
+          },
+          "context_length": 262000
+        },
+        {
+          "provider_name": "GMICloud",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000075",
+            "completion": "0.00000025",
+            "input_cache_read": "0.000000015",
+            "discount": 0.5
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Near AI",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000008",
+            "completion": "0.0000005",
+            "input_cache_read": "0.000000012",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Novita",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000084",
+            "completion": "0.00000028",
+            "input_cache_read": "0.0000000168",
+            "discount": 0.44
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "StreamLake",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000000885",
+            "completion": "0.000000295",
+            "input_cache_read": "0.0000000177",
+            "discount": 0.41
+          },
+          "context_length": 1024000
+        },
+        {
+          "provider_name": "SiliconFlow",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000004",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DekaLLM",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Cohere",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.000000105",
+            "completion": "0.00000034",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000108",
+            "completion": "0.00000035",
+            "input_cache_read": "0.000000035",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000108",
+            "completion": "0.00000035",
+            "input_cache_read": "0.000000035",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DigitalOcean",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000001125",
+            "completion": "0.000000375",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Reka",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000012",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "CoreWeave",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.00000012",
+            "completion": "0.00000038",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "River",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000012",
+            "completion": "0.0000004",
+            "input_cache_read": "0.000000024",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Morph",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000124",
+            "completion": "0.000000358",
+            "input_cache_read": "0.000000062",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Particle AI",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.00000013",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000004",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Makora",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000014",
+            "completion": "0.00000024",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Baidu",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Mistral",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "KT",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Nebius",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Modal",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Inceptron",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000004",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Crusoe",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Friendli",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Together",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048575
+        },
+        {
+          "provider_name": "Parasail",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "BaseTen",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Venice",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Z.AI",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000005",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Sail Research",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000175",
+            "completion": "0.000000625",
+            "input_cache_read": "0.0000000225",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Sail Research",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000175",
+            "completion": "0.000000625",
+            "input_cache_read": "0.0000000225",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Parasail",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000001875",
+            "completion": "0.000000625",
+            "input_cache_read": "0.0000000375",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000000225",
+            "completion": "0.00000075",
+            "input_cache_read": "0.000000045",
+            "discount": 0
+          },
+          "context_length": 1048576
+        }
+      ]
+    },
+    "z-ai/glm-5.3": {
+      "snapshot_hash": "81e16c687b6cb7b78674b9b7d4a8b5939e55d3b64a8358aa56a9b9cf555451a0",
+      "endpoints": [
+        {
+          "provider_name": "Wafer",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000000699",
+            "completion": "0.0000014",
+            "input_cache_read": "0.0000000689",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Relace",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000000703",
+            "completion": "0.0000043843",
+            "input_cache_read": "0.0000000703",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000084",
+            "completion": "0.0000036",
+            "input_cache_read": "0.000000079",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000084",
+            "completion": "0.0000036",
+            "input_cache_read": "0.000000079",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Wafer",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000179",
+            "completion": "0.0000014",
+            "input_cache_read": "0.000000178",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "AkashML",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000019",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000019",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Featherless",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000042",
+            "completion": "0.00000132",
+            "input_cache_read": "0.000000078",
+            "discount": 0.7
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.000002",
+            "input_cache_read": "0.0000001",
+            "discount": 0.375
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Cohere",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.0000005",
+            "completion": "0.0000035",
+            "input_cache_read": "0.0000001",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Decart",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000056",
+            "completion": "0.00000181",
+            "input_cache_read": "0.0000001",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000005625",
+            "completion": "0.0000025",
+            "input_cache_read": "0.000000125",
+            "discount": 0.375
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Tenstorrent",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000006",
+            "completion": "0.0000025",
+            "input_cache_read": "0.0000001",
+            "discount": 0
+          },
+          "context_length": 1044480
+        },
+        {
+          "provider_name": "Novita",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000063",
+            "completion": "0.00000198",
+            "input_cache_read": "0.000000117",
+            "discount": 0.55
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "SiliconFlow",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000007",
+            "completion": "0.0000019",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000007",
+            "completion": "0.0000022",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "GMICloud",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000007",
+            "completion": "0.0000022",
+            "input_cache_read": "0.00000013",
+            "discount": 0.5
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Cloudflare",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000007",
+            "completion": "0.0000022",
+            "input_cache_read": "0.00000013",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "CoreWeave",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.00000075",
+            "completion": "0.000003",
+            "input_cache_read": "0.00000019",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Sail Research",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000075",
+            "completion": "0.000003",
+            "input_cache_read": "0.00000012",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DigitalOcean",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000091",
+            "completion": "0.00000286",
+            "input_cache_read": "0.000000169",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Morph",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000001045",
+            "completion": "0.000004876",
+            "input_cache_read": "0.000000212",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Inceptron",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000105",
+            "completion": "0.0000034",
+            "input_cache_read": "0.0000001249",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Sail Research",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000105",
+            "completion": "0.0000042",
+            "input_cache_read": "0.000000168",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Alibaba",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000119",
+            "completion": "0.00000374",
+            "input_cache_read": "0.000000238",
+            "discount": 0
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "Friendli",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000126",
+            "completion": "0.00000396",
+            "input_cache_read": "0.000000234",
+            "discount": 0.1
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Doubleword",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.00000136",
+            "completion": "0.00000544",
+            "input_cache_read": "0.000000136",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Nebius",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "SambaNova",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000007",
+            "discount": 0.5
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Mistral",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000014",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Baidu",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "BaseTen",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000014",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Crusoe",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Venice",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0.2
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "Together",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048575
+        },
+        {
+          "provider_name": "Parasail",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Modal",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "BaseTen",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000014",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "AtlasCloud",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Z.AI",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000014",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Makora",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000015",
+            "completion": "0.0000044",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Mistral",
+          "quantization": "nvfp4",
+          "pricing": {
+            "prompt": "0.00000154",
+            "completion": "0.00000484",
+            "input_cache_read": "0.000000154",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Amazon Bedrock",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000168",
+            "completion": "0.00000528",
+            "input_cache_read": "0.000000312",
+            "input_cache_write": "0.0000021",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Alibaba",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000168",
+            "completion": "0.00000528",
+            "input_cache_read": "0.000000336",
+            "discount": 0
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "Parasail",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000021",
+            "completion": "0.0000066",
+            "input_cache_read": "0.00000026",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "ModelRun",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000021",
+            "completion": "0.0000066",
+            "input_cache_read": "0.0000004",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000021",
+            "completion": "0.0000066",
+            "input_cache_read": "0.00000039",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "BaseTen",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000021",
+            "completion": "0.0000066",
+            "input_cache_read": "0.00000021",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "BaseTen",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000021",
+            "completion": "0.0000066",
+            "input_cache_read": "0.00000021",
+            "discount": 0
+          },
+          "context_length": 1048576
+        }
+      ]
+    },
+    "moonshotai/kimi-k3.1-pro": {
+      "snapshot_hash": "06743ea05f3388d46768e8adffb53c99c1f106f0bd1e748dd4e8e8e5410ca65c",
+      "endpoints": [
+        {
+          "provider_name": "Relace",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000002403",
+            "completion": "0.0000084023",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Wafer",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.000000253",
+            "completion": "0.0000088",
+            "input_cache_read": "0.00000018",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Morph",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000932",
+            "completion": "0.000013979",
+            "input_cache_read": "0.000000296",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Sail Research",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000010425",
+            "completion": "0.00000935",
+            "input_cache_read": "0.000000187",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Decart",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.0000012",
+            "completion": "0.000006",
+            "input_cache_read": "0.00000012",
+            "discount": 0.4
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Sail Research",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000014025",
+            "completion": "0.00000935",
+            "input_cache_read": "0.000000187",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "AkashML",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000175",
+            "completion": "0.00001",
+            "input_cache_read": "0.00000018",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Wafer",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.0000018",
+            "completion": "0.000009",
+            "input_cache_read": "0.00000018",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.0000018",
+            "completion": "0.000009",
+            "input_cache_read": "0.000000182",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.0000018",
+            "completion": "0.000009",
+            "input_cache_read": "0.000000182",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "bf16",
+          "pricing": {
+            "prompt": "0.0000019",
+            "completion": "0.0000095",
+            "input_cache_read": "0.00000019",
+            "discount": 0.05
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Makora",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00000949",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Nebius",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "River",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "PrimaLabs",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DigitalOcean",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Parasail",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Alibaba",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Modal",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Together",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Moonshot AI",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.000002",
+            "completion": "0.00001",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.0000027",
+            "completion": "0.0000135",
+            "input_cache_read": "0.00000027",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "InferenceNet",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.0000027",
+            "completion": "0.0000135",
+            "input_cache_read": "0.00000027",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Amazon Bedrock",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000004",
+            "completion": "0.00002",
+            "input_cache_read": "0.0000002",
+            "input_cache_write": "0.000005",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Moonshot AI",
+          "quantization": "mxfp4",
+          "pricing": {
+            "prompt": "0.000004",
+            "completion": "0.00002",
+            "input_cache_read": "0.0000002",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Amazon Bedrock",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000044",
+            "completion": "0.000022",
+            "input_cache_read": "0.00000022",
+            "input_cache_write": "0.0000055",
+            "discount": 0
+          },
+          "context_length": 1048576
+        }
+      ]
+    },
+    "minimax/minimax-m3": {
+      "snapshot_hash": "135aa8da7ca0f14afe422e924a4210180af4989e31901396062a246b71b4717a",
+      "endpoints": [
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000224",
+            "completion": "0.00000088",
+            "input_cache_read": "0.0000000448",
+            "discount": 0
+          },
+          "context_length": 524288
+        },
+        {
+          "provider_name": "CoreWeave",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000023",
+            "completion": "0.00000096",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "GMICloud",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000024",
+            "completion": "0.00000096",
+            "input_cache_read": "0.000000048",
+            "discount": 0.2
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000028",
+            "completion": "0.0000011",
+            "input_cache_read": "0.000000056",
+            "discount": 0
+          },
+          "context_length": 524288
+        },
+        {
+          "provider_name": "Venice",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.00000006",
+            "discount": 0
+          },
+          "context_length": 524288
+        },
+        {
+          "provider_name": "Parasail",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.00000006",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Minimax",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.0000003",
+            "completion": "0.0000012",
+            "input_cache_read": "0.00000006",
+            "discount": 0
+          },
+          "context_length": 524288
+        },
+        {
+          "provider_name": "Parasail",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.0000018",
+            "input_cache_read": "0.00000009",
+            "discount": 0
+          },
+          "context_length": 1048576
+        },
+        {
+          "provider_name": "Featherless",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000055",
+            "completion": "0.0000022",
+            "input_cache_read": "0.00000006",
+            "discount": 0
+          },
+          "context_length": 262144
+        }
+      ]
+    },
+    "qwen/qwen3.8-27b": {
+      "snapshot_hash": "eba1ae9afd8e47dd05c7b5078fdd11858304204978fa0ed34300f850cccd7bd4",
+      "endpoints": [
+        {
+          "provider_name": "Darkbloom",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.000000035",
+            "completion": "0.0000015",
+            "input_cache_read": "0.0000000175",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Chutes",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000039",
+            "completion": "0.00000125",
+            "input_cache_read": "0.0000000039",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Near AI",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.00000135",
+            "input_cache_read": "0.000000018",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Ionstream",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.00000195",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Modal",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.0000023",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "DekaLLM",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000004",
+            "completion": "0.0000025",
+            "input_cache_read": "0.00000002",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Wafer",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000006",
+            "completion": "0.0000022",
+            "input_cache_read": "0.000000059",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Mancer 2",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000125",
+            "completion": "0.0000015",
+            "input_cache_read": "0.00000003",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Tenstorrent",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000016",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "DeepInfra",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.000001875",
+            "input_cache_read": "0.0000000375",
+            "discount": 0.25
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Reka",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000025",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "StreamLake",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000000175",
+            "completion": "0.00000105",
+            "input_cache_read": "0.000000035",
+            "discount": 0.65
+          },
+          "context_length": 1024000
+        },
+        {
+          "provider_name": "ModelRun",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.0000002",
+            "completion": "0.0000025",
+            "input_cache_read": "0.00000009",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "AkashML",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000225",
+            "completion": "0.00000198",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Parasail",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000024",
+            "completion": "0.0000022",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "CoreWeave",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.000003",
+            "input_cache_read": "0.00000015",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Novita",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000042",
+            "completion": "0.000003",
+            "input_cache_read": "0.000000085",
+            "discount": 0
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "SiliconFlow",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.000000425",
+            "completion": "0.00000255",
+            "input_cache_read": "0.000000085",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Alibaba",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.000000425",
+            "completion": "0.00000255",
+            "input_cache_read": "0.000000085",
+            "input_cache_write": "0.00000053125",
+            "discount": 0
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "Nebius",
+          "quantization": "fp4",
+          "pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.000003",
+            "input_cache_read": "0.0000001",
+            "discount": 0
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "GMICloud",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.0000032",
+            "input_cache_read": "0.00000025",
+            "discount": 0
+          },
+          "context_length": 1000000
+        },
+        {
+          "provider_name": "PrimeIntellect",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.0000032",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Cloudflare",
+          "quantization": "unknown",
+          "pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.0000032",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Venice",
+          "quantization": "fp8",
+          "pricing": {
+            "prompt": "0.00000045",
+            "completion": "0.0000032",
+            "discount": 0
+          },
+          "context_length": 262144
+        },
+        {
+          "provider_name": "Cerebras",
+          "quantization": "fp16",
+          "pricing": {
+            "prompt": "0.00000099",
+            "completion": "0.00000149",
+            "input_cache_read": "0.00000099",
+            "discount": 0
+          },
+          "context_length": 65536
+        }
+      ]
+    }
+  }
+}

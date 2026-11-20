@@ -1,0 +1,749 @@
+{
+  "name": "GLM-5.3-Flash",
+  "facts": {
+    "released": {
+      "value": "2026-08-26",
+      "source": "https://z.ai/blog/glm-5.3",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "family": {
+      "value": "GLM 5",
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "company_slug": {
+      "value": "zai",
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "distribution": {
+      "value": "open",
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parameters_b": {
+      "value": 320,
+      "source": "https://docs.z.ai/guides/vlm/glm-5.3-flash#model-api",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parameters_active_b": {
+      "value": 18,
+      "source": "https://docs.z.ai/guides/vlm/glm-5.3-flash#model-api",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "architecture.type": {
+      "value": "moe",
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "bb8f01c42cb92a52ca72e65afb4d5bd8d11aef083cd210e8de25dfb904f23e9f",
+      "snapshot_ext": "json"
+    },
+    "architecture.experts": {
+      "value": 288,
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/config.json",
+      "fetched": "2026-09-06",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "bb8f01c42cb92a52ca72e65afb4d5bd8d11aef083cd210e8de25dfb904f23e9f",
+      "snapshot_ext": "json"
+    },
+    "license": {
+      "value": "MIT",
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/LICENSE",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "context_length": {
+      "value": 1048576,
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/config.json",
+      "fetched": "2026-09-07",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "bb8f01c42cb92a52ca72e65afb4d5bd8d11aef083cd210e8de25dfb904f23e9f",
+      "snapshot_ext": "json"
+    },
+    "supports_tools": {
+      "value": true,
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "supports_vision": {
+      "value": true,
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "supports_structured_output": {
+      "value": true,
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "quantizations_unsloth": {
+      "value": [
+        {
+          "name": "UD-IQ1_S",
+          "size_gb": 93.1
+        },
+        {
+          "name": "UD-IQ1_M",
+          "size_gb": 97.6
+        },
+        {
+          "name": "UD-IQ2_XXS",
+          "size_gb": 101.8
+        },
+        {
+          "name": "UD-Q2_K_XL",
+          "size_gb": 108.7
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "size_gb": 120.4
+        },
+        {
+          "name": "UD-Q3_K_XL",
+          "size_gb": 147.5
+        },
+        {
+          "name": "UD-IQ4_XS",
+          "size_gb": 156.8
+        },
+        {
+          "name": "UD-Q4_K_XL",
+          "size_gb": 199.7
+        },
+        {
+          "name": "UD-Q5_K_XL",
+          "size_gb": 240.3
+        },
+        {
+          "name": "UD-Q6_K_XL",
+          "size_gb": 291.8
+        },
+        {
+          "name": "Q8_0",
+          "size_gb": 341
+        },
+        {
+          "name": "BF16",
+          "size_gb": 641.6
+        }
+      ],
+      "source": "https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "49d638ed61d4a657104f66c4f3aee2fd57b1615009df8fce1f5825ee18dcd261",
+      "snapshot_ext": "json"
+    },
+    "quantizations_bartowski": {
+      "value": [],
+      "source": "https://huggingface.co/bartowski",
+      "fetched": "2026-09-09",
+      "verified_by": "auto",
+      "verified_at": "2026-09-09"
+    },
+    "native_size_gb": {
+      "value": 328.3,
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "8b7b2a3b34f2d3fdfa39fa7f05d81c804b2150d3a79f17644f566cc28d0c42fc",
+      "snapshot_ext": "json"
+    },
+    "aa_id": {
+      "value": "19496b81-9f41-4214-a77a-1df803b3c5ae",
+      "source": "https://artificialanalysis.ai/api/v2/language/models/free",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-08"
+    },
+    "benchmark.aa_intelligence_index": {
+      "value": 27.8,
+      "source": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "452cb17ff0d2bd866af438d14a68120f18a1a257f75da1b58f76e533a7901305",
+      "snapshot_ext": "json"
+    },
+    "pricing.input_per_m_usd": {
+      "value": 0.127,
+      "source": "https://openrouter.ai/z-ai/glm-5.3-flash",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "9cb9f55dc92c7e081ebf9151b8483b09f83ae209486f48ab8308b4e3cfba4db7",
+      "snapshot_ext": "json"
+    },
+    "pricing.output_per_m_usd": {
+      "value": 0.5,
+      "source": "https://openrouter.ai/z-ai/glm-5.3-flash",
+      "fetched": "2026-10-23",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "452cb17ff0d2bd866af438d14a68120f18a1a257f75da1b58f76e533a7901305",
+      "snapshot_ext": "json"
+    },
+    "pricing.blended_per_m_usd": {
+      "value": 0.195,
+      "source": "https://openrouter.ai/z-ai/glm-5.3-flash",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "9cb9f55dc92c7e081ebf9151b8483b09f83ae209486f48ab8308b4e3cfba4db7",
+      "snapshot_ext": "json"
+    },
+    "speed.output_tokens_per_second": {
+      "value": 61.35,
+      "source": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "96ac6b94310077209a45be91767586c523ba491107b0b2091d0ee56862e63457",
+      "snapshot_ext": "json"
+    },
+    "speed.time_to_first_token_seconds": {
+      "value": 1.6,
+      "source": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "2ecc214d3233635f940fefac989ecb1d79a18282bd856fed364e12e1b19765e7",
+      "snapshot_ext": "json"
+    },
+    "snapshot.huggingface_card": {
+      "value": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "9d8924e3dc7c4857225eaa0a0e73a9bc80420024dd9ac2bd5b7f80596b54d085",
+      "snapshot_ext": "html"
+    },
+    "snapshot.hf_config": {
+      "value": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/config.json",
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/config.json",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "bb8f01c42cb92a52ca72e65afb4d5bd8d11aef083cd210e8de25dfb904f23e9f",
+      "snapshot_ext": "html"
+    },
+    "snapshot.github": {
+      "value": "https://github.com/THUDM/GLM",
+      "source": "https://github.com/THUDM/GLM",
+      "fetched": "2026-09-08",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "snapshot.unsloth_gguf": {
+      "value": "https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF",
+      "source": "https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF",
+      "fetched": "2026-09-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "49d638ed61d4a657104f66c4f3aee2fd57b1615009df8fce1f5825ee18dcd261",
+      "snapshot_ext": "json"
+    },
+    "snapshot.official_announcement": {
+      "value": "https://z.ai/blog/glm-5.3",
+      "source": "https://z.ai/blog/glm-5.3",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "a6ac37b2a6c3d9b7e3b084abc6bdf6962b348bf38d26062d777ee13020b40504",
+      "snapshot_ext": "html"
+    },
+    "pricing.cached_input_per_m_usd": {
+      "value": 0.03,
+      "source": "https://openrouter.ai/z-ai/glm-5.3-flash",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "452cb17ff0d2bd866af438d14a68120f18a1a257f75da1b58f76e533a7901305",
+      "snapshot_ext": "json"
+    },
+    "arena_name": {
+      "value": "GLM-5.3-Flash",
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-11",
+      "verified_by": "luke",
+      "verified_at": "2026-11-11",
+      "quote": "GLM-5.3-Flash"
+    },
+    "benchmark.arena_text_coding": {
+      "value": 1526,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-15",
+      "verified_by": "auto",
+      "verified_at": "2026-11-15",
+      "snapshot_hash": "793403c62742af0da61f4e36392241c7df1e89436d85ac3aeaf679f318a8ea56",
+      "snapshot_ext": "parquet"
+    },
+    "pricing.blended_min_per_m_usd": {
+      "value": 0.0495,
+      "source": "https://openrouter.ai/z-ai/glm-5.3-flash",
+      "fetched": "2026-11-11",
+      "verified_by": "auto",
+      "verified_at": "2026-11-11",
+      "snapshot_hash": "db314ea71c68334353b7731980a99b4a1990fc3eba3e020ac8849393b66362ae",
+      "snapshot_ext": "json"
+    },
+    "providers": {
+      "value": [
+        {
+          "provider": "Relace",
+          "quantization": "fp4",
+          "input": 0.0399,
+          "output": 0.0784,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Wafer",
+          "quantization": "nvfp4",
+          "input": 0.042,
+          "output": 0.184,
+          "cached_input": 0.041,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Darkbloom",
+          "quantization": "fp4",
+          "input": 0.065,
+          "output": 0.18,
+          "cached_input": 0.012,
+          "context_length": 262144
+        },
+        {
+          "provider": "Wafer",
+          "quantization": "nvfp4",
+          "input": 0.065,
+          "output": 0.24,
+          "cached_input": 0.064,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Particle AI",
+          "quantization": "nvfp4",
+          "input": 0.065,
+          "output": 0.25,
+          "cached_input": 0.02,
+          "context_length": 1048576
+        },
+        {
+          "provider": "GMICloud",
+          "quantization": "fp8",
+          "input": 0.075,
+          "output": 0.25,
+          "cached_input": 0.015,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Tenstorrent",
+          "quantization": "fp8",
+          "input": 0.075,
+          "output": 0.25,
+          "cached_input": 0.015,
+          "context_length": 262000
+        },
+        {
+          "provider": "Novita",
+          "quantization": "fp8",
+          "input": 0.084,
+          "output": 0.28,
+          "cached_input": 0.0168,
+          "context_length": 1048576
+        },
+        {
+          "provider": "StreamLake",
+          "quantization": "fp8",
+          "input": 0.0885,
+          "output": 0.295,
+          "cached_input": 0.0177,
+          "context_length": 1024000
+        },
+        {
+          "provider": "OpenInference",
+          "quantization": "fp4",
+          "input": 0.05,
+          "output": 0.45,
+          "cached_input": 0.025,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Cohere",
+          "quantization": "nvfp4",
+          "input": 0.105,
+          "output": 0.34,
+          "cached_input": 0.02,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Reka",
+          "quantization": "unknown",
+          "input": 0.12,
+          "output": 0.3,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Makora",
+          "quantization": "fp4",
+          "input": 0.14,
+          "output": 0.24,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "InferenceNet",
+          "quantization": "fp4",
+          "input": 0.108,
+          "output": 0.35,
+          "cached_input": 0.035,
+          "context_length": 1048576
+        },
+        {
+          "provider": "InferenceNet",
+          "quantization": "fp4",
+          "input": 0.108,
+          "output": 0.35,
+          "cached_input": 0.035,
+          "context_length": 1048576
+        },
+        {
+          "provider": "SiliconFlow",
+          "quantization": "fp8",
+          "input": 0.1,
+          "output": 0.4,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DigitalOcean",
+          "quantization": "unknown",
+          "input": 0.1125,
+          "output": 0.375,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Morph",
+          "quantization": "fp8",
+          "input": 0.124,
+          "output": 0.358,
+          "cached_input": 0.062,
+          "context_length": 1048576
+        },
+        {
+          "provider": "CoreWeave",
+          "quantization": "nvfp4",
+          "input": 0.12,
+          "output": 0.38,
+          "cached_input": 0.02,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Near AI",
+          "quantization": "fp8",
+          "input": 0.08,
+          "output": 0.5,
+          "cached_input": 0.012,
+          "context_length": 1048576
+        },
+        {
+          "provider": "River",
+          "quantization": "unknown",
+          "input": 0.12,
+          "output": 0.4,
+          "cached_input": 0.024,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DekaLLM",
+          "quantization": "unknown",
+          "input": 0.1,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Particle AI",
+          "quantization": "nvfp4",
+          "input": 0.13,
+          "output": 0.5,
+          "cached_input": 0.04,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Baidu",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "BaseTen",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Crusoe",
+          "quantization": "fp4",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DeepInfra",
+          "quantization": "fp4",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Fireworks",
+          "quantization": "unknown",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Friendli",
+          "quantization": "unknown",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Inceptron",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.04,
+          "context_length": 1048576
+        },
+        {
+          "provider": "KT",
+          "quantization": "unknown",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Mistral",
+          "quantization": "unknown",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Modal",
+          "quantization": "fp4",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Nebius",
+          "quantization": "fp4",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Parasail",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Together",
+          "quantization": "unknown",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048575
+        },
+        {
+          "provider": "Venice",
+          "quantization": "unknown",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Z.AI",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 0.5,
+          "cached_input": 0.03,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Sail Research",
+          "quantization": "fp4",
+          "input": 0.175,
+          "output": 0.625,
+          "cached_input": 0.0225,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Sail Research",
+          "quantization": "fp4",
+          "input": 0.175,
+          "output": 0.625,
+          "cached_input": 0.0225,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Parasail",
+          "quantization": "fp4",
+          "input": 0.1875,
+          "output": 0.625,
+          "cached_input": 0.0375,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Fireworks",
+          "quantization": "unknown",
+          "input": 0.225,
+          "output": 0.75,
+          "cached_input": 0.045,
+          "context_length": 1048576
+        }
+      ],
+      "source": "https://openrouter.ai/z-ai/glm-5.3-flash",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "9cb9f55dc92c7e081ebf9151b8483b09f83ae209486f48ab8308b4e3cfba4db7",
+      "snapshot_ext": "json"
+    },
+    "benchmark.arena_text_legal": {
+      "value": 1476,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "benchmark.arena_text_science": {
+      "value": 1493,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "kv_cache_bytes_per_token": {
+      "value": 14080,
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/config.json",
+      "fetched": "2026-11-17",
+      "verified_by": "auto",
+      "verified_at": "2026-11-17",
+      "snapshot_hash": "bb8f01c42cb92a52ca72e65afb4d5bd8d11aef083cd210e8de25dfb904f23e9f",
+      "snapshot_ext": "json"
+    },
+    "snapshot.bartowski_gguf": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    }
+  },
+  "references": [
+    {
+      "title": "GLM-5 Technical Report",
+      "url": "https://arxiv.org/abs/2602.15763",
+      "author": "Z.ai (Zhipu AI)",
+      "date": "Feb 2026"
+    },
+    {
+      "title": "GLM-5.3-Flash — HuggingFace Model Card",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "author": "Z.ai (Zhipu AI)",
+      "date": "2026"
+    },
+    {
+      "title": "GLM-5.3 Release Announcement",
+      "url": "https://z.ai/blog/glm-5.3",
+      "author": "Z.ai",
+      "date": "2026"
+    },
+    {
+      "title": "THUDM/GLM — GitHub",
+      "url": "https://github.com/THUDM/GLM",
+      "author": "THUDM",
+      "date": "2026"
+    },
+    {
+      "title": "GLM-5.3-Flash GGUF (Unsloth)",
+      "url": "https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF",
+      "author": "Unsloth",
+      "date": "2026"
+    },
+    {
+      "title": "GLM-5.3-Flash — Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "author": "Artificial Analysis",
+      "date": "2026"
+    }
+  ]
+}

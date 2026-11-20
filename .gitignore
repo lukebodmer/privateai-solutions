@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.local
+.direnv/
+
+# Raw source material used to generate data files.
+# Kept local; not shipped in the public repo.
+research/
+
+# Requests the dashboard queued for Neuman's next run (scripts/lib/queue.mjs).
+# The runs themselves live outside the repository, in PRIVATEAI_RUNS_DIR.
+queue/
+# When each API sync last ran (scripts/lib/facts.mjs).
+.sync-state.json
+
+# Neuman's docs, fetched from its main branch at build (scripts/fetch-docs.mjs).
+src/content/docs/
+src/data/neuman-docs.json

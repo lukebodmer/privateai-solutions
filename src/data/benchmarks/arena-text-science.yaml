@@ -1,0 +1,11 @@
+key: benchmark.arena_text_science
+title: Arena Text — Life, Physical & Social Science
+short_title: Arena · Science
+description: >
+  Arena's rating from people comparing two anonymous models on questions from
+  the life, physical and social sciences and voting for the better answer.
+  Style-controlled.
+scale_min: 1300
+scale_max: 1600
+source_url: https://arena.ai/leaderboard/text
+order: 4

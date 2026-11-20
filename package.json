@@ -1,0 +1,49 @@
+{
+  "name": "privateai-solutions",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env scripts/dev.mjs",
+    "dev:admin": "node --env-file-if-exists=.env scripts/admin-server.mjs",
+    "task:prepare": "node --env-file-if-exists=.env scripts/prepare.mjs",
+    "check": "node --env-file-if-exists=.env scripts/check-run.mjs",
+    "sync:aa": "node --env-file-if-exists=.env scripts/sync-aa.mjs",
+    "sync:aa:force": "node --env-file-if-exists=.env scripts/sync-aa.mjs --force",
+    "sync:arena": "node --env-file-if-exists=.env scripts/sync-arena.mjs",
+    "sync:arena:force": "node --env-file-if-exists=.env scripts/sync-arena.mjs --force",
+    "sync:openrouter": "node --env-file-if-exists=.env scripts/sync-openrouter.mjs",
+    "sync:openrouter:force": "node --env-file-if-exists=.env scripts/sync-openrouter.mjs --force",
+    "sync:hf": "node --env-file-if-exists=.env scripts/sync-hf.mjs",
+    "sync:hf:force": "node --env-file-if-exists=.env scripts/sync-hf.mjs --force",
+    "sync:github": "node --env-file-if-exists=.env scripts/sync-github.mjs",
+    "sync:github:force": "node --env-file-if-exists=.env scripts/sync-github.mjs --force",
+    "brand": "node scripts/brand-images.mjs",
+    "sizing:sources": "node --env-file-if-exists=.env scripts/sizing-sources.mjs",
+    "docs:fetch": "node --env-file-if-exists=.env scripts/fetch-docs.mjs",
+    "build": "node --env-file-if-exists=.env scripts/fetch-docs.mjs && astro build",
+    "preview": "astro preview",
+    "deploy": "pnpm build && wrangler pages deploy dist --project-name privateai-solutions"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.9",
+    "@astrojs/react": "^3.6.3",
+    "@astrojs/sitemap": "3.2.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "astro": "^4.15.0",
+    "hyparquet": "^1.33.0",
+    "js-yaml": "^4.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@types/three": "^0.186.0",
+    "typescript": "^5.5.0"
+  }
+}

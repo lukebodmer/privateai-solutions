@@ -1,0 +1,64 @@
+---
+/**
+ * Every value on an entity page, and where it came from.
+ *
+ * Collapsed by default under a one-line tally, so the page reads as a
+ * reference and the receipts are one click away. Lists every fact the
+ * schema declares for the entity that has a value — prose (`my_take`)
+ * and display toggles excluded — each with its Provenance line.
+ */
+import type { Entity } from '../lib/facts';
+import { FACT_SCHEMAS, factApplies } from '../data/schemas/factSchemas';
+import Provenance from './Provenance.astro';
+
+interface Props {
+  entity: Entity;
+}
+
+const { entity } = Astro.props;
+
+const rows = FACT_SCHEMAS[entity.type]
+  .filter(e => e.type !== 'text' && e.key !== 'hidden' && e.key !== 'price.swept' && factApplies(e, entity))
+  .map(e => ({ key: e.key, fact: entity.facts[e.key] }))
+  .filter(r => r.fact && r.fact.na !== true && r.fact.value !== null && r.fact.value !== undefined);
+
+const count = (signer: string | null) => rows.filter(r => (r.fact.verified_by ?? null) === signer).length;
+const tally = [
+  [count('luke'), 'checked by Luke'],
+  [count('auto'), 'from source APIs'],
+  [count('neuman'), 'found by Neuman and confirmed'],
+  [count(null), 'unverified'],
+].filter(([n]) => (n as number) > 0).map(([n, label]) => `${n} ${label}`).join(' · ');
+
+function show(v: unknown): string {
+  if (Array.isArray(v)) return `${v.length} entries`;
+  if (typeof v === 'boolean') return v ? 'yes' : 'no';
+  if (typeof v === 'number') return v.toLocaleString();
+  const s = String(v);
+  return s.length > 48 ? `${s.slice(0, 45)}…` : s;
+}
+---
+
+{rows.length > 0 && (
+  <details class="mb-8 group">
+    <summary class="cursor-pointer text-sm text-nord-400 hover:text-nord-200">
+      Where every value on this page comes from
+      <span class="text-xs text-nord-600 ml-2">{tally}</span>
+    </summary>
+    <p class="text-xs text-nord-500 mt-3 mb-2">
+      Each value carries its source and the last time it was checked.
+      <a href="/blog/how-i-use-neuman-tasks-to-maintain-this-site" class="underline decoration-nord-700 underline-offset-2 hover:text-nord-300">How this site is maintained</a>.
+    </p>
+    <table class="w-full text-xs">
+      <tbody class="divide-y divide-nord-800/70">
+        {rows.map(r => (
+          <tr>
+            <td class="py-1.5 pr-3 font-mono text-nord-500 whitespace-nowrap">{r.key}</td>
+            <td class="py-1.5 pr-3 text-nord-300">{show(r.fact.value)}</td>
+            <td class="py-1.5"><Provenance fact={r.fact} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </details>
+)}

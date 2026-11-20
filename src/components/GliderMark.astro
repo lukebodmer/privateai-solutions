@@ -1,0 +1,88 @@
+---
+/**
+ * The site mark: a Game of Life glider on its 3×3 board.
+ *
+ * The four groups are the glider's four generations, each normalised into the
+ * same 3×3 box, so stepping through them shows the glider living in place.
+ * Generation 0 is the resting mark (and the one in /favicon.svg).
+ *
+ * `animate`:
+ *   - 'none'   — always generation 0
+ *   - 'hover'  — steps through the generations while an ancestor with the
+ *                `group` class is hovered or focused (the nav's home link)
+ *   - 'always' — steps continuously
+ * Motion stops for visitors who prefer reduced motion.
+ */
+interface Props {
+  size?: number;
+  animate?: 'none' | 'hover' | 'always';
+  class?: string;
+}
+const { size = 20, animate = 'none', class: className = '' } = Astro.props;
+
+// [x, y] of the live cells in each generation (B3/S23, period 4).
+const generations: [number, number][][] = [
+  [[1, 0], [2, 1], [0, 2], [1, 2], [2, 2]],
+  [[0, 0], [2, 0], [1, 1], [2, 1], [1, 2]],
+  [[2, 0], [0, 1], [2, 1], [1, 2], [2, 2]],
+  [[0, 0], [1, 1], [2, 1], [0, 2], [1, 2]],
+];
+const board = [0, 1, 2].flatMap(y => [0, 1, 2].map(x => [x, y] as [number, number]));
+// 3 cells of 6 units on an 18-unit board: 5-unit squares with a 1-unit gutter.
+const at = (n: number) => n * 6 + 0.5;
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 18 18"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  class:list={['glider', `glider-${animate}`, className]}
+>
+  {board.map(([x, y]) => (
+    <rect x={at(x)} y={at(y)} width="5" height="5" rx="1.2" fill="currentColor" opacity="0.14" />
+  ))}
+  {generations.map((cells, g) => (
+    <g class={`gen gen-${g}`}>
+      {cells.map(([x, y]) => (
+        <rect x={at(x)} y={at(y)} width="5" height="5" rx="1.2" fill="currentColor" />
+      ))}
+    </g>
+  ))}
+</svg>
+
+<style>
+  .gen { opacity: 0; }
+  .gen-0 { opacity: 1; }
+
+  @keyframes glider-step {
+    0% { opacity: 1; }
+    25%, 100% { opacity: 0; }
+  }
+
+  /* Each generation shows for a quarter of the cycle, in turn. The timing
+     lives on the cells; the triggers below set only `animation-name`, so
+     they cannot reset the per-generation delays. */
+  .glider { --glider-cycle: 1.2s; }
+  .glider-hover { --glider-cycle: 0.8s; }
+  .gen {
+    animation-duration: var(--glider-cycle);
+    animation-timing-function: steps(1);
+    animation-iteration-count: infinite;
+  }
+  .gen-1 { animation-delay: calc(var(--glider-cycle) * 0.25); }
+  .gen-2 { animation-delay: calc(var(--glider-cycle) * 0.5); }
+  .gen-3 { animation-delay: calc(var(--glider-cycle) * 0.75); }
+
+  .glider-always .gen,
+  :global(.group:hover) .glider-hover .gen,
+  :global(.group:focus-visible) .glider-hover .gen {
+    animation-name: glider-step;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glider .gen { animation: none !important; }
+  }
+</style>

@@ -1,0 +1,118 @@
+{
+  "name": "OpenAI",
+  "slug": "openai",
+  "facts": {
+    "country": {
+      "value": "United States",
+      "source": "https://openai.com",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "founded": {
+      "value": "2015-12",
+      "source": "https://openai.com",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "weights_availability": {
+      "value": "open-with-restrictions",
+      "source": "https://openai.com",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-06"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "hq_city": {
+      "value": "San Francisco",
+      "source": "https://en.wikipedia.org/wiki/OpenAI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "legal_structure": {
+      "value": "pbc",
+      "source": "https://en.wikipedia.org/wiki/OpenAI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "ownership": {
+      "value": "private",
+      "source": "https://en.wikipedia.org/wiki/OpenAI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parent_company": {
+      "value": null,
+      "source": "https://en.wikipedia.org/wiki/OpenAI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "employee_tier": {
+      "value": "500-5k",
+      "source": "https://en.wikipedia.org/wiki/OpenAI",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "snapshot.official": {
+      "value": "https://openai.com",
+      "source": "https://openai.com",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/OpenAI",
+      "source": "https://en.wikipedia.org/wiki/OpenAI",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "9052bd118d11d09b4db3dd714bf9abb6a5c86a47d4f37f082b5a36405ce39f57",
+      "snapshot_ext": "html"
+    },
+    "snapshot.huggingface_org": {
+      "value": "https://huggingface.co/openai",
+      "source": "https://huggingface.co/openai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "868a4f37dce94af928d437d7ccb3ef06faed2f8b97e5d21e52dd819bf1cd617e",
+      "snapshot_ext": "html"
+    },
+    "snapshot.github_org": {
+      "value": "https://github.com/openai",
+      "source": "https://github.com/openai",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "f56dcbd20de7bd3616c38cecdb049be26f1b676c63000efbbcf45fcfe20779b0",
+      "snapshot_ext": "html"
+    },
+    "hidden": {
+      "value": true,
+      "source": null,
+      "fetched": "2026-11-13",
+      "verified_by": "luke",
+      "verified_at": "2026-11-13"
+    }
+  },
+  "references": [
+    {
+      "title": "OpenAI — GitHub",
+      "url": "https://github.com/openai",
+      "author": "OpenAI",
+      "date": "2015"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+---
+import { PLATFORM_ICONS } from '../lib/platformIcons.mjs';
+
+// The squares that pick an install. Each is a tab with id `<id>-tab`,
+// controlling the element with id `<id>-panel`: the page writes those panels
+// itself, after the picker, with the first visible and the rest `hidden`, so
+// the page is whole before this component's script runs.
+interface Install {
+  /** Unique on the page, and the prefix of its tab and panel ids. */
+  id: string;
+  /** What the square says: the operating system, not the install method. */
+  name: string;
+  /** The line under it: how it installs, or that it is not ready. */
+  detail: string;
+  icon: keyof typeof PLATFORM_ICONS;
+  soon?: boolean;
+}
+
+interface Props {
+  /** Names the group of squares for a screen reader, e.g. "Server platform". */
+  label: string;
+  installs: Install[];
+}
+
+const { label, installs } = Astro.props;
+---
+
+<div data-install-picker>
+  <div class="flex flex-wrap gap-3" role="tablist" aria-label={label}>
+    {installs.map((install, i) => (
+      <button
+        type="button"
+        role="tab"
+        id={`${install.id}-tab`}
+        aria-controls={`${install.id}-panel`}
+        aria-selected={i === 0 ? 'true' : 'false'}
+        tabindex={i === 0 ? 0 : -1}
+        data-selected={i === 0 ? 'true' : 'false'}
+        data-tab
+        class:list={[
+          'group flex h-32 w-32 shrink-0 flex-col items-center justify-center gap-2.5 rounded-xl border bg-nord-950 px-2 text-center transition-colors',
+          'hover:bg-nord-800/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-frost-500 focus-visible:ring-offset-2 focus-visible:ring-offset-nord-900',
+          'data-[selected=true]:border-frost-700 data-[selected=true]:bg-nord-800/70',
+          install.soon
+            ? 'border-dashed border-nord-800 hover:border-nord-700'
+            : 'border-nord-800 hover:border-nord-600',
+        ]}
+      >
+        <svg
+          class:list={[
+            'h-9 w-9 transition-colors',
+            install.soon
+              ? 'text-nord-600 group-hover:text-nord-400 group-data-[selected=true]:text-nord-400'
+              : 'text-nord-500 group-hover:text-nord-300 group-data-[selected=true]:text-frost-300',
+          ]}
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          {PLATFORM_ICONS[install.icon].map(d => <path d={d} />)}
+        </svg>
+        <span
+          class:list={[
+            'text-[13px] font-medium leading-none',
+            install.soon
+              ? 'text-nord-400 group-data-[selected=true]:text-nord-200'
+              : 'text-nord-200 group-data-[selected=true]:text-nord-50',
+          ]}
+        >{install.name}</span>
+        <span class="text-[10.5px] leading-none text-nord-500">{install.detail}</span>
+      </button>
+    ))}
+  </div>
+</div>
+
+<script>
+  for (const picker of document.querySelectorAll<HTMLElement>('[data-install-picker]')) {
+    const tabs = [...picker.querySelectorAll<HTMLElement>('[data-tab]')];
+    const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls') ?? ''));
+
+    function select(index: number) {
+      tabs.forEach((tab, i) => {
+        const selected = i === index;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.dataset.selected = String(selected);
+        tab.tabIndex = selected ? 0 : -1;
+        const panel = panels[i];
+        if (panel) panel.hidden = !selected;
+      });
+    }
+
+    // The panels are in the page, the selection is here: settle it on load.
+    const initial = tabs.findIndex(tab => tab.getAttribute('aria-selected') === 'true');
+    select(initial === -1 ? 0 : initial);
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(i));
+
+      // The arrow keys belong to the group once it has focus, as in any tab list.
+      tab.addEventListener('keydown', event => {
+        const last = tabs.length - 1;
+        const next =
+          event.key === 'ArrowRight' ? (i === last ? 0 : i + 1) :
+          event.key === 'ArrowLeft' ? (i === 0 ? last : i - 1) :
+          event.key === 'Home' ? 0 :
+          event.key === 'End' ? last :
+          undefined;
+        if (next === undefined) return;
+        event.preventDefault();
+        select(next);
+        tabs[next].focus();
+      });
+    });
+  }
+</script>

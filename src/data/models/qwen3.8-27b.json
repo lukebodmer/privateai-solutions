@@ -1,0 +1,778 @@
+{
+  "name": "Qwen3.8 27B",
+  "facts": {
+    "released": {
+      "value": "2026-08-14",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parameters_b": {
+      "value": 27,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "parameters_active_b": {
+      "value": 27,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/config.json",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "architecture.type": {
+      "value": "dense",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/config.json",
+      "fetched": "2026-09-09",
+      "verified_by": "auto",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab",
+      "snapshot_ext": "json"
+    },
+    "architecture.experts": {
+      "value": null,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/config.json",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "license": {
+      "value": "Apache 2.0",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/LICENSE",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "context_length": {
+      "value": 262144,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/config.json",
+      "fetched": "2026-09-04",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab",
+      "snapshot_ext": "json"
+    },
+    "supports_tools": {
+      "value": true,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "supports_vision": {
+      "value": true,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "supports_structured_output": {
+      "value": true,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-04",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "family": {
+      "value": "Qwen3.8",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "company_slug": {
+      "value": "alibaba",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "distribution": {
+      "value": "open",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "my_take": {
+      "value": "This model is a beast and a game changer for running locally on small setups. It's small enough that you can run a quantized 4 bit version of this on a single 3090 GPU. Plus its got vision capabilities. ",
+      "source": null,
+      "fetched": "2026-09-07",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "quantizations_unsloth": {
+      "value": [
+        {
+          "name": "UD-IQ1_S",
+          "size_gb": 6.2
+        },
+        {
+          "name": "UD-IQ1_M",
+          "size_gb": 6.7
+        },
+        {
+          "name": "UD-IQ2_XXS",
+          "size_gb": 7.2
+        },
+        {
+          "name": "UD-IQ2_XS",
+          "size_gb": 7.6
+        },
+        {
+          "name": "UD-IQ2_S",
+          "size_gb": 8.4
+        },
+        {
+          "name": "UD-Q2_K_XL",
+          "size_gb": 9.9
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "size_gb": 10.9
+        },
+        {
+          "name": "UD-IQ3_S",
+          "size_gb": 12
+        },
+        {
+          "name": "UD-Q3_K_XL",
+          "size_gb": 13.1
+        },
+        {
+          "name": "UD-IQ4_XS",
+          "size_gb": 14.4
+        },
+        {
+          "name": "UD-Q4_K_S",
+          "size_gb": 15.4
+        },
+        {
+          "name": "Q4_0",
+          "size_gb": 16.1
+        },
+        {
+          "name": "UD-Q4_K_M",
+          "size_gb": 16.6
+        },
+        {
+          "name": "Q4_1",
+          "size_gb": 17.5
+        },
+        {
+          "name": "UD-Q4_K_XL",
+          "size_gb": 17.7
+        },
+        {
+          "name": "UD-Q5_K_S",
+          "size_gb": 18.8
+        },
+        {
+          "name": "UD-Q5_K_M",
+          "size_gb": 19.9
+        },
+        {
+          "name": "UD-Q5_K_XL",
+          "size_gb": 21
+        },
+        {
+          "name": "UD-Q6_K",
+          "size_gb": 22
+        },
+        {
+          "name": "UD-Q6_K_M",
+          "size_gb": 23.1
+        },
+        {
+          "name": "UD-Q6_K_L",
+          "size_gb": 24.2
+        },
+        {
+          "name": "UD-Q6_K_XL",
+          "size_gb": 25.3
+        },
+        {
+          "name": "UD-Q8_K_L",
+          "size_gb": 28
+        },
+        {
+          "name": "Q8_0",
+          "size_gb": 29
+        },
+        {
+          "name": "UD-Q8_K_XL",
+          "size_gb": 31.5
+        },
+        {
+          "name": "BF16",
+          "size_gb": 54.7
+        }
+      ],
+      "source": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "ef3a3ab21c1a56557da4b157937ed07db98a03d6a8c76bf2a235122cdb973491",
+      "snapshot_ext": "json"
+    },
+    "quantizations_bartowski": {
+      "value": [
+        {
+          "name": "IQ2_XXS",
+          "size_gb": 8.9
+        },
+        {
+          "name": "IQ2_XS",
+          "size_gb": 9.1
+        },
+        {
+          "name": "IQ2_S",
+          "size_gb": 9.7
+        },
+        {
+          "name": "IQ2_M",
+          "size_gb": 10.5
+        },
+        {
+          "name": "Q2_K",
+          "size_gb": 10.8
+        },
+        {
+          "name": "IQ3_XXS",
+          "size_gb": 12.3
+        },
+        {
+          "name": "Q3_K_S",
+          "size_gb": 12.7
+        },
+        {
+          "name": "IQ3_XS",
+          "size_gb": 12.8
+        },
+        {
+          "name": "Q2_K_L",
+          "size_gb": 13.1
+        },
+        {
+          "name": "Q3_K_M",
+          "size_gb": 13.4
+        },
+        {
+          "name": "Q3_K_L",
+          "size_gb": 14.1
+        },
+        {
+          "name": "IQ3_M",
+          "size_gb": 14.9
+        },
+        {
+          "name": "IQ4_XS",
+          "size_gb": 15.5
+        },
+        {
+          "name": "Q4_0",
+          "size_gb": 16.3
+        },
+        {
+          "name": "Q3_K_XL",
+          "size_gb": 16.4
+        },
+        {
+          "name": "Q4_K_S",
+          "size_gb": 16.4
+        },
+        {
+          "name": "IQ4_NL",
+          "size_gb": 17.4
+        },
+        {
+          "name": "Q4_K_M",
+          "size_gb": 17.4
+        },
+        {
+          "name": "Q4_1",
+          "size_gb": 17.8
+        },
+        {
+          "name": "Q4_K_L",
+          "size_gb": 18.8
+        },
+        {
+          "name": "Q5_K_S",
+          "size_gb": 19.6
+        },
+        {
+          "name": "Q5_K_M",
+          "size_gb": 20.9
+        },
+        {
+          "name": "Q5_K_L",
+          "size_gb": 21.5
+        },
+        {
+          "name": "Q6_K_S",
+          "size_gb": 22.9
+        },
+        {
+          "name": "Q6_K",
+          "size_gb": 23.9
+        },
+        {
+          "name": "Q6_K_L",
+          "size_gb": 25
+        },
+        {
+          "name": "Q8_0",
+          "size_gb": 29.1
+        },
+        {
+          "name": "bf16",
+          "size_gb": 54.7
+        }
+      ],
+      "source": "https://huggingface.co/bartowski/Qwen3.8-27B-GGUF",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "574b768e9059e6c1e6c5fb3813c8e3f7b65376b25408a30a7ee4ad2d5ee07940",
+      "snapshot_ext": "json"
+    },
+    "native_size_gb": {
+      "value": 55.6,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "2fd89227a872cc208a40c781dade8d0250cfde55241a2e37a5d2abd8d8f89a32",
+      "snapshot_ext": "json"
+    },
+    "aa_id": {
+      "value": "b01dee41-c62b-48ed-8d16-984adc405e5c",
+      "source": "https://artificialanalysis.ai/api/v2/language/models/free",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-08"
+    },
+    "benchmark.aa_intelligence_index": {
+      "value": 20.1,
+      "source": "https://artificialanalysis.ai/models/qwen3-8-27b",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "452cb17ff0d2bd866af438d14a68120f18a1a257f75da1b58f76e533a7901305",
+      "snapshot_ext": "json"
+    },
+    "pricing.input_per_m_usd": {
+      "value": 0.2,
+      "source": "https://openrouter.ai/qwen/qwen3.8-27b",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "0b89a0857195fa43be496398f4677bb92cca7d70a0fefa516165f53e9c1a813d",
+      "snapshot_ext": "json"
+    },
+    "pricing.output_per_m_usd": {
+      "value": 2.3,
+      "source": "https://openrouter.ai/qwen/qwen3.8-27b",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "0b89a0857195fa43be496398f4677bb92cca7d70a0fefa516165f53e9c1a813d",
+      "snapshot_ext": "json"
+    },
+    "pricing.blended_per_m_usd": {
+      "value": 0.73,
+      "source": "https://openrouter.ai/qwen/qwen3.8-27b",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "0b89a0857195fa43be496398f4677bb92cca7d70a0fefa516165f53e9c1a813d",
+      "snapshot_ext": "json"
+    },
+    "speed.output_tokens_per_second": {
+      "value": 46.81,
+      "source": "https://artificialanalysis.ai/models/qwen3-8-27b",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "2ecc214d3233635f940fefac989ecb1d79a18282bd856fed364e12e1b19765e7",
+      "snapshot_ext": "json"
+    },
+    "speed.time_to_first_token_seconds": {
+      "value": 3.84,
+      "source": "https://artificialanalysis.ai/models/qwen3-8-27b",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "96ac6b94310077209a45be91767586c523ba491107b0b2091d0ee56862e63457",
+      "snapshot_ext": "json"
+    },
+    "snapshot.huggingface_card": {
+      "value": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "884acdda259d450f2324c06a3f548fe30857433d2c66863ac9417ceb8f0377b7",
+      "snapshot_ext": "html"
+    },
+    "snapshot.github": {
+      "value": "https://github.com/AlibabaCloud-Official/Qwen3.8-27B",
+      "source": "https://github.com/AlibabaCloud-Official/Qwen3.8-27B",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "0ac698d39eb6ce90063cc990bcb807eaec70bfabfe1c6c59589c5a15ce25523f",
+      "snapshot_ext": "html"
+    },
+    "snapshot.official_announcement": {
+      "value": "https://qwen.ai/blog/qwen3.8-27b",
+      "source": "https://qwen.ai/blog/qwen3.8-27b",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "07247d1e8a8a052e94fee2e672c31fb9e6a7326fb1578113e679937ca4457348",
+      "snapshot_ext": "html"
+    },
+    "snapshot.unsloth_gguf": {
+      "value": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "source": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "fetched": "2026-09-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "6387222b9d4754b66a31025fd6dfc65ec1ea9f07f6687ad91f38b73d15b6091b",
+      "snapshot_ext": "json"
+    },
+    "snapshot.bartowski_gguf": {
+      "value": "https://huggingface.co/bartowski/Qwen3.8-27B-GGUF",
+      "source": "https://huggingface.co/bartowski/Qwen3.8-27B-GGUF",
+      "fetched": "2026-09-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "574b768e9059e6c1e6c5fb3813c8e3f7b65376b25408a30a7ee4ad2d5ee07940",
+      "snapshot_ext": "json"
+    },
+    "snapshot.hf_config": {
+      "value": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/config.json",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/config.json",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab",
+      "snapshot_ext": "html"
+    },
+    "pricing.cached_input_per_m_usd": {
+      "value": 0.05,
+      "source": "https://openrouter.ai/qwen/qwen3.8-27b",
+      "fetched": "2026-11-11",
+      "verified_by": "auto",
+      "verified_at": "2026-11-11",
+      "snapshot_hash": "da848a789f59e8d90e4a851818e32643681cd9fa4ded46f7afbead2d0fd21bca",
+      "snapshot_ext": "json"
+    },
+    "arena_name": {
+      "value": "Qwen3.8-27B",
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-11",
+      "verified_by": "luke",
+      "verified_at": "2026-11-11",
+      "quote": "Qwen3.8-27B"
+    },
+    "benchmark.arena_text_coding": {
+      "value": 1498,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "pricing.blended_min_per_m_usd": {
+      "value": 0.3418,
+      "source": "https://openrouter.ai/qwen/qwen3.8-27b",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "0b89a0857195fa43be496398f4677bb92cca7d70a0fefa516165f53e9c1a813d",
+      "snapshot_ext": "json"
+    },
+    "providers": {
+      "value": [
+        {
+          "provider": "Chutes",
+          "quantization": "fp8",
+          "input": 0.039,
+          "output": 1.25,
+          "cached_input": 0.0039,
+          "context_length": 262144
+        },
+        {
+          "provider": "Near AI",
+          "quantization": "fp8",
+          "input": 0.04,
+          "output": 1.35,
+          "cached_input": 0.018,
+          "context_length": 262144
+        },
+        {
+          "provider": "StreamLake",
+          "quantization": "unknown",
+          "input": 0.175,
+          "output": 1.05,
+          "cached_input": 0.035,
+          "context_length": 1024000
+        },
+        {
+          "provider": "Darkbloom",
+          "quantization": "fp4",
+          "input": 0.035,
+          "output": 1.5,
+          "cached_input": 0.0175,
+          "context_length": 262144
+        },
+        {
+          "provider": "Mancer 2",
+          "quantization": "fp8",
+          "input": 0.125,
+          "output": 1.5,
+          "cached_input": 0.03,
+          "context_length": 262144
+        },
+        {
+          "provider": "Tenstorrent",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 1.6,
+          "cached_input": 0.05,
+          "context_length": 262144
+        },
+        {
+          "provider": "Ionstream",
+          "quantization": "fp8",
+          "input": 0.04,
+          "output": 1.95,
+          "cached_input": 0.02,
+          "context_length": 262144
+        },
+        {
+          "provider": "DeepInfra",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 1.875,
+          "cached_input": 0.0375,
+          "context_length": 262144
+        },
+        {
+          "provider": "Wafer",
+          "quantization": "fp8",
+          "input": 0.06,
+          "output": 2.2,
+          "cached_input": 0.059,
+          "context_length": 262144
+        },
+        {
+          "provider": "Modal",
+          "quantization": "unknown",
+          "input": 0.04,
+          "output": 2.3,
+          "cached_input": 0.02,
+          "context_length": 262144
+        },
+        {
+          "provider": "DekaLLM",
+          "quantization": "unknown",
+          "input": 0.04,
+          "output": 2.5,
+          "cached_input": 0.02,
+          "context_length": 262144
+        },
+        {
+          "provider": "AkashML",
+          "quantization": "fp8",
+          "input": 0.225,
+          "output": 1.98,
+          "cached_input": 0.05,
+          "context_length": 262144
+        },
+        {
+          "provider": "Parasail",
+          "quantization": "fp8",
+          "input": 0.24,
+          "output": 2.2,
+          "cached_input": 0.05,
+          "context_length": 262144
+        },
+        {
+          "provider": "Reka",
+          "quantization": "fp8",
+          "input": 0.15,
+          "output": 2.5,
+          "cached_input": 0.05,
+          "context_length": 262144
+        },
+        {
+          "provider": "ModelRun",
+          "quantization": "fp4",
+          "input": 0.2,
+          "output": 2.5,
+          "cached_input": 0.09,
+          "context_length": 262144
+        },
+        {
+          "provider": "Alibaba",
+          "quantization": "unknown",
+          "input": 0.425,
+          "output": 2.55,
+          "cached_input": 0.085,
+          "context_length": 1000000
+        },
+        {
+          "provider": "SiliconFlow",
+          "quantization": "fp8",
+          "input": 0.425,
+          "output": 2.55,
+          "cached_input": 0.085,
+          "context_length": 262144
+        },
+        {
+          "provider": "CoreWeave",
+          "quantization": "fp8",
+          "input": 0.4,
+          "output": 3,
+          "cached_input": 0.15,
+          "context_length": 262144
+        },
+        {
+          "provider": "Novita",
+          "quantization": "unknown",
+          "input": 0.42,
+          "output": 3,
+          "cached_input": 0.085,
+          "context_length": 1000000
+        },
+        {
+          "provider": "Nebius",
+          "quantization": "fp4",
+          "input": 0.45,
+          "output": 3,
+          "cached_input": 0.1,
+          "context_length": 1000000
+        },
+        {
+          "provider": "Cerebras",
+          "quantization": "fp16",
+          "input": 0.99,
+          "output": 1.49,
+          "cached_input": 0.99,
+          "context_length": 65536
+        },
+        {
+          "provider": "Cloudflare",
+          "quantization": "unknown",
+          "input": 0.45,
+          "output": 3.2,
+          "cached_input": 0.05,
+          "context_length": 262144
+        },
+        {
+          "provider": "GMICloud",
+          "quantization": "fp8",
+          "input": 0.45,
+          "output": 3.2,
+          "cached_input": 0.25,
+          "context_length": 1000000
+        },
+        {
+          "provider": "PrimeIntellect",
+          "quantization": "fp8",
+          "input": 0.45,
+          "output": 3.2,
+          "cached_input": 0.05,
+          "context_length": 262144
+        },
+        {
+          "provider": "Venice",
+          "quantization": "fp8",
+          "input": 0.45,
+          "output": 3.2,
+          "cached_input": null,
+          "context_length": 262144
+        }
+      ],
+      "source": "https://openrouter.ai/qwen/qwen3.8-27b",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "eba1ae9afd8e47dd05c7b5078fdd11858304204978fa0ed34300f850cccd7bd4",
+      "snapshot_ext": "json"
+    },
+    "benchmark.arena_text_legal": {
+      "value": 1438,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "benchmark.arena_text_science": {
+      "value": 1464,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "kv_cache_bytes_per_token": {
+      "value": 65536,
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/config.json",
+      "fetched": "2026-11-17",
+      "verified_by": "auto",
+      "verified_at": "2026-11-17",
+      "snapshot_hash": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab",
+      "snapshot_ext": "json"
+    }
+  },
+  "references": [
+    {
+      "title": "Qwen3.8-27B — HuggingFace Model Card",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "author": "Qwen (Alibaba)",
+      "date": "Aug 2026"
+    },
+    {
+      "title": "Qwen3.8-27B Blog Post",
+      "url": "https://qwen.ai/blog/qwen3.8-27b",
+      "author": "Qwen Team",
+      "date": "Aug 2026"
+    },
+    {
+      "title": "Qwen3.8-27B GitHub Repository",
+      "url": "https://github.com/AlibabaCloud-Official/Qwen3.8-27B",
+      "author": "Alibaba Cloud",
+      "date": "2026"
+    },
+    {
+      "title": "Qwen3.8 27B GGUF (Unsloth)",
+      "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "author": "Unsloth",
+      "date": "2026"
+    },
+    {
+      "title": "Qwen3.8 27B GGUF (bartowski)",
+      "url": "https://huggingface.co/bartowski/Qwen3.8-27B-GGUF",
+      "author": "bartowski",
+      "date": "2026"
+    }
+  ]
+}

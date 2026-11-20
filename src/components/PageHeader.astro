@@ -1,0 +1,31 @@
+---
+// The header a top-level page opens with: a small label, a light headline and
+// an optional intro, straight on the page. `accent` is the end of the
+// headline set in the frost gradient, as the home page's is. `wide` lets the
+// intro run further across, for a page whose content spans the full width.
+interface Props {
+  title: string;
+  accent?: string;
+  eyebrow?: string;
+  wide?: boolean;
+  class?: string;
+}
+
+const { title, accent, eyebrow, wide = false, class: className = '' } = Astro.props;
+const hasIntro = Astro.slots.has('default');
+---
+
+<header class={className}>
+  {eyebrow && (
+    <p class="text-[11px] font-semibold tracking-wider uppercase text-frost-400 mb-3">{eyebrow}</p>
+  )}
+  <h1 class="text-[2rem] sm:text-5xl font-light text-nord-50 leading-[1.08] tracking-[-0.03em]">
+    {accent ? `${title} ` : title}
+    {accent && <span class="bg-gradient-to-r from-frost-300 to-frost-500 bg-clip-text text-transparent">{accent}</span>}
+  </h1>
+  {hasIntro && (
+    <div class={`mt-4 ${wide ? 'max-w-4xl' : 'max-w-xl'} text-sm sm:text-base font-light text-nord-400 leading-relaxed`}>
+      <slot />
+    </div>
+  )}
+</header>

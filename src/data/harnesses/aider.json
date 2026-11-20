@@ -1,0 +1,157 @@
+{
+  "name": "Aider",
+  "slug": "aider",
+  "facts": {
+    "developer": {
+      "value": "Aider AI",
+      "source": "https://github.com/Aider-AI/aider",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "77725148bade28bbfc5a68f79dae759240b7fda90907eea3f70b9b6994cf0614",
+      "snapshot_ext": "html"
+    },
+    "license": {
+      "value": "Apache-2.0",
+      "source": "https://github.com/Aider-AI/aider",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "f4f97e5ec4fff3bf174b8b7d1f15f29eae83888cc1bcd8fe7c6663a1ff6b6e91",
+      "snapshot_ext": "json"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://github.com/Aider-AI/aider/blob/main/LICENSE.txt",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "e75cb0131f5429a8d46cda1851fd7c75ebb10617591f2142c14e22d409bc948f",
+      "snapshot_ext": "html"
+    },
+    "language": {
+      "value": [
+        {
+          "name": "Python",
+          "percent": 80.1
+        },
+        {
+          "name": "CSS",
+          "percent": 4.1
+        },
+        {
+          "name": "Shell",
+          "percent": 4
+        },
+        {
+          "name": "Tree-sitter Query",
+          "percent": 3.9
+        },
+        {
+          "name": "JavaScript",
+          "percent": 3.7
+        },
+        {
+          "name": "HTML",
+          "percent": 2.7
+        },
+        {
+          "name": "Other",
+          "percent": 1.6
+        }
+      ],
+      "source": "https://github.com/Aider-AI/aider",
+      "fetched": "2026-09-09",
+      "verified_by": "auto",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "524f7ec5ad055083c2998395142065e22b2abb6646326603fe837e4775d5d8d8",
+      "snapshot_ext": "json"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": null,
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "developer_company_slug": {
+      "value": null,
+      "source": "https://api.github.com/orgs/Aider-AI",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "philosophy": {
+      "value": "AI pair programming in your terminal",
+      "source": "https://aider.chat",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-07"
+    },
+    "install_method": {
+      "value": "pip install aider-install",
+      "source": "https://aider.chat",
+      "fetched": "2026-09-06",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "5c4361d45bfdf3a54ec8f3f17c8c8bf7da1aa975e34db2e36d02b6f5ab977770",
+      "snapshot_ext": "html"
+    },
+    "snapshot.github": {
+      "value": "https://github.com/Aider-AI/aider",
+      "source": "https://github.com/Aider-AI/aider",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "2c47418a5e3ba2f4bbfdbdb292facff5ba77bef17dca52e31988db9dca547450",
+      "snapshot_ext": "html"
+    },
+    "snapshot.website": {
+      "value": "https://aider.chat",
+      "source": "https://aider.chat",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "5c4361d45bfdf3a54ec8f3f17c8c8bf7da1aa975e34db2e36d02b6f5ab977770",
+      "snapshot_ext": "html"
+    },
+    "snapshot.docs": {
+      "value": "https://aider.chat/docs/",
+      "source": "https://aider.chat/docs/",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "3e8a0546effca7f1cd7d69e3b634da35073bbc154c839738405b9d75b7ef856a",
+      "snapshot_ext": "html"
+    },
+    "snapshot.package": {
+      "value": "https://pypi.org/project/aider-chat/",
+      "source": "https://pypi.org/project/aider-chat/",
+      "fetched": "2026-09-08",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09",
+      "snapshot_hash": "52bd94451423d727532c0f96169d5a0a94dd60906b8330e0b7d38e337769cbfd",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "Aider — GitHub",
+      "url": "https://github.com/Aider-AI/aider",
+      "author": "Aider AI",
+      "date": "2023"
+    },
+    {
+      "title": "Aider — Official Site",
+      "url": "https://aider.chat",
+      "author": "Aider AI",
+      "date": "2023"
+    },
+    {
+      "title": "Aider — Documentation",
+      "url": "https://aider.chat/docs/",
+      "author": "Aider AI",
+      "date": "2023"
+    }
+  ]
+}

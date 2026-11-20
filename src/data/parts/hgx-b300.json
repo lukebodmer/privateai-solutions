@@ -1,0 +1,131 @@
+{
+  "name": "Exxact TensorEX 8U HGX B300 Server (TS4-131188947)",
+  "slug": "hgx-b300",
+  "facts": {
+    "class": {
+      "value": "system",
+      "source": "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/overview.html",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "The Enterprise RA is a modular architecture based on NVIDIA-Certified HGX B300 systems, each with eight B300 SXM GPUs.",
+      "snapshot_hash": "98009795fbcf0ee5399a3675b522245065610058509e7465ffa98c6af621753e",
+      "snapshot_ext": "html"
+    },
+    "snapshot.maker": {
+      "value": "https://www.nvidia.com/en-us/data-center/hgx/",
+      "source": "https://www.nvidia.com/en-us/data-center/hgx/",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "NVIDIA HGX is available in a single baseboard with eight NVIDIA Rubin, NVIDIA Blackwell, or NVIDIA Blackwell Ultra SXMs.",
+      "snapshot_hash": "a47137229d62a5ef176e84a54070045c2e1ccd2a8860343e7910f52b36f6be86",
+      "snapshot_ext": "html"
+    },
+    "gpu_count": {
+      "value": 8,
+      "source": "https://www.nvidia.com/en-us/data-center/hgx/",
+      "fetched": "2026-11-18",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-18",
+      "quote": "Form Factor 8x NVIDIA Blackwell Ultra SXM",
+      "snapshot_hash": "a47137229d62a5ef176e84a54070045c2e1ccd2a8860343e7910f52b36f6be86",
+      "snapshot_ext": "html"
+    },
+    "memory_gb": {
+      "value": 2304,
+      "source": "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/components.html",
+      "fetched": "2026-11-18",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-18",
+      "quote": "Eight NVIDIA B300 GPUs on an HGX B300 baseboard with up to 2304 GB of GPU memory",
+      "snapshot_hash": "8db5c1cb160cfb3935d36324a112155d827a9b2e32768e59540ebd56f40840ec",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/Blackwell_(microarchitecture)",
+      "source": "https://en.wikipedia.org/wiki/Blackwell_(microarchitecture)",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "At the Graphics Technology Conference (GTC) on March 18, 2024, Nvidia officially announced the Blackwell architecture with focus placed on its B100 and B200 datacenter accelerators",
+      "snapshot_hash": "8d2001c8d8e4cc5745ee40fceaa32b20f3d5737dd7e76d476f0198665f717145",
+      "snapshot_ext": "html"
+    },
+    "maker": {
+      "value": "NVIDIA",
+      "source": "https://www.nvidia.com/en-us/data-center/hgx/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "NVIDIA HGX is available in a single baseboard with eight NVIDIA Rubin, NVIDIA Blackwell, or NVIDIA Blackwell Ultra SXMs.",
+      "snapshot_hash": "a47137229d62a5ef176e84a54070045c2e1ccd2a8860343e7910f52b36f6be86",
+      "snapshot_ext": "html"
+    },
+    "price.new_usd": {
+      "value": null,
+      "source": "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/overview.html",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "quote": "Hardware support is available through the fulfillment system and channel partners.",
+      "snapshot_hash": "98009795fbcf0ee5399a3675b522245065610058509e7465ffa98c6af621753e",
+      "snapshot_ext": "html"
+    },
+    "price.swept": {
+      "value": true,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "memory_bandwidth_gbps": {
+      "value": 64000,
+      "source": "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/components.html",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "quote": "GPU Aggregate Bandwidth per Node 38.4TB/s Up to 64TB/s Up to 64 TB/s",
+      "snapshot_hash": "8db5c1cb160cfb3935d36324a112155d827a9b2e32768e59540ebd56f40840ec",
+      "snapshot_ext": "html"
+    },
+    "bf16_tflops": {
+      "value": 18000,
+      "source": "https://www.nvidia.com/en-us/data-center/hgx/",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "quote": "FP16/BF16 Tensor Core 36 PFLOPS",
+      "snapshot_hash": "a47137229d62a5ef176e84a54070045c2e1ccd2a8860343e7910f52b36f6be86",
+      "snapshot_ext": "html"
+    },
+    "gpu_memory_gb": {
+      "value": null,
+      "source": "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/components.html",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "quote": "Memory per Node 1.1TB HBM3e 1.44TB HBM3e 2.30TB HBM3e",
+      "snapshot_hash": "8db5c1cb160cfb3935d36324a112155d827a9b2e32768e59540ebd56f40840ec",
+      "snapshot_ext": "html"
+    },
+    "placement": {
+      "value": "rack",
+      "source": "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/overview.html",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "quote": "Flexible rail-optimized end-of-row network architecture that can accommodate modifications in the rack layout and number of servers per rack.",
+      "snapshot_hash": "98009795fbcf0ee5399a3675b522245065610058509e7465ffa98c6af621753e",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "Exxact TensorEX 8U HGX B300 Server, 2x Intel Xeon 6500P/6700E/6700P (TS4-131188947)",
+      "url": "https://www.exxactcorp.com/Exxact-TS4-131188947-E131188947",
+      "author": "Exxact",
+      "date": "2026"
+    }
+  ]
+}

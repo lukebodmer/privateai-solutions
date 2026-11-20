@@ -1,0 +1,141 @@
+{
+  "name": "Exxact Valence DGX Station (VWS-158270643)",
+  "slug": "dgx-station",
+  "facts": {
+    "class": {
+      "value": "system",
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "is the ultimate deskside AI supercomputer for building and running AI",
+      "snapshot_hash": "880d4e3f3ce22f5e7e6eb67e59e2ba8e72964ca96838a68899625f501631fede",
+      "snapshot_ext": "html"
+    },
+    "snapshot.maker": {
+      "value": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "fetched": "2026-11-17",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "Powered by the NVIDIA GB300 Grace Blackwell Ultra Desktop Superchip, it features a massive 748 GB of coherent memory",
+      "snapshot_hash": "880d4e3f3ce22f5e7e6eb67e59e2ba8e72964ca96838a68899625f501631fede",
+      "snapshot_ext": "html"
+    },
+    "memory_gb": {
+      "value": 748,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-18",
+      "quote": "it features a massive 748 GB of coherent memory and up to 20 petaFLOPS of AI compute performance",
+      "snapshot_hash": "880d4e3f3ce22f5e7e6eb67e59e2ba8e72964ca96838a68899625f501631fede",
+      "snapshot_ext": "html"
+    },
+    "gpu_memory_gb": {
+      "value": 252,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-18",
+      "quote": "GPU Memory 252 GB HBM3e ECC | 7.1 TB/s",
+      "snapshot_hash": "880d4e3f3ce22f5e7e6eb67e59e2ba8e72964ca96838a68899625f501631fede",
+      "snapshot_ext": "html"
+    },
+    "power_w": {
+      "value": 1600,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-18",
+      "quote": "Total System Power 1,600 W | 20A circuit required",
+      "snapshot_hash": "880d4e3f3ce22f5e7e6eb67e59e2ba8e72964ca96838a68899625f501631fede",
+      "snapshot_ext": "html"
+    },
+    "gpu_count": {
+      "value": 1,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "fetched": "2026-11-17",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-19",
+      "quote": "NVIDIA GPU 1x NVIDIA Blackwell Ultra",
+      "snapshot_hash": "9573679501537311f4f3ff701156772a05da565fbce4d0ba834818ed502f02d9",
+      "snapshot_ext": "html"
+    },
+    "snapshot.wikipedia": {
+      "value": "https://en.wikipedia.org/wiki/Nvidia_DGX",
+      "source": "https://en.wikipedia.org/wiki/Nvidia_DGX",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "The DGX Station is an upcoming Deskside AI Supercomputer based on the GB300 superchip",
+      "snapshot_hash": "988aa7c53cc90637905fab7cc92c457e441234f1e008dcd845eeccf98fad20e7",
+      "snapshot_ext": "html"
+    },
+    "maker": {
+      "value": "NVIDIA",
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "Powered by the NVIDIA GB300 Grace Blackwell Ultra Desktop Superchip",
+      "snapshot_hash": "880d4e3f3ce22f5e7e6eb67e59e2ba8e72964ca96838a68899625f501631fede",
+      "snapshot_ext": "html"
+    },
+    "memory_bandwidth_gbps": {
+      "value": 7100,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "GPU Memory 252 GB HBM3e ECC | 7.1 TB/s",
+      "snapshot_hash": "988aa7c53cc90637905fab7cc92c457e441234f1e008dcd845eeccf98fad20e7",
+      "snapshot_ext": "html"
+    },
+    "placement": {
+      "value": "deskside",
+      "source": "https://en.wikipedia.org/wiki/Nvidia_DGX",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "The DGX Station is an upcoming Deskside AI Supercomputer based on the GB300 superchip",
+      "snapshot_hash": "988aa7c53cc90637905fab7cc92c457e441234f1e008dcd845eeccf98fad20e7",
+      "snapshot_ext": "html"
+    },
+    "bf16_tflops": {
+      "value": 2500,
+      "source": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-18",
+      "quote": "FP16/BF16 Tensor Core 5 PFLOPS",
+      "snapshot_hash": "880d4e3f3ce22f5e7e6eb67e59e2ba8e72964ca96838a68899625f501631fede",
+      "snapshot_ext": "html"
+    },
+    "price.new_usd": {
+      "value": 104830,
+      "source": "https://www.exxactcorp.com/Exxact-VWS-158270643-E158270643",
+      "fetched": "2026-11-18",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "quote": "Starting Price: $104,830.00",
+      "snapshot_hash": "e1697f96ee6c978aa6fe8beabf6f85ea5f1b142d796746fd6092d48bcfa5ce00",
+      "snapshot_ext": "html"
+    },
+    "price.swept": {
+      "value": true,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": [
+    {
+      "title": "Exxact Valence NVIDIA DGX Station, 1x GB300 Grace Blackwell Ultra Desktop Superchip (VWS-158270643)",
+      "url": "https://www.exxactcorp.com/Exxact-VWS-158270643-E158270643",
+      "author": "Exxact",
+      "date": "2026"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+---
+import Base from '../../layouts/Base.astro';
+import SourceLinks from '../../components/SourceLinks.astro';
+import FactLedger from '../../components/FactLedger.astro';
+import { loadEntities, loadEntity, factStr, factBool, factValue, relatedEntity } from '../../lib/facts';
+import { resolveLogo } from '../../utils/resolveLogo';
+
+export async function getStaticPaths() {
+  return loadEntities('harness').map(h => ({
+    params: { slug: h.slug },
+    props: { slug: h.slug },
+  }));
+}
+
+const { slug } = Astro.props;
+const harness = loadEntity('harness', slug)!;
+const logo = resolveLogo('harnesses', harness.slug);
+
+const developer = factStr(harness, 'developer');
+const license = factStr(harness, 'license');
+const licenseCommercial = factBool(harness, 'license_commercial');
+const philosophy = factStr(harness, 'philosophy') ?? '';
+const installMethod = factStr(harness, 'install_method');
+const developerCompany = relatedEntity(harness, 'developer_company_slug', 'company');
+
+interface LangRow { name: string; percent: number | null }
+const languageRows: LangRow[] = (() => {
+  const raw = factValue<LangRow[]>(harness, 'language');
+  if (!Array.isArray(raw)) return [];
+  // Sort desc by percent, "Other" always last regardless of percent.
+  return [...raw].sort((a, b) => {
+    if (a.name === 'Other') return 1;
+    if (b.name === 'Other') return -1;
+    return (b.percent ?? 0) - (a.percent ?? 0);
+  });
+})();
+const primaryLanguage = languageRows[0]?.name ?? null;
+
+// Deterministic color for the open-vocabulary philosophy chip. Same phrase
+// always lands in the same palette slot (case- and whitespace-insensitive),
+// so similar wording across harnesses reads as visually related.
+const PHILOSOPHY_PALETTE = [
+  'bg-frost-900/40 text-frost-300 border-frost-800',
+  'bg-sky-900/40 text-sky-300 border-sky-800',
+  'bg-amber-900/40 text-amber-300 border-amber-800',
+  'bg-violet-900/40 text-violet-300 border-violet-800',
+  'bg-rose-900/40 text-rose-300 border-rose-800',
+  'bg-teal-900/40 text-teal-300 border-teal-800',
+];
+function hashPhilosophy(s: string): number {
+  const normalized = s.trim().toLowerCase().replace(/\s+/g, ' ');
+  let h = 5381;
+  for (let i = 0; i < normalized.length; i++) h = ((h << 5) + h + normalized.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+const philosophyClass = philosophy
+  ? PHILOSOPHY_PALETTE[hashPhilosophy(philosophy) % PHILOSOPHY_PALETTE.length]
+  : '';
+---
+
+<Base
+  title={`${harness.name} — Open-Source AI Coding Agent Harness`}
+  description={`${harness.name} by ${developer ?? ''}: license, install, and language details.`}
+>
+  <main class="max-w-3xl w-full mx-auto px-4 sm:px-6 py-10">
+
+    <a href="/ecosystem" class="inline-flex items-center gap-1.5 text-sm text-nord-500 hover:text-nord-300 transition-colors mb-8">
+      <span>←</span> Ecosystem
+    </a>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center gap-4">
+        {logo && (
+          <img src={logo} alt="" class="w-10 h-10 rounded shrink-0" />
+        )}
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold text-nord-100 leading-tight">{harness.name}</h1>
+          <p class="text-nord-500 mt-1">
+            {developer}
+            {developerCompany && (
+              <>
+                {' · '}
+                <a href={`/companies/${developerCompany.slug}`} class="text-frost-400 hover:underline">Company profile</a>
+              </>
+            )}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mt-4">
+        {philosophy && (
+          <span class={`px-2 py-1 rounded text-xs border font-medium ${philosophyClass}`}>
+            {philosophy}
+          </span>
+        )}
+        {license && (
+          <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">{license}</span>
+        )}
+        {primaryLanguage && (
+          <span class="px-2 py-1 rounded text-xs border bg-nord-800 text-nord-400 border-nord-700">{primaryLanguage}</span>
+        )}
+      </div>
+
+      <div class="mt-3">
+        <SourceLinks
+          entity={harness}
+          keys={['snapshot.website', 'snapshot.github', 'snapshot.docs', 'snapshot.package']}
+        />
+      </div>
+    </div>
+
+    <!-- My take -->
+    {harness.my_take && (
+      <section class="mb-8">
+        <div class="p-4 bg-nord-900 border border-nord-800 rounded-lg text-sm text-nord-300 leading-relaxed border-l-2 border-l-frost-700 whitespace-pre-wrap">
+          {harness.my_take}
+        </div>
+      </section>
+    )}
+
+    <!-- Quick info -->
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold text-nord-100 mb-3">Quick Info</h2>
+      <div class="space-y-3 text-sm">
+        {installMethod && (
+          <div>
+            <div class="text-nord-500 text-xs">Install</div>
+            <div class="font-mono text-xs text-nord-300 break-all">{installMethod}</div>
+          </div>
+        )}
+        {license && (
+          <div>
+            <div class="text-nord-500 text-xs">License</div>
+            <div class="text-nord-300">{license}{licenseCommercial ? ' · Commercial OK' : ''}</div>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Languages -->
+    {languageRows.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">Languages</h2>
+        <div class="space-y-1.5">
+          {languageRows.map(row => {
+            const pct = row.percent ?? 0;
+            const width = Math.max(2, pct);   // min-width so slivers stay visible
+            return (
+              <div class="flex items-center gap-3 text-sm">
+                <div class="w-32 shrink-0 text-nord-300 truncate">{row.name}</div>
+                <div class="flex-1 bg-nord-800 rounded-full h-1.5 overflow-hidden">
+                  <div class="h-full rounded-full bg-frost-600" style={`width: ${width}%`} />
+                </div>
+                <div class="w-14 text-right font-mono text-xs text-nord-400 tabular-nums">
+                  {pct.toFixed(pct < 10 ? 1 : 0)}%
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    <FactLedger entity={harness} />
+
+    <!-- References -->
+    {harness.references.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-nord-100 mb-3">References</h2>
+        <ul class="space-y-2">
+          {harness.references.map(ref => (
+            <li class="text-sm text-nord-400 leading-relaxed">
+              <a href={ref.url} target="_blank" rel="noopener noreferrer"
+                class="text-frost-400 hover:text-frost-300 hover:underline">
+                {ref.title}
+              </a>
+              {ref.author ? ` — ${ref.author}` : ''}
+              {ref.date ? ` (${ref.date})` : ''}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- CTA -->
+    <div class="mt-12 pt-8 border-t border-nord-800">
+      <p class="text-nord-400 text-sm mb-4">
+        Trying to decide which harness fits your workflow?
+      </p>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
+        <a href="/services"
+          class="px-4 py-2 rounded-full bg-frost-500 hover:bg-frost-400 text-nord-950 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(136,192,208,0.6)] transition-colors">
+          View services
+        </a>
+        <a href="/ecosystem"
+          class="group inline-flex items-center gap-1.5 text-sm font-medium text-nord-300 hover:text-white transition-colors">
+          <span class="text-frost-400 transition-transform group-hover:-translate-x-0.5" aria-hidden="true">&larr;</span>
+          Back to the ecosystem
+        </a>
+      </div>
+    </div>
+
+  </main>
+</Base>

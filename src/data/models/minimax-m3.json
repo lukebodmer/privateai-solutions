@@ -1,0 +1,650 @@
+{
+  "name": "MiniMax M3",
+  "slug": "minimax-m3",
+  "facts": {
+    "distribution": {
+      "value": "open",
+      "source": "https://www.minimax.io/models/text/m3",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "8487804f179fa7a490f646b480684dc1b2adc014858174ac962e44e90f931bed",
+      "snapshot_ext": "html"
+    },
+    "snapshot.official_announcement": {
+      "value": "https://www.minimax.io/models/text/m3",
+      "source": "https://www.minimax.io/models/text/m3",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "279151266c2fc86b0da09d728e1cd90a6f9c04a439eec1ebee626e13bab760f4",
+      "snapshot_ext": "html"
+    },
+    "snapshot.unsloth_gguf": {
+      "value": "https://huggingface.co/unsloth/MiniMax-M3-GGUF",
+      "source": "https://huggingface.co/unsloth/MiniMax-M3-GGUF",
+      "fetched": "2026-09-09",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "78fa3af027ef853d1241d338d6c515e89c27eb6ba60c207b4c37458a1686d30a",
+      "snapshot_ext": "json"
+    },
+    "snapshot.huggingface_card": {
+      "value": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "4012aa92ede496b8b34fc8f3836ac847badc18202eab94822da3f7e50fe377fa",
+      "snapshot_ext": "html"
+    },
+    "snapshot.hf_config": {
+      "value": "https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json",
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "c9c97ce1e4eece60012d5a10ea87717458bfb1f19c2c7a615a3dbff83d090c6b",
+      "snapshot_ext": "html"
+    },
+    "snapshot.bartowski_gguf": {
+      "value": "https://huggingface.co/bartowski/MiniMax-M3-GGUF",
+      "source": "https://huggingface.co/bartowski/MiniMax-M3-GGUF",
+      "fetched": "2026-09-09",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "55670f9419e041d2e761d7f23c7f7644064eea6c64b931582fb5999996bc0a19",
+      "snapshot_ext": "json"
+    },
+    "snapshot.github": {
+      "value": "https://github.com/MiniMax-AI/MiniMax-M3",
+      "source": "https://github.com/MiniMax-AI/MiniMax-M3",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "a426f2d0d4149be3f3a15712b84c66d4dffa9d77402de84cdcd4b8f1c787f864",
+      "snapshot_ext": "html"
+    },
+    "family": {
+      "value": "MiniMax M3",
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "25b2219059b44188fbcc91f34c97e8679adee3711b21d41401f8bba6d805b0e8",
+      "snapshot_ext": "html"
+    },
+    "company_slug": {
+      "value": "minimax",
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "1b33485b0711923bf0db5e51cffe4d8c9a45f66a0b240238ce7db508e2d6edf7",
+      "snapshot_ext": "html"
+    },
+    "released": {
+      "value": "2026-06-01",
+      "source": "https://www.minimax.io/blog/minimax-m3",
+      "fetched": "2026-09-09",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-11",
+      "quote": "MiniMax M3: Frontier Coding, 1M Context, Native Multimodality — All in One Model 2026-06-01",
+      "snapshot_hash": "4d4cf61514e3168d0ecb507a80935e638019e6a6e85dbbd86031e425d7ad4526",
+      "snapshot_ext": "html"
+    },
+    "parameters_b": {
+      "value": 428,
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/README.md",
+      "fetched": "2026-09-09",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-11",
+      "quote": "It has ~428B parameters and ~23B activated parameters.",
+      "snapshot_hash": "5e2abb578c875ad4920cc9dd1d0666b9b65a2f1b9591d7999143eb71f0437ddf",
+      "snapshot_ext": "txt"
+    },
+    "license": {
+      "value": "minimax-community",
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/README.md",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "8373991994fed08a289655006e7ff12614bb7181ea90ceebf8e7c7a921e3c764",
+      "snapshot_ext": "html"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/LICENSE",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "b53f2fdda3049b0e9013207be51efc2d372cda1fcfdd8bb4bb8b22658ca5db9c",
+      "snapshot_ext": "html"
+    },
+    "supports_tools": {
+      "value": true,
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "f5710b4b38654739d99ad08e639241514b48a7c9741c9ce940690f67882ecb10",
+      "snapshot_ext": "html"
+    },
+    "supports_vision": {
+      "value": true,
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "43b1806d5000ace0c4c6417f429e8691f85cc00fcf0943404f58f74a4713e749",
+      "snapshot_ext": "html"
+    },
+    "supports_structured_output": {
+      "value": true,
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "aaa9742509f35996bc1a4a553fb191c635b7950a43231148aaee47e1b1c1d051",
+      "snapshot_ext": "html"
+    },
+    "native_size_gb": {
+      "value": 854.2,
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "8c7ca5f1abd8dfbf325c659ed5cf647ba294d28d28b3603110ea4ffdc0feca06",
+      "snapshot_ext": "json"
+    },
+    "aa_id": {
+      "value": "277f939a-985b-4b37-859d-b3eabc7c0b26",
+      "source": "https://artificialanalysis.ai/api/v2/language/models/free",
+      "fetched": "2026-09-09",
+      "verified_by": "luke",
+      "verified_at": "2026-09-09"
+    },
+    "architecture.type": {
+      "value": "moe",
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "c9c97ce1e4eece60012d5a10ea87717458bfb1f19c2c7a615a3dbff83d090c6b",
+      "snapshot_ext": "json"
+    },
+    "quantizations_unsloth": {
+      "value": [
+        {
+          "name": "UD-IQ1_M",
+          "size_gb": 129.3
+        },
+        {
+          "name": "UD-IQ2_XXS",
+          "size_gb": 134.9
+        },
+        {
+          "name": "UD-IQ2_M",
+          "size_gb": 135.1
+        },
+        {
+          "name": "UD-Q2_K_XL",
+          "size_gb": 143.9
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "size_gb": 160.3
+        },
+        {
+          "name": "UD-IQ3_S",
+          "size_gb": 175.6
+        },
+        {
+          "name": "UD-Q3_K_M",
+          "size_gb": 195.5
+        },
+        {
+          "name": "UD-Q3_K_XL",
+          "size_gb": 195.8
+        },
+        {
+          "name": "UD-IQ4_XS",
+          "size_gb": 208.5
+        },
+        {
+          "name": "UD-IQ4_NL",
+          "size_gb": 212.7
+        },
+        {
+          "name": "UD-Q4_K_S",
+          "size_gb": 248.6
+        },
+        {
+          "name": "MXFP4_MOE",
+          "size_gb": 257.4
+        },
+        {
+          "name": "UD-Q4_K_M",
+          "size_gb": 264.9
+        },
+        {
+          "name": "UD-Q4_K_XL",
+          "size_gb": 265.8
+        },
+        {
+          "name": "UD-Q5_K_S",
+          "size_gb": 299.7
+        },
+        {
+          "name": "UD-Q5_K_M",
+          "size_gb": 318.7
+        },
+        {
+          "name": "UD-Q5_K_XL",
+          "size_gb": 319.4
+        },
+        {
+          "name": "UD-Q6_K",
+          "size_gb": 355.3
+        },
+        {
+          "name": "UD-Q6_K_XL",
+          "size_gb": 388.1
+        },
+        {
+          "name": "Q8_0",
+          "size_gb": 453.6
+        },
+        {
+          "name": "UD-Q8_K_XL",
+          "size_gb": 465.2
+        },
+        {
+          "name": "BF16",
+          "size_gb": 852.9
+        }
+      ],
+      "source": "https://huggingface.co/unsloth/MiniMax-M3-GGUF",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "78fa3af027ef853d1241d338d6c515e89c27eb6ba60c207b4c37458a1686d30a",
+      "snapshot_ext": "json"
+    },
+    "quantizations_bartowski": {
+      "value": [
+        {
+          "name": "IQ1_S",
+          "size_gb": 90.5
+        },
+        {
+          "name": "IQ1_M",
+          "size_gb": 100.7
+        },
+        {
+          "name": "IQ2_XXS",
+          "size_gb": 116.6
+        },
+        {
+          "name": "IQ2_XS",
+          "size_gb": 129.5
+        },
+        {
+          "name": "IQ2_S",
+          "size_gb": 132.1
+        },
+        {
+          "name": "IQ2_M",
+          "size_gb": 145.6
+        },
+        {
+          "name": "Q2_K",
+          "size_gb": 151.9
+        },
+        {
+          "name": "Q2_K_L",
+          "size_gb": 153.1
+        },
+        {
+          "name": "IQ3_XXS",
+          "size_gb": 180
+        },
+        {
+          "name": "Q3_K_S",
+          "size_gb": 187.3
+        },
+        {
+          "name": "IQ3_XS",
+          "size_gb": 196.4
+        },
+        {
+          "name": "Q3_K_M",
+          "size_gb": 196.6
+        },
+        {
+          "name": "Q3_K_L",
+          "size_gb": 205
+        },
+        {
+          "name": "IQ3_M",
+          "size_gb": 205.5
+        },
+        {
+          "name": "Q3_K_XL",
+          "size_gb": 206
+        },
+        {
+          "name": "IQ4_XS",
+          "size_gb": 229.7
+        },
+        {
+          "name": "IQ4_NL",
+          "size_gb": 242.8
+        },
+        {
+          "name": "Q4_0",
+          "size_gb": 243.6
+        },
+        {
+          "name": "Q4_K_S",
+          "size_gb": 251.4
+        },
+        {
+          "name": "Q4_K_M",
+          "size_gb": 261.3
+        },
+        {
+          "name": "Q4_1",
+          "size_gb": 268.9
+        },
+        {
+          "name": "Q5_K_S",
+          "size_gb": 295.2
+        },
+        {
+          "name": "Q5_K_M",
+          "size_gb": 305.3
+        },
+        {
+          "name": "Q6_K",
+          "size_gb": 369.4
+        },
+        {
+          "name": "Q8_0",
+          "size_gb": 453.6
+        }
+      ],
+      "source": "https://huggingface.co/bartowski/MiniMax-M3-GGUF",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "55670f9419e041d2e761d7f23c7f7644064eea6c64b931582fb5999996bc0a19",
+      "snapshot_ext": "json"
+    },
+    "benchmark.aa_intelligence_index": {
+      "value": 18.9,
+      "source": "https://artificialanalysis.ai/models/minimax-m3",
+      "fetched": "2026-11-08",
+      "verified_by": "auto",
+      "verified_at": "2026-11-08",
+      "snapshot_hash": "452cb17ff0d2bd866af438d14a68120f18a1a257f75da1b58f76e533a7901305",
+      "snapshot_ext": "json"
+    },
+    "pricing.input_per_m_usd": {
+      "value": 0.3,
+      "source": "https://openrouter.ai/minimax/minimax-m3",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "ba8be122a337c9cf3f3fec3b37ed0fc154abedbba8ffc9f37d4fb81f220a995d",
+      "snapshot_ext": "json"
+    },
+    "pricing.output_per_m_usd": {
+      "value": 1.2,
+      "source": "https://openrouter.ai/minimax/minimax-m3",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "ba8be122a337c9cf3f3fec3b37ed0fc154abedbba8ffc9f37d4fb81f220a995d",
+      "snapshot_ext": "json"
+    },
+    "pricing.blended_per_m_usd": {
+      "value": 0.525,
+      "source": "https://openrouter.ai/minimax/minimax-m3",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "ba8be122a337c9cf3f3fec3b37ed0fc154abedbba8ffc9f37d4fb81f220a995d",
+      "snapshot_ext": "json"
+    },
+    "speed.output_tokens_per_second": {
+      "value": 87.15,
+      "source": "https://artificialanalysis.ai/models/minimax-m3",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "2ecc214d3233635f940fefac989ecb1d79a18282bd856fed364e12e1b19765e7",
+      "snapshot_ext": "json"
+    },
+    "speed.time_to_first_token_seconds": {
+      "value": 0.76,
+      "source": "https://artificialanalysis.ai/models/minimax-m3",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "96ac6b94310077209a45be91767586c523ba491107b0b2091d0ee56862e63457",
+      "snapshot_ext": "json"
+    },
+    "pricing.cached_input_per_m_usd": {
+      "value": 0.06,
+      "source": "https://openrouter.ai/minimax/minimax-m3",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "ba8be122a337c9cf3f3fec3b37ed0fc154abedbba8ffc9f37d4fb81f220a995d",
+      "snapshot_ext": "json"
+    },
+    "arena_name": {
+      "value": "MiniMax-M3",
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-11",
+      "verified_by": "luke",
+      "verified_at": "2026-11-11",
+      "quote": "MiniMax-M3"
+    },
+    "benchmark.arena_text_coding": {
+      "value": 1492,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "pricing.blended_min_per_m_usd": {
+      "value": 0.388,
+      "source": "https://openrouter.ai/minimax/minimax-m3",
+      "fetched": "2026-11-11",
+      "verified_by": "auto",
+      "verified_at": "2026-11-11",
+      "snapshot_hash": "22e76d17271014418fb2746a23393d078c54af7418a23e6347ce81c755f8e656",
+      "snapshot_ext": "json"
+    },
+    "providers": {
+      "value": [
+        {
+          "provider": "DeepInfra",
+          "quantization": "fp8",
+          "input": 0.224,
+          "output": 0.88,
+          "cached_input": 0.0448,
+          "context_length": 524288
+        },
+        {
+          "provider": "CoreWeave",
+          "quantization": "fp4",
+          "input": 0.23,
+          "output": 0.96,
+          "cached_input": 0.05,
+          "context_length": 262144
+        },
+        {
+          "provider": "GMICloud",
+          "quantization": "fp8",
+          "input": 0.24,
+          "output": 0.96,
+          "cached_input": 0.048,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DeepInfra",
+          "quantization": "fp8",
+          "input": 0.28,
+          "output": 1.1,
+          "cached_input": 0.056,
+          "context_length": 524288
+        },
+        {
+          "provider": "Minimax",
+          "quantization": "unknown",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.06,
+          "context_length": 524288
+        },
+        {
+          "provider": "Parasail",
+          "quantization": "fp8",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.06,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Venice",
+          "quantization": "fp8",
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.06,
+          "context_length": 524288
+        },
+        {
+          "provider": "Parasail",
+          "quantization": "fp8",
+          "input": 0.45,
+          "output": 1.8,
+          "cached_input": 0.09,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Featherless",
+          "quantization": "fp8",
+          "input": 0.55,
+          "output": 2.2,
+          "cached_input": 0.06,
+          "context_length": 262144
+        }
+      ],
+      "source": "https://openrouter.ai/minimax/minimax-m3",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "ba8be122a337c9cf3f3fec3b37ed0fc154abedbba8ffc9f37d4fb81f220a995d",
+      "snapshot_ext": "json"
+    },
+    "architecture.experts": {
+      "value": 128,
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "c9c97ce1e4eece60012d5a10ea87717458bfb1f19c2c7a615a3dbff83d090c6b",
+      "snapshot_ext": "json"
+    },
+    "context_length": {
+      "value": 1048576,
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "c9c97ce1e4eece60012d5a10ea87717458bfb1f19c2c7a615a3dbff83d090c6b",
+      "snapshot_ext": "json"
+    },
+    "hidden": {
+      "value": true,
+      "source": null,
+      "fetched": "2026-11-13",
+      "verified_by": "luke",
+      "verified_at": "2026-11-13"
+    },
+    "benchmark.arena_text_legal": {
+      "value": 1432,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "benchmark.arena_text_science": {
+      "value": 1458,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "kv_cache_bytes_per_token": {
+      "value": 184320,
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3/raw/main/config.json",
+      "fetched": "2026-11-17",
+      "verified_by": "auto",
+      "verified_at": "2026-11-17",
+      "snapshot_hash": "c9c97ce1e4eece60012d5a10ea87717458bfb1f19c2c7a615a3dbff83d090c6b",
+      "snapshot_ext": "json"
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    },
+    "parameters_active_b": {
+      "value": 23,
+      "source": "https://github.com/MiniMax-AI/MiniMax-M3",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "871f7d1e09e436b8431c216fe0be0ea8f186d0e8e2341f65e13cf9a422235fc5",
+      "snapshot_ext": "html"
+    }
+  },
+  "references": [
+    {
+      "title": "MiniMax M3: Frontier Coding, 1M Context, Native Multimodality — All in One Model",
+      "url": "https://www.minimax.io/blog/minimax-m3",
+      "author": "MiniMax",
+      "date": "Jun 2026"
+    },
+    {
+      "title": "MiniMax-M3 — HuggingFace Model Card",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "author": "MiniMax",
+      "date": "Jun 2026"
+    },
+    {
+      "title": "MiniMax-M3 GitHub Repository",
+      "url": "https://github.com/MiniMax-AI/MiniMax-M3",
+      "author": "MiniMax",
+      "date": "2026"
+    },
+    {
+      "title": "MiniMax Sparse Attention (MSA) Technical Report",
+      "url": "https://arxiv.org/abs/2606.13392",
+      "author": "MiniMax",
+      "date": "Jun 2026"
+    }
+  ]
+}

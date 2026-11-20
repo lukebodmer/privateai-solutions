@@ -1,0 +1,44 @@
+{
+  "name": "privateai.solutions update",
+  "workspace": "/home/lj/projects/privateai_solutions",
+  "run_root": "/data/privateai-runs",
+  "inputs": [],
+  "steps": [
+    {
+      "kind": "run",
+      "name": "prepare",
+      "argv": ["nix", "develop", "-c", "pnpm", "task:prepare"],
+      "timeout_s": 900
+    },
+    {
+      "kind": "agent",
+      "name": "research",
+      "instruction": "Read brief.md in your working directory and follow it.",
+      "model": "DeepSeek-V4.1-Flash",
+      "reasoning": null,
+      "envelope": {
+        "tools": ["fs_read", "fs_list", "fs_write", "web_fetch"],
+        "files_read": ["$RUN_DIR"],
+        "files_write": ["$RUN_DIR"],
+        "network": "any",
+        "models": ["DeepSeek-V4.1-Flash"],
+        "max_iterations": 200
+      }
+    },
+    {
+      "kind": "run",
+      "name": "check",
+      "argv": ["nix", "develop", "-c", "pnpm", "check"],
+      "timeout_s": 1800,
+      "run_if": "ok_or_budget"
+    }
+  ],
+  "schedule": {
+    "kind": "weekly",
+    "weekday": 0,
+    "time": "06:15",
+    "timezone": "America/Los_Angeles"
+  },
+  "outputs": ["claims.json", "report.md", "result.json"],
+  "enabled": true
+}

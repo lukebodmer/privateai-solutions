@@ -1,0 +1,17 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- A Game of Life glider on its 3x3 board (generation 0 of src/components/GliderMark.astro). -->
+  <rect width="32" height="32" rx="6" fill="#1e232b"/>
+  <g fill="#2c323d">
+    <rect x="5" y="5" width="6.5" height="6.5" rx="1.4"/>
+    <rect x="20.5" y="5" width="6.5" height="6.5" rx="1.4"/>
+    <rect x="5" y="12.75" width="6.5" height="6.5" rx="1.4"/>
+    <rect x="12.75" y="12.75" width="6.5" height="6.5" rx="1.4"/>
+  </g>
+  <g fill="#88c0d0">
+    <rect x="12.75" y="5" width="6.5" height="6.5" rx="1.4"/>
+    <rect x="20.5" y="12.75" width="6.5" height="6.5" rx="1.4"/>
+    <rect x="5" y="20.5" width="6.5" height="6.5" rx="1.4"/>
+    <rect x="12.75" y="20.5" width="6.5" height="6.5" rx="1.4"/>
+    <rect x="20.5" y="20.5" width="6.5" height="6.5" rx="1.4"/>
+  </g>
+</svg>

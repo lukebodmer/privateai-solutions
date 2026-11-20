@@ -1,0 +1,9 @@
+key: benchmark.aa_intelligence_index
+title: AA Intelligence Index
+short_title: Intelligence
+description: >
+  Artificial Analysis's headline composite score, weighted across the frontier
+  benchmark suite. The single "how smart is it?" number.
+scale_max: 100
+source_url: https://artificialanalysis.ai/
+order: 1

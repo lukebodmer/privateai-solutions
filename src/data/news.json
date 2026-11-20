@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://thedataexchange.media/pete-warden-moonshine/",
+    "title": "Why AI Wants to Be Local",
+    "source": "The Data Exchange",
+    "date": "2026-11-19",
+    "added": "2026-11-19T18:57:30.081Z"
+  },
+  {
+    "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
+    "title": "Windows 11 Is Collecting Data on Which Coding Agents and Developer Tools You Use",
+    "source": "Xusheng Li",
+    "date": "2026-11-16",
+    "added": "2026-11-18T01:47:28.965Z"
+  },
+  {
+    "url": "https://qwen.ai/blog?id=qwen4-max",
+    "title": "Qwen4-Max: Your New Teammate Has Arrived",
+    "source": "qwen.ai",
+    "date": "2026-11-15",
+    "added": "2026-11-18T01:46:58.638Z"
+  },
+  {
+    "url": "https://unsloth.ai/docs/models/qwen3.8",
+    "title": "Unsloth Qwen3.8-27B Quantizations – Dynamic v3.1 Update",
+    "source": "unsloth.ai",
+    "date": "2026-11-13",
+    "added": "2026-11-14T02:54:50.498Z"
+  },
+  {
+    "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+    "title": "Coding Agents Copy Your Secrets to a Hidden File. Thousands Are on GitHub",
+    "source": "apiiro.com",
+    "date": "2026-11-11",
+    "added": "2026-11-12T06:34:51.137Z"
+  },
+  {
+    "url": "https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/",
+    "title": "Inside ZCode: Silently Uploading Your Entire Git History to the Cloud",
+    "source": "Code is cheap, let's talk",
+    "date": "2026-09-18",
+    "added": "2026-11-12T06:38:58.524Z"
+  }
+]

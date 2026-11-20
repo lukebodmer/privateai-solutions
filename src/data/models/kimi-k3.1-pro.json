@@ -1,0 +1,576 @@
+{
+  "name": "Kimi K3.1 Pro",
+  "slug": "kimi-k3.1-pro",
+  "facts": {
+    "distribution": {
+      "value": "open",
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Kimi K3.1 Pro is an open-weight, natively multimodal agentic model, and our most capable 3T-class model to date.",
+      "snapshot_hash": "b34a37c1286aea8c60948e43478542e1696228ba43a8f1b7fcb6ac32067dd046",
+      "snapshot_ext": "html"
+    },
+    "snapshot.official_announcement": {
+      "value": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "source": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Kimi K3.1 Pro Tech Blog: Advancing Open Intelligence",
+      "snapshot_hash": "9b36a514064fbc1106024174b5dac9aed2db5ffc67659d277c1e9ee5da053634",
+      "snapshot_ext": "html"
+    },
+    "family": {
+      "value": "Kimi K3.1",
+      "source": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "345089195b428a895c4bccac4cf3f31b187625fdaeeae12da24542c5c8a01561",
+      "snapshot_ext": "html"
+    },
+    "company_slug": {
+      "value": "moonshot",
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "d7c515c918a594d9d6cdef41ce64c382379204df373bcc975867bb29677f8916",
+      "snapshot_ext": "html"
+    },
+    "released": {
+      "value": "2026-11-04",
+      "source": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "fetched": "2026-11-12",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-12",
+      "quote": "Full model weights will be released by Nov 4, 2026.",
+      "snapshot_hash": "9b36a514064fbc1106024174b5dac9aed2db5ffc67659d277c1e9ee5da053634",
+      "snapshot_ext": "html"
+    },
+    "parameters_b": {
+      "value": 2800,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "quote": "Total Parameters 2.8T",
+      "snapshot_hash": "58c5d40b2f696f3a3a05f37c6a0f6eee920891a8a720e629f199ebb101fc3baf",
+      "snapshot_ext": "html"
+    },
+    "parameters_active_b": {
+      "value": 104,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "fetched": "2026-11-12",
+      "verified_by": "neuman",
+      "verified_at": "2026-11-12",
+      "quote": "Activated Parameters 104B",
+      "snapshot_hash": "b34a37c1286aea8c60948e43478542e1696228ba43a8f1b7fcb6ac32067dd046",
+      "snapshot_ext": "html"
+    },
+    "license": {
+      "value": "Kimi K3.1 Pro License",
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/LICENSE",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "da05c356f773d22a0e1c6de390f280304d7cee6eb56fa161aa789d30dedba63b",
+      "snapshot_ext": "html"
+    },
+    "license_commercial": {
+      "value": true,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/LICENSE",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software",
+      "snapshot_hash": "da05c356f773d22a0e1c6de390f280304d7cee6eb56fa161aa789d30dedba63b",
+      "snapshot_ext": "txt"
+    },
+    "supports_tools": {
+      "value": true,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "For multi-turn conversations and tool calls, Kimi K3.1 Pro requires the complete assistant message returned by the API to be passed back to messages as-is",
+      "snapshot_hash": "b34a37c1286aea8c60948e43478542e1696228ba43a8f1b7fcb6ac32067dd046",
+      "snapshot_ext": "html"
+    },
+    "supports_vision": {
+      "value": true,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Kimi K3.1 Pro is an open-weight, natively multimodal agentic model, and our most capable 3T-class model to date.",
+      "snapshot_hash": "b34a37c1286aea8c60948e43478542e1696228ba43a8f1b7fcb6ac32067dd046",
+      "snapshot_ext": "html"
+    },
+    "supports_structured_output": {
+      "value": true,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "For full guides and examples (vision input, structured output, partial mode, tool choice, dynamic tool loading, context caching)",
+      "snapshot_hash": "b34a37c1286aea8c60948e43478542e1696228ba43a8f1b7fcb6ac32067dd046",
+      "snapshot_ext": "html"
+    },
+    "snapshot.huggingface_card": {
+      "value": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "moonshotai/Kimi-K3.1-Pro",
+      "snapshot_hash": "b34a37c1286aea8c60948e43478542e1696228ba43a8f1b7fcb6ac32067dd046",
+      "snapshot_ext": "html"
+    },
+    "snapshot.hf_config": {
+      "value": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json",
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "KimiK31ForConditionalGeneration",
+      "snapshot_hash": "d95037631e3f23bf527a9f476f25209b231b46853a84877b9c56d5672b8d1202",
+      "snapshot_ext": "txt"
+    },
+    "aa_id": {
+      "value": "665c67ca-09eb-48f0-a7a3-0096e1d5de51",
+      "source": "https://artificialanalysis.ai/api/v2/language/models/free",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Kimi K3.1 Pro"
+    },
+    "arena_name": {
+      "value": "Kimi K3.1 Pro (Max)",
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-12",
+      "verified_by": "luke",
+      "verified_at": "2026-11-17",
+      "quote": "Kimi K3.1 Pro (Max)"
+    },
+    "benchmark.aa_intelligence_index": {
+      "value": 46.5,
+      "source": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "a25963c9c45a7cc258f327657b5a8280b8076bb88b4bdd06f51f48a8c108b51e",
+      "snapshot_ext": "json"
+    },
+    "speed.output_tokens_per_second": {
+      "value": 28.28,
+      "source": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
+      "fetched": "2026-11-19",
+      "verified_by": "auto",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "96ac6b94310077209a45be91767586c523ba491107b0b2091d0ee56862e63457",
+      "snapshot_ext": "json"
+    },
+    "speed.time_to_first_token_seconds": {
+      "value": 2.68,
+      "source": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "2ecc214d3233635f940fefac989ecb1d79a18282bd856fed364e12e1b19765e7",
+      "snapshot_ext": "json"
+    },
+    "benchmark.arena_text_coding": {
+      "value": 1532,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "native_size_gb": {
+      "value": 1561.3,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "3f7bfd29b2288e6ccbcd91fea04255e7f0662726b0b178258e18bfd1d28a3fd6",
+      "snapshot_ext": "json"
+    },
+    "architecture.type": {
+      "value": "moe",
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "d95037631e3f23bf527a9f476f25209b231b46853a84877b9c56d5672b8d1202",
+      "snapshot_ext": "json"
+    },
+    "quantizations_unsloth": {
+      "value": [],
+      "source": "https://huggingface.co/unsloth",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12"
+    },
+    "quantizations_bartowski": {
+      "value": [],
+      "source": "https://huggingface.co/bartowski",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12"
+    },
+    "pricing.input_per_m_usd": {
+      "value": 2,
+      "source": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+      "fetched": "2026-11-15",
+      "verified_by": "auto",
+      "verified_at": "2026-11-15",
+      "snapshot_hash": "6f98b7b2c495691edb64d6bf03c0d74b92caaf6a3ac4eec5d1059431040fd37d",
+      "snapshot_ext": "json"
+    },
+    "pricing.output_per_m_usd": {
+      "value": 10,
+      "source": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "a8b72342c8f70b3d42d7b28cb24879b2f79a6b4351f0d9cb0c62f7eae3e6b8f5",
+      "snapshot_ext": "json"
+    },
+    "pricing.cached_input_per_m_usd": {
+      "value": 0.2,
+      "source": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "a8b72342c8f70b3d42d7b28cb24879b2f79a6b4351f0d9cb0c62f7eae3e6b8f5",
+      "snapshot_ext": "json"
+    },
+    "pricing.blended_per_m_usd": {
+      "value": 4,
+      "source": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+      "fetched": "2026-11-15",
+      "verified_by": "auto",
+      "verified_at": "2026-11-15",
+      "snapshot_hash": "6f98b7b2c495691edb64d6bf03c0d74b92caaf6a3ac4eec5d1059431040fd37d",
+      "snapshot_ext": "json"
+    },
+    "pricing.blended_min_per_m_usd": {
+      "value": 2.2808,
+      "source": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+      "fetched": "2026-11-15",
+      "verified_by": "auto",
+      "verified_at": "2026-11-15",
+      "snapshot_hash": "6f98b7b2c495691edb64d6bf03c0d74b92caaf6a3ac4eec5d1059431040fd37d",
+      "snapshot_ext": "json"
+    },
+    "providers": {
+      "value": [
+        {
+          "provider": "Relace",
+          "quantization": "fp4",
+          "input": 0.2403,
+          "output": 8.4023,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Wafer",
+          "quantization": "mxfp4",
+          "input": 0.253,
+          "output": 8.8,
+          "cached_input": 0.18,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Decart",
+          "quantization": "mxfp4",
+          "input": 1.2,
+          "output": 6,
+          "cached_input": 0.12,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Sail Research",
+          "quantization": "fp4",
+          "input": 1.0425,
+          "output": 9.35,
+          "cached_input": 0.187,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Sail Research",
+          "quantization": "fp4",
+          "input": 1.4025,
+          "output": 9.35,
+          "cached_input": 0.187,
+          "context_length": 1048576
+        },
+        {
+          "provider": "InferenceNet",
+          "quantization": "mxfp4",
+          "input": 1.8,
+          "output": 9,
+          "cached_input": 0.182,
+          "context_length": 1048576
+        },
+        {
+          "provider": "InferenceNet",
+          "quantization": "mxfp4",
+          "input": 1.8,
+          "output": 9,
+          "cached_input": 0.182,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Wafer",
+          "quantization": "mxfp4",
+          "input": 1.8,
+          "output": 9,
+          "cached_input": 0.18,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DeepInfra",
+          "quantization": "bf16",
+          "input": 1.9,
+          "output": 9.5,
+          "cached_input": 0.19,
+          "context_length": 1048576
+        },
+        {
+          "provider": "AkashML",
+          "quantization": "fp4",
+          "input": 1.75,
+          "output": 10,
+          "cached_input": 0.18,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Makora",
+          "quantization": "unknown",
+          "input": 2,
+          "output": 9.49,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Alibaba",
+          "quantization": "unknown",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "DigitalOcean",
+          "quantization": "unknown",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Fireworks",
+          "quantization": "unknown",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Modal",
+          "quantization": "mxfp4",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Moonshot AI",
+          "quantization": "mxfp4",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Nebius",
+          "quantization": "fp4",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Parasail",
+          "quantization": "fp4",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "PrimaLabs",
+          "quantization": "mxfp4",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "River",
+          "quantization": "unknown",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Together",
+          "quantization": "unknown",
+          "input": 2,
+          "output": 10,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Morph",
+          "quantization": "fp8",
+          "input": 0.932,
+          "output": 13.979,
+          "cached_input": 0.296,
+          "context_length": 1048576
+        },
+        {
+          "provider": "InferenceNet",
+          "quantization": "mxfp4",
+          "input": 2.7,
+          "output": 13.5,
+          "cached_input": 0.27,
+          "context_length": 1048576
+        },
+        {
+          "provider": "InferenceNet",
+          "quantization": "mxfp4",
+          "input": 2.7,
+          "output": 13.5,
+          "cached_input": 0.27,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Amazon Bedrock",
+          "quantization": "unknown",
+          "input": 4,
+          "output": 20,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Moonshot AI",
+          "quantization": "mxfp4",
+          "input": 4,
+          "output": 20,
+          "cached_input": 0.2,
+          "context_length": 1048576
+        },
+        {
+          "provider": "Amazon Bedrock",
+          "quantization": "unknown",
+          "input": 4.4,
+          "output": 22,
+          "cached_input": 0.22,
+          "context_length": 1048576
+        }
+      ],
+      "source": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "06743ea05f3388d46768e8adffb53c99c1f106f0bd1e748dd4e8e8e5410ca65c",
+      "snapshot_ext": "json"
+    },
+    "architecture.experts": {
+      "value": 896,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "d95037631e3f23bf527a9f476f25209b231b46853a84877b9c56d5672b8d1202",
+      "snapshot_ext": "json"
+    },
+    "context_length": {
+      "value": 1048576,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json",
+      "fetched": "2026-11-12",
+      "verified_by": "auto",
+      "verified_at": "2026-11-12",
+      "snapshot_hash": "d95037631e3f23bf527a9f476f25209b231b46853a84877b9c56d5672b8d1202",
+      "snapshot_ext": "json"
+    },
+    "benchmark.arena_text_legal": {
+      "value": 1495,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "benchmark.arena_text_science": {
+      "value": 1497,
+      "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "fetched": "2026-11-20",
+      "verified_by": "auto",
+      "verified_at": "2026-11-20",
+      "snapshot_hash": "27bead57fff70f449181276a0f0a0f98fa5242f2db463b9adc5d7b899387256e",
+      "snapshot_ext": "parquet"
+    },
+    "kv_cache_bytes_per_token": {
+      "value": 27648,
+      "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/config.json",
+      "fetched": "2026-11-17",
+      "verified_by": "auto",
+      "verified_at": "2026-11-17",
+      "snapshot_hash": "d95037631e3f23bf527a9f476f25209b231b46853a84877b9c56d5672b8d1202",
+      "snapshot_ext": "json"
+    },
+    "snapshot.github": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": null,
+      "verified_at": null,
+      "na": true
+    },
+    "snapshot.unsloth_gguf": {
+      "value": "https://huggingface.co/unsloth/Kimi-K3.1-Pro",
+      "source": "https://huggingface.co/unsloth/Kimi-K3.1-Pro",
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "snapshot_hash": "bcfd18a8e605c9ee4daba4cfc4f9084998880cbf7ecb7f07de5255d92a135d15",
+      "snapshot_ext": "html"
+    },
+    "snapshot.bartowski_gguf": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19",
+      "na": true
+    },
+    "my_take": {
+      "value": null,
+      "source": null,
+      "fetched": "2026-11-19",
+      "verified_by": "luke",
+      "verified_at": "2026-11-19"
+    }
+  },
+  "references": []
+}
