@@ -19,10 +19,11 @@ before it is announced:
   footer promises. Adding the site in Web Analytics would add per-page views
   and Core Web Vitals; a proxied zone gets the beacon injected at the edge, so
   no snippet belongs in the layouts.
-- **No DMARC record**, so `info@` can be spoofed. Add `_dmarc` =
-  `v=DMARC1; p=none; rua=mailto:info@privateai.solutions`, read the reports,
-  and tighten to `quarantine` then `reject` once the contact form's mail is
-  confirmed to pass.
+- **DMARC is watching, not enforcing.** `_dmarc` publishes `p=none` with
+  reports to Cloudflare DMARC Management. Confirm the contact form's mail
+  passes SPF and DKIM (Gmail → Show original), then move the policy to
+  `quarantine`, and to `reject` once the reports look clean — keeping the
+  `rua` address, which is what feeds the dashboard.
 - **Commits are authored `lukejbodmer@gmail.com`** — a personal address in a
   public history. Add and verify `info@privateai.solutions` on GitHub, then
   set it in git.
