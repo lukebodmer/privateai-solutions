@@ -29,6 +29,10 @@ const next = idx >= 0 && idx < flat.length - 1 ? flat[idx + 1] : null;
 // The label over the title: the doc's group, or "Documentation" on the index.
 const group = groups.find(g => g.docs.some(d => d.slug === current))?.label ?? 'Documentation';
 
+// The index is the section itself, so it carries its own name; a doc is named
+// inside it.
+const pageTitle = current ? `${title} — Neuman docs` : title;
+
 // A doc of h3 entries and no h2 sections lists its h3s instead.
 const depth = headings.some(h => h.depth === 2) ? 2 : 3;
 const toc = headings.filter(h => h.depth === depth);
@@ -38,7 +42,7 @@ const fmt = (iso: string) =>
   new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 ---
 
-<Base title={`${title} — Neuman docs`} description={description}>
+<Base title={pageTitle} description={description}>
   <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 flex gap-10">
 
     <aside class="hidden lg:block w-56 shrink-0 sticky top-14 self-start max-h-[calc(100vh-3.5rem)] overflow-y-auto py-8">
