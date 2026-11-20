@@ -7,6 +7,9 @@
   "name": "privateai-solutions",
   "main": "src/worker.js",
   "compatibility_date": "2026-11-20",
+  // The site answers on the Custom Domain alone. Without this, a deploy
+  // re-enables <name>.<account>.workers.dev, undoing a dashboard Disable.
+  "workers_dev": false,
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",

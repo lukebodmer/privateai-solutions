@@ -6,62 +6,41 @@
 
 ---
 
-## Current state (2026-11-10)
-
-The site maintains itself with three writers and one gate:
-
-- **API syncs** (AA, Hugging Face, GitHub) own everything an API can answer.
-  AA moved to its documented V2 Free catalog after the legacy endpoints were
-  retired on 2026-11-04; the per-benchmark scores AA's Free tier does not
-  serve were removed.
-- **Neuman** runs one task on Luke's account (`neuman-task.json`): a
-  `prepare` command (syncs and the brief), a research step that reads the
-  brief and writes claims to its run directory and nothing else, and a
-  `check` command. Daily at 10:00 Pacific; every run takes the oldest
-  queued request, or sweeps when none is waiting.
-- **The checker** (`scripts/check-run.mjs`) fetches every cited page itself,
-  archives it, and publishes a claim only if the quote and value are on it.
-  Identity, classification, conflicts and big jumps go to a review queue in
-  the dashboard.
-- **Luke** reviews the queue, writes `my_take` and the blog.
-
-Every value change lands in `src/data/changes.jsonl`; every entity page
-shows each value's provenance; the blog post *How I used Neuman to maintain
-this site* explains it to readers.
-
-Hardware prices are now `price.new_usd` and `price.used_usd`, one observed
-listing each. The old low/typical/high estimates were migrated where the
-market was unambiguous (single new or used); H100, RTX 4090 and RTX 6000 Ada
-had "mixed" prices and start empty until the first sweep.
-
----
-
 ## What's next
 
-### Before the first public deploy
+### Launch checklist
 
-- **Give this repository a remote.** `README`/`ARCHITECTURE.md` name
-  `github.com/lukebodmer/privateai-solutions`, and the footer's issue link
-  points there, but no remote is configured.
-- **Set up the Neuman task.** Give Luke's account `shell`, `fs_write`,
-  `fs_list`, `web_fetch` and the research model, read on this repository and
-  write on `/data/privateai-runs`; create the task from `neuman-task.json`
-  in Neuman's task editor. Remove the `research` account and
-  `modules/neuman-research` from the NixOS config.
-- **Run the first sweep by hand** (Run now with an empty queue) and work the
-  review queue; fill the empty part prices.
+The site is deployed — Cloudflare Workers, rebuilt on every push to `main` —
+and `info@privateai.solutions` receives through Email Routing. What is left
+before it is announced:
+
+- **`www.privateai.solutions` does not resolve.** A proxied `A` record for
+  `www` to `192.0.2.0`, then a Redirect Rule from `https://www.*` to
+  `https://${1}`, status 301, query string preserved.
+- **Web Analytics is off** while the footer promises aggregate analytics. Add
+  the site in Web Analytics; a proxied zone gets the beacon injected at the
+  edge, so no snippet belongs in the layouts.
+- **No DMARC record**, so `info@` can be spoofed. Add `_dmarc` =
+  `v=DMARC1; p=none; rua=mailto:info@privateai.solutions`, read the reports,
+  and tighten to `quarantine` then `reject` once the contact form's mail is
+  confirmed to pass.
+- **Commits are authored `lukejbodmer@gmail.com`** — a personal address in a
+  public history. Add and verify `info@privateai.solutions` on GitHub, then
+  set it in git.
 - **Write *How I used Neuman to maintain this site*** (a placeholder now),
-  **and read the home page in your own voice** — it was drafted
-  for you and is public prose.
+  **and read the home page in your own voice** — it was drafted for you and
+  is public prose.
+- **Work the review queue**, and fill the empty part prices.
+- **Remove the `research` account and `modules/neuman-research`** from the
+  NixOS config.
 
-### When Neuman v1 is public
+### Neuman's release
 
-- Make `github:lukebodmer/neuman` public: `/download` installs from it, so
-  its commands reach nothing until the repository does.
-- Remove `NEUMAN_DOCS_DIR` from `.env`, so builds read Neuman's docs from
-  main rather than the local checkout.
-- Add Neuman as a harness entity (`snapshot.github` once the repo is public),
-  and link the home page and `/docs` to the source.
+The repository is public, so the docs fetch needs no token and `/download`
+installs from it. Left:
+
+- Add Neuman as a harness entity (`snapshot.github`), and link the home page
+  and `/docs` to the source.
 - "Runs in Neuman" panel on model pages from Neuman's shipped presets (via
   its release bundle). Needs one model id convention across both repos —
   Neuman says `qwen3_8-27b`, this site `qwen3.8-27b`.
