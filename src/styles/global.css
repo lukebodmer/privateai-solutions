@@ -55,6 +55,9 @@
 }
 .prose-blog code {
   @apply font-mono text-[13px] bg-nord-900 border border-nord-800 rounded px-1.5 py-0.5 text-frost-300;
+  /* A path or a long flag is one token with nowhere to break. Left alone it
+     runs past the text column and the page scrolls sideways on a phone. */
+  overflow-wrap: anywhere;
 }
 .prose-blog pre {
   @apply bg-nord-900 border border-nord-800 rounded-lg p-4 overflow-x-auto text-[12.5px] leading-relaxed;
