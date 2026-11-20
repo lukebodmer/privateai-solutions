@@ -34,8 +34,8 @@ and who signed it off. The schema decides who may write each fact
   facts, conflicts, big jumps, anything the checker could not confirm).
 
 Every page shows which, per value (`FactLedger`), and every value change is
-logged to `src/data/changes.jsonl`. The blog post *How I used Neuman to
-maintain this site* explains this to readers.
+logged to `src/data/changes.jsonl`. The blog post *How I Use Neuman's Tasks
+to Maintain This Site* explains this to readers.
 
 ### Data model
 

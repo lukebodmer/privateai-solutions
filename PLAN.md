@@ -28,9 +28,8 @@ before it is announced:
 - **Commits are authored `lukejbodmer@gmail.com`** — a personal address in a
   public history. Add and verify `info@privateai.solutions` on GitHub, then
   set it in git.
-- **Write *How I used Neuman to maintain this site*** (a placeholder now),
-  **and read the home page in your own voice** — it was drafted for you and
-  is public prose.
+- **Read the home page in your own voice** — it was drafted for you and is
+  public prose.
 - **Work the review queue**, and fill the empty part prices.
 - **Remove the `research` account and `modules/neuman-research`** from the
   NixOS config.
