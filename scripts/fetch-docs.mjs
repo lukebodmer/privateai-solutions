@@ -4,10 +4,11 @@
  *
  * Neuman's repository owns the content; this site owns presentation. Every
  * top-level docs/*.md on main is published, so a doc added there appears
- * here on the next build without a change to this repository; its place in
- * the sidebar comes from src/lib/docs.ts. Two are held back — the decision
- * log and the failure log, NOT_PUBLISHED below — and docs/plans/ is working
- * material; none of those reaches this site.
+ * here on the next build without a change to this repository and its place
+ * in the sidebar comes from src/lib/docs.ts. The exceptions are the two in
+ * NOT_PUBLISHED below — the decision log and the failure log, working
+ * material for Neuman's contributors — and docs/plans/, none of which
+ * reaches this site.
  *
  * Each file is rewritten for the site: frontmatter (title from its H1,
  * description from its first paragraph), the H1 stripped because the layout
