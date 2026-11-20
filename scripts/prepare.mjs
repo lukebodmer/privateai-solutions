@@ -37,7 +37,7 @@ function briefFor(request) {
 function main() {
   const id = currentRunId();
   const queued = listQueue()[0];
-  const request = queued ?? { id: null, kind: 'sweep', entity: null, title: 'Weekly check' };
+  const request = queued ?? { id: null, kind: 'sweep', entity: null, title: 'Daily check' };
 
   for (const script of ['sync-aa.mjs', 'sync-arena.mjs', 'sync-openrouter.mjs', 'sync-hf.mjs', 'sync-github.mjs']) {
     spawnSync(process.execPath, ['--env-file-if-exists=.env', join(ROOT, 'scripts', script)], { cwd: ROOT, stdio: 'inherit' });

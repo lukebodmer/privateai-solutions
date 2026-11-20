@@ -349,11 +349,11 @@ export const PART_FACT_SCHEMA: FactSchemaEntry[] = [
 
   // A price is one observed listing, not an estimate: the cited page is
   // the listing and the quote carries the price, so the checker can
-  // confirm it. Checked weekly.
+  // confirm it. Checked on every sweep.
   { key: 'price.new_usd', type: 'number', writer: 'agent', volatile: true, max_change: 0.35,
     description: 'Lowest in-stock price for a new unit, USD: a major retailer for cards (maker store, Best Buy, Newegg, B&H, Micro Center, Amazon sold by Amazon), the maker or an authorized reseller for systems. The cited page is the listing. Null with a note when it is sold only on quote or no longer sold new.' },
   { key: 'price.swept', type: 'boolean', writer: 'human',
-    description: 'Whether the weekly sweep re-checks this part\'s price. False when no listing the checker can read exists; absent = swept.' },
+    description: 'Whether the sweep re-checks this part\'s price. False when no listing the checker can read exists; absent = swept.' },
 
   { key: 'memory_gb', type: 'number', writer: 'agent',
     description: 'Memory a model can be loaded into, in GB: a card\'s VRAM; a Mac\'s unified memory; a Grace system\'s coherent memory (GPU HBM plus the CPU memory the GPU addresses over NVLink-C2C); an HGX server\'s total GPU memory. Builds size models against this.' },

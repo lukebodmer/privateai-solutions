@@ -84,7 +84,7 @@ export function valuesEqual(a, b) {
  * When each sync last ran, in a gitignored file. Not derivable from the
  * facts: `fetched` moves only when a value changes and `verified_at`
  * only when a fact is rewritten, so an unchanged API looks "never synced".
- * The weekly sweep keeps its own entry here too (`last-sweep`): the start of
+ * The sweep keeps its own entry here too (`last-sweep`): the start of
  * the last one that got through research, so the next looks for news since
  * then whatever runs have been deleted.
  */

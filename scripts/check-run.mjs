@@ -22,7 +22,7 @@
  *   - a claim on a key whose writer is not `agent` is rejected;
  *   - a value that contradicts one Luke signed off waits for review,
  *     unless the fact is `volatile` (prices move; his sign-off was of
- *     last week's number);
+ *     the last checked number);
  *   - a numeric jump bigger than the fact's `max_change` waits for review.
  *
  * The verdicts, and later Luke's decisions on the review queue, live in

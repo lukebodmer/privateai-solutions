@@ -19,7 +19,7 @@ import { runDir } from './runs.mjs';
 
 const PROMPTS_DIR = join(ROOT, 'src/data/prompts');
 /** Upper bound on facts in one sweep's re-check list, so a backlog after
- *  a long gap is worked off over several weeks, not one enormous run. */
+ *  a long gap is worked off over several runs, not one enormous run. */
 const DUE_LIMIT = 40;
 
 const template = name => readFileSync(join(PROMPTS_DIR, name), 'utf8');
@@ -302,7 +302,7 @@ function daysSince(iso) {
 export function sweepBrief() {
   const parts = loadAll('part');
   // A part whose price has no listing the checker can read is marked
-  // `price.swept: false`; it is not re-asked every week. An N/A price is
+  // `price.swept: false`; it is not re-asked on every sweep. An N/A price is
   // Luke's choice and is left out too.
   const pricedParts = parts.filter(p => p.facts['price.new_usd']?.na !== true);
   const sweptParts = pricedParts.filter(p => p.facts['price.swept']?.value !== false);

@@ -19,7 +19,7 @@
   <text x="148" y="95" font-family="Inter, sans-serif" font-size="27" letter-spacing="-0.6"><tspan font-weight="500" fill="#eceff4">Private AI</tspan> <tspan font-weight="300" fill="url(#frost)">Solutions</tspan></text>
 
   <!-- Hero -->
-  <text x="88" y="212" font-family="Inter, sans-serif" font-size="15" font-weight="600" letter-spacing="1.6" fill="#88c0d0">NEUMAN · OPEN SOURCE · PRE-RELEASE</text>
+  <text x="88" y="212" font-family="Inter, sans-serif" font-size="15" font-weight="600" letter-spacing="1.6" fill="#88c0d0">NEUMAN · OPEN SOURCE · RELEASED</text>
   <text font-family="Inter, sans-serif" font-size="70" font-weight="300" letter-spacing="-2.1">
     <tspan x="85" y="292" fill="#eceff4">Free your AI</tspan>
     <tspan x="85" y="368" fill="url(#frost)">from the cloud.</tspan>

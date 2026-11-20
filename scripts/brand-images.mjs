@@ -65,7 +65,7 @@ function field() {
 }
 
 // ---- Copy (from the home page hero) ----
-const eyebrow = 'Neuman · open source · pre-release';
+const eyebrow = 'Neuman · open source · released';
 const headline = ['Free your AI', 'from the cloud.'];
 const lede = 'The future of AI is local and open source.';
 const points = ['On machines you own.', 'Open to inspect and adapt.', 'Your data stays yours.'];

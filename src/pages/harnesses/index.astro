@@ -22,8 +22,8 @@ const harnessLogos = new Map(harnesses.map(h => [h.slug, resolveLogo('harnesses'
     </header>
 
     <div class="space-y-3">
-      {/* Neuman: ours, pre-release, so a hand-written card rather than a
-          harness entity — it has no public repository to source facts from. */}
+      {/* Neuman: ours, so a hand-written card rather than a sourced harness
+          entity. The badge is the same license slot the other cards use. */}
       <a href="/"
         class="block bg-nord-900 border border-frost-900/60 rounded-lg px-4 py-4 hover:border-frost-700 hover:bg-nord-800/60 transition-colors">
         <div class="flex items-start justify-between gap-3">
@@ -34,7 +34,7 @@ const harnessLogos = new Map(harnesses.map(h => [h.slug, resolveLogo('harnesses'
               <span class="block text-xs text-nord-500 mt-0.5">Private AI Solutions · Python</span>
             </div>
           </div>
-          <span class="text-xs px-2 py-0.5 rounded bg-frost-950/60 text-frost-400 border border-frost-900 whitespace-nowrap">Pre-release</span>
+          <span class="text-xs px-2 py-0.5 rounded bg-frost-950/60 text-frost-400 border border-frost-900 whitespace-nowrap">MIT</span>
         </div>
         <p class="text-xs text-nord-400 mt-2 leading-relaxed">
           Runs as the person it acts for, and does nothing they haven't approved.

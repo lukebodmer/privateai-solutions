@@ -1,6 +1,6 @@
 # What running this site on Neuman teaches Neuman
 
-This site is Neuman's first real unattended workload: a weekly task of
+This site is Neuman's first real unattended workload: a daily task of
 commands and one research step, run on Luke's account inside an envelope,
 whose output a machine checks. Every time a run is awkward, the reason goes
 here — the list is the requirements for Neuman's task feature, and the

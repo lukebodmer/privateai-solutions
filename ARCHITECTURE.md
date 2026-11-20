@@ -232,7 +232,7 @@ facts only.
 listing as source and the price in the quote, so the checker can confirm it;
 `null` with the page that shows a part is sold on quote. It is `volatile`
 (a newer checked price supersedes Luke's sign-off) with a 35% `max_change`.
-`price.swept` is Luke's switch for whether the weekly sweep re-checks that
+`price.swept` is Luke's switch for whether the sweep re-checks that
 part's price; false when no listing the checker can read exists.
 A system build shows its parts' prices; a custom build shows only Luke's
 `price_range`, never a computed total.
@@ -248,8 +248,8 @@ optionally `volatile`, `max_change` and `review_days`. No typed
 `review_days` is the sweep cadence for an agent fact: snapshots and judgment
 facts default to 365 days, a `quote` fact opts in explicitly, and a fact with
 no cadence is checked when the entity is onboarded and then left alone.
-`price.new_usd` is the exception: it has no `review_days` because the weekly
-price list handles it.
+`price.new_usd` is the exception: it has no `review_days` because the price
+list handles it.
 
 **Closed models are first-class entities.** GPT-6, Claude Opus 5, etc. live in
 `src/data/models/` alongside open ones, distinguished by the `distribution`
@@ -422,7 +422,7 @@ Start `pnpm dev` then open `http://localhost:4321/admin`:
   confirmed. Missing = unverified.
 - **Request update** (per entity): queues a refresh for the next Run now
   of the Neuman task (see [Runs](#runs)). The sweep has no button; Run now
-  with an empty queue, or the weekly schedule, runs it.
+  with an empty queue, or the daily schedule, runs it.
 - **+ New model / company / part / harness** (section headers):
   modals collecting the seed (name, slug, the identifying URL(s), a
   disambiguation string when the name needs one, and per type: distribution,
@@ -454,7 +454,7 @@ Start `pnpm dev` then open `http://localhost:4321/admin`:
 
 Neuman is the agent appliance this site showcases. Here it runs one
 **task**, owned by Luke's own Neuman account: a recipe of three steps that
-Neuman walks in order, on Luke's client, with a weekly schedule. The recipe
+Neuman walks in order, on Luke's client, with a daily schedule. The recipe
 is `neuman-task.json` in this repository — the same fields as Neuman's task
 editor, kept here so the envelope the site describes is a reviewed file.
 
@@ -494,7 +494,7 @@ read could change what the next command runs. The checker still treats
 when none is waiting, it runs the sweep:
 
 - **A queued request** — an onboarding or a refresh the dashboard asked for.
-- **The sweep** — this week's price of every swept part, a re-check of agent
+- **The sweep** — this run's price of every swept part, a re-check of agent
   facts whose `review_days` have elapsed (at most 40 per sweep), and a list
   of notable new releases in the report, since the start of the last sweep
   that reached `check` (`last-sweep` in `.sync-state.json`, written by that
@@ -838,10 +838,10 @@ with a safe slug charset.
    the next sync fills everything the APIs know.
 ```
 
-## Workflow: the weekly update
+## Workflow: the daily update
 
 ```
-1. Monday 06:15 Pacific: Neuman runs the task — syncs, the sweep brief, the
+1. 10:00 Pacific: Neuman runs the task — syncs, the sweep brief, the
    research, the checker. Prices that pass publish; jumps, absences and
    refusals wait for review.
 2. Work the review queue in the dashboard.
@@ -850,7 +850,7 @@ with a safe slug charset.
 ```
 
 A due run waits for Luke's client: if nemo's client is not connected at
-06:15, the run starts when it reconnects, or is marked missed after six
+10:00, the run starts when it reconnects, or is marked missed after six
 hours.
 
 ---
@@ -864,13 +864,13 @@ the page). Neuman's repository owns the content; this site owns presentation.
 
 - **Fetched at build from the head of main.** `pnpm build` (and so
   `pnpm deploy`) runs `scripts/fetch-docs.mjs` first, as does `pnpm dev`;
-  `pnpm docs:fetch` runs it alone. The repository is private, so the fetch
-  needs `GITHUB_TOKEN` with read access to `lukebodmer/neuman`'s contents.
-  `NEUMAN_DOCS_DIR=../neuman/docs` reads a local checkout instead. Until
-  Neuman is public, `.env` sets it, so the site shows the docs as they are
-  being written: `pnpm dev` watches that folder and re-copies on every save,
-  and the fetch writes only the files that changed, so Astro reloads just the
-  edited doc.
+  `pnpm docs:fetch` runs it alone. The repository is public, so no token is
+  needed; `GITHUB_TOKEN`, when set, only raises the API's unauthenticated rate
+  limit. `NEUMAN_DOCS_DIR=../neuman/docs` reads a local checkout instead, to
+  preview a doc before pushing it: `pnpm dev` watches that folder and re-copies
+  on every save, and the fetch writes only the files that changed, so Astro
+  reloads just the edited doc. That is a development override; a build reads
+  main.
 - **Every top-level `docs/*.md` publishes**; `docs/plans/` does not. The
   sidebar's groups are `GROUPS` in `src/lib/docs.ts`; a doc that list does
   not name appears under "More" rather than disappearing.

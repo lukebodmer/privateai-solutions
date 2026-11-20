@@ -17,7 +17,7 @@ The site maintains itself with three writers and one gate:
 - **Neuman** runs one task on Luke's account (`neuman-task.json`): a
   `prepare` command (syncs and the brief), a research step that reads the
   brief and writes claims to its run directory and nothing else, and a
-  `check` command. Weekly on Monday at 06:15; every run takes the oldest
+  `check` command. Daily at 10:00 Pacific; every run takes the oldest
   queued request, or sweeps when none is waiting.
 - **The checker** (`scripts/check-run.mjs`) fetches every cited page itself,
   archives it, and publishes a claim only if the quote and value are on it.
@@ -66,7 +66,7 @@ had "mixed" prices and start empty until the first sweep.
   its release bundle). Needs one model id convention across both repos —
   Neuman says `qwen3_8-27b`, this site `qwen3.8-27b`.
 
-### The weekly run
+### The daily run
 
 The schedule is Neuman's. Log every friction in `NEUMAN_FEEDBACK.md`; that
 list is what the task feature needs next. Once the review queue stays
@@ -128,7 +128,7 @@ measured.** No recommendation rests on an unsourced number:
   `src/data/sizing.json`, so the method's sources are as checkable as a
   fact's. Speed figures appear only when measured.
 
-**Prices.** Weekly. The sweep re-reads one listing per part; a part with no
+**Prices.** Daily. The sweep re-reads one listing per part; a part with no
 listing the checker can read is marked `price.swept: false` and drops out. A
 per-part history file (`src/data/price-history/<slug>.jsonl`) gets a row at
 every check, changed or not, and system builds chart it. Custom builds show
@@ -146,8 +146,8 @@ panel and model pages following.
 - Run the four queued onboardings (RTX PRO 6000 Blackwell, Mac Studio, DGX
   Station, HGX B300) and the RTX 5090's re-research of `bf16_tflops`; until
   then their builds show memory as pending.
-- (3) the price history log and chart, with the schedule moving to weekly
-  for prices; (4) `sync-bestbuy.mjs`.
+- (3) the price history log and chart, with the schedule moving from daily
+  to weekly for prices; (4) `sync-bestbuy.mjs`.
 
 ### Near-term features
 

@@ -1,4 +1,4 @@
-# Weekly sweep — {{today}}
+# Daily sweep — {{today}}
 
 Run `{{run_id}}`. The API syncs (Artificial Analysis, Arena, OpenRouter,
 Hugging Face, GitHub) have already run; the facts they own are not your job.
@@ -6,7 +6,7 @@ Three jobs, in order, all into one claims file.
 
 ## 1. Part prices
 
-For every part below, claim this week's `price.new_usd`, changed or not. A
+For every part below, claim today's `price.new_usd`, changed or not. A
 price is one observed listing, not an estimate.
 
 - **Cards** — the lowest in-stock price for a new unit at a major retailer:

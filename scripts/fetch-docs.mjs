@@ -13,10 +13,13 @@
  * renders it, and links between docs — `[x](guarantee.md)` and the
  * `docs/guarantee.md` the docs cite in code spans — pointed at /docs/<slug>.
  *
- * The repository is private, so the GitHub API needs GITHUB_TOKEN with read
- * access to its contents. NEUMAN_DOCS_DIR=../neuman/docs reads a local
- * checkout instead, to preview a doc before it is pushed; `pnpm dev` then
- * re-runs this on every save there (scripts/dev.mjs).
+ * The repository is public, so no token is needed: GITHUB_TOKEN, when set, only
+ * raises the API's unauthenticated rate limit (60 requests an hour per address,
+ * against one commit, one listing and one request per doc).
+ * NEUMAN_DOCS_DIR=../neuman/docs reads a local checkout instead, to preview a
+ * doc before it is pushed; `pnpm dev` then re-runs this on every save there
+ * (scripts/dev.mjs). It is a development override, not a build input — a build
+ * reads main.
  *
  * What was fetched (commit, date) goes to src/data/neuman-docs.json for the
  * docs pages to show. A fetch that fails keeps the copy already on disk and
@@ -33,10 +36,15 @@ const DEST = join(ROOT, 'src/content/docs');
 const META = join(ROOT, 'src/data/neuman-docs.json');
 
 async function github(path, accept = 'application/vnd.github+json') {
+  // Public repository: the token is optional, and exists only to lift the
+  // unauthenticated rate limit on CI.
   const token = process.env.GITHUB_TOKEN;
-  if (!token) throw new Error('GITHUB_TOKEN unset — the neuman repository is private');
   const res = await fetch(`https://api.github.com/repos/${REPO}/${path}`, {
-    headers: { Accept: accept, Authorization: `Bearer ${token}`, 'User-Agent': 'privateai-solutions/fetch-docs' },
+    headers: {
+      Accept: accept,
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      'User-Agent': 'privateai-solutions/fetch-docs',
+    },
     signal: AbortSignal.timeout(30000),
   });
   if (!res.ok) throw new Error(`GitHub ${path}: HTTP ${res.status}`);

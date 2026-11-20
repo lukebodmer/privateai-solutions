@@ -35,20 +35,20 @@ The site has not launched. Until it has:
 
 | Repo | Relationship |
 |------|--------------|
-| `~/projects/neuman` | The product. This site showcases it and is maintained with it. Read its `docs/security-model.md` before describing it publicly. Nothing here may become a build-time dependency of Neuman. |
+| `~/projects/neuman` | The product, public at <https://github.com/lukebodmer/neuman>. This site showcases it and is maintained with it. Read its `docs/security-model.md` before describing it publicly. Nothing here may become a build-time dependency of Neuman. |
 
 What flows between them:
 
-- **Neuman → this site:** at Neuman's first public release, its release
-  bundle (version, presets) for the home page, which is Neuman's, and "Runs
-  in Neuman" panels. Until then the home page is hand-written and links
-  nowhere external.
 - **Neuman → this site, always:** its `docs/*.md` from the head of main,
   fetched at every build into `/docs` (`scripts/fetch-docs.mjs`). Neuman's
   repository owns their content; fix a doc there, never in the fetched copy.
-  Until Neuman is public, `.env` sets `NEUMAN_DOCS_DIR=../neuman/docs`, so
-  they come from the local checkout and `pnpm dev` shows edits as they are
-  saved.
+  The repository is public, so the fetch needs no token. `NEUMAN_DOCS_DIR`
+  reads a local checkout instead, to preview a doc before pushing it — a
+  development override, not a build input: a build reads main.
+- **Neuman → this site, at its releases:** its release bundle (version,
+  presets) for the home page, which is Neuman's, and "Runs in Neuman" panels.
+  Neuman is at 0.1.0 with a public repository; the home page is still
+  hand-written and links nowhere external, and joining the two is not done.
 - **This site → Neuman:** `NEUMAN_FEEDBACK.md` — what running this site on
   Neuman shows Neuman needs. Never code.
 - **Model ids** differ today (`qwen3.8-27b` here, `qwen3_8-27b` in Neuman's
