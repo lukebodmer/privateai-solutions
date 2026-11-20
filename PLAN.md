@@ -20,10 +20,11 @@ before it is announced:
   and Core Web Vitals; a proxied zone gets the beacon injected at the edge, so
   no snippet belongs in the layouts.
 - **DMARC is watching, not enforcing.** `_dmarc` publishes `p=none` with
-  reports to Cloudflare DMARC Management. Confirm the contact form's mail
-  passes SPF and DKIM (Gmail → Show original), then move the policy to
-  `quarantine`, and to `reject` once the reports look clean — keeping the
-  `rua` address, which is what feeds the dashboard.
+  reports to Cloudflare DMARC Management. The contact form's mail passes SPF,
+  DKIM and DMARC (Gmail headers, 2026-11-20), so the policy can move to
+  `quarantine` and then to `reject` as reports stay clean — keeping the `rua`
+  address, which is what feeds the dashboard. The SPF record ends `~all`;
+  `-all` once nothing else sends as the domain.
 - **Commits are authored `lukejbodmer@gmail.com`** — a personal address in a
   public history. Add and verify `info@privateai.solutions` on GitHub, then
   set it in git.
