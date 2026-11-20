@@ -7,9 +7,11 @@ benchmark scatter charts (they don't get detail pages).
 
 **Site:** https://privateai.solutions
 **Repo:** github.com/lukebodmer/privateai-solutions
-**Hosting:** Cloudflare Workers, static assets only (`wrangler.jsonc`) —
-Workers Builds deploys every push to `main`; `pnpm deploy` does the same from
-a machine.
+**Hosting:** Cloudflare Workers (`wrangler.jsonc`) — every page is a static
+asset; `src/worker.js` runs for `/api/*` only and emails a contact-form
+submission to the destination pinned in the `send_email` binding. Workers
+Builds deploys every push to `main`; `pnpm deploy` does the same from a
+machine.
 **Maintainer:** Luke Bodmer
 
 ---

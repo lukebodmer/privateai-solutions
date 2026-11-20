@@ -1,14 +1,23 @@
-// Cloudflare Workers, static assets only: no `main`, so no Worker script runs
-// and every request is served from the uploaded files for free.
+// Cloudflare Workers: static assets, plus the one script that takes the contact
+// form (src/worker.js). Pages are served straight from ./dist; the Worker runs
+// only for /api/*, so a page request never touches it.
 // Workers Builds reads this file; the Worker's name in the dashboard must
 // match `name` here or the build fails.
 {
   "name": "privateai-solutions",
+  "main": "src/worker.js",
   "compatibility_date": "2026-11-20",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
   },
+  // Form submissions are emailed here. `destination_address` refuses any other
+  // recipient, so the binding can never be used to send somewhere else.
+  "send_email": [
+    { "name": "CONTACT", "destination_address": "lukejbodmer@gmail.com" }
+  ],
   // A deploy creates the Custom Domain and its DNS record if it is not there.
   "routes": [
     { "pattern": "privateai.solutions", "custom_domain": true }

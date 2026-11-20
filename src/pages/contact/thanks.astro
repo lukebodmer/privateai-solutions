@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+
+<Base
+  title="Message sent — Private AI Solutions"
+  description="Your message has been sent to Private AI Solutions."
+>
+  <main class="max-w-2xl w-full mx-auto px-4 sm:px-6 py-16">
+
+    <PageHeader eyebrow="Sent" title="Message sent" wide class="mb-10">
+      <p>Thanks — it's in the inbox. I'll get back to you as soon as I can, usually within a
+        business day.</p>
+      <p class="mt-3">If it's urgent, or the message didn't arrive, write to
+        <a href="mailto:info@privateai.solutions" class="text-frost-400 hover:underline">info@privateai.solutions</a>.</p>
+    </PageHeader>
+
+    <a href="/" class="inline-block px-5 py-2 rounded-full bg-frost-500 hover:bg-frost-400 text-nord-950 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(136,192,208,0.6)] transition-colors">
+      Back to the site
+    </a>
+
+  </main>
+</Base>

@@ -18,11 +18,15 @@ import PageHeader from '../components/PageHeader.astro';
     </PageHeader>
 
     <form
-      action="mailto:info@privateai.solutions"
-      method="get"
-      enctype="text/plain"
+      action="/api/contact"
+      method="post"
       class="space-y-5"
     >
+      <!-- A field no visitor sees; scripts that fill it are answered like a person. -->
+      <div class="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
       <div>
         <label for="name" class="block text-sm font-medium text-nord-300 mb-1.5">Name</label>
         <input
