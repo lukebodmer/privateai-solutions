@@ -7,6 +7,9 @@ benchmark scatter charts (they don't get detail pages).
 
 **Site:** https://privateai.solutions
 **Repo:** github.com/lukebodmer/privateai-solutions
+**Hosting:** Cloudflare Workers, static assets only (`wrangler.jsonc`) —
+Workers Builds deploys every push to `main`; `pnpm deploy` does the same from
+a machine.
 **Maintainer:** Luke Bodmer
 
 ---

@@ -1,5 +1,5 @@
 {
-  description = "privateai.solutions — Astro static site with Cloudflare Pages deploy";
+  description = "privateai.solutions — Astro static site with Cloudflare Workers deploy";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -25,7 +25,7 @@
           echo "privateai.solutions dev shell"
           echo "  pnpm dev          → local dev server + admin dashboard"
           echo "  pnpm build        → production build"
-          echo "  pnpm deploy       → build + publish to Cloudflare Pages"
+          echo "  pnpm deploy       → build + deploy to Cloudflare Workers"
         '';
       };
     };

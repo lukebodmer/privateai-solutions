@@ -15,6 +15,9 @@ queue/
 # When each API sync last ran (scripts/lib/facts.mjs).
 .sync-state.json
 
+# Wrangler's local state (wrangler deploy).
+.wrangler/
+
 # Neuman's docs, fetched from its main branch at build (scripts/fetch-docs.mjs).
 src/content/docs/
 src/data/neuman-docs.json

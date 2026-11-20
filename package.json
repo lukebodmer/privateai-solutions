@@ -2,6 +2,7 @@
   "name": "privateai-solutions",
   "type": "module",
   "version": "0.1.0",
+  "packageManager": "pnpm@11.21.0",
   "scripts": {
     "dev": "node --env-file-if-exists=.env scripts/dev.mjs",
     "dev:admin": "node --env-file-if-exists=.env scripts/admin-server.mjs",
@@ -22,7 +23,7 @@
     "docs:fetch": "node --env-file-if-exists=.env scripts/fetch-docs.mjs",
     "build": "node --env-file-if-exists=.env scripts/fetch-docs.mjs && astro build",
     "preview": "astro preview",
-    "deploy": "pnpm build && wrangler pages deploy dist --project-name privateai-solutions"
+    "deploy": "pnpm build && wrangler deploy"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",

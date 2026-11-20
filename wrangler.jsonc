@@ -1,0 +1,16 @@
+// Cloudflare Workers, static assets only: no `main`, so no Worker script runs
+// and every request is served from the uploaded files for free.
+// Workers Builds reads this file; the Worker's name in the dashboard must
+// match `name` here or the build fails.
+{
+  "name": "privateai-solutions",
+  "compatibility_date": "2026-11-20",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  // A deploy creates the Custom Domain and its DNS record if it is not there.
+  "routes": [
+    { "pattern": "privateai.solutions", "custom_domain": true }
+  ]
+}
