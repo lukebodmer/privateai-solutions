@@ -37,16 +37,14 @@ export async function docGroups(): Promise<DocGroup[]> {
 }
 
 export interface DocsSource {
-  source: 'github' | 'local';
-  repo?: string;
-  branch?: string;
-  sha?: string;
-  committed?: string;
-  dir?: string;
+  repo: string;
+  branch: string;
+  sha: string;
+  committed: string;
   fetched: string;
 }
 
-/** What the last fetch read: the commit on main, or a local directory. */
+/** What the last fetch read: the commit on main. */
 export function docsSource(): DocsSource | null {
   const path = join(process.cwd(), 'src/data/neuman-docs.json');
   return existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : null;

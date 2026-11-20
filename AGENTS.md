@@ -42,9 +42,8 @@ What flows between them:
 - **Neuman → this site, always:** its `docs/*.md` from the head of main,
   fetched at every build into `/docs` (`scripts/fetch-docs.mjs`). Neuman's
   repository owns their content; fix a doc there, never in the fetched copy.
-  The repository is public, so the fetch needs no token. `NEUMAN_DOCS_DIR`
-  reads a local checkout instead, to preview a doc before pushing it — a
-  development override, not a build input: a build reads main.
+  The repository is public, so the fetch needs no token, and main is the only
+  source: nothing reads a local checkout.
 - **Neuman → this site, at its releases:** its release bundle (version,
   presets) for the home page, which is Neuman's, and "Runs in Neuman" panels.
   Neuman is at 0.1.0 with a public repository; the home page is still

@@ -65,9 +65,7 @@ const fmt = (iso: string) =>
         ))}
         {source && (
           <p class="text-[11px] text-nord-600 leading-relaxed mt-6 pt-4 border-t border-nord-800">
-            {source.source === 'github'
-              ? <>From <span class="text-nord-500">{source.branch}</span> at <code class="text-nord-500">{source.sha?.slice(0, 7)}</code>, {fmt(source.committed!)}</>
-              : <>From a local checkout</>}
+            From <span class="text-nord-500">{source.branch}</span> at <code class="text-nord-500">{source.sha.slice(0, 7)}</code>, {fmt(source.committed)}
           </p>
         )}
 

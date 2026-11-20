@@ -768,7 +768,7 @@ with a safe slug charset.
 | `pnpm task:prepare` | The task's first step: syncs, then `run.json` and `brief.md` in `NEUMAN_RUN_DIR` |
 | `pnpm check [<run-id>] [--dry-run]` | Run the checker on a run's claims — the task's own run when no id is given |
 | `pnpm dev:admin` | Just the admin server |
-| `pnpm docs:fetch` | Neuman's docs from main (`NEUMAN_DOCS_DIR` for a local checkout) |
+| `pnpm docs:fetch` | Neuman's docs from main |
 | `pnpm sync:aa` / `sync:aa:force` | Manual AA sync |
 | `pnpm sync:arena` / `sync:arena:force` | Manual Arena sync |
 | `pnpm sync:openrouter` / `sync:openrouter:force` | Manual OpenRouter sync |
@@ -871,11 +871,8 @@ the page). Neuman's repository owns the content; this site owns presentation.
   `pnpm deploy`) runs `scripts/fetch-docs.mjs` first, as does `pnpm dev`;
   `pnpm docs:fetch` runs it alone. The repository is public, so no token is
   needed; `GITHUB_TOKEN`, when set, only raises the API's unauthenticated rate
-  limit. `NEUMAN_DOCS_DIR=../neuman/docs` reads a local checkout instead, to
-  preview a doc before pushing it: `pnpm dev` watches that folder and re-copies
-  on every save, and the fetch writes only the files that changed, so Astro
-  reloads just the edited doc. That is a development override; a build reads
-  main.
+  limit. Main is the only source. The fetch
+  writes only the files that changed, so a re-fetch leaves the rest alone.
 - **Every top-level `docs/*.md` publishes**, except the two `NOT_PUBLISHED`
   in `scripts/fetch-docs.mjs`: the decision log (`decisions.md`) and the
   failure log (`gotchas.md`) stay in Neuman's repository, being working

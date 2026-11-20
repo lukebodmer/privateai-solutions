@@ -18,11 +18,8 @@
  *
  * The repository is public, so no token is needed: GITHUB_TOKEN, when set, only
  * raises the API's unauthenticated rate limit (60 requests an hour per address,
- * against one commit, one listing and one request per doc).
- * NEUMAN_DOCS_DIR=../neuman/docs reads a local checkout instead, to preview a
- * doc before it is pushed; `pnpm dev` then re-runs this on every save there
- * (scripts/dev.mjs). It is a development override, not a build input — a build
- * reads main.
+ * against one commit, one listing and one request per doc). Main is the only
+ * source; a build and a dev server read the same thing.
  *
  * What was fetched (commit, date) goes to src/data/neuman-docs.json for the
  * docs pages to show. A fetch that fails keeps the copy already on disk and
@@ -30,7 +27,7 @@
  */
 
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'fs';
-import { join, resolve } from 'path';
+import { join } from 'path';
 import { ROOT } from './lib/facts.mjs';
 
 const REPO = 'lukebodmer/neuman';
@@ -67,15 +64,8 @@ async function fromGithub() {
     .map(async e => ({ name: e.name, body: await github(`contents/docs/${e.name}?ref=${head.sha}`, 'application/vnd.github.raw') })));
   return {
     files,
-    meta: { source: 'github', repo: REPO, branch: BRANCH, sha: head.sha, committed: head.commit.committer.date },
+    meta: { repo: REPO, branch: BRANCH, sha: head.sha, committed: head.commit.committer.date },
   };
-}
-
-function fromLocal(dir) {
-  const files = readdirSync(dir)
-    .filter(name => name.endsWith('.md'))
-    .map(name => ({ name, body: readFileSync(join(dir, name), 'utf8') }));
-  return { files, meta: { source: 'local', dir } };
 }
 
 /* ─────────────────────────── rewriting ─────────────────────────── */
@@ -138,10 +128,9 @@ function pruneHeldBack() {
   }
 }
 
-const local = process.env.NEUMAN_DOCS_DIR;
 let fetched;
 try {
-  fetched = local ? fromLocal(resolve(ROOT, local)) : await fromGithub();
+  fetched = await fromGithub();
 } catch (err) {
   const have = existsSync(DEST) && readdirSync(DEST).some(f => f.endsWith('.md'));
   console.warn(`[docs] ${err.message}${have ? ' — keeping the docs already fetched' : ''}`);
@@ -152,9 +141,9 @@ try {
 // What this site publishes out of what Neuman holds.
 const files = fetched.files.filter(f => !NOT_PUBLISHED.has(f.name.replace(/\.md$/, '')));
 
-// Write only what changed and remove only what is gone, so a dev server
-// watching src/content/docs reloads the one doc that was edited. A held-back
-// doc is removed like one main has dropped.
+// Write only what changed and remove only what is gone, so a re-fetch leaves
+// the rest of the tree alone. A held-back doc is removed like one main has
+// dropped.
 const published = new Set(files.map(f => f.name.replace(/\.md$/, '')));
 mkdirSync(DEST, { recursive: true });
 for (const name of readdirSync(DEST)) {
@@ -167,5 +156,5 @@ for (const file of files) {
 }
 writeFileSync(META, JSON.stringify({ ...fetched.meta, fetched: new Date().toISOString() }, null, 2) + '\n');
 
-const at = fetched.meta.sha ? `${REPO}@${fetched.meta.sha.slice(0, 7)}` : fetched.meta.dir;
+const at = `${REPO}@${fetched.meta.sha.slice(0, 7)}`;
 console.log(`[docs] ${files.length} doc(s) from ${at}`);
