@@ -876,14 +876,18 @@ the page). Neuman's repository owns the content; this site owns presentation.
   on every save, and the fetch writes only the files that changed, so Astro
   reloads just the edited doc. That is a development override; a build reads
   main.
-- **Every top-level `docs/*.md` publishes**; `docs/plans/` does not. The
+- **Every top-level `docs/*.md` publishes**, except the two `NOT_PUBLISHED`
+  in `scripts/fetch-docs.mjs`: the decision log (`decisions.md`) and the
+  failure log (`gotchas.md`) stay in Neuman's repository, being working
+  material for its contributors. `docs/plans/` does not publish either. The
   sidebar's groups are `GROUPS` in `src/lib/docs.ts`; a doc that list does
   not name appears under "More" rather than disappearing.
 - **The fetch rewrites each file**: frontmatter (title from the H1, minus a
   leading "Neuman —"; description from the first paragraph), the H1
   removed, and links between docs — `[x](security-model.md)` and the
   `` `docs/security-model.md` `` code spans the docs cite each other with —
-  pointed at `/docs/<slug>`. Output is `src/content/docs/` (the `docs`
+  pointed at `/docs/<slug>`. A link to a held-back doc keeps its text and
+  loses its target. Output is `src/content/docs/` (the `docs`
   collection) and `src/data/neuman-docs.json` (the commit it read, shown
   under the sidebar); both gitignored.
 - **A failed fetch keeps the copy on disk**, and fails the build only when

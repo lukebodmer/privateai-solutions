@@ -5,13 +5,16 @@
  * Neuman's repository owns the content; this site owns presentation. Every
  * top-level docs/*.md on main is published, so a doc added there appears
  * here on the next build without a change to this repository; its place in
- * the sidebar comes from src/lib/docs.ts. docs/plans/ is working material and
- * is not published.
+ * the sidebar comes from src/lib/docs.ts. Two are held back — the decision
+ * log and the failure log, NOT_PUBLISHED below — and docs/plans/ is working
+ * material; none of those reaches this site.
  *
  * Each file is rewritten for the site: frontmatter (title from its H1,
  * description from its first paragraph), the H1 stripped because the layout
  * renders it, and links between docs — `[x](guarantee.md)` and the
  * `docs/guarantee.md` the docs cite in code spans — pointed at /docs/<slug>.
+ * A link to a held-back doc keeps its text and loses its target, there being
+ * no page to point it at.
  *
  * The repository is public, so no token is needed: GITHUB_TOKEN, when set, only
  * raises the API's unauthenticated rate limit (60 requests an hour per address,
@@ -34,6 +37,11 @@ const REPO = 'lukebodmer/neuman';
 const BRANCH = 'main';
 const DEST = join(ROOT, 'src/content/docs');
 const META = join(ROOT, 'src/data/neuman-docs.json');
+
+// Docs that stay in Neuman's repository and are not pages here: the decision
+// log and the failure log are working material for Neuman's contributors, not
+// documentation for the site's reader.
+const NOT_PUBLISHED = new Set(['decisions', 'gotchas']);
 
 async function github(path, accept = 'application/vnd.github+json') {
   // Public repository: the token is optional, and exists only to lift the
@@ -97,13 +105,14 @@ function firstParagraph(md) {
   return text.length > 220 ? `${text.slice(0, 217).replace(/\s+\S*$/, '')}…` : text;
 }
 
-/** Point links between docs at their pages. Code fences are left alone. */
+/** Point links between docs at their pages; one to a doc this site does not
+ *  publish keeps its text and loses its link. Code fences are left alone. */
 function linkDocs(md, published) {
   return md.split(/(^```[\s\S]*?^```)/m).map((chunk, i) => {
     if (i % 2 === 1) return chunk;
     return chunk
-      .replace(/\]\(([a-z0-9-]+)\.md(#[^)]*)?\)/g, (m, slug, hash = '') =>
-        published.has(slug) ? `](/docs/${slug}${hash})` : m)
+      .replace(/\[([^\]]+)\]\(([a-z0-9-]+)\.md(#[^)]*)?\)/g, (m, text, slug, hash = '') =>
+        published.has(slug) ? `[${text}](/docs/${slug}${hash})` : text)
       .replace(/(?<!\[)`docs\/([a-z0-9-]+)\.md`(?!\])/g, (m, slug) =>
         published.has(slug) ? `[${m}](/docs/${slug})` : m);
   }).join('');
@@ -120,6 +129,15 @@ function rewrite({ name, body }, published) {
 
 /* ─────────────────────────── main ─────────────────────────── */
 
+/** A held-back doc is not published whatever the fetch did: an older copy of
+ *  one goes even when the fetch fails and the rest of the copy is kept. */
+function pruneHeldBack() {
+  if (!existsSync(DEST)) return;
+  for (const name of readdirSync(DEST)) {
+    if (NOT_PUBLISHED.has(name.replace(/\.md$/, ''))) rmSync(join(DEST, name), { recursive: true, force: true });
+  }
+}
+
 const local = process.env.NEUMAN_DOCS_DIR;
 let fetched;
 try {
@@ -127,17 +145,22 @@ try {
 } catch (err) {
   const have = existsSync(DEST) && readdirSync(DEST).some(f => f.endsWith('.md'));
   console.warn(`[docs] ${err.message}${have ? ' — keeping the docs already fetched' : ''}`);
+  if (have) pruneHeldBack();
   process.exit(have ? 0 : 1);
 }
 
+// What this site publishes out of what Neuman holds.
+const files = fetched.files.filter(f => !NOT_PUBLISHED.has(f.name.replace(/\.md$/, '')));
+
 // Write only what changed and remove only what is gone, so a dev server
-// watching src/content/docs reloads the one doc that was edited.
-const published = new Set(fetched.files.map(f => f.name.replace(/\.md$/, '')));
+// watching src/content/docs reloads the one doc that was edited. A held-back
+// doc is removed like one main has dropped.
+const published = new Set(files.map(f => f.name.replace(/\.md$/, '')));
 mkdirSync(DEST, { recursive: true });
 for (const name of readdirSync(DEST)) {
-  if (!fetched.files.some(f => f.name === name)) rmSync(join(DEST, name), { recursive: true, force: true });
+  if (!files.some(f => f.name === name)) rmSync(join(DEST, name), { recursive: true, force: true });
 }
-for (const file of fetched.files) {
+for (const file of files) {
   const path = join(DEST, file.name);
   const text = rewrite(file, published);
   if (!existsSync(path) || readFileSync(path, 'utf8') !== text) writeFileSync(path, text);
@@ -145,4 +168,4 @@ for (const file of fetched.files) {
 writeFileSync(META, JSON.stringify({ ...fetched.meta, fetched: new Date().toISOString() }, null, 2) + '\n');
 
 const at = fetched.meta.sha ? `${REPO}@${fetched.meta.sha.slice(0, 7)}` : fetched.meta.dir;
-console.log(`[docs] ${fetched.files.length} doc(s) from ${at}`);
+console.log(`[docs] ${files.length} doc(s) from ${at}`);

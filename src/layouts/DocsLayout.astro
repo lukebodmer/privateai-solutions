@@ -29,7 +29,7 @@ const next = idx >= 0 && idx < flat.length - 1 ? flat[idx + 1] : null;
 // The label over the title: the doc's group, or "Documentation" on the index.
 const group = groups.find(g => g.docs.some(d => d.slug === current))?.label ?? 'Documentation';
 
-// A doc of h3 entries and no h2 sections (gotchas) lists its h3s instead.
+// A doc of h3 entries and no h2 sections lists its h3s instead.
 const depth = headings.some(h => h.depth === 2) ? 2 : 3;
 const toc = headings.filter(h => h.depth === depth);
 

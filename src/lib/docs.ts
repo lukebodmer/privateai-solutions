@@ -3,6 +3,9 @@
  * fetched from Neuman's main branch (scripts/fetch-docs.mjs); a doc this
  * list does not name still publishes, under "More", so a new doc on main is
  * never silently dropped — it just waits here for a place.
+ *
+ * Neuman's decision log and failure log are not on this site (NOT_PUBLISHED
+ * in the fetch), so no group here names them.
  */
 import { existsSync, readFileSync } from 'fs';
 import { join } from 'path';
@@ -12,7 +15,6 @@ const GROUPS: { label: string; slugs: string[] }[] = [
   { label: 'Start here', slugs: ['philosophy', 'manifesto'] },
   { label: 'How it works', slugs: ['security-model', 'tools', 'tasks', 'context', 'harness', 'networking', 'database', 'platforms'] },
   { label: 'Running it', slugs: ['setup', 'administration'] },
-  { label: 'Why it is built this way', slugs: ['decisions', 'gotchas'] },
 ];
 
 export type Doc = CollectionEntry<'docs'>;
