@@ -14,12 +14,11 @@ The site is deployed — Cloudflare Workers, rebuilt on every push to `main` —
 and `info@privateai.solutions` receives through Email Routing. What is left
 before it is announced:
 
-- **`www.privateai.solutions` does not resolve.** A proxied `A` record for
-  `www` to `192.0.2.0`, then a Redirect Rule from `https://www.*` to
-  `https://${1}`, status 301, query string preserved.
-- **Web Analytics is off** while the footer promises aggregate analytics. Add
-  the site in Web Analytics; a proxied zone gets the beacon injected at the
-  edge, so no snippet belongs in the layouts.
+- **Web Analytics is a choice.** The zone's traffic analytics already count
+  requests, bandwidth and unique visitors without a beacon, which is what the
+  footer promises. Adding the site in Web Analytics would add per-page views
+  and Core Web Vitals; a proxied zone gets the beacon injected at the edge, so
+  no snippet belongs in the layouts.
 - **No DMARC record**, so `info@` can be spoofed. Add `_dmarc` =
   `v=DMARC1; p=none; rua=mailto:info@privateai.solutions`, read the reports,
   and tighten to `quarantine` then `reject` once the contact form's mail is
