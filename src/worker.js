@@ -49,7 +49,7 @@ async function contact(request, env) {
   try {
     await env.CONTACT.send({
       to: DESTINATION,
-      from: { email: FROM, name: 'privateai.solutions' },
+      from: { email: FROM, name: 'Private AI Solutions' },
       replyTo: email,
       subject,
       text: [`Name:  ${name}`, `Email: ${email}`, `Topic: ${topic || '—'}`, '', message].join('\n'),
