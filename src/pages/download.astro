@@ -111,7 +111,7 @@ programs.neuman-client = {
             <ul class={`mt-6 ${noteList}`}>
               <li class="flex gap-3">
                 <span class={noteDot}>&middot;</span>
-                <span>Postgres, the units and the directories are the module's business. There is nothing else to configure for a server used from its own machine.</span>
+                <span>Postgres, the units, the directories, the port and TLS are the module's business — what a restart changes. Accounts, roles, providers, models and the prompt are not.</span>
               </li>
               <li class="flex gap-3">
                 <span class={noteDot}>&middot;</span>
@@ -127,7 +127,7 @@ programs.neuman-client = {
               </li>
               <li class="flex gap-3">
                 <span class={noteDot}>&middot;</span>
-                <span>A fresh appliance is empty &mdash; no roles, providers or models. Those are not Nix; they are made in the administration page.</span>
+                <span>A fresh appliance is empty — no accounts, roles, providers, models or prompt. All of it is made in the administration page, and a change needs no rebuild.</span>
               </li>
             </ul>
           </div>
