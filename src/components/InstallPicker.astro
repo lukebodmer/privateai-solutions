@@ -8,7 +8,8 @@ import { PLATFORM_ICONS } from '../lib/platformIcons.mjs';
 interface Install {
   /** Unique on the page, and the prefix of its tab and panel ids. */
   id: string;
-  /** What the square says: the operating system, not the install method. */
+  /** What the square says: the platform or ecosystem the install belongs to
+   *  — NixOS, Ubuntu, Nix, macOS — never the package format beside it. */
   name: string;
   /** The line under it: how it installs, or that it is not ready. */
   detail: string;
@@ -33,9 +34,9 @@ const { label, installs } = Astro.props;
         role="tab"
         id={`${install.id}-tab`}
         aria-controls={`${install.id}-panel`}
-        aria-selected={i === 0 ? 'true' : 'false'}
-        tabindex={i === 0 ? 0 : -1}
-        data-selected={i === 0 ? 'true' : 'false'}
+        aria-selected="false"
+        tabindex="0"
+        data-selected="false"
         data-tab
         class:list={[
           'group flex h-32 w-32 shrink-0 flex-col items-center justify-center gap-2.5 rounded-xl border bg-nord-950 px-2 text-center transition-colors',
@@ -74,27 +75,107 @@ const { label, installs } = Astro.props;
 </div>
 
 <script>
+  // The panels open to their measured height and close back to nothing. A CSS
+  // grid-row transition was the first attempt and does not resolve here:
+  // `1fr` on an auto-height grid computes to zero in this browser, so the
+  // panel never grows. Height in the Web Animations API needs no such trick,
+  // and `prefers-reduced-motion` skips straight to the end state.
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const OPEN_MS = 260;
+  const CLOSE_MS = 200;
+
   for (const picker of document.querySelectorAll<HTMLElement>('[data-install-picker]')) {
     const tabs = [...picker.querySelectorAll<HTMLElement>('[data-tab]')];
     const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls') ?? ''));
+    let openIndex = -1;
 
-    function select(index: number) {
+    // Closing has a state to reach, and the timer that reaches it when the
+    // finish event does not must not fire after the panel was reopened.
+    function bump(panel: HTMLElement): string {
+      const token = String((Number(panel.dataset.closeToken) || 0) + 1);
+      panel.dataset.closeToken = token;
+      return token;
+    }
+
+    function open(panel: HTMLElement) {
+      bump(panel);
+      panel.getAnimations().forEach(animation => animation.cancel());
+      panel.hidden = false;
+      panel.inert = false;
+      panel.removeAttribute('aria-hidden');
+      if (reduced) return;
+
+      // The panel's own state is the open one; the animation only paints the
+      // way there. Nothing has to run at the end, so a backgrounded tab (whose
+      // animation timeline is frozen) can never leave it collapsed.
+      const height = panel.getBoundingClientRect().height;
+      const margin = parseFloat(getComputedStyle(panel).marginTop) || 0;
+      panel.animate(
+        [
+          { height: '0px', marginTop: '0px', opacity: 0 },
+          { height: `${height}px`, marginTop: `${margin}px`, opacity: 1 },
+        ],
+        { duration: OPEN_MS, easing: 'ease' },
+      );
+    }
+
+    function close(panel: HTMLElement) {
+      panel.getAnimations().forEach(animation => animation.cancel());
+      panel.inert = true;
+      panel.setAttribute('aria-hidden', 'true');
+      if (reduced) {
+        panel.hidden = true;
+        return;
+      }
+
+      const height = panel.getBoundingClientRect().height;
+      const margin = parseFloat(getComputedStyle(panel).marginTop) || 0;
+      const token = bump(panel);
+      const animation = panel.animate(
+        [
+          { height: `${height}px`, marginTop: `${margin}px`, opacity: 1 },
+          { height: '0px', marginTop: '0px', opacity: 0 },
+        ],
+        { duration: CLOSE_MS, easing: 'ease', fill: 'forwards' },
+      );
+      // Closing has a state to reach. `fill: forwards` holds the collapsed
+      // frame until the panel is hidden, and the timer is the case where the
+      // finish event never arrives because the tab was in the background.
+      const finish = () => {
+        if (panel.dataset.closeToken !== token) return;
+        panel.hidden = true;
+        animation.cancel();
+      };
+      animation.onfinish = finish;
+      window.setTimeout(finish, CLOSE_MS + 80);
+    }
+
+    function show(index: number) {
+      const previous = openIndex;
+      openIndex = index;
       tabs.forEach((tab, i) => {
         const selected = i === index;
         tab.setAttribute('aria-selected', String(selected));
         tab.dataset.selected = String(selected);
-        tab.tabIndex = selected ? 0 : -1;
-        const panel = panels[i];
-        if (panel) panel.hidden = !selected;
+        // With nothing selected every tab is a tab stop; a roving tabindex
+        // needs one selected tab to rove to.
+        tab.tabIndex = 0;
+      });
+      panels.forEach((panel, i) => {
+        if (!panel) return;
+        if (i === index) open(panel);
+        else if (i === previous) close(panel);
       });
     }
 
-    // The panels are in the page, the selection is here: settle it on load.
-    const initial = tabs.findIndex(tab => tab.getAttribute('aria-selected') === 'true');
-    select(initial === -1 ? 0 : initial);
+    // Nothing is chosen until the reader chooses: the page opens as a
+    // question — which platform? — rather than as instructions for whichever
+    // one is listed first.
+    show(-1);
 
     tabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => select(i));
+      // A second press collapses it, back to showing nothing.
+      tab.addEventListener('click', () => show(openIndex === i ? -1 : i));
 
       // The arrow keys belong to the group once it has focus, as in any tab list.
       tab.addEventListener('keydown', event => {
@@ -107,7 +188,7 @@ const { label, installs } = Astro.props;
           undefined;
         if (next === undefined) return;
         event.preventDefault();
-        select(next);
+        show(next);
         tabs[next].focus();
       });
     });

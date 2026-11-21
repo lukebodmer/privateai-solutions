@@ -35,11 +35,13 @@ programs.neuman-client = {
   server = "https://neuman.example.com";   # your appliance
 };`;
 
-// The Ubuntu package is versioned with Neuman; one place so the panel cannot
-// link a file whose name it does not know.
+// The Ubuntu packages are versioned with Neuman; one place so the panels cannot
+// link a file whose name they do not know.
 const debVersion = '0.1.0';
 const debFile = `neuman_${debVersion}_amd64.deb`;
 const debUrl = `/neuman/${debFile}`;
+const clientDebFile = `neuman-client_${debVersion}_amd64.deb`;
+const clientDebUrl = `/neuman/${clientDebFile}`;
 ---
 
 <Base
@@ -47,6 +49,13 @@ const debUrl = `/neuman/${debFile}`;
   description="Install Neuman from its Nix flake: the server as a NixOS module, the client through home-manager."
 >
   <main class="max-w-4xl w-full mx-auto px-4 sm:px-6 py-16">
+
+    <!-- Without JavaScript the tabs do nothing, so every panel stays visible
+         and the page reads as three stacked installs. With it, the markup's
+         `hidden` is the default and nothing opens until a tile is clicked. -->
+    <noscript>
+      <style is:inline>{`[id$="-panel"] { display: block !important; }`}</style>
+    </noscript>
 
     <PageHeader eyebrow="Neuman" title="Download" accent="Neuman" class="mb-10">
       <p>
@@ -78,7 +87,7 @@ const debUrl = `/neuman/${debFile}`;
             ]}
           />
 
-          <div id="server-nixos-panel" role="tabpanel" aria-labelledby="server-nixos-tab" tabindex="0" class="mt-7">
+          <div id="server-nixos-panel" role="tabpanel" aria-labelledby="server-nixos-tab" tabindex="0" class="mt-7" hidden>
             <p class="text-sm font-light text-nord-400">On the machine that runs the appliance.</p>
 
             <ol class="mt-5 space-y-5">
@@ -137,6 +146,7 @@ const debUrl = `/neuman/${debFile}`;
                 <span>A fresh appliance is empty — no accounts, roles, providers, models or prompt. All of it is made in the administration page, and a change needs no rebuild.</span>
               </li>
             </ul>
+
           </div>
 
           <div id="server-ubuntu-panel" role="tabpanel" aria-labelledby="server-ubuntu-tab" tabindex="0" class="mt-7" hidden>
@@ -179,7 +189,7 @@ neuman-admin bootstrap --name you`}</code></pre>
             <ul class={`mt-6 ${noteList}`}>
               <li class="flex gap-3">
                 <span class={noteDot}>&middot;</span>
-                <span>24.04 is the baseline because the server needs Python 3.12. 22.04 is not supported.</span>
+                <span>24.04 only, for now: the packages are built for its Python 3.12. 22.04 ships 3.10, and every release since 25.04 ships 3.13 or newer, whose interpreter cannot load the bundled wheels — <code class={ic}>apt</code> refuses rather than installing something that will not start.</span>
               </li>
               <li class="flex gap-3">
                 <span class={noteDot}>&middot;</span>
@@ -194,6 +204,7 @@ neuman-admin bootstrap --name you`}</code></pre>
                 <span>Local models are not in the package: they need a <code class={ic}>llama-server</code> from somewhere else.</span>
               </li>
             </ul>
+
           </div>
         </div>
 
@@ -216,12 +227,13 @@ neuman-admin bootstrap --name you`}</code></pre>
           <InstallPicker
             label="Client platform"
             installs={[
-              { id: 'client-linux', name: 'Linux', detail: 'Nix · home-manager', icon: 'Linux' },
+              { id: 'client-nix', name: 'Nix', detail: 'home-manager', icon: 'NixOS' },
+              { id: 'client-ubuntu', name: 'Ubuntu', detail: '24.04 · .deb', icon: 'Linux' },
               { id: 'client-macos', name: 'macOS', detail: 'Coming soon', icon: 'macOS', soon: true },
             ]}
           />
 
-          <div id="client-linux-panel" role="tabpanel" aria-labelledby="client-linux-tab" tabindex="0" class="mt-7">
+          <div id="client-nix-panel" role="tabpanel" aria-labelledby="client-nix-tab" tabindex="0" class="mt-7" hidden>
             <p class="text-sm font-light text-nord-400">On each machine someone works at.</p>
 
             <ol class="mt-5 space-y-5">
@@ -254,6 +266,64 @@ neuman-client login --server https://neuman.example.com --user you</code></pre>
                 <span>The tools run as the account you are logged in as, which need not be the name of your Neuman account.</span>
               </li>
             </ul>
+
+          </div>
+
+          <div id="client-ubuntu-panel" role="tabpanel" aria-labelledby="client-ubuntu-tab" tabindex="0" class="mt-7" hidden>
+            <p class="text-sm font-light text-nord-400">On a person's Ubuntu 24.04 machine, as that person.</p>
+
+            <ol class="mt-5 space-y-5">
+              <li>
+                <p class={stepLabel}>1 &middot; Download the package</p>
+                <pre class={code}><code>{`wget https://privateai.solutions${clientDebUrl}`}</code></pre>
+              </li>
+              <li>
+                <p class={stepLabel}>2 &middot; Install it</p>
+                <pre class={code}><code>{`sudo apt install ./${clientDebFile}`}</code></pre>
+                <ul class={`mt-3 border-l border-nord-800 pl-4 ${noteList}`}>
+                  <li class="flex gap-3">
+                    <span class={noteDot}>&middot;</span>
+                    <span>The package is built for 24.04's Python 3.12, and depends on git. Chromium is recommended, not bundled: <code class={ic}>chromium</code>, <code class={ic}>chromium-browser</code>, <code class={ic}>google-chrome</code> or the Chromium snap all work.</span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p class={stepLabel}>3 &middot; Log in to the appliance</p>
+                <pre class={code}><code>{`neuman-client login --server https://neuman.example.com --user you`}</code></pre>
+
+                <ul class={`mt-3 border-l border-nord-800 pl-4 ${noteList}`}>
+                  <li class="flex gap-3">
+                    <span class={noteDot}>&middot;</span>
+                    <span>This stores the server with the session, so the services need no configuration file of their own.</span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p class={stepLabel}>4 &middot; Start it</p>
+                <pre class={code}><code>{`systemctl --user daemon-reload
+systemctl --user enable --now neuman-client.service
+systemctl --user enable --now neuman-browser.service`}</code></pre>
+
+                <ul class={`mt-3 border-l border-nord-800 pl-4 ${noteList}`}>
+                  <li class="flex gap-3">
+                    <span class={noteDot}>&middot;</span>
+                    <span>The browser service opens the window; the Neuman entry in the application menu starts it again later.</span>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+
+            <ul class={`mt-6 ${noteList}`}>
+              <li class="flex gap-3">
+                <span class={noteDot}>&middot;</span>
+                <span>Only the <code class={ic}>browse</code> tool needs a browser; the window itself is served on <code class={ic}>127.0.0.1:8642</code>, and the appliance is not involved in the browsing at all.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class={noteDot}>&middot;</span>
+                <span><code class={ic}>neuman-client doctor</code> reports the interpreter, session, browser and socket — the first thing to run when something is wrong.</span>
+              </li>
+            </ul>
+
           </div>
 
           <div id="client-macos-panel" role="tabpanel" aria-labelledby="client-macos-tab" tabindex="0" class="mt-7" hidden>
